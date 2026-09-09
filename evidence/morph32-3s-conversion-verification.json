@@ -1,0 +1,19 @@
+{
+  "status": "passed",
+  "profile": "morph32-3s",
+  "conversion_seconds": 161.76053020800464,
+  "converted_projections": 192,
+  "verified_tensor_payloads": 2610,
+  "all_tensor_hashes_match_measured_checkpoint": true,
+  "all_projection_descriptors_match_measured_checkpoint": true,
+  "manifest_tensor_hashes_sha256": "1cf1e99f3256e1a3c9abb5d97a5964bc9643fb854cd27cb74b4005381329b67c",
+  "inventory": {
+    "file_bytes": 13670822555,
+    "logical_parameters": 27356728560,
+    "physical_bpw": 3.9977945535458423,
+    "tensor_payload_bytes": 13670077134,
+    "container_bytes": 745421,
+    "embedded_asset_bytes": 26949584
+  },
+  "scope": "Full conversion completed using packaged CLI; every declared tensor payload hash matches the measured morph32-3s checkpoint. Server startup independently verified every new payload. Full benchmark suites were not rerun."
+}

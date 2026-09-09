@@ -1,0 +1,60 @@
+{
+  "status": "passed",
+  "profile": "morph32-3s",
+  "projections": [
+    {
+      "layer": 0,
+      "projection": "gate_proj",
+      "rows": 4,
+      "seed_and_scale_exact": true
+    },
+    {
+      "layer": 0,
+      "projection": "up_proj",
+      "rows": 4,
+      "seed_and_scale_exact": true
+    },
+    {
+      "layer": 0,
+      "projection": "down_proj",
+      "rows": 4,
+      "seed_and_scale_exact": true
+    },
+    {
+      "layer": 32,
+      "projection": "gate_proj",
+      "rows": 4,
+      "seed_and_scale_exact": true
+    },
+    {
+      "layer": 32,
+      "projection": "up_proj",
+      "rows": 4,
+      "seed_and_scale_exact": true
+    },
+    {
+      "layer": 32,
+      "projection": "down_proj",
+      "rows": 4,
+      "seed_and_scale_exact": true
+    },
+    {
+      "layer": 63,
+      "projection": "gate_proj",
+      "rows": 4,
+      "seed_and_scale_exact": true
+    },
+    {
+      "layer": 63,
+      "projection": "up_proj",
+      "rows": 4,
+      "seed_and_scale_exact": true
+    },
+    {
+      "layer": 63,
+      "projection": "down_proj",
+      "rows": 4,
+      "seed_and_scale_exact": true
+    }
+  ]
+}

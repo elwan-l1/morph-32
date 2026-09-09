@@ -1,0 +1,47 @@
+{
+  "native": {
+    "file_bytes": 16081490933,
+    "physical_bpw": 4.702752640244788,
+    "resident_parameter_bytes": 15132802048,
+    "peak_mlx_bytes": 18262474796,
+    "peak_process_physical_bytes": 22536285896,
+    "prompt_tokens_per_second": 504.7193342679666,
+    "generation_tokens_per_second": 18.053564785664477,
+    "first_4096_nll": 1.6981500163674355,
+    "first_4096_perplexity": 5.463830040000037,
+    "heldout_nll": 1.5594690646976233,
+    "heldout_perplexity": 4.756295289559941,
+    "heldout_perplexity_increase_percent": 0.0,
+    "mmlu50_correct": 41
+  },
+  "morph32-3s": {
+    "file_bytes": 13670822426,
+    "physical_bpw": 3.997794515822034,
+    "resident_parameter_bytes": 12721667358,
+    "peak_mlx_bytes": 15868241774,
+    "peak_process_physical_bytes": 20556704496,
+    "prompt_tokens_per_second": 430.22773485649384,
+    "generation_tokens_per_second": 11.24271611498843,
+    "first_4096_nll": 1.7275053914636374,
+    "first_4096_perplexity": 5.626600221549407,
+    "heldout_nll": 1.5833440721035004,
+    "heldout_perplexity": 4.871218309858461,
+    "heldout_perplexity_increase_percent": 2.416229718764007,
+    "mmlu50_correct": 46
+  },
+  "morph32-c": {
+    "file_bytes": 13136054168,
+    "physical_bpw": 3.8414108292778995,
+    "resident_parameter_bytes": 12186893598,
+    "peak_mlx_bytes": 15333386094,
+    "peak_process_physical_bytes": 19933194584,
+    "prompt_tokens_per_second": 336.500064902142,
+    "generation_tokens_per_second": 8.459146477741784,
+    "first_4096_nll": 1.7591510340571404,
+    "first_4096_perplexity": 5.807504927054387,
+    "heldout_nll": 1.611338373273611,
+    "heldout_perplexity": 5.009511339298772,
+    "heldout_perplexity_increase_percent": 5.323808433312371,
+    "mmlu50_correct": 42
+  }
+}

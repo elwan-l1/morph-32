@@ -1,0 +1,32 @@
+{
+  "status": "passed",
+  "device": {
+    "device_name": "Apple M5 Pro",
+    "max_recommended_working_set_size": 40200896512,
+    "memory_size": 51539607552,
+    "architecture": "applegpu_g17s",
+    "max_buffer_length": 30150672384,
+    "resource_limit": 499000
+  },
+  "integrity_verified": true,
+  "profile": "morph32-c",
+  "checkpoint_inventory": {
+    "file_bytes": 13136054168,
+    "logical_parameters": 27356728560,
+    "physical_bpw": 3.8414108292778995,
+    "tensor_payload_bytes": 13135303374,
+    "container_bytes": 750794,
+    "embedded_asset_bytes": 26949584
+  },
+  "descriptors": 497,
+  "resident_parameter_bytes": 12186893598,
+  "question_id": "college_chemistry:17",
+  "choice_logprobs": [
+    -3.9154701232910156,
+    -5.665470123291016,
+    -5.040470123291016,
+    -0.040470123291015625
+  ],
+  "archived_logprobs_exact": true,
+  "cached_single_token_execution_finite": true
+}

@@ -1,0 +1,73 @@
+{
+  "scope": "Packaged morph32-3s conversion and local serving validated. Full morph32-c conversion and benchmark suites were not rerun.",
+  "versions": {
+    "morph32-mlx": "0.1.0",
+    "mlx": "0.32.2",
+    "mlx-lm": "0.31.3",
+    "numpy": "2.5.3",
+    "safetensors": "0.8.0",
+    "ruff": "0.16.6",
+    "pytest": "9.1.1"
+  },
+  "device": {
+    "device_name": "Apple M5 Pro",
+    "max_recommended_working_set_size": 40200896512,
+    "memory_size": 51539607552,
+    "architecture": "applegpu_g17s",
+    "max_buffer_length": 30150672384,
+    "resource_limit": 499000
+  },
+  "checks": {
+    "pytest": "6 model-free tests passed; 3 earlier Metal tests retained",
+    "ruff_check": "passed",
+    "ruff_format": "passed",
+    "evidence_audit": "passed",
+    "wheel_and_sdist_build": "passed",
+    "wheel_contains_metal_source": true,
+    "local_documentation_links": "passed",
+    "three_seed_full_conversion": "passed; all 2610 tensor hashes match measured checkpoint",
+    "http_chat": "passed",
+    "http_streaming_tool_call": "passed",
+    "opencode_desktop_chat": "passed; zero reasoning tokens"
+  },
+  "source_sha256": {
+    "src/morph32/__init__.py": "4ffef9a4c967b20724899cb4df065a677429c7521780385859acfaebc2a784d7",
+    "src/morph32/__main__.py": "6d8b7d7846a845059d7a3107143f11131f63c5511d669b44085b15ec5e3d2279",
+    "src/morph32/calibration.py": "66b5c635a0f968cf4168812d226b94942f8d7ed900eef86fd6ac3da99d99cb0e",
+    "src/morph32/cli.py": "e18358534fa1938c29387d24baadb46e443a589329a9b9a534ded882d63947ec",
+    "src/morph32/codec.py": "3d441d094c4ef3626c53c5858a037f126a3d52e27446453f609d2dfc295e4c67",
+    "src/morph32/conversion.py": "351fe2cb9ade75cfba4767161e7360390ceaafa452d9a02efd05d3870807ccfe",
+    "src/morph32/evaluation.py": "d09b966a7bf24cb319fca47884106d942243e211a4fd8de2d9f52dbe6bc1f34a",
+    "src/morph32/generation.py": "ce5f0745b70143a5d7140c5d34b51c36eab7464a20d353ff3eadc04b56d64058",
+    "src/morph32/grading.py": "784234e0abb521d1ff876e4c71748b1c97cbdb70a2051be5d152a6bbfe66b674",
+    "src/morph32/inventory.py": "ed8254283a9b35ba7fa214ae3da86d8bd2dfbc6d4b7ff902ba84d50aa66473f3",
+    "src/morph32/metadata.py": "96bf2f5a2859935545458994da469094d55fd0542afa2d018f9fae265b14ebe3",
+    "src/morph32/metadata_kernels.py": "581e776959ad5ca31c9b6936a122250826c3399c4d02d2d0fab59684424b0bd8",
+    "src/morph32/metadata_packet.py": "21f759e0a1cd08e5b289a23d2d87c7b899799b1ef028c5fc37aa47dc576251ea",
+    "src/morph32/metal/metadata_packet.metal": "4b26c7720d9d98141db57d5974c14e680a9e5189f52e6d82168f779d6258406a",
+    "src/morph32/metrics.py": "12f3d7dcfe31271c7be45a33ea739984e69c6b5486bba8174dfd09885046a8c7",
+    "src/morph32/mmlu.py": "501b9aea01e54d2d22bdf93d91e30083a519205648ae84f152515c40b6b0262b",
+    "src/morph32/packing.py": "099a7f16488b6a5d64152d25bdf1debd30cbde55bce9b771e2edd9f1ef5c61af",
+    "src/morph32/paths.py": "daebc954496d65e5c2b1cceafcb1cb12ff27817fccc683dd30be09c28d8138a3",
+    "src/morph32/prefill.py": "f0d0386c06426b9db85a56e2fc5a38df9d38ea9bb25ad4606a530eef882edf64",
+    "src/morph32/profiles.py": "f0cf9b6d018b71f15a488dc7af0448d8bc48600d6b63dace5004637a4db3e913",
+    "src/morph32/runtime.py": "778f8c62e002d56af3aee7f6a5a875322f9ed091a1d0afbb583893a440010c06",
+    "src/morph32/server.py": "7aaf9afc9f092f7b9b2aa50a9dee7c27812885fa2386ae48e87f3251ba2dbe9d",
+    "src/morph32/sources.py": "47751bee5e54ebccbafd3b408a8fac7686d67a49e4e8feca908e0756f29ca167",
+    "src/morph32/tasks.py": "cec77d920524a13f535b9a3b19da57481c41fa19bfb363b86519d1a83d3cb8a5",
+    "src/morph32/workloads.py": "4821d09dd08c39730e8cf4fee06de449cc5c99afe6c776429c9688b42bda7006",
+    "scripts/audit_evidence.py": "43f978636f61b43a2418a6bd9e3ee8e3e71f84eb536aa7ef0a72a69637fb36f8",
+    "scripts/check_conversion_rows.py": "2de61d61ba34abfeb6a7dd020223fce7ebe45eb8f3254a7b320b28c4004a1d58",
+    "scripts/run_mmlu.py": "66145250243c05784a4f40ada7378d52519002aa837c3ccc9025b99a7a666489",
+    "scripts/smoke_checkpoint.py": "f3e4ef4232e83e49a97f46c846acfb4705a72edba8b0e0d016cd6eef51e43a75",
+    "tests/test_format.py": "65f59a64483065646cbcb953af2549f99d09c82c195d2f2fe2fc72bdd660b933",
+    "tests/test_metal.py": "4dfa4d16a27006f5aece4bc18e337818f01b8f37c5eca361444196232262b08f",
+    "tests/test_server.py": "b1f82fb4318d5c6399bba4bf44fdc768076aa948dcdf6c4649c2e92658202ec9"
+  },
+  "release_reports": [
+    "release-morph32-3s.json",
+    "release-morph32-c.json",
+    "conversion-rows-morph32-3s.json",
+    "conversion-rows-morph32-c.json"
+  ]
+}

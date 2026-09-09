@@ -1,0 +1,62 @@
+{
+  "description": "Curated archived measurements. Machine-specific paths and unrelated provenance removed; measured numbers, outputs and token records preserved. These are not new runs of this package. Profile labels and report filenames were standardized to morph32-3s and morph32-c; original archive hashes and measured values are unchanged.",
+  "files": {
+    "morph32-3s-quality-512.json": {
+      "archived_report_sha256": "bc36716bdba3eb8cb1f0c9a3bcc3ad1704c8806d52ae2216e75f20cbce0b807f",
+      "curated_report_sha256": "a7e2232976f9d24cb07eb7895f3ee2c6173070e32fb63aaa2d838484266ad119"
+    },
+    "morph32-3s-quality-speed.json": {
+      "archived_report_sha256": "8150a303ed73ab5f6f3972d5b102c83d711b88346f566b5f3ae8febaad42b472",
+      "curated_report_sha256": "7a61ff8014789fd24476a2cbe821362af3771c129eee0700f1ca1f588200687c"
+    },
+    "morph32-3s-quality-heldout.json": {
+      "archived_report_sha256": "fb28972733858b5bf832dabd8422f6117db7f6b010e4ab65a52eb68822f46e2a",
+      "curated_report_sha256": "9e470b607d5cc5d2320bda769882fdfba855ae87822ec38133642b8db22cd146"
+    },
+    "morph32-3s-workloads.json": {
+      "archived_report_sha256": "3aaacf2b4f4eb1240783a379cecc8f50de34f7ab66e6d27002c77452de0f50f8",
+      "curated_report_sha256": "62a9dc7b6c350e31be30710873b440b84fdfc01330412564b3dd54df6d5120af"
+    },
+    "morph32-c-quality-512.json": {
+      "archived_report_sha256": "074f4b6666573161056b010cea7f07fcd8414dc0aa171c95a8068b842a5e2c2d",
+      "curated_report_sha256": "e695c474996733bfa4cc445275176b3b56fa1e1c2df253349fded17490b4563b"
+    },
+    "morph32-c-quality-speed.json": {
+      "archived_report_sha256": "382496b3143975e83887a7873034e6da571e3309a43e4e980e8e670378cdb0ca",
+      "curated_report_sha256": "c9843366960f8decdcc457c747581eb0ebac305f160f3304d6b516e9a192761d"
+    },
+    "morph32-c-quality-heldout.json": {
+      "archived_report_sha256": "b58e4f8a98bdfa41a897623966dd10e340c4602975c7a76905df929f3543aa5b",
+      "curated_report_sha256": "a74259105e20afe179780edeb3c50877f701d14f814a1b52538e98c31ec5f916"
+    },
+    "morph32-c-workloads.json": {
+      "archived_report_sha256": "a54a9a3dde1c6c59823056a7acd834155e2a6cd1ecb30f49e76d1bc466976dc2",
+      "curated_report_sha256": "27cfce7559194df0bcfeca9dfaee0d7944874c8d87b7f1444fc505bd00d9b0cd"
+    },
+    "native-quality-speed.json": {
+      "archived_report_sha256": "4bb7e5eebe883363bd7a5407482dde9ff02b068aa4949a9aaaf00dc4e8b0bf78",
+      "curated_report_sha256": "b5cf59a995f42d05ec6fca65d1d54654ca0892a7451ec60a667f90d7a6fb3f99"
+    },
+    "native-quality-heldout.json": {
+      "archived_report_sha256": "915c42b554766aa60f828d7553e4cec0a1c27a7ca2ba8b78d1fdc49841d6ab6c",
+      "curated_report_sha256": "5bb7d3b462bc3d83d40bcd4be8a354f6de344127d77d6295de50ea875da5511b"
+    },
+    "native-workloads.json": {
+      "archived_report_sha256": "5d587861b913226c06ecdcaeff2d36d42378eeeb5592e9e868dc0a05d6a00288",
+      "curated_report_sha256": "1bd9793da54c2062c17c61b556e15eb08607c69ed554a90bc4aa1d93d515d5ef"
+    },
+    "native-mmlu50.json": {
+      "archived_report_sha256": "752f994a1b977484afaf7f87ab6486907606b7ceb7fbd9ea2634532e777d17b9",
+      "curated_report_sha256": "c0b6626cdc87332fdcb8c220cd87927e0c1e098473fdcb88959ce9776c63afd5"
+    },
+    "morph32-3s-mmlu50.json": {
+      "archived_report_sha256": "37a8e987e8aa0d1c3cf5978b004fbbbb2a3dadc1606be30b54f22998b7007a3e",
+      "curated_report_sha256": "54ae8ec8eadd827eb370baa029d47752f42ff610383def0194dd23884ad8b67d"
+    },
+    "morph32-c-mmlu50.json": {
+      "archived_report_sha256": "15a4adb91b9e3ab154727c4956f29ecb9ba083e0720ba4567fdb687863bea07e",
+      "curated_report_sha256": "68e345a7a0f5e07ce3a58f7df2a70bb699f547f5f5828e7d1a3bb45fc47bb4da",
+      "pre_rename_curated_report_sha256": "e2e432ae7ded4586feba930ac3676a35656b81e5f479a43ec74e5f45eb5f9735"
+    }
+  }
+}

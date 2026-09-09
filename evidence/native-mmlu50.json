@@ -1,0 +1,2048 @@
+{
+  "profile": "native",
+  "status": "complete",
+  "records": [
+    {
+      "id": "college_chemistry:17",
+      "category": "STEM",
+      "subject": "college_chemistry",
+      "prompt_sha256": "5d802a775899805b1de81ac627e34e3aadae80e26476e0525a5a9c0e5ba0b00b",
+      "token_sha256": "c20f8e27ef8ef2618898c23685e04fb835c41ac3f1a49b7354c57b0099c0d861",
+      "prompt_tokens": 584,
+      "answer_token_ids": [
+        357,
+        417,
+        351,
+        414
+      ],
+      "expected": "D",
+      "predicted": "D",
+      "correct": true,
+      "choice_logprobs": [
+        -3.787874221801758,
+        -3.412874221801758,
+        -5.412874221801758,
+        -0.1628742218017578
+      ],
+      "choice_probabilities": [
+        0.024890098720788956,
+        0.03621487691998482,
+        0.004901151172816753,
+        0.9339938759803772
+      ],
+      "seconds": 1.387031082995236,
+      "memory": {
+        "mlx_active_bytes": 15913155646,
+        "mlx_cache_bytes": 953608428,
+        "mlx_peak_bytes": 16707571360,
+        "process_peak_rss_bytes": 11524259840,
+        "process_phys_footprint_bytes": 17451871896,
+        "process_lifetime_peak_phys_footprint_bytes": 17451871896,
+        "mach_resident_bytes": 4694753280,
+        "mach_resident_peak_bytes": 11524259840
+      }
+    },
+    {
+      "id": "high_school_us_history:43",
+      "category": "humanities",
+      "subject": "high_school_us_history",
+      "prompt_sha256": "b916aee1fa3cbcb857782d98bb1c2b8d76162dd7e21e3eaa9809e1a07c11d0b3",
+      "token_sha256": "e77b37cecfa28f62d22717e10130b9d5864949f2aaf143959c8cba79f9872673",
+      "prompt_tokens": 2293,
+      "answer_token_ids": [
+        357,
+        417,
+        351,
+        414
+      ],
+      "expected": "B",
+      "predicted": "B",
+      "correct": true,
+      "choice_logprobs": [
+        -14.940509796142578,
+        -13.128009796142578,
+        -16.128009796142578,
+        -17.596759796142578
+      ],
+      "choice_probabilities": [
+        0.13331671059131622,
+        0.8166637420654297,
+        0.04065929725766182,
+        0.009360301308333874
+      ],
+      "seconds": 5.948370625003008,
+      "memory": {
+        "mlx_active_bytes": 17693637694,
+        "mlx_cache_bytes": 2155997184,
+        "mlx_peak_bytes": 19474955302,
+        "process_peak_rss_bytes": 11524259840,
+        "process_phys_footprint_bytes": 20433956504,
+        "process_lifetime_peak_phys_footprint_bytes": 20433956504,
+        "mach_resident_bytes": 1106722816,
+        "mach_resident_peak_bytes": 11524259840
+      }
+    },
+    {
+      "id": "high_school_geography:76",
+      "category": "social sciences",
+      "subject": "high_school_geography",
+      "prompt_sha256": "6cb9746e8065daef4bdc246807527ccdc98e0281dca7209a43be797b62ac6787",
+      "token_sha256": "48f41aad0ceead3547d8b7a30ba200ab0ae1d5775c1acc57296973e265e4d21b",
+      "prompt_tokens": 377,
+      "answer_token_ids": [
+        357,
+        417,
+        351,
+        414
+      ],
+      "expected": "D",
+      "predicted": "D",
+      "correct": true,
+      "choice_logprobs": [
+        -8.02229118347168,
+        -7.08479118347168,
+        -9.27229118347168,
+        -0.2097911834716797
+      ],
+      "choice_probabilities": [
+        0.00040401730802841485,
+        0.0010316944681107998,
+        0.00011575291864573956,
+        0.9984484910964966
+      ],
+      "seconds": 1.5733558339998126,
+      "memory": {
+        "mlx_active_bytes": 15692692542,
+        "mlx_cache_bytes": 695278588,
+        "mlx_peak_bytes": 16321205248,
+        "process_peak_rss_bytes": 11524259840,
+        "process_phys_footprint_bytes": 16972770968,
+        "process_lifetime_peak_phys_footprint_bytes": 20433956504,
+        "mach_resident_bytes": 1107443712,
+        "mach_resident_peak_bytes": 11524259840
+      }
+    },
+    {
+      "id": "nutrition:272",
+      "category": "other (business, health, misc.)",
+      "subject": "nutrition",
+      "prompt_sha256": "5d582b80203d76778be49e5db3ae3415558ee815ef71843f615b307851f44ebe",
+      "token_sha256": "29a3c9e46ecb11546fc623ede65457c09944ad01ec89bf5184875968f36bab88",
+      "prompt_tokens": 566,
+      "answer_token_ids": [
+        357,
+        417,
+        351,
+        414
+      ],
+      "expected": "D",
+      "predicted": "D",
+      "correct": true,
+      "choice_logprobs": [
+        -5.916667938232422,
+        -5.041667938232422,
+        -1.6666679382324219,
+        -0.2916679382324219
+      ],
+      "choice_probabilities": [
+        0.002850818680599332,
+        0.006838756147772074,
+        0.19985775649547577,
+        0.7904526591300964
+      ],
+      "seconds": 1.2645306670019636,
+      "memory": {
+        "mlx_active_bytes": 15895854142,
+        "mlx_cache_bytes": 929884108,
+        "mlx_peak_bytes": 16705326608,
+        "process_peak_rss_bytes": 11524259840,
+        "process_phys_footprint_bytes": 17410666136,
+        "process_lifetime_peak_phys_footprint_bytes": 20433956504,
+        "mach_resident_bytes": 1107460096,
+        "mach_resident_peak_bytes": 11524259840
+      }
+    },
+    {
+      "id": "conceptual_physics:146",
+      "category": "STEM",
+      "subject": "conceptual_physics",
+      "prompt_sha256": "a0adb2949729254c811fe591f1308905f17aa717cee609ef0440e28d8b055f92",
+      "token_sha256": "1466f874aee91c70747471de68733a9a087aa21ee3a6668d7f8106ab14119da3",
+      "prompt_tokens": 308,
+      "answer_token_ids": [
+        357,
+        417,
+        351,
+        414
+      ],
+      "expected": "B",
+      "predicted": "B",
+      "correct": true,
+      "choice_logprobs": [
+        -4.981599807739258,
+        -0.04409980773925781,
+        -4.544099807739258,
+        -7.356599807739258
+      ],
+      "choice_probabilities": [
+        0.0070391264744102955,
+        0.9814038276672363,
+        0.010902414098381996,
+        0.0006547407829202712
+      ],
+      "seconds": 0.7334850420011207,
+      "memory": {
+        "mlx_active_bytes": 15625714750,
+        "mlx_cache_bytes": 627464108,
+        "mlx_peak_bytes": 16175845314,
+        "process_peak_rss_bytes": 11524259840,
+        "process_phys_footprint_bytes": 16838258328,
+        "process_lifetime_peak_phys_footprint_bytes": 20433956504,
+        "mach_resident_bytes": 1107673088,
+        "mach_resident_peak_bytes": 11524259840
+      }
+    },
+    {
+      "id": "professional_law:621",
+      "category": "humanities",
+      "subject": "professional_law",
+      "prompt_sha256": "e1ab5bc5d83ddf4d838c805e24afe95423d0c83edc6dd286d26b5a0733b4135c",
+      "token_sha256": "a484392958a5adb26cb6e9c54653efb3735cc088bd30fc4562d1f492cdb1d144",
+      "prompt_tokens": 1746,
+      "answer_token_ids": [
+        357,
+        417,
+        351,
+        414
+      ],
+      "expected": "C",
+      "predicted": "C",
+      "correct": true,
+      "choice_logprobs": [
+        -14.438068389892578,
+        -16.125568389892578,
+        -9.500568389892578,
+        -16.375568389892578
+      ],
+      "choice_probabilities": [
+        0.007104780990630388,
+        0.0013142521493136883,
+        0.9905574321746826,
+        0.0010235406225547194
+      ],
+      "seconds": 3.8575311659951694,
+      "memory": {
+        "mlx_active_bytes": 17122950206,
+        "mlx_cache_bytes": 1762729844,
+        "mlx_peak_bytes": 18652511286,
+        "process_peak_rss_bytes": 11524259840,
+        "process_phys_footprint_bytes": 19470069400,
+        "process_lifetime_peak_phys_footprint_bytes": 20433956504,
+        "mach_resident_bytes": 1107804160,
+        "mach_resident_peak_bytes": 11524259840
+      }
+    },
+    {
+      "id": "high_school_macroeconomics:313",
+      "category": "social sciences",
+      "subject": "high_school_macroeconomics",
+      "prompt_sha256": "34597197e948b7eb43ec0d0c466bfd444c5befd0a93c7ec1495076f40a3ac220",
+      "token_sha256": "7092b9142541c1dfa68a15112f89a3d2ee88b87bf6e9292d79e8650833c6aa09",
+      "prompt_tokens": 359,
+      "answer_token_ids": [
+        357,
+        417,
+        351,
+        414
+      ],
+      "expected": "D",
+      "predicted": "D",
+      "correct": true,
+      "choice_logprobs": [
+        -9.707122802734375,
+        -6.957122802734375,
+        -7.332122802734375,
+        -0.019622802734375
+      ],
+      "choice_probabilities": [
+        6.194906018208712e-05,
+        0.0009690462029539049,
+        0.0006660149665549397,
+        0.9983029365539551
+      ],
+      "seconds": 0.8592405829986092,
+      "memory": {
+        "mlx_active_bytes": 15675391038,
+        "mlx_cache_bytes": 662231772,
+        "mlx_peak_bytes": 16269988576,
+        "process_peak_rss_bytes": 11524259840,
+        "process_phys_footprint_bytes": 16922373784,
+        "process_lifetime_peak_phys_footprint_bytes": 20433956504,
+        "mach_resident_bytes": 1107820544,
+        "mach_resident_peak_bytes": 11524259840
+      }
+    },
+    {
+      "id": "professional_medicine:127",
+      "category": "other (business, health, misc.)",
+      "subject": "professional_medicine",
+      "prompt_sha256": "3cbe2412cbdfb9a33c9e33407c137d2927911c1ba91cae8e33950c18298d8ec1",
+      "token_sha256": "60af39215bb52871b6ade9aea2d608fd05dadc131b24c813dfc6de5bae9107d8",
+      "prompt_tokens": 1096,
+      "answer_token_ids": [
+        357,
+        417,
+        351,
+        414
+      ],
+      "expected": "D",
+      "predicted": "D",
+      "correct": true,
+      "choice_logprobs": [
+        -5.360431671142578,
+        -5.360431671142578,
+        -4.485431671142578,
+        -0.11043167114257812
+      ],
+      "choice_probabilities": [
+        0.005129123106598854,
+        0.005129123106598854,
+        0.012304122559726238,
+        0.9774376153945923
+      ],
+      "seconds": 2.4613701659982326,
+      "memory": {
+        "mlx_active_bytes": 16450026558,
+        "mlx_cache_bytes": 1315902796,
+        "mlx_peak_bytes": 17543527480,
+        "process_peak_rss_bytes": 11524259840,
+        "process_phys_footprint_bytes": 18350386840,
+        "process_lifetime_peak_phys_footprint_bytes": 20433956504,
+        "mach_resident_bytes": 1107918848,
+        "mach_resident_peak_bytes": 11524259840
+      }
+    },
+    {
+      "id": "college_biology:25",
+      "category": "STEM",
+      "subject": "college_biology",
+      "prompt_sha256": "3f5751329bef2b6a48a0c03aecb3ae940c9876f5d6e483e83dbfec3e9c1ebcdc",
+      "token_sha256": "7c15bb73d7703a66acf3b3998b7494e028cb4e276aad7fb4f0e6bcdac38d8d56",
+      "prompt_tokens": 447,
+      "answer_token_ids": [
+        357,
+        417,
+        351,
+        414
+      ],
+      "expected": "D",
+      "predicted": "B",
+      "correct": false,
+      "choice_logprobs": [
+        -6.926239013671875,
+        -0.363739013671875,
+        -7.363739013671875,
+        -4.613739013671875
+      ],
+      "choice_probabilities": [
+        0.001389304525218904,
+        0.9836822152137756,
+        0.0008970019407570362,
+        0.014031472615897655
+      ],
+      "seconds": 1.0132805829925928,
+      "memory": {
+        "mlx_active_bytes": 15761898558,
+        "mlx_cache_bytes": 822288476,
+        "mlx_peak_bytes": 16507230304,
+        "process_peak_rss_bytes": 11524259840,
+        "process_phys_footprint_bytes": 17168903832,
+        "process_lifetime_peak_phys_footprint_bytes": 20433956504,
+        "mach_resident_bytes": 1107935232,
+        "mach_resident_peak_bytes": 11524259840
+      }
+    },
+    {
+      "id": "world_religions:12",
+      "category": "humanities",
+      "subject": "world_religions",
+      "prompt_sha256": "fd177905cbfd3a1b1d5b4a40625066f5621547ce2d23f0570c3158f46c3fe9c1",
+      "token_sha256": "2d2f5635eeb760dee09df944d1dbf367947257f5acb4738c226cc45caaa9bb1f",
+      "prompt_tokens": 256,
+      "answer_token_ids": [
+        357,
+        417,
+        351,
+        414
+      ],
+      "expected": "B",
+      "predicted": "B",
+      "correct": true,
+      "choice_logprobs": [
+        -7.384471893310547,
+        -0.009471893310546875,
+        -9.759471893310547,
+        -8.696971893310547
+      ],
+      "choice_probabilities": [
+        0.0006261923699639738,
+        0.9991470575332642,
+        5.82449501962401e-05,
+        0.00016853735723998398
+      ],
+      "seconds": 0.5786696249997476,
+      "memory": {
+        "mlx_active_bytes": 15557164094,
+        "mlx_cache_bytes": 527635500,
+        "mlx_peak_bytes": 16039890042,
+        "process_peak_rss_bytes": 11524259840,
+        "process_phys_footprint_bytes": 16669732528,
+        "process_lifetime_peak_phys_footprint_bytes": 20433956504,
+        "mach_resident_bytes": 1108180992,
+        "mach_resident_peak_bytes": 11524259840
+      }
+    },
+    {
+      "id": "high_school_psychology:386",
+      "category": "social sciences",
+      "subject": "high_school_psychology",
+      "prompt_sha256": "8294300d92fd068616de971b2455e907c47a1fd302fb805088eafe5114613977",
+      "token_sha256": "6b9fa0401bba192327ccd90890d51ff417e2e4a951abc52ddf511cb16d5f0690",
+      "prompt_tokens": 485,
+      "answer_token_ids": [
+        357,
+        417,
+        351,
+        414
+      ],
+      "expected": "D",
+      "predicted": "D",
+      "correct": true,
+      "choice_logprobs": [
+        -7.466114044189453,
+        -7.716114044189453,
+        -9.341114044189453,
+        -0.5286140441894531
+      ],
+      "choice_probabilities": [
+        0.0009688764112070203,
+        0.0007545616244897246,
+        0.0001485819957451895,
+        0.9981279969215393
+      ],
+      "seconds": 1.1116180829994846,
+      "memory": {
+        "mlx_active_bytes": 15798860862,
+        "mlx_cache_bytes": 896688828,
+        "mlx_peak_bytes": 16569916096,
+        "process_peak_rss_bytes": 11524259840,
+        "process_phys_footprint_bytes": 17280478896,
+        "process_lifetime_peak_phys_footprint_bytes": 20433956504,
+        "mach_resident_bytes": 1108475904,
+        "mach_resident_peak_bytes": 11524259840
+      }
+    },
+    {
+      "id": "miscellaneous:45",
+      "category": "other (business, health, misc.)",
+      "subject": "miscellaneous",
+      "prompt_sha256": "afaac241aac0296d121326800188bef49c6d6f255c4fc7085e1846c128d5abcd",
+      "token_sha256": "26ae40ed135188a9cb056dd1c5910478d50407ed1a907d9c5f270e0faf128e2a",
+      "prompt_tokens": 299,
+      "answer_token_ids": [
+        357,
+        417,
+        351,
+        414
+      ],
+      "expected": "B",
+      "predicted": "B",
+      "correct": true,
+      "choice_logprobs": [
+        -9.241891860961914,
+        -1.054391860961914,
+        -10.054391860961914,
+        -10.804391860961914
+      ],
+      "choice_probabilities": [
+        0.00027798060909844935,
+        0.9995404481887817,
+        0.0001233531511388719,
+        5.8267880376661196e-05
+      ],
+      "seconds": 0.715656874992419,
+      "memory": {
+        "mlx_active_bytes": 15616408638,
+        "mlx_cache_bytes": 615765788,
+        "mlx_peak_bytes": 16150826802,
+        "process_peak_rss_bytes": 11524259840,
+        "process_phys_footprint_bytes": 16817139376,
+        "process_lifetime_peak_phys_footprint_bytes": 20433956504,
+        "mach_resident_bytes": 1108508672,
+        "mach_resident_peak_bytes": 11524259840
+      }
+    },
+    {
+      "id": "high_school_physics:116",
+      "category": "STEM",
+      "subject": "high_school_physics",
+      "prompt_sha256": "6e1f211b14632cf54f4929c9d3bbefc534c9998829655142dba8566027c30368",
+      "token_sha256": "3eb733f89d18d23e79d29cb5c496103aee4925fbdb9f9102ef80d6ee96e333cd",
+      "prompt_tokens": 694,
+      "answer_token_ids": [
+        357,
+        417,
+        351,
+        414
+      ],
+      "expected": "A",
+      "predicted": "D",
+      "correct": false,
+      "choice_logprobs": [
+        -1.749917984008789,
+        -6.249917984008789,
+        -7.374917984008789,
+        -0.24991798400878906
+      ],
+      "choice_probabilities": [
+        0.181937113404274,
+        0.0020211392547935247,
+        0.0006561675108969212,
+        0.8153855204582214
+      ],
+      "seconds": 1.541170582990162,
+      "memory": {
+        "mlx_active_bytes": 16021683262,
+        "mlx_cache_bytes": 942400756,
+        "mlx_peak_bytes": 16882225662,
+        "process_peak_rss_bytes": 11524259840,
+        "process_phys_footprint_bytes": 17548914352,
+        "process_lifetime_peak_phys_footprint_bytes": 20433956504,
+        "mach_resident_bytes": 1108541440,
+        "mach_resident_peak_bytes": 11524259840
+      }
+    },
+    {
+      "id": "logical_fallacies:87",
+      "category": "humanities",
+      "subject": "logical_fallacies",
+      "prompt_sha256": "0eaa6e9a49fa8da8ab24509dfddca71747df4c7ae0596094af3566d7876af17f",
+      "token_sha256": "5b793dc547a876ddf1190c21cbb2af889134083a55e27acc786a7b605304024f",
+      "prompt_tokens": 455,
+      "answer_token_ids": [
+        357,
+        417,
+        351,
+        414
+      ],
+      "expected": "D",
+      "predicted": "D",
+      "correct": true,
+      "choice_logprobs": [
+        -7.208354949951172,
+        -7.270854949951172,
+        -7.520854949951172,
+        -0.5833549499511719
+      ],
+      "choice_probabilities": [
+        0.0013220951659604907,
+        0.0012419938575476408,
+        0.0009672656888142228,
+        0.9964686632156372
+      ],
+      "seconds": 1.1185089589998825,
+      "memory": {
+        "mlx_active_bytes": 15769762878,
+        "mlx_cache_bytes": 837083356,
+        "mlx_peak_bytes": 16528627936,
+        "process_peak_rss_bytes": 11524259840,
+        "process_phys_footprint_bytes": 17191612080,
+        "process_lifetime_peak_phys_footprint_bytes": 20433956504,
+        "mach_resident_bytes": 1108557824,
+        "mach_resident_peak_bytes": 11524259840
+      }
+    },
+    {
+      "id": "human_sexuality:45",
+      "category": "social sciences",
+      "subject": "human_sexuality",
+      "prompt_sha256": "f79bfec63563b3a71b7223d2464b803c7eb5be54337855d5085277ebc24dad56",
+      "token_sha256": "3154257e6142bf2f13f7f03643eb2f17a4706a500016168dce0f4f83bf4a7d3e",
+      "prompt_tokens": 347,
+      "answer_token_ids": [
+        357,
+        417,
+        351,
+        414
+      ],
+      "expected": "B",
+      "predicted": "B",
+      "correct": true,
+      "choice_logprobs": [
+        -4.461826324462891,
+        -0.08682632446289062,
+        -7.711826324462891,
+        -8.58682632446289
+      ],
+      "choice_probabilities": [
+        0.012423166073858738,
+        0.9868943691253662,
+        0.0004816986038349569,
+        0.0002008017763728276
+      ],
+      "seconds": 0.8604837499879068,
+      "memory": {
+        "mlx_active_bytes": 15663594558,
+        "mlx_cache_bytes": 640145948,
+        "mlx_peak_bytes": 16238154272,
+        "process_peak_rss_bytes": 11524259840,
+        "process_phys_footprint_bytes": 16888737456,
+        "process_lifetime_peak_phys_footprint_bytes": 20433956504,
+        "mach_resident_bytes": 1108574208,
+        "mach_resident_peak_bytes": 11524259840
+      }
+    },
+    {
+      "id": "global_facts:13",
+      "category": "other (business, health, misc.)",
+      "subject": "global_facts",
+      "prompt_sha256": "e1699d29a6e3af7e3de845d2ad855af44246cef2a63468f2ca9fd0b8a60cab0f",
+      "token_sha256": "808fd2674e620428895a7cca178d5c8e880751ae3a46372c9661d9b68eed337b",
+      "prompt_tokens": 418,
+      "answer_token_ids": [
+        357,
+        417,
+        351,
+        414
+      ],
+      "expected": "A",
+      "predicted": "D",
+      "correct": false,
+      "choice_logprobs": [
+        -0.8251724243164062,
+        -3.3251724243164062,
+        -6.637672424316406,
+        -0.7001724243164062
+      ],
+      "choice_probabilities": [
+        0.4508111774921417,
+        0.03700483962893486,
+        0.0013479010667651892,
+        0.5108360052108765
+      ],
+      "seconds": 0.9804101249901578,
+      "memory": {
+        "mlx_active_bytes": 15733587006,
+        "mlx_cache_bytes": 769138316,
+        "mlx_peak_bytes": 16430192272,
+        "process_peak_rss_bytes": 11524259840,
+        "process_phys_footprint_bytes": 17087721136,
+        "process_lifetime_peak_phys_footprint_bytes": 20433956504,
+        "mach_resident_bytes": 1108574208,
+        "mach_resident_peak_bytes": 11524259840
+      }
+    },
+    {
+      "id": "elementary_mathematics:318",
+      "category": "STEM",
+      "subject": "elementary_mathematics",
+      "prompt_sha256": "aef8a3035be1b4f4671c0e71094ff01b0ff6b134ed27d9c158fab351a81f17de",
+      "token_sha256": "c96035a2c4240e67fd3661b83e049a077e4ac800eb3b47c5e31e850dbf4a7f65",
+      "prompt_tokens": 629,
+      "answer_token_ids": [
+        357,
+        417,
+        351,
+        414
+      ],
+      "expected": "D",
+      "predicted": "C",
+      "correct": false,
+      "choice_logprobs": [
+        -7.246761322021484,
+        -5.246761322021484,
+        -0.3717613220214844,
+        -1.2467613220214844
+      ],
+      "choice_probabilities": [
+        0.0007248513284139335,
+        0.005355967674404383,
+        0.7014932632446289,
+        0.29242590069770813
+      ],
+      "seconds": 1.4004054999968503,
+      "memory": {
+        "mlx_active_bytes": 15957195838,
+        "mlx_cache_bytes": 1029483452,
+        "mlx_peak_bytes": 16814018568,
+        "process_peak_rss_bytes": 11524259840,
+        "process_phys_footprint_bytes": 17571376816,
+        "process_lifetime_peak_phys_footprint_bytes": 20433956504,
+        "mach_resident_bytes": 1108606976,
+        "mach_resident_peak_bytes": 11524259840
+      }
+    },
+    {
+      "id": "moral_scenarios:619",
+      "category": "humanities",
+      "subject": "moral_scenarios",
+      "prompt_sha256": "c067a36bdd8a96adc73de726845c2dd0ac52b373f430b4ca40c990090899e935",
+      "token_sha256": "aec0cbb5d8228d036aaed26422b33435fca9be56f0e0d67f3095b8937d5e6983",
+      "prompt_tokens": 644,
+      "answer_token_ids": [
+        357,
+        417,
+        351,
+        414
+      ],
+      "expected": "C",
+      "predicted": "D",
+      "correct": false,
+      "choice_logprobs": [
+        -9.635671615600586,
+        -8.948171615600586,
+        -6.823171615600586,
+        -0.07317161560058594
+      ],
+      "choice_probabilities": [
+        7.021980127319694e-05,
+        0.0001396488369209692,
+        0.0011692647822201252,
+        0.998620867729187
+      ],
+      "seconds": 1.533379957996658,
+      "memory": {
+        "mlx_active_bytes": 15972138046,
+        "mlx_cache_bytes": 1028680876,
+        "mlx_peak_bytes": 16842739840,
+        "process_peak_rss_bytes": 11524259840,
+        "process_phys_footprint_bytes": 17585565360,
+        "process_lifetime_peak_phys_footprint_bytes": 20433956504,
+        "mach_resident_bytes": 1108639744,
+        "mach_resident_peak_bytes": 11524259840
+      }
+    },
+    {
+      "id": "sociology:141",
+      "category": "social sciences",
+      "subject": "sociology",
+      "prompt_sha256": "4e5ff6608884750292c40094fad1116992a3056e5dc658c995a0ff3c427a978f",
+      "token_sha256": "eba138d59b78224e5f4082699cbc3926a859211990d19a93da1a4394b71d491d",
+      "prompt_tokens": 436,
+      "answer_token_ids": [
+        357,
+        417,
+        351,
+        414
+      ],
+      "expected": "B",
+      "predicted": "B",
+      "correct": true,
+      "choice_logprobs": [
+        -8.131122589111328,
+        -0.006122589111328125,
+        -8.506122589111328,
+        -10.943622589111328
+      ],
+      "choice_probabilities": [
+        0.0002958916884381324,
+        0.9994829893112183,
+        0.00020336316083557904,
+        1.776967656041961e-05
+      ],
+      "seconds": 1.2375498329929542,
+      "memory": {
+        "mlx_active_bytes": 15750888510,
+        "mlx_cache_bytes": 801709996,
+        "mlx_peak_bytes": 16477394864,
+        "process_peak_rss_bytes": 11524259840,
+        "process_phys_footprint_bytes": 17137462960,
+        "process_lifetime_peak_phys_footprint_bytes": 20433956504,
+        "mach_resident_bytes": 1108656128,
+        "mach_resident_peak_bytes": 11524259840
+      }
+    },
+    {
+      "id": "human_aging:62",
+      "category": "other (business, health, misc.)",
+      "subject": "human_aging",
+      "prompt_sha256": "1d7bdb2621ba13a246c18e52a55da4c394e41c29a8e0845348fd46691fe77921",
+      "token_sha256": "2fe3ba99907f5a082568a298cf021498ccafb5d5e687cda8054c674bd5134f91",
+      "prompt_tokens": 332,
+      "answer_token_ids": [
+        357,
+        417,
+        351,
+        414
+      ],
+      "expected": "C",
+      "predicted": "C",
+      "correct": true,
+      "choice_logprobs": [
+        -10.756343841552734,
+        -7.756343841552734,
+        -0.006343841552734375,
+        -12.256343841552734
+      ],
+      "choice_probabilities": [
+        2.1435622329590842e-05,
+        0.0004305459151510149,
+        0.999543309211731,
+        4.782933956448687e-06
+      ],
+      "seconds": 0.9770733339973958,
+      "memory": {
+        "mlx_active_bytes": 15648652350,
+        "mlx_cache_bytes": 612178220,
+        "mlx_peak_bytes": 16197914928,
+        "process_peak_rss_bytes": 11524259840,
+        "process_phys_footprint_bytes": 16845696688,
+        "process_lifetime_peak_phys_footprint_bytes": 20433956504,
+        "mach_resident_bytes": 1108688896,
+        "mach_resident_peak_bytes": 11524259840
+      }
+    },
+    {
+      "id": "college_mathematics:46",
+      "category": "STEM",
+      "subject": "college_mathematics",
+      "prompt_sha256": "002b83fa5371b6ddcba7b873c9919033b851fb59c294c1bf36604f7f259b3eec",
+      "token_sha256": "87ab59a40cf55f18a8aa68dc7af3f947b0f92a3ad1eff57a3790213117e7563f",
+      "prompt_tokens": 587,
+      "answer_token_ids": [
+        357,
+        417,
+        351,
+        414
+      ],
+      "expected": "B",
+      "predicted": "A",
+      "correct": false,
+      "choice_logprobs": [
+        -0.14171791076660156,
+        -2.3917179107666016,
+        -7.891717910766602,
+        -6.891717910766602
+      ],
+      "choice_probabilities": [
+        0.9033417105674744,
+        0.09521152824163437,
+        0.0003891077940352261,
+        0.001057704328559339
+      ],
+      "seconds": 1.7680355829943437,
+      "memory": {
+        "mlx_active_bytes": 15916301374,
+        "mlx_cache_bytes": 959113500,
+        "mlx_peak_bytes": 16715206328,
+        "process_peak_rss_bytes": 11524259840,
+        "process_phys_footprint_bytes": 17460145840,
+        "process_lifetime_peak_phys_footprint_bytes": 20433956504,
+        "mach_resident_bytes": 1108688896,
+        "mach_resident_peak_bytes": 11524259840
+      }
+    },
+    {
+      "id": "jurisprudence:97",
+      "category": "humanities",
+      "subject": "jurisprudence",
+      "prompt_sha256": "f9f84b1b2f51d99722cbb3c7ef08a059b220c6a4e2492ff578f8c24c0b151d2a",
+      "token_sha256": "92d0845b83b4eb632c50ae935180af3149ca7fad712ee8e000275679de698778",
+      "prompt_tokens": 408,
+      "answer_token_ids": [
+        357,
+        417,
+        351,
+        414
+      ],
+      "expected": "B",
+      "predicted": "B",
+      "correct": true,
+      "choice_logprobs": [
+        -8.746891021728516,
+        -0.18439102172851562,
+        -8.996891021728516,
+        -6.434391021728516
+      ],
+      "choice_probabilities": [
+        0.00019070789858233184,
+        0.9977346658706665,
+        0.00014852343883831054,
+        0.0019260813714936376
+      ],
+      "seconds": 1.0020245829946361,
+      "memory": {
+        "mlx_active_bytes": 15723363390,
+        "mlx_cache_bytes": 748838380,
+        "mlx_peak_bytes": 16402404848,
+        "process_peak_rss_bytes": 11524259840,
+        "process_phys_footprint_bytes": 17057066672,
+        "process_lifetime_peak_phys_footprint_bytes": 20433956504,
+        "mach_resident_bytes": 1108705280,
+        "mach_resident_peak_bytes": 11524259840
+      }
+    },
+    {
+      "id": "public_relations:79",
+      "category": "social sciences",
+      "subject": "public_relations",
+      "prompt_sha256": "868fb437756a96de37781b31a8de29b906674ffe22bb8922cb488c61028b6f36",
+      "token_sha256": "557e272a8d02b42b26d85bc2fd3158db9e2ad0ac53ccc3bb3991b506cf8c6c9f",
+      "prompt_tokens": 425,
+      "answer_token_ids": [
+        357,
+        417,
+        351,
+        414
+      ],
+      "expected": "A",
+      "predicted": "A",
+      "correct": true,
+      "choice_logprobs": [
+        -0.07526206970214844,
+        -6.450262069702148,
+        -7.262762069702148,
+        -6.512762069702148
+      ],
+      "choice_probabilities": [
+        0.9959563612937927,
+        0.001696731080301106,
+        0.0007529199356213212,
+        0.0015939319273456931
+      ],
+      "seconds": 1.0780153750092722,
+      "memory": {
+        "mlx_active_bytes": 15739878462,
+        "mlx_cache_bytes": 781836028,
+        "mlx_peak_bytes": 16448132864,
+        "process_peak_rss_bytes": 11524259840,
+        "process_phys_footprint_bytes": 17106595504,
+        "process_lifetime_peak_phys_footprint_bytes": 20433956504,
+        "mach_resident_bytes": 1108770816,
+        "mach_resident_peak_bytes": 11524259840
+      }
+    },
+    {
+      "id": "anatomy:123",
+      "category": "other (business, health, misc.)",
+      "subject": "anatomy",
+      "prompt_sha256": "28318359cc41e5e429ece297bd265d215dc7e26b7bcf5903af418efc9b083b2d",
+      "token_sha256": "3682ac559c765fb4b96cfb722f2cd13271644e6b6b6ba3855f9a22f1d9bfe1ac",
+      "prompt_tokens": 340,
+      "answer_token_ids": [
+        357,
+        417,
+        351,
+        414
+      ],
+      "expected": "B",
+      "predicted": "B",
+      "correct": true,
+      "choice_logprobs": [
+        -6.594104766845703,
+        -0.09410476684570312,
+        -6.406604766845703,
+        -6.656604766845703
+      ],
+      "choice_probabilities": [
+        0.0014963623834773898,
+        0.9952928423881531,
+        0.0018049570498988032,
+        0.001405702787451446
+      ],
+      "seconds": 1.0347492909932043,
+      "memory": {
+        "mlx_active_bytes": 15656516670,
+        "mlx_cache_bytes": 626842028,
+        "mlx_peak_bytes": 16219099568,
+        "process_peak_rss_bytes": 11524259840,
+        "process_phys_footprint_bytes": 16868241072,
+        "process_lifetime_peak_phys_footprint_bytes": 20433956504,
+        "mach_resident_bytes": 1108770816,
+        "mach_resident_peak_bytes": 11524259840
+      }
+    },
+    {
+      "id": "high_school_biology:250",
+      "category": "STEM",
+      "subject": "high_school_biology",
+      "prompt_sha256": "dfd46693644fe8aceca3c95045625efd929e31ad71716127690ecbf938872a76",
+      "token_sha256": "bd00415f52bc44997de616a66c593892fce5563d289f2a6c5dcff08f7f71e12c",
+      "prompt_tokens": 465,
+      "answer_token_ids": [
+        357,
+        417,
+        351,
+        414
+      ],
+      "expected": "C",
+      "predicted": "A",
+      "correct": false,
+      "choice_logprobs": [
+        -1.6527900695800781,
+        -6.402790069580078,
+        -5.652790069580078,
+        -5.652790069580078
+      ],
+      "choice_probabilities": [
+        0.9566786289215088,
+        0.008276892825961113,
+        0.017522182315587997,
+        0.017522182315587997
+      ],
+      "seconds": 1.360322874999838,
+      "memory": {
+        "mlx_active_bytes": 15779200062,
+        "mlx_cache_bytes": 860430716,
+        "mlx_peak_bytes": 16513128832,
+        "process_peak_rss_bytes": 11524259840,
+        "process_phys_footprint_bytes": 17224445616,
+        "process_lifetime_peak_phys_footprint_bytes": 20433956504,
+        "mach_resident_bytes": 1108787200,
+        "mach_resident_peak_bytes": 11524259840
+      }
+    },
+    {
+      "id": "international_law:72",
+      "category": "humanities",
+      "subject": "international_law",
+      "prompt_sha256": "f0303e8a33b10989acd949a69d52e21e1284010e06bea630eee06a6f33b62975",
+      "token_sha256": "15ab641f56bed86889757e196b35fd30eb40bfca5dffdeb2d697a70639fbbdc3",
+      "prompt_tokens": 612,
+      "answer_token_ids": [
+        357,
+        417,
+        351,
+        414
+      ],
+      "expected": "B",
+      "predicted": "B",
+      "correct": true,
+      "choice_logprobs": [
+        -2.8624839782714844,
+        -0.4874839782714844,
+        -4.862483978271484,
+        -1.2374839782714844
+      ],
+      "choice_probabilities": [
+        0.05894569680094719,
+        0.6337259411811829,
+        0.007977431640028954,
+        0.29935094714164734
+      ],
+      "seconds": 1.392068166998797,
+      "memory": {
+        "mlx_active_bytes": 15940680766,
+        "mlx_cache_bytes": 999025324,
+        "mlx_peak_bytes": 16773795712,
+        "process_peak_rss_bytes": 11524259840,
+        "process_phys_footprint_bytes": 17524502192,
+        "process_lifetime_peak_phys_footprint_bytes": 20433956504,
+        "mach_resident_bytes": 1108590592,
+        "mach_resident_peak_bytes": 11524259840
+      }
+    },
+    {
+      "id": "professional_psychology:570",
+      "category": "social sciences",
+      "subject": "professional_psychology",
+      "prompt_sha256": "8aa8e8526bd980584f543fc27c78cef24d8a3f2e207fb57ca1bad39aa4239b2b",
+      "token_sha256": "9b75d67e91585729240f27855d214efe773b3eb40e9de209a7a64e33a7780bda",
+      "prompt_tokens": 578,
+      "answer_token_ids": [
+        357,
+        417,
+        351,
+        414
+      ],
+      "expected": "D",
+      "predicted": "D",
+      "correct": true,
+      "choice_logprobs": [
+        -12.168386459350586,
+        -12.105886459350586,
+        -11.980886459350586,
+        -3.168386459350586
+      ],
+      "choice_probabilities": [
+        0.00012336006329860538,
+        0.00013131606101524085,
+        0.00014880060916766524,
+        0.9995965361595154
+      ],
+      "seconds": 1.3817991249961779,
+      "memory": {
+        "mlx_active_bytes": 15907650622,
+        "mlx_cache_bytes": 944253068,
+        "mlx_peak_bytes": 16694333040,
+        "process_peak_rss_bytes": 11524259840,
+        "process_phys_footprint_bytes": 17436634800,
+        "process_lifetime_peak_phys_footprint_bytes": 20433956504,
+        "mach_resident_bytes": 1108590592,
+        "mach_resident_peak_bytes": 11524259840
+      }
+    },
+    {
+      "id": "medical_genetics:50",
+      "category": "other (business, health, misc.)",
+      "subject": "medical_genetics",
+      "prompt_sha256": "968579c7750bbe817ec83e3044c00a8f62ce82844f6c381262c4a0b15c01367c",
+      "token_sha256": "cd0d29523f03cb8525c48c805fc448b92a355b98c60e7e9c240532f60e3d9b42",
+      "prompt_tokens": 325,
+      "answer_token_ids": [
+        357,
+        417,
+        351,
+        414
+      ],
+      "expected": "D",
+      "predicted": "D",
+      "correct": true,
+      "choice_logprobs": [
+        -7.571880340576172,
+        -7.884380340576172,
+        -5.134380340576172,
+        -0.009380340576171875
+      ],
+      "choice_probabilities": [
+        0.0005160418804734945,
+        0.0003775443765334785,
+        0.005905786529183388,
+        0.9932006001472473
+      ],
+      "seconds": 0.8322497079934692,
+      "memory": {
+        "mlx_active_bytes": 15641574462,
+        "mlx_cache_bytes": 668883132,
+        "mlx_peak_bytes": 16222343378,
+        "process_peak_rss_bytes": 11524259840,
+        "process_phys_footprint_bytes": 16895454896,
+        "process_lifetime_peak_phys_footprint_bytes": 20433956504,
+        "mach_resident_bytes": 1108721664,
+        "mach_resident_peak_bytes": 11524259840
+      }
+    },
+    {
+      "id": "high_school_chemistry:202",
+      "category": "STEM",
+      "subject": "high_school_chemistry",
+      "prompt_sha256": "01c019948fec97c01ba465608f6e2930408afab95154d0d0d552fa4bea7afa74",
+      "token_sha256": "d99fbb41c34f3d8237b8f70ac665862ba3e8c1e384095e653c062af61ec87c07",
+      "prompt_tokens": 526,
+      "answer_token_ids": [
+        357,
+        417,
+        351,
+        414
+      ],
+      "expected": "B",
+      "predicted": "B",
+      "correct": true,
+      "choice_logprobs": [
+        -7.469411849975586,
+        -0.03191184997558594,
+        -7.594411849975586,
+        -9.969411849975586
+      ],
+      "choice_probabilities": [
+        0.0005880750250071287,
+        0.9988446235656738,
+        0.000518974382430315,
+        4.827215525438078e-05
+      ],
+      "seconds": 1.2310777919919929,
+      "memory": {
+        "mlx_active_bytes": 15856532542,
+        "mlx_cache_bytes": 863053132,
+        "mlx_peak_bytes": 16608398544,
+        "process_peak_rss_bytes": 11524259840,
+        "process_phys_footprint_bytes": 17304546992,
+        "process_lifetime_peak_phys_footprint_bytes": 20433956504,
+        "mach_resident_bytes": 1108721664,
+        "mach_resident_peak_bytes": 11524259840
+      }
+    },
+    {
+      "id": "formal_logic:125",
+      "category": "humanities",
+      "subject": "formal_logic",
+      "prompt_sha256": "1a1f555895bc2a6e49cdd3c8f620a58b37ac437b161bbb0b18adcd20f8a2cfc7",
+      "token_sha256": "508710882aad8e0854b46d12c38bdbbde13cb65687c7ab005a5daa3a6bffe466",
+      "prompt_tokens": 616,
+      "answer_token_ids": [
+        357,
+        417,
+        351,
+        414
+      ],
+      "expected": "C",
+      "predicted": "C",
+      "correct": true,
+      "choice_logprobs": [
+        -5.344814300537109,
+        -4.532314300537109,
+        -0.09481430053710938,
+        -5.532314300537109
+      ],
+      "choice_probabilities": [
+        0.005137458443641663,
+        0.011577441357076168,
+        0.9790260195732117,
+        0.004259102512151003
+      ],
+      "seconds": 1.3692204170074547,
+      "memory": {
+        "mlx_active_bytes": 15944629310,
+        "mlx_cache_bytes": 1005546220,
+        "mlx_peak_bytes": 16783085472,
+        "process_peak_rss_bytes": 11524259840,
+        "process_phys_footprint_bytes": 17534922416,
+        "process_lifetime_peak_phys_footprint_bytes": 20433956504,
+        "mach_resident_bytes": 1108738048,
+        "mach_resident_peak_bytes": 11524259840
+      }
+    },
+    {
+      "id": "high_school_microeconomics:148",
+      "category": "social sciences",
+      "subject": "high_school_microeconomics",
+      "prompt_sha256": "323ebac57170c0c046e81695618cf2097cb5e65b4b96d211f441bc40d47bf674",
+      "token_sha256": "110e70f1f6ebfefa8bbe56d37c5ae2c49104372b3d20d64746723554a48ccaa7",
+      "prompt_tokens": 396,
+      "answer_token_ids": [
+        357,
+        417,
+        351,
+        414
+      ],
+      "expected": "A",
+      "predicted": "A",
+      "correct": true,
+      "choice_logprobs": [
+        -0.05098533630371094,
+        -8.800985336303711,
+        -8.175985336303711,
+        -8.925985336303711
+      ],
+      "choice_probabilities": [
+        0.999406099319458,
+        0.00015836719830986112,
+        0.00029586892924271524,
+        0.00013975864567328244
+      ],
+      "seconds": 0.9791434169892455,
+      "memory": {
+        "mlx_active_bytes": 15711583294,
+        "mlx_cache_bytes": 727211308,
+        "mlx_peak_bytes": 16370783536,
+        "process_peak_rss_bytes": 11524259840,
+        "process_phys_footprint_bytes": 17023676080,
+        "process_lifetime_peak_phys_footprint_bytes": 20433956504,
+        "mach_resident_bytes": 1108738048,
+        "mach_resident_peak_bytes": 11524259840
+      }
+    },
+    {
+      "id": "college_medicine:154",
+      "category": "other (business, health, misc.)",
+      "subject": "college_medicine",
+      "prompt_sha256": "509a0c4756df20d9983cc8690e0143b71d50e552d2819f9f4bb9bf422f26f7ae",
+      "token_sha256": "bb9bb2b10d553ae3e823cdf4c827dcc48ae7f65677f2f2ed8cde8b473cdab905",
+      "prompt_tokens": 446,
+      "answer_token_ids": [
+        357,
+        417,
+        351,
+        414
+      ],
+      "expected": "D",
+      "predicted": "D",
+      "correct": true,
+      "choice_logprobs": [
+        -1.9120063781738281,
+        -3.787006378173828,
+        -7.849506378173828,
+        -0.5370063781738281
+      ],
+      "choice_probabilities": [
+        0.1956537365913391,
+        0.03000447154045105,
+        0.000516255444381386,
+        0.773825466632843
+      ],
+      "seconds": 0.999030250008218,
+      "memory": {
+        "mlx_active_bytes": 15761112126,
+        "mlx_cache_bytes": 820322380,
+        "mlx_peak_bytes": 16504608848,
+        "process_peak_rss_bytes": 11524259840,
+        "process_phys_footprint_bytes": 17166479024,
+        "process_lifetime_peak_phys_footprint_bytes": 20433956504,
+        "mach_resident_bytes": 1108770816,
+        "mach_resident_peak_bytes": 11524259840
+      }
+    },
+    {
+      "id": "electrical_engineering:121",
+      "category": "STEM",
+      "subject": "electrical_engineering",
+      "prompt_sha256": "8a82f8af06d739bd05d78ca5af61b05e4399a8dc8ea361eeec7f0b064ce641e7",
+      "token_sha256": "41872b9750979af000a959d57dbc76d7db7afac73df1f7756d7a49bbd5a1b056",
+      "prompt_tokens": 464,
+      "answer_token_ids": [
+        357,
+        417,
+        351,
+        414
+      ],
+      "expected": "A",
+      "predicted": "A",
+      "correct": true,
+      "choice_logprobs": [
+        -0.024753570556640625,
+        -5.649753570556641,
+        -4.524753570556641,
+        -6.962253570556641
+      ],
+      "choice_probabilities": [
+        0.9845559597015381,
+        0.0035508647561073303,
+        0.010937430895864964,
+        0.0009557020966894925
+      ],
+      "seconds": 1.0970995419920655,
+      "memory": {
+        "mlx_active_bytes": 15778413630,
+        "mlx_cache_bytes": 857809260,
+        "mlx_peak_bytes": 16510130544,
+        "process_peak_rss_bytes": 11524259840,
+        "process_phys_footprint_bytes": 17221054128,
+        "process_lifetime_peak_phys_footprint_bytes": 20433956504,
+        "mach_resident_bytes": 1108803584,
+        "mach_resident_peak_bytes": 11524259840
+      }
+    },
+    {
+      "id": "high_school_world_history:15",
+      "category": "humanities",
+      "subject": "high_school_world_history",
+      "prompt_sha256": "7573ad933d130036ba4e9ef38b2310ebc01d3f4831505b9bfab553907f952917",
+      "token_sha256": "dd5c3e245e5d8337cf12f760ca4c8d51ab5a101adf6bbec80a343f6cea5308db",
+      "prompt_tokens": 1287,
+      "answer_token_ids": [
+        357,
+        417,
+        351,
+        414
+      ],
+      "expected": "D",
+      "predicted": "D",
+      "correct": true,
+      "choice_logprobs": [
+        -8.973491668701172,
+        -9.598491668701172,
+        -10.660991668701172,
+        -1.9109916687011719
+      ],
+      "choice_probabilities": [
+        0.0008553734514862299,
+        0.0004578483058139682,
+        0.00015822812565602362,
+        0.9985284805297852
+      ],
+      "seconds": 2.895722625005874,
+      "memory": {
+        "mlx_active_bytes": 16654761022,
+        "mlx_cache_bytes": 1482692680,
+        "mlx_peak_bytes": 17925487672,
+        "process_peak_rss_bytes": 11524259840,
+        "process_phys_footprint_bytes": 18721992368,
+        "process_lifetime_peak_phys_footprint_bytes": 20433956504,
+        "mach_resident_bytes": 1108262912,
+        "mach_resident_peak_bytes": 11524259840
+      }
+    },
+    {
+      "id": "security_studies:195",
+      "category": "social sciences",
+      "subject": "security_studies",
+      "prompt_sha256": "72afccaf90263af6cdb701d618a22ebb7dbef8b42f264b2466f5725923fa11a2",
+      "token_sha256": "7ee86fe02d2d8bc033022f8213bbb1a6fdea4ef63689e5fc60618b8c011423da",
+      "prompt_tokens": 1150,
+      "answer_token_ids": [
+        357,
+        417,
+        351,
+        414
+      ],
+      "expected": "A",
+      "predicted": "C",
+      "correct": false,
+      "choice_logprobs": [
+        -1.653635025024414,
+        -6.153635025024414,
+        -1.528635025024414,
+        -10.341135025024414
+      ],
+      "choice_probabilities": [
+        0.46632519364356995,
+        0.005180405918508768,
+        0.5284156799316406,
+        7.866031228331849e-05
+      ],
+      "seconds": 2.5261782919988036,
+      "memory": {
+        "mlx_active_bytes": 16503503934,
+        "mlx_cache_bytes": 1340429860,
+        "mlx_peak_bytes": 17679203384,
+        "process_peak_rss_bytes": 11524259840,
+        "process_phys_footprint_bytes": 18428751536,
+        "process_lifetime_peak_phys_footprint_bytes": 20433956504,
+        "mach_resident_bytes": 1108377600,
+        "mach_resident_peak_bytes": 11524259840
+      }
+    },
+    {
+      "id": "professional_accounting:137",
+      "category": "other (business, health, misc.)",
+      "subject": "professional_accounting",
+      "prompt_sha256": "f496470ab7b1bc1199894817be226c98035354ff6411a264a871cc5c45ce7d98",
+      "token_sha256": "76262d6c134297d3b505a4e229396e95195d654f979b7e4c26f37fc2e01964ba",
+      "prompt_tokens": 687,
+      "answer_token_ids": [
+        357,
+        417,
+        351,
+        414
+      ],
+      "expected": "D",
+      "predicted": "D",
+      "correct": true,
+      "choice_logprobs": [
+        -4.45074462890625,
+        -6.32574462890625,
+        -1.57574462890625,
+        -0.82574462890625
+      ],
+      "choice_probabilities": [
+        0.017729399725794792,
+        0.0027188912499696016,
+        0.3142610788345337,
+        0.6652906537055969
+      ],
+      "seconds": 1.5447023330052616,
+      "memory": {
+        "mlx_active_bytes": 16014605374,
+        "mlx_cache_bytes": 932897952,
+        "mlx_peak_bytes": 16866398662,
+        "process_peak_rss_bytes": 11524259840,
+        "process_phys_footprint_bytes": 17532415664,
+        "process_lifetime_peak_phys_footprint_bytes": 20433956504,
+        "mach_resident_bytes": 1108475904,
+        "mach_resident_peak_bytes": 11524259840
+      }
+    },
+    {
+      "id": "college_computer_science:9",
+      "category": "STEM",
+      "subject": "college_computer_science",
+      "prompt_sha256": "54b064be5c758c29e8849efa3b927ab8ee42897d52dc0a3bb3bf9f3a1e8c91a7",
+      "token_sha256": "c15d87f088ef235e9a7ea70efefdf66f5228abc7502ec90d8cbaf24a7ae1b760",
+      "prompt_tokens": 899,
+      "answer_token_ids": [
+        357,
+        417,
+        351,
+        414
+      ],
+      "expected": "C",
+      "predicted": "C",
+      "correct": true,
+      "choice_logprobs": [
+        -3.0235137939453125,
+        -2.7735137939453125,
+        -0.1485137939453125,
+        -4.7735137939453125
+      ],
+      "choice_probabilities": [
+        0.04954610392451286,
+        0.06361845880746841,
+        0.878225564956665,
+        0.008609822019934654
+      ],
+      "seconds": 2.25105325000186,
+      "memory": {
+        "mlx_active_bytes": 16239787070,
+        "mlx_cache_bytes": 1216605840,
+        "mlx_peak_bytes": 17289369702,
+        "process_peak_rss_bytes": 11524259840,
+        "process_phys_footprint_bytes": 18040991408,
+        "process_lifetime_peak_phys_footprint_bytes": 20433956504,
+        "mach_resident_bytes": 1108312064,
+        "mach_resident_peak_bytes": 11524259840
+      }
+    },
+    {
+      "id": "prehistory:44",
+      "category": "humanities",
+      "subject": "prehistory",
+      "prompt_sha256": "3abbdcf62f076f50722e0c5d7bfca4d15294db82a80cd77fa750c665dec654db",
+      "token_sha256": "3755d95e74af336083c3f33f236f539c0cbe7d11032e40a3e45030904613116c",
+      "prompt_tokens": 504,
+      "answer_token_ids": [
+        357,
+        417,
+        351,
+        414
+      ],
+      "expected": "A",
+      "predicted": "A",
+      "correct": true,
+      "choice_logprobs": [
+        -0.004047393798828125,
+        -9.191547393798828,
+        -7.379047393798828,
+        -7.316547393798828
+      ],
+      "choice_probabilities": [
+        0.9986059069633484,
+        0.00010216768714599311,
+        0.0006258532521314919,
+        0.0006662171217612922
+      ],
+      "seconds": 1.1892010839947034,
+      "memory": {
+        "mlx_active_bytes": 15817735230,
+        "mlx_cache_bytes": 932291564,
+        "mlx_peak_bytes": 16618904560,
+        "process_peak_rss_bytes": 11524259840,
+        "process_phys_footprint_bytes": 17334988464,
+        "process_lifetime_peak_phys_footprint_bytes": 20433956504,
+        "mach_resident_bytes": 1108590592,
+        "mach_resident_peak_bytes": 11524259840
+      }
+    },
+    {
+      "id": "high_school_government_and_politics:53",
+      "category": "social sciences",
+      "subject": "high_school_government_and_politics",
+      "prompt_sha256": "521799caae77e5a32027d0d64eaae41c2b418aee345242f58e83de24d6ba44c5",
+      "token_sha256": "1f6ef654a8678ad09f7f469d170d42099eba1bc4a99b51bf116a843c02ea0206",
+      "prompt_tokens": 459,
+      "answer_token_ids": [
+        357,
+        417,
+        351,
+        414
+      ],
+      "expected": "D",
+      "predicted": "D",
+      "correct": true,
+      "choice_logprobs": [
+        -13.875459671020508,
+        -12.625459671020508,
+        -11.250459671020508,
+        -0.0004596710205078125
+      ],
+      "choice_probabilities": [
+        9.422295761396526e-07,
+        3.2887016914173728e-06,
+        1.3007083907723427e-05,
+        0.9999827146530151
+      ],
+      "seconds": 1.1138578749960288,
+      "memory": {
+        "mlx_active_bytes": 15773695038,
+        "mlx_cache_bytes": 844505372,
+        "mlx_peak_bytes": 16539343136,
+        "process_peak_rss_bytes": 11524259840,
+        "process_phys_footprint_bytes": 17203031728,
+        "process_lifetime_peak_phys_footprint_bytes": 20433956504,
+        "mach_resident_bytes": 1108590592,
+        "mach_resident_peak_bytes": 11524259840
+      }
+    },
+    {
+      "id": "clinical_knowledge:12",
+      "category": "other (business, health, misc.)",
+      "subject": "clinical_knowledge",
+      "prompt_sha256": "41b48d9a91bdec8e993f3760055cd549e2d5954e0f9dd725b7a3823dabeddd04",
+      "token_sha256": "d7957c00a4453b87628577ea345a71da3c4bd676b63af7ddb96caa9212032914",
+      "prompt_tokens": 434,
+      "answer_token_ids": [
+        357,
+        417,
+        351,
+        414
+      ],
+      "expected": "B",
+      "predicted": "B",
+      "correct": true,
+      "choice_logprobs": [
+        -4.203088760375977,
+        -0.26558876037597656,
+        -4.828088760375977,
+        -5.578088760375977
+      ],
+      "choice_probabilities": [
+        0.018840089440345764,
+        0.966312050819397,
+        0.010084373876452446,
+        0.004763520788401365
+      ],
+      "seconds": 1.0148049170093145,
+      "memory": {
+        "mlx_active_bytes": 15749315646,
+        "mlx_cache_bytes": 798564236,
+        "mlx_peak_bytes": 16472889232,
+        "process_peak_rss_bytes": 11524259840,
+        "process_phys_footprint_bytes": 17132760752,
+        "process_lifetime_peak_phys_footprint_bytes": 20433956504,
+        "mach_resident_bytes": 1108639744,
+        "mach_resident_peak_bytes": 11524259840
+      }
+    },
+    {
+      "id": "abstract_algebra:8",
+      "category": "STEM",
+      "subject": "abstract_algebra",
+      "prompt_sha256": "c9525b5525ecc87e943ef58948bdf947444ae951e5189bc81e0f6023f4384bf9",
+      "token_sha256": "6bbb8b98772a98c75207ee70d5e6816adb6218cba1d44a4df6336fa1ef5273ba",
+      "prompt_tokens": 345,
+      "answer_token_ids": [
+        357,
+        417,
+        351,
+        414
+      ],
+      "expected": "B",
+      "predicted": "B",
+      "correct": true,
+      "choice_logprobs": [
+        -8.442899703979492,
+        -0.0053997039794921875,
+        -6.005399703979492,
+        -9.255399703979492
+      ],
+      "choice_probabilities": [
+        0.00021598809689749032,
+        0.9972163438796997,
+        0.0024718530476093292,
+        9.584413783159107e-05
+      ],
+      "seconds": 0.8574080420075916,
+      "memory": {
+        "mlx_active_bytes": 15661235262,
+        "mlx_cache_bytes": 636672508,
+        "mlx_peak_bytes": 16232600064,
+        "process_peak_rss_bytes": 11524259840,
+        "process_phys_footprint_bytes": 16882790064,
+        "process_lifetime_peak_phys_footprint_bytes": 20433956504,
+        "mach_resident_bytes": 1108639744,
+        "mach_resident_peak_bytes": 11524259840
+      }
+    },
+    {
+      "id": "philosophy:184",
+      "category": "humanities",
+      "subject": "philosophy",
+      "prompt_sha256": "e2097369267858af1ec959fb9007d52ff1a3faf97fa979bbb29e3a785f09ad87",
+      "token_sha256": "acb5f7104e231e22f1c7d32d4f445f35181d678fc9dcabc67b418d9d78c01271",
+      "prompt_tokens": 332,
+      "answer_token_ids": [
+        357,
+        417,
+        351,
+        414
+      ],
+      "expected": "C",
+      "predicted": "D",
+      "correct": false,
+      "choice_logprobs": [
+        -15.380926132202148,
+        -15.255926132202148,
+        -13.380926132202148,
+        -12.255926132202148
+      ],
+      "choice_probabilities": [
+        0.030976923182606697,
+        0.035101454704999924,
+        0.22889022529125214,
+        0.7050314545631409
+      ],
+      "seconds": 0.8300513330032118,
+      "memory": {
+        "mlx_active_bytes": 15648652350,
+        "mlx_cache_bytes": 612178220,
+        "mlx_peak_bytes": 16197914928,
+        "process_peak_rss_bytes": 11524259840,
+        "process_phys_footprint_bytes": 16845713072,
+        "process_lifetime_peak_phys_footprint_bytes": 20433956504,
+        "mach_resident_bytes": 1108639744,
+        "mach_resident_peak_bytes": 11524259840
+      }
+    },
+    {
+      "id": "econometrics:20",
+      "category": "social sciences",
+      "subject": "econometrics",
+      "prompt_sha256": "5096b73de39b5f5a239af9992039e5aaeba03ea84fb044e92dad0a0559805aae",
+      "token_sha256": "68e24ea7f7287a4fba554cbb47e2849133021e0fc4f4f4aa62a3d1c56126abe7",
+      "prompt_tokens": 584,
+      "answer_token_ids": [
+        357,
+        417,
+        351,
+        414
+      ],
+      "expected": "B",
+      "predicted": "B",
+      "correct": true,
+      "choice_logprobs": [
+        -7.7527618408203125,
+        -0.0027618408203125,
+        -8.377761840820312,
+        -9.752761840820312
+      ],
+      "choice_probabilities": [
+        0.0004304329049773514,
+        0.9992809891700745,
+        0.0002303940855199471,
+        5.8252757298760116e-05
+      ],
+      "seconds": 1.3589574579964392,
+      "memory": {
+        "mlx_active_bytes": 15913155646,
+        "mlx_cache_bytes": 953608428,
+        "mlx_peak_bytes": 16707571360,
+        "process_peak_rss_bytes": 11524259840,
+        "process_phys_footprint_bytes": 17451642544,
+        "process_lifetime_peak_phys_footprint_bytes": 20433956504,
+        "mach_resident_bytes": 1108639744,
+        "mach_resident_peak_bytes": 11524259840
+      }
+    },
+    {
+      "id": "management:95",
+      "category": "other (business, health, misc.)",
+      "subject": "management",
+      "prompt_sha256": "a607725759938fe418f3f8e93100caafe8a8fd533a454ca87a9e9895307e2892",
+      "token_sha256": "2f140a5e15a78f4b296fbef37567656ebdd053d222e2459799f2034192915f52",
+      "prompt_tokens": 274,
+      "answer_token_ids": [
+        357,
+        417,
+        351,
+        414
+      ],
+      "expected": "B",
+      "predicted": "B",
+      "correct": true,
+      "choice_logprobs": [
+        -7.063514709472656,
+        -0.06351470947265625,
+        -9.813514709472656,
+        -8.501014709472656
+      ],
+      "choice_probabilities": [
+        0.0009108009980991483,
+        0.9988147020339966,
+        5.822557432111353e-05,
+        0.00021633428696077317
+      ],
+      "seconds": 0.76836462499341,
+      "memory": {
+        "mlx_active_bytes": 15592029246,
+        "mlx_cache_bytes": 568546700,
+        "mlx_peak_bytes": 16107163042,
+        "process_peak_rss_bytes": 11524259840,
+        "process_phys_footprint_bytes": 16745754288,
+        "process_lifetime_peak_phys_footprint_bytes": 20433956504,
+        "mach_resident_bytes": 1108819968,
+        "mach_resident_peak_bytes": 11524259840
+      }
+    },
+    {
+      "id": "computer_security:75",
+      "category": "STEM",
+      "subject": "computer_security",
+      "prompt_sha256": "5ab62d4730f57154e910489141b8608f67915bed4c050b2268cb0fee5379072b",
+      "token_sha256": "b07b86bb0ae9e0c04e96827ae9ccfdf7352c72e317c40c10a374ee13e9f6afeb",
+      "prompt_tokens": 346,
+      "answer_token_ids": [
+        357,
+        417,
+        351,
+        414
+      ],
+      "expected": "A",
+      "predicted": "A",
+      "correct": true,
+      "choice_logprobs": [
+        -0.24061965942382812,
+        -2.490619659423828,
+        -4.365619659423828,
+        -2.365619659423828
+      ],
+      "choice_probabilities": [
+        0.8058046102523804,
+        0.08493118733167648,
+        0.013024617917835712,
+        0.09623964130878448
+      ],
+      "seconds": 0.8729911249974975,
+      "memory": {
+        "mlx_active_bytes": 15662808126,
+        "mlx_cache_bytes": 638605836,
+        "mlx_peak_bytes": 16235942416,
+        "process_peak_rss_bytes": 11524259840,
+        "process_phys_footprint_bytes": 16886427312,
+        "process_lifetime_peak_phys_footprint_bytes": 20433956504,
+        "mach_resident_bytes": 1108819968,
+        "mach_resident_peak_bytes": 11524259840
+      }
+    },
+    {
+      "id": "moral_disputes:184",
+      "category": "humanities",
+      "subject": "moral_disputes",
+      "prompt_sha256": "53b71bd132bf2893c2add2afbbd8dfd7273c13d2fd725bb0b2f2bbbcbec3f7ad",
+      "token_sha256": "5efd743f5d31c10ec08d869846f49d4d2ee9dde5e28228054be659d45506ab7d",
+      "prompt_tokens": 557,
+      "answer_token_ids": [
+        357,
+        417,
+        351,
+        414
+      ],
+      "expected": "C",
+      "predicted": "C",
+      "correct": true,
+      "choice_logprobs": [
+        -8.971992492675781,
+        -10.096992492675781,
+        -5.346992492675781,
+        -7.096992492675781
+      ],
+      "choice_probabilities": [
+        0.02204090729355812,
+        0.007155633997172117,
+        0.8270787596702576,
+        0.1437247395515442
+      ],
+      "seconds": 1.246820000000298,
+      "memory": {
+        "mlx_active_bytes": 15886416958,
+        "mlx_cache_bytes": 915023676,
+        "mlx_peak_bytes": 16683093448,
+        "process_peak_rss_bytes": 11524259840,
+        "process_phys_footprint_bytes": 17386319536,
+        "process_lifetime_peak_phys_footprint_bytes": 20433956504,
+        "mach_resident_bytes": 1108819968,
+        "mach_resident_peak_bytes": 11524259840
+      }
+    },
+    {
+      "id": "us_foreign_policy:57",
+      "category": "social sciences",
+      "subject": "us_foreign_policy",
+      "prompt_sha256": "e3c6bd5e56f8b1eddc0990bffe379e6441a01448428b06395974979504fd7a28",
+      "token_sha256": "5bc43a754ae962b26498bada6cc8c83241ceacdaebd48c51d077a50ddc5b32e9",
+      "prompt_tokens": 427,
+      "answer_token_ids": [
+        357,
+        417,
+        351,
+        414
+      ],
+      "expected": "D",
+      "predicted": "D",
+      "correct": true,
+      "choice_logprobs": [
+        -6.879905700683594,
+        -9.254905700683594,
+        -9.379905700683594,
+        -0.00490570068359375
+      ],
+      "choice_probabilities": [
+        0.0010320444125682116,
+        9.599512122804299e-05,
+        8.471538603771478e-05,
+        0.9987872242927551
+      ],
+      "seconds": 1.0400303750066087,
+      "memory": {
+        "mlx_active_bytes": 15742237758,
+        "mlx_cache_bytes": 785571612,
+        "mlx_peak_bytes": 16453883680,
+        "process_peak_rss_bytes": 11524259840,
+        "process_phys_footprint_bytes": 17112690352,
+        "process_lifetime_peak_phys_footprint_bytes": 20433956504,
+        "mach_resident_bytes": 1108639744,
+        "mach_resident_peak_bytes": 11524259840
+      }
+    },
+    {
+      "id": "marketing:134",
+      "category": "other (business, health, misc.)",
+      "subject": "marketing",
+      "prompt_sha256": "0a93dd6268324766187f40817132c37fa3423fc0bf0571907b3a300ace83832e",
+      "token_sha256": "f9e085bf8212a648ec010fd4dd47f932f58c605d0f10ad1f6a202742cdd12454",
+      "prompt_tokens": 400,
+      "answer_token_ids": [
+        357,
+        417,
+        351,
+        414
+      ],
+      "expected": "D",
+      "predicted": "D",
+      "correct": true,
+      "choice_logprobs": [
+        -9.898170471191406,
+        -6.898170471191406,
+        -9.398170471191406,
+        -0.02317047119140625
+      ],
+      "choice_probabilities": [
+        5.138476626598276e-05,
+        0.001032090513035655,
+        8.471916953567415e-05,
+        0.9988318085670471
+      ],
+      "seconds": 0.9680547909956658,
+      "memory": {
+        "mlx_active_bytes": 15715499070,
+        "mlx_cache_bytes": 735141228,
+        "mlx_peak_bytes": 16381039984,
+        "process_peak_rss_bytes": 11524259840,
+        "process_phys_footprint_bytes": 17035521712,
+        "process_lifetime_peak_phys_footprint_bytes": 20433956504,
+        "mach_resident_bytes": 1108639744,
+        "mach_resident_peak_bytes": 11524259840
+      }
+    },
+    {
+      "id": "astronomy:142",
+      "category": "STEM",
+      "subject": "astronomy",
+      "prompt_sha256": "b742280115d1c3357a9961b2e060c6ec89bb72204964b58f8226944e5ccb3b31",
+      "token_sha256": "c75a41639674d61d50f8bd6eb14588af8f69d9d082a97f7ee71d7d5aeeb93560",
+      "prompt_tokens": 581,
+      "answer_token_ids": [
+        357,
+        417,
+        351,
+        414
+      ],
+      "expected": "C",
+      "predicted": "C",
+      "correct": true,
+      "choice_logprobs": [
+        -7.90080451965332,
+        -9.27580451965332,
+        -0.2133045196533203,
+        -9.21330451965332
+      ],
+      "choice_probabilities": [
+        0.0004582032561302185,
+        0.00011585193715291098,
+        0.9993026256561279,
+        0.0001233237999258563
+      ],
+      "seconds": 1.3247207079984946,
+      "memory": {
+        "mlx_active_bytes": 15910009918,
+        "mlx_cache_bytes": 949283004,
+        "mlx_peak_bytes": 16700853896,
+        "process_peak_rss_bytes": 11524259840,
+        "process_phys_footprint_bytes": 17444335280,
+        "process_lifetime_peak_phys_footprint_bytes": 20433956504,
+        "mach_resident_bytes": 1108672512,
+        "mach_resident_peak_bytes": 11524259840
+      }
+    },
+    {
+      "id": "high_school_european_history:79",
+      "category": "humanities",
+      "subject": "high_school_european_history",
+      "prompt_sha256": "9783df2e7fc1317f934f69e3a05ac35ef471fe85f35e93d6bae1040582a51701",
+      "token_sha256": "ede72e9b03f4e3d3b3b3653d8e673120208654b3a7016151043a5380835e1294",
+      "prompt_tokens": 2716,
+      "answer_token_ids": [
+        357,
+        417,
+        351,
+        414
+      ],
+      "expected": "B",
+      "predicted": "B",
+      "correct": true,
+      "choice_logprobs": [
+        -11.538658142089844,
+        -1.9136581420898438,
+        -10.538658142089844,
+        -15.538658142089844
+      ],
+      "choice_probabilities": [
+        6.604022200917825e-05,
+        0.9997532963752747,
+        0.00017951588961295784,
+        1.209569404636568e-06
+      ],
+      "seconds": 7.0200276669929735,
+      "memory": {
+        "mlx_active_bytes": 18143214654,
+        "mlx_cache_bytes": 2552262300,
+        "mlx_peak_bytes": 20253244454,
+        "process_peak_rss_bytes": 11524259840,
+        "process_phys_footprint_bytes": 21279977136,
+        "process_lifetime_peak_phys_footprint_bytes": 21279977136,
+        "mach_resident_bytes": 578633728,
+        "mach_resident_peak_bytes": 11524259840
+      }
+    }
+  ],
+  "subset_sha256": "c5ccec4b785dee671bfe6609c92e37fd01108e1624b60581b5b5b205ea6eb2cd",
+  "parameters": {
+    "fewshot": 5,
+    "batch_size": 1,
+    "scoring": "loglikelihood of single-token ' A', ' B', ' C', ' D'",
+    "chat_template": false,
+    "thinking": false,
+    "generated_tokens": 0,
+    "sampling": null
+  },
+  "device": {
+    "device_name": "Apple M5 Pro",
+    "max_recommended_working_set_size": 40200896512,
+    "memory_size": 51539607552,
+    "architecture": "applegpu_g17s",
+    "max_buffer_length": 30150672384,
+    "resource_limit": 499000
+  },
+  "versions": {
+    "mlx": "0.32.2",
+    "mlx-lm": "0.31.3",
+    "transformers": "5.16.1",
+    "tokenizers": "0.23.2"
+  },
+  "process_seconds": 81.42188395900303,
+  "load_seconds": 3.0664192919939524,
+  "resident_parameter_bytes": 15132802048,
+  "loaded_memory": {
+    "mlx_active_bytes": 15133588488,
+    "mlx_cache_bytes": 10572,
+    "mlx_peak_bytes": 15133588488,
+    "process_peak_rss_bytes": 11524259840,
+    "process_phys_footprint_bytes": 15637474848,
+    "process_lifetime_peak_phys_footprint_bytes": 15753899576,
+    "mach_resident_bytes": 5050171392,
+    "mach_resident_peak_bytes": 11524259840
+  },
+  "total_prompt_tokens": 30941,
+  "warmup_seconds": 1.372812666988466,
+  "benchmark_seconds": 75.99177295799018,
+  "correct": 41,
+  "accuracy": 0.82
+}
