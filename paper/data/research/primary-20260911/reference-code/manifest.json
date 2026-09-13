@@ -1,0 +1,224 @@
+{
+  "status": "complete",
+  "corpus": {
+    "domain": "code",
+    "sha256": "377942ec488719a227c4210fcd8d455df1c425d8eebf6f4b09c39b739229bc2c",
+    "token_sha256": "ffae8fd6ebc1edf3a95a9421c074fffbdb997a4b88c63f121239a6147c446916",
+    "offset": 0,
+    "tokens": 4096,
+    "chunk_size": 128
+  },
+  "tokenizer_sha256": "365c2d8a0c0e72d4bcc5dbc6c2e9330a87dae7ffc77e9fcd9d65739f4d16bfff",
+  "quality": {
+    "nll": 1.0429729176685214,
+    "perplexity": 2.8376405586493365,
+    "scored_tokens": 4096,
+    "seconds": 12.1341574590042
+  },
+  "chunks": [
+    {
+      "file": "00000000.npy",
+      "sha256": "bdc7c7e4ac60a1a79a346ebf49ba966f560e6b7918bbc0c636fdc498d0fb76bd"
+    },
+    {
+      "file": "00000128.npy",
+      "sha256": "fab2d536deeef7004ff76522d65b50f8d9632d8edcc30bee595e0c5c4c9d5fbd"
+    },
+    {
+      "file": "00000256.npy",
+      "sha256": "61dde9da1f299a3c0830246abcec5ab8765370205d131fb97774226a5de3d0f8"
+    },
+    {
+      "file": "00000384.npy",
+      "sha256": "344c80f47de879c20dd47bbb28ffd1671459738f32b75abbbfa4d0693341019a"
+    },
+    {
+      "file": "00000512.npy",
+      "sha256": "0a08554e4609b9d4131f364b5a22ca9a024f352664f764fc972b1a51b5157764"
+    },
+    {
+      "file": "00000640.npy",
+      "sha256": "aece1c1fea9b03ba7c4f29fad2b88c7b858c746f5b18cd56aab8ec270af011c5"
+    },
+    {
+      "file": "00000768.npy",
+      "sha256": "33162708e7ac7e16ff49baa55107a4b1d18afb425f7f6317467687a4f7b351c8"
+    },
+    {
+      "file": "00000896.npy",
+      "sha256": "edc0b81988e3643e7556195ffb84ac14fc553934e25267a77f860853936d3d5e"
+    },
+    {
+      "file": "00001024.npy",
+      "sha256": "da01202d48aab63f45b889accbb28f0a26fdd41b833bb259ca08a9cb454398cc"
+    },
+    {
+      "file": "00001152.npy",
+      "sha256": "dfe7b13c5fbf0cac5fe5db49fce2d9d706df678d0f96e88e39eee093c1ad06f0"
+    },
+    {
+      "file": "00001280.npy",
+      "sha256": "e5d608d09fa962368e7209e280303b5b1ff5a98390de0c5d62ee107d6aab676e"
+    },
+    {
+      "file": "00001408.npy",
+      "sha256": "0e7ed4936188512cba8b67dfb6e72d095b1f308425b48e608432f839b126b10a"
+    },
+    {
+      "file": "00001536.npy",
+      "sha256": "66f86bac3adee27cbfc9af7beef1fed4503086cd35857cc072570e2db5b81ce4"
+    },
+    {
+      "file": "00001664.npy",
+      "sha256": "cbd270dd03140ff7118d81fc241304f9d1f8d9e20175ecbdeac0caad82db73f6"
+    },
+    {
+      "file": "00001792.npy",
+      "sha256": "612177c417d86a8bc6d482427e19d289b4cdeb9c3ceec4fd181c62b466329100"
+    },
+    {
+      "file": "00001920.npy",
+      "sha256": "6fdd14b955c2a266e410dc61d26db5a72833986770d9bbbcc227aaabbe8591a7"
+    },
+    {
+      "file": "00002048.npy",
+      "sha256": "ea744f8dde18842ee904e8e9d1f39d6560daaa4c616a2174a52b7b65a63e4da9"
+    },
+    {
+      "file": "00002176.npy",
+      "sha256": "882e7a50e6ff67bf98dca53d2e2497fa89ce607991a7901e0eba58a6ae672a37"
+    },
+    {
+      "file": "00002304.npy",
+      "sha256": "75d8fb95f4661a425300f51de8beda18a9522d71b9231dc4f5511a7568a7db52"
+    },
+    {
+      "file": "00002432.npy",
+      "sha256": "451b04e381c9836e62cfaaa6ad3df853cbf5b52e362940e35cf829164b02d33a"
+    },
+    {
+      "file": "00002560.npy",
+      "sha256": "395d448b4e537ec57c0f82904d4fa2677f8e7918056d402003ecb40d62a74940"
+    },
+    {
+      "file": "00002688.npy",
+      "sha256": "9ac8f5fdf27668dd8cf4033eaa08ffcd5eee20ed3e71ccccd4af0a52015fdf04"
+    },
+    {
+      "file": "00002816.npy",
+      "sha256": "66006b38117c07ee95d73b7b8f9754aaf12d97655af2703a618e0e820c0acce1"
+    },
+    {
+      "file": "00002944.npy",
+      "sha256": "5f58905dd338c3ad5a9cc82e9e76b64765d2d34410c21ae0fc6c6cc9c08218fd"
+    },
+    {
+      "file": "00003072.npy",
+      "sha256": "930538dc3d56df5ad16fb28cbf7d9ad4c7a2e346a80c257841f1f76d65f18946"
+    },
+    {
+      "file": "00003200.npy",
+      "sha256": "c5931145ee9964c98067a13ef5a730bba0f1af7e9102f898a0e440cf4967c3c9"
+    },
+    {
+      "file": "00003328.npy",
+      "sha256": "3e0df0cd393660471838b31a01a49db0105c0d173d3fa86c9a117e5ad2a7495a"
+    },
+    {
+      "file": "00003456.npy",
+      "sha256": "1e9acbcb33f99612638593a0299677c5519b899a51892ea49d7f0f2bc4601ef4"
+    },
+    {
+      "file": "00003584.npy",
+      "sha256": "505309a45f0640db349ba9fa2f98e05e6ac0847a25a332cca75bb920a798b58f"
+    },
+    {
+      "file": "00003712.npy",
+      "sha256": "96e938bfcac665fa3020b2d6d78ebf8e610f8ef4ad4f27df04c1dd883615630c"
+    },
+    {
+      "file": "00003840.npy",
+      "sha256": "a46728a418ebdc6e2dca870923bca12860ff60f6f0daf37997b1c47ef306280c"
+    },
+    {
+      "file": "00003968.npy",
+      "sha256": "a2057ebd21bf90fd54f76365f0bc2dd007e5dbd1f795b868d3edbe19bb1680d0"
+    }
+  ],
+  "provenance": {
+    "model": "/Users/elwan.mayencou/.cache/huggingface/hub/models--mlx-community--Qwen3.8-27B-4bit/snapshots/3e6447f082e89cc7f0bc6e5441afd38dfce760ff",
+    "model_sha256": {
+      "model-00001-of-00003.safetensors": "6cc1508e96fb5d0865dfd5753a79f4ec60651bf3e2a82844a7e8ae9c60528c0d",
+      "model-00002-of-00003.safetensors": "83f2a20ca8058f486a3634a27faf99587f4cd3c156a83dee34fb99e6ac178670",
+      "model-00003-of-00003.safetensors": "31b8c91ef899f79efaaa69e3d2c096f6e2ebeb2ff20e29222abbd9ebc79e560a",
+      "config.json": "14b65a0ee06517060a6bbd979bb1a8ff54e7b304b1a1f01d54344b88b8285e85",
+      "generation_config.json": "e70c136c1b78ddc1fb0905bac8e733a4dc448d4f852a5dd75143fffc70be550e",
+      "model.safetensors.index.json": "13b840162b4cb35c66fef7df072f7dbb4717908204364f5e5d9f9655a2758fa8",
+      "preprocessor_config.json": "27225450ac9c6529872ee1924fcb0962ff5634834f817040f444118116f4e516",
+      "processor_config.json": "45fc17c8dd2474af6b493b52483c26c0584b0082d368c480f9fa611e73070040",
+      "tokenizer.json": "06b9509352d2af50381ab2247e083b80d32d5c0aba91c272ca9ff729b6a0e523",
+      "tokenizer_config.json": "792fa3f0cb88b111e54ef3134c873531008c4df471d108da17903426e308aa7b",
+      "video_preprocessor_config.json": "7768af27c1fafa9cc9011c1dc20067e03f8915e03b63504550e11d5066986d13",
+      "vocab.json": "ce99b4cb2983d118806ce0a8b777a35b093e2000a503ebde25853284c9dfa003"
+    },
+    "source_sha256": {
+      "src/morph32/__init__.py": "726bcfaa1c2fa5d955ff7418ef7404e7e7494664881afdc5bd72fc9d146c4017",
+      "src/morph32/__main__.py": "6d8b7d7846a845059d7a3107143f11131f63c5511d669b44085b15ec5e3d2279",
+      "src/morph32/calibration.py": "66430a5b636c4e4ec532b442b9b3c9d2ab447b4913775cd6be784def76a294d2",
+      "src/morph32/capabilities.py": "3710fd0b58a6834ed911353f4981d5481a5682bb65c704f2219ccfd322c0b532",
+      "src/morph32/cli.py": "0b823ab84a548721afcf3abb77035def06f9056fe6af01a9d16e8f54dc04a1d3",
+      "src/morph32/codec.py": "ff513d861fb74dae67d5ffb382d5e288e4760ff7c20baa012f3c9f3275f1f8db",
+      "src/morph32/conversion.py": "9df0dcafa30f5ea4f44024e7bfe4c5a767eb79a62d5344e322e9a70678fc24b0",
+      "src/morph32/evaluation.py": "05ee9669ffb636e202374843d15188e02501011dc72ed7f68d6cac85f30934d9",
+      "src/morph32/fused.py": "b50d98aab4c503db0abebf609e1e99e3a348634ea5d8ba5ea6323da4eb46a0b7",
+      "src/morph32/generation.py": "ce5f0745b70143a5d7140c5d34b51c36eab7464a20d353ff3eadc04b56d64058",
+      "src/morph32/grading.py": "784234e0abb521d1ff876e4c71748b1c97cbdb70a2051be5d152a6bbfe66b674",
+      "src/morph32/inventory.py": "08673ceccad819f1dd6c913707bb8079f4c1ee3eb128daffee84ba088b5dbda9",
+      "src/morph32/metadata.py": "1da904b6dbb5e3a406db4bc64fc41a2598db3e00bcebaf1e13b78b0d83aa626a",
+      "src/morph32/metadata_kernels.py": "581e776959ad5ca31c9b6936a122250826c3399c4d02d2d0fab59684424b0bd8",
+      "src/morph32/metadata_packet.py": "21f759e0a1cd08e5b289a23d2d87c7b899799b1ef028c5fc37aa47dc576251ea",
+      "src/morph32/metrics.py": "12f3d7dcfe31271c7be45a33ea739984e69c6b5486bba8174dfd09885046a8c7",
+      "src/morph32/mmlu.py": "e551f8e35a42270e20ff20008e3592c73e73207c8ab93fd1f4a81b089b7355fa",
+      "src/morph32/optimization.py": "96aeb9c14b4a6ccc905d3f087247fd31ed4a62bafc52ff37041c5f70d40401f1",
+      "src/morph32/packing.py": "099a7f16488b6a5d64152d25bdf1debd30cbde55bce9b771e2edd9f1ef5c61af",
+      "src/morph32/paths.py": "daebc954496d65e5c2b1cceafcb1cb12ff27817fccc683dd30be09c28d8138a3",
+      "src/morph32/prefill.py": "ff8cdedbe7600d54ddfc743bd38b2646b6e9c8a62d98e28f7a0e8c71e9d1b62f",
+      "src/morph32/profiles.py": "07eeebd75cd54cf9041e08560a35619859f450ae29290a693b01d74cd498edcb",
+      "src/morph32/research.py": "89c8ded49b5f129571daef88bb83c5cce3499735ee06684cb831d1ba88482287",
+      "src/morph32/runtime.py": "210299d47d8b3523f9030824b1bd7c44151320c075ae9102f23f0aa642634ac6",
+      "src/morph32/scalar.py": "4946711bd408d57532e2d1a0f55e57e950ab391a8e2bd4770af3fe995f929857",
+      "src/morph32/server.py": "2b427fe1552c4da8590520b99f6030212ac6a6c9597e64f88395ff7f279ae739",
+      "src/morph32/sources.py": "60cc9ea84a260e943fdc25eb755510ee4f8324a6fda282f8f4898c83fe74fa8f",
+      "src/morph32/statistics.py": "ef8bfe3ff4b11e9d6076f51a4384ddbe559f4a24bb01a841cc45edb8afb02c8b",
+      "src/morph32/tasks.py": "cec77d920524a13f535b9a3b19da57481c41fa19bfb363b86519d1a83d3cb8a5",
+      "src/morph32/workloads.py": "4821d09dd08c39730e8cf4fee06de449cc5c99afe6c776429c9688b42bda7006",
+      "src/morph32/metal/metadata_packet.metal": "4b26c7720d9d98141db57d5974c14e680a9e5189f52e6d82168f779d6258406a"
+    },
+    "git_commit": "2b20e817b0e806e0a7038d5a7da6fb7ca320be38",
+    "platform": "macOS-26.6.2-arm64-arm-64bit",
+    "packages": {
+      "mlx": "0.32.2",
+      "mlx-lm": "0.31.3",
+      "numpy": "2.5.3"
+    },
+    "device": {
+      "device_name": "Apple M5 Pro",
+      "max_recommended_working_set_size": 40200896512,
+      "memory_size": 51539607552,
+      "architecture": "applegpu_g17s",
+      "max_buffer_length": 30150672384,
+      "resource_limit": 499000
+    },
+    "power": {
+      "power": "Now drawing from 'AC Power'\n -InternalBattery-0 (id=7471203)\t100%; charged; 0:00 remaining present: true",
+      "thermal": "Note: No thermal warning level has been recorded\nNote: No performance warning level has been recorded\nNote: No CPU power status has been recorded"
+    },
+    "seed": 0,
+    "decode_variant": "original",
+    "prefill_variant": "original",
+    "decode_values": 32,
+    "fuse_gate_up": "0",
+    "metadata_variant": "packet",
+    "prefill_block_m": 128
+  }
+}

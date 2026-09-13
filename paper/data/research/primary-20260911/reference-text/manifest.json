@@ -1,0 +1,224 @@
+{
+  "status": "complete",
+  "corpus": {
+    "domain": "text",
+    "sha256": "d790b833ef8cf03a90db7bf1271b7520b83c45ce07ba3c1a9699df81e239eca0",
+    "token_sha256": "7e46166cf14157082c6b1bbccdef77fd5921f194a49811f62446d4d54b4d0372",
+    "offset": 8192,
+    "tokens": 4096,
+    "chunk_size": 128
+  },
+  "tokenizer_sha256": "365c2d8a0c0e72d4bcc5dbc6c2e9330a87dae7ffc77e9fcd9d65739f4d16bfff",
+  "quality": {
+    "nll": 1.5594690646976233,
+    "perplexity": 4.756295289559941,
+    "scored_tokens": 4096,
+    "seconds": 12.88849174999632
+  },
+  "chunks": [
+    {
+      "file": "00000000.npy",
+      "sha256": "4ebe62cc26f66046ac35d2b43f6c3e3e4adef41879195205c006091ddbc06db9"
+    },
+    {
+      "file": "00000128.npy",
+      "sha256": "aaefac82b93749f955f38287153a196417c4bfe241e50f7efd7aaa2679407378"
+    },
+    {
+      "file": "00000256.npy",
+      "sha256": "fe5c4d6c6819422b8bc8fbc4f1f9920eb0f18a8a1cc4632a2a6ff3ea659db342"
+    },
+    {
+      "file": "00000384.npy",
+      "sha256": "958c065a993729b5b31dd4337ba4fa7bf342b1b1d5347465bf57582d3f32963f"
+    },
+    {
+      "file": "00000512.npy",
+      "sha256": "abaeff220e970b5d03cac932a54d78bee14f10a79f74d22fd8c6b20716463fd5"
+    },
+    {
+      "file": "00000640.npy",
+      "sha256": "f7d782107b1f869a1bf1af6d8fe54fe29b7bab46fa840fdb2068a0dbf9f6aaed"
+    },
+    {
+      "file": "00000768.npy",
+      "sha256": "984959f337fd24420a78584efe658221118863cc4bef23c2e16d483dcf59b469"
+    },
+    {
+      "file": "00000896.npy",
+      "sha256": "811717dfa69ae2e3da58ef5133863810f09ec97c55b9d9e21437194bb3ba9463"
+    },
+    {
+      "file": "00001024.npy",
+      "sha256": "e3f4152bbd0a4570c97e649f64d9b5e4a36cd337a434e401fc2c9e0cbfe76108"
+    },
+    {
+      "file": "00001152.npy",
+      "sha256": "205e23f024d0d66601a27d334f8503cf48c7c5817d7306943754335d54100c22"
+    },
+    {
+      "file": "00001280.npy",
+      "sha256": "11b4a724b3ae2bc6e78c953bbcb9a7cede19431267c0ca7c034e555d44935dca"
+    },
+    {
+      "file": "00001408.npy",
+      "sha256": "723225ac20a55d0788ed4cd8dcf6667d0cc1a6cfacaf657b28c554a935e14714"
+    },
+    {
+      "file": "00001536.npy",
+      "sha256": "bc6ed51a0b19f0c41af4a818992d0a948b99733e45e095b6f377cc3806ea50de"
+    },
+    {
+      "file": "00001664.npy",
+      "sha256": "90c7e143f181913202dcbdb0c0513942ebaae6929a9d8afe81867cd444efa777"
+    },
+    {
+      "file": "00001792.npy",
+      "sha256": "bb56697d408402c4ae8da1946a1ef6f8fe64aa31a3e8c91039e8e4c6ea624ddb"
+    },
+    {
+      "file": "00001920.npy",
+      "sha256": "e7a9e11fd7418b7436a743ca1f829ad5b351ae88d717a63a7c664409b594ea09"
+    },
+    {
+      "file": "00002048.npy",
+      "sha256": "5b0a3f4523c81ef686f95efa85308aea5a7753d6c60e13bc607b23fd6cd1ead4"
+    },
+    {
+      "file": "00002176.npy",
+      "sha256": "1f6fe53710dbc3d63a2e20e6d2eeaf14e6f4e4af466bd62bfa81c55831d91592"
+    },
+    {
+      "file": "00002304.npy",
+      "sha256": "d97421592d609eebb68b1210252458f3c4314773368a9f2fae017b02dd8a2f80"
+    },
+    {
+      "file": "00002432.npy",
+      "sha256": "5b0c9ec0f1d4f94b23b72fd80b34297ae0e0a2f445d9579bf417f5631479e190"
+    },
+    {
+      "file": "00002560.npy",
+      "sha256": "b70a3e7b3f64dd8ecac68729aee7af94a19f6ddda315228d8fae9ee20eda8243"
+    },
+    {
+      "file": "00002688.npy",
+      "sha256": "4fb20e880570a80aeb2b980f38a4fa10cfe839efdb0ce629b0f8ee9c194a81c0"
+    },
+    {
+      "file": "00002816.npy",
+      "sha256": "3963fa642188c6736632b4491541385d9aef33789af1638980e9fc4635dbec3f"
+    },
+    {
+      "file": "00002944.npy",
+      "sha256": "2171ccb3c402611985eef2e74123907af09111af9fe088d5a579cf4367b14b20"
+    },
+    {
+      "file": "00003072.npy",
+      "sha256": "995fc38681860d268215808ef1394808d47ccbf2cd3ab86b276120ab65e2270f"
+    },
+    {
+      "file": "00003200.npy",
+      "sha256": "e0e782bc51a8697783e5da4d1737063c07e69b745494c0b36d9f5d1314fbf6ee"
+    },
+    {
+      "file": "00003328.npy",
+      "sha256": "6bd2361e36473af85c13399b31ea941950c23162d01e8115b3e0a3360f6bd709"
+    },
+    {
+      "file": "00003456.npy",
+      "sha256": "5d607650ba62953353ea9a14ac3c781a045806bcc621c6dd547944f2ed7d0112"
+    },
+    {
+      "file": "00003584.npy",
+      "sha256": "b6406a135ff3108b9c263ec87a484db54781cba9a8409d424106021625a83e85"
+    },
+    {
+      "file": "00003712.npy",
+      "sha256": "c60342f342505e278ef5bea87dd97fa012509da567a64f969094af25a981e19c"
+    },
+    {
+      "file": "00003840.npy",
+      "sha256": "2f0c67fe9915b071dccb15e2844fee6edd1b3780d07fc48b47c89f5eef335622"
+    },
+    {
+      "file": "00003968.npy",
+      "sha256": "2a429e2893118f6c1da55f915fa6a2fd8db1304965aa6ea56c511fa4c532ee6d"
+    }
+  ],
+  "provenance": {
+    "model": "/Users/elwan.mayencou/.cache/huggingface/hub/models--mlx-community--Qwen3.8-27B-4bit/snapshots/3e6447f082e89cc7f0bc6e5441afd38dfce760ff",
+    "model_sha256": {
+      "model-00001-of-00003.safetensors": "6cc1508e96fb5d0865dfd5753a79f4ec60651bf3e2a82844a7e8ae9c60528c0d",
+      "model-00002-of-00003.safetensors": "83f2a20ca8058f486a3634a27faf99587f4cd3c156a83dee34fb99e6ac178670",
+      "model-00003-of-00003.safetensors": "31b8c91ef899f79efaaa69e3d2c096f6e2ebeb2ff20e29222abbd9ebc79e560a",
+      "config.json": "14b65a0ee06517060a6bbd979bb1a8ff54e7b304b1a1f01d54344b88b8285e85",
+      "generation_config.json": "e70c136c1b78ddc1fb0905bac8e733a4dc448d4f852a5dd75143fffc70be550e",
+      "model.safetensors.index.json": "13b840162b4cb35c66fef7df072f7dbb4717908204364f5e5d9f9655a2758fa8",
+      "preprocessor_config.json": "27225450ac9c6529872ee1924fcb0962ff5634834f817040f444118116f4e516",
+      "processor_config.json": "45fc17c8dd2474af6b493b52483c26c0584b0082d368c480f9fa611e73070040",
+      "tokenizer.json": "06b9509352d2af50381ab2247e083b80d32d5c0aba91c272ca9ff729b6a0e523",
+      "tokenizer_config.json": "792fa3f0cb88b111e54ef3134c873531008c4df471d108da17903426e308aa7b",
+      "video_preprocessor_config.json": "7768af27c1fafa9cc9011c1dc20067e03f8915e03b63504550e11d5066986d13",
+      "vocab.json": "ce99b4cb2983d118806ce0a8b777a35b093e2000a503ebde25853284c9dfa003"
+    },
+    "source_sha256": {
+      "src/morph32/__init__.py": "726bcfaa1c2fa5d955ff7418ef7404e7e7494664881afdc5bd72fc9d146c4017",
+      "src/morph32/__main__.py": "6d8b7d7846a845059d7a3107143f11131f63c5511d669b44085b15ec5e3d2279",
+      "src/morph32/calibration.py": "66430a5b636c4e4ec532b442b9b3c9d2ab447b4913775cd6be784def76a294d2",
+      "src/morph32/capabilities.py": "3710fd0b58a6834ed911353f4981d5481a5682bb65c704f2219ccfd322c0b532",
+      "src/morph32/cli.py": "0b823ab84a548721afcf3abb77035def06f9056fe6af01a9d16e8f54dc04a1d3",
+      "src/morph32/codec.py": "ff513d861fb74dae67d5ffb382d5e288e4760ff7c20baa012f3c9f3275f1f8db",
+      "src/morph32/conversion.py": "9df0dcafa30f5ea4f44024e7bfe4c5a767eb79a62d5344e322e9a70678fc24b0",
+      "src/morph32/evaluation.py": "05ee9669ffb636e202374843d15188e02501011dc72ed7f68d6cac85f30934d9",
+      "src/morph32/fused.py": "b50d98aab4c503db0abebf609e1e99e3a348634ea5d8ba5ea6323da4eb46a0b7",
+      "src/morph32/generation.py": "ce5f0745b70143a5d7140c5d34b51c36eab7464a20d353ff3eadc04b56d64058",
+      "src/morph32/grading.py": "784234e0abb521d1ff876e4c71748b1c97cbdb70a2051be5d152a6bbfe66b674",
+      "src/morph32/inventory.py": "08673ceccad819f1dd6c913707bb8079f4c1ee3eb128daffee84ba088b5dbda9",
+      "src/morph32/metadata.py": "1da904b6dbb5e3a406db4bc64fc41a2598db3e00bcebaf1e13b78b0d83aa626a",
+      "src/morph32/metadata_kernels.py": "581e776959ad5ca31c9b6936a122250826c3399c4d02d2d0fab59684424b0bd8",
+      "src/morph32/metadata_packet.py": "21f759e0a1cd08e5b289a23d2d87c7b899799b1ef028c5fc37aa47dc576251ea",
+      "src/morph32/metrics.py": "12f3d7dcfe31271c7be45a33ea739984e69c6b5486bba8174dfd09885046a8c7",
+      "src/morph32/mmlu.py": "e551f8e35a42270e20ff20008e3592c73e73207c8ab93fd1f4a81b089b7355fa",
+      "src/morph32/optimization.py": "96aeb9c14b4a6ccc905d3f087247fd31ed4a62bafc52ff37041c5f70d40401f1",
+      "src/morph32/packing.py": "099a7f16488b6a5d64152d25bdf1debd30cbde55bce9b771e2edd9f1ef5c61af",
+      "src/morph32/paths.py": "daebc954496d65e5c2b1cceafcb1cb12ff27817fccc683dd30be09c28d8138a3",
+      "src/morph32/prefill.py": "ff8cdedbe7600d54ddfc743bd38b2646b6e9c8a62d98e28f7a0e8c71e9d1b62f",
+      "src/morph32/profiles.py": "07eeebd75cd54cf9041e08560a35619859f450ae29290a693b01d74cd498edcb",
+      "src/morph32/research.py": "89c8ded49b5f129571daef88bb83c5cce3499735ee06684cb831d1ba88482287",
+      "src/morph32/runtime.py": "210299d47d8b3523f9030824b1bd7c44151320c075ae9102f23f0aa642634ac6",
+      "src/morph32/scalar.py": "4946711bd408d57532e2d1a0f55e57e950ab391a8e2bd4770af3fe995f929857",
+      "src/morph32/server.py": "2b427fe1552c4da8590520b99f6030212ac6a6c9597e64f88395ff7f279ae739",
+      "src/morph32/sources.py": "60cc9ea84a260e943fdc25eb755510ee4f8324a6fda282f8f4898c83fe74fa8f",
+      "src/morph32/statistics.py": "ef8bfe3ff4b11e9d6076f51a4384ddbe559f4a24bb01a841cc45edb8afb02c8b",
+      "src/morph32/tasks.py": "cec77d920524a13f535b9a3b19da57481c41fa19bfb363b86519d1a83d3cb8a5",
+      "src/morph32/workloads.py": "4821d09dd08c39730e8cf4fee06de449cc5c99afe6c776429c9688b42bda7006",
+      "src/morph32/metal/metadata_packet.metal": "4b26c7720d9d98141db57d5974c14e680a9e5189f52e6d82168f779d6258406a"
+    },
+    "git_commit": "2b20e817b0e806e0a7038d5a7da6fb7ca320be38",
+    "platform": "macOS-26.6.2-arm64-arm-64bit",
+    "packages": {
+      "mlx": "0.32.2",
+      "mlx-lm": "0.31.3",
+      "numpy": "2.5.3"
+    },
+    "device": {
+      "device_name": "Apple M5 Pro",
+      "max_recommended_working_set_size": 40200896512,
+      "memory_size": 51539607552,
+      "architecture": "applegpu_g17s",
+      "max_buffer_length": 30150672384,
+      "resource_limit": 499000
+    },
+    "power": {
+      "power": "Now drawing from 'AC Power'\n -InternalBattery-0 (id=7471203)\t100%; charged; 0:00 remaining present: true",
+      "thermal": "Note: No thermal warning level has been recorded\nNote: No performance warning level has been recorded\nNote: No CPU power status has been recorded"
+    },
+    "seed": 0,
+    "decode_variant": "original",
+    "prefill_variant": "original",
+    "decode_values": 32,
+    "fuse_gate_up": "0",
+    "metadata_variant": "packet",
+    "prefill_block_m": 128
+  }
+}

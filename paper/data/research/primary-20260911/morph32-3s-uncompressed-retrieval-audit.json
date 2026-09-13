@@ -1,0 +1,18 @@
+{
+  "status": "complete",
+  "report_sha256": "2a5e078ad119ff1df8557dc79487d5e16db391b266dcafe3a58e0085e8c050e4",
+  "checks": [
+    "50/50 exact-string successes",
+    "all tokens, text, prompts, positions and scores identical to standard MORPH32-3s"
+  ],
+  "accuracy_summary": {
+    "correct": 10,
+    "count": 10,
+    "accuracy": 1.0,
+    "ci95": [
+      0.7224672001371107,
+      0.9999999999999999
+    ],
+    "interval_method": "Wilson; fixed benchmark task sampling only"
+  }
+}

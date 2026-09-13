@@ -1,0 +1,22 @@
+{
+  "status": "complete",
+  "report_sha256": "5e2ba4af4da6041acba68d52a808736d123cf1a2c06a9deee2efc59c44d31e36",
+  "checks": [
+    "50 unique trial-position pairs",
+    "10 trials and 5 positions each",
+    "exact-string scoring",
+    "trial-level success and Wilson intervals"
+  ],
+  "correct_prompts": 50,
+  "prompts": 50,
+  "accuracy_summary": {
+    "correct": 10,
+    "count": 10,
+    "accuracy": 1.0,
+    "ci95": [
+      0.7224672001371107,
+      0.9999999999999999
+    ],
+    "interval_method": "Wilson; fixed benchmark task sampling only"
+  }
+}

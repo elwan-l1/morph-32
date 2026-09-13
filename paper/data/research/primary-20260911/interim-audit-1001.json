@@ -1,0 +1,15 @@
+{
+  "status": "complete",
+  "scope": "Completed native and 3s text records only; full suite remains running",
+  "text_records": {
+    "native": {
+      "source_sha256": "af128175203bc7e5aeb9b29db12d31c40aa330852d0ffca58408fe92b0c00fdd",
+      "perplexity": 4.756295289559941
+    },
+    "morph32-3s": {
+      "source_sha256": "88358866f78bf31719e9e7d976d679594de1b3b770c46441c249c250f4e02c74",
+      "perplexity": 4.920256138486851
+    }
+  },
+  "metadata_ablation_identical_mlp_payloads": 384
+}

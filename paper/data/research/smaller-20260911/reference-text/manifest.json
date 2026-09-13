@@ -1,0 +1,220 @@
+{
+  "status": "complete",
+  "corpus": {
+    "domain": "text",
+    "sha256": "d790b833ef8cf03a90db7bf1271b7520b83c45ce07ba3c1a9699df81e239eca0",
+    "token_sha256": "b5f94ca16bd38d6672a9e104c2aa0ee0a781444c7955e33ae25461da9202e07f",
+    "offset": 8192,
+    "tokens": 4096,
+    "chunk_size": 128
+  },
+  "tokenizer_sha256": "3ec3c124e02b7ace235364350c04b8fc38d34b182aad914fc45430fa925c0f3f",
+  "quality": {
+    "nll": 2.675503697246313,
+    "perplexity": 14.51966151152257,
+    "scored_tokens": 4096,
+    "seconds": 2.0450012920045992
+  },
+  "chunks": [
+    {
+      "file": "00000000.npy",
+      "sha256": "0c19b966d7590dbd0ba7e4d590875f2820a439d3bf33292dae57ef5b2e0e733f"
+    },
+    {
+      "file": "00000128.npy",
+      "sha256": "9fda32caf766cbc727d63e25380bdd271ced9a35314345bafce379ed28b40110"
+    },
+    {
+      "file": "00000256.npy",
+      "sha256": "4aca800fed715fea209d29b23eabd2a1751836c97600d12d83f6e69f1602d59b"
+    },
+    {
+      "file": "00000384.npy",
+      "sha256": "e33eacbb8f78b5ce02a2a8554dc9c03717b504748e0f3f87a9bf876da24d0cbc"
+    },
+    {
+      "file": "00000512.npy",
+      "sha256": "b78a080d1d816f03342ef25af197e4cc1c9d95a59f1d36c9e1f0f83869b0dfbc"
+    },
+    {
+      "file": "00000640.npy",
+      "sha256": "9a25358090c94c7ecab75ab37d73c9cf89769c20f12d0f0252172eef3aac8577"
+    },
+    {
+      "file": "00000768.npy",
+      "sha256": "19e58a8d985f1d0d2bc6da7c9d311cdfae2ccd5e446f9b6a644b7f2d2a314ff9"
+    },
+    {
+      "file": "00000896.npy",
+      "sha256": "b7ac87819f18dcfcf2c12993a7e3fcc43d999a1bb7f247fea0e29a2203e447a5"
+    },
+    {
+      "file": "00001024.npy",
+      "sha256": "53fd7bf90daf35c23016c2feb3681094d03bb25c99994a27c33533fbe6858aea"
+    },
+    {
+      "file": "00001152.npy",
+      "sha256": "6f118c68fd2d9d5986a1cc7c1f3b2d18b062c9c055fc53ae2da5866659172293"
+    },
+    {
+      "file": "00001280.npy",
+      "sha256": "f940bec3238b5c8a2d3cfd8c9fd8cc80d2d56e26b5ef6320627cb2e64e311102"
+    },
+    {
+      "file": "00001408.npy",
+      "sha256": "44270f8d5bd939402fdeca21d5305fd01a6a899a43ac983aa69cd8c34b867846"
+    },
+    {
+      "file": "00001536.npy",
+      "sha256": "ccc7e68f4d326623712f07f9f1295593754a791ca4fe44f3c2c3ad60b4383fe1"
+    },
+    {
+      "file": "00001664.npy",
+      "sha256": "f867b6b6eced0cf5c25c2d4381b5fdd50a726fc2a154608abd339134b870ec60"
+    },
+    {
+      "file": "00001792.npy",
+      "sha256": "12066ddf87d92488c9017bc6ddcd85da1fbd0aa6b5ef717c7948aec333afdc11"
+    },
+    {
+      "file": "00001920.npy",
+      "sha256": "235a89a4ba4ab2eea5d0c375537347b5201c5d465fe19961ea7f83d1d0315b81"
+    },
+    {
+      "file": "00002048.npy",
+      "sha256": "2cea3bce6baea5556ac248657ddc356809510fb0bdf0902b1d9a3ee35c04494d"
+    },
+    {
+      "file": "00002176.npy",
+      "sha256": "14db3a9506c06de7738519713a518ff2581343a07de4ae9c253c829d1e2f4b7c"
+    },
+    {
+      "file": "00002304.npy",
+      "sha256": "578cf0577f6fb221a086891fdfeb471d48ab029aca5a6a68aac830a7afb1617a"
+    },
+    {
+      "file": "00002432.npy",
+      "sha256": "ffbeddbe4ce091ece7f802356f3f1882b3164f5c19325f2603e9b7a5a499eef1"
+    },
+    {
+      "file": "00002560.npy",
+      "sha256": "16271c0e53355f4f4174ee8403c05640bc2d64f9a9e0d5e5938969cd4812ed55"
+    },
+    {
+      "file": "00002688.npy",
+      "sha256": "e7d135e67823b1bdceb7a8eaa9f1af4e2c309039c04d46146114f1f8db27af6e"
+    },
+    {
+      "file": "00002816.npy",
+      "sha256": "c8de033aa3094523b4e5d7eede98b6c70fb524196e86bc19167ef0431d538882"
+    },
+    {
+      "file": "00002944.npy",
+      "sha256": "b9dfb803f7f8446a4f2e39e80c53ab5e5dfec0a38c8c22f08c150fb93e547e20"
+    },
+    {
+      "file": "00003072.npy",
+      "sha256": "5585c45181c770ab02caf7faf338e78e4fe49717855f26bbdc09b3e7f3381611"
+    },
+    {
+      "file": "00003200.npy",
+      "sha256": "334b047eba11eb63e8ad333c3b0ab77977874655fa3e64c47690d2eeb2811025"
+    },
+    {
+      "file": "00003328.npy",
+      "sha256": "543079951998280fcbdabd67efaefece5aae8dbc846a8b2cb3fa57f8c40ff221"
+    },
+    {
+      "file": "00003456.npy",
+      "sha256": "0a4d1806296abd94bdc3b02a7cdf90d590e2047c2be5c7a944c7b268948c3054"
+    },
+    {
+      "file": "00003584.npy",
+      "sha256": "9fe7cfc45cb5d864903cc0ca035706b48bc88367014ee8da75212b27ce47f069"
+    },
+    {
+      "file": "00003712.npy",
+      "sha256": "369dd417adac807a40e168d0dd3610764d89e62a860a56d372a50038ed5630f3"
+    },
+    {
+      "file": "00003840.npy",
+      "sha256": "d8a10e9ed137ac87436ef95590518110027f914379922e275c3ab2cb9102a34b"
+    },
+    {
+      "file": "00003968.npy",
+      "sha256": "486b268678b54b13555363c935e664367ea68c1272d7c7882d7c8f39e5a5aab4"
+    }
+  ],
+  "provenance": {
+    "model": "/Users/elwan.mayencou/Documents/GitHub/morph-32/models/research-Qwen3-0.6B-4bit",
+    "model_sha256": {
+      "model.safetensors": "392e8d466d56100ada00eb82031fb854297fc9e389b7d303eba3af114e87bce2",
+      "added_tokens.json": "c0284b582e14987fbd3d5a2cb2bd139084371ed9acbae488829a1c900833c680",
+      "config.json": "15d3ac26c043ae477273ed5802ee0f0b33bb14f18c9d3dd70910c02d906e3f1f",
+      "model.safetensors.index.json": "7b294141456f6904936db03c00bca50fb5f6198f652fe8483f9cd2a1018accfb",
+      "special_tokens_map.json": "76862e765266b85aa9459767e33cbaf13970f327a0e88d1c65846c2ddd3a1ecd",
+      "tokenizer.json": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4",
+      "tokenizer_config.json": "253153d0738ceb4c668d2eff957714dd2bea0b56de772a9fdccd96cbf517e6a0",
+      "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+    },
+    "source_sha256": {
+      "src/morph32/__init__.py": "726bcfaa1c2fa5d955ff7418ef7404e7e7494664881afdc5bd72fc9d146c4017",
+      "src/morph32/__main__.py": "6d8b7d7846a845059d7a3107143f11131f63c5511d669b44085b15ec5e3d2279",
+      "src/morph32/calibration.py": "66430a5b636c4e4ec532b442b9b3c9d2ab447b4913775cd6be784def76a294d2",
+      "src/morph32/capabilities.py": "3710fd0b58a6834ed911353f4981d5481a5682bb65c704f2219ccfd322c0b532",
+      "src/morph32/cli.py": "0b823ab84a548721afcf3abb77035def06f9056fe6af01a9d16e8f54dc04a1d3",
+      "src/morph32/codec.py": "ff513d861fb74dae67d5ffb382d5e288e4760ff7c20baa012f3c9f3275f1f8db",
+      "src/morph32/conversion.py": "9df0dcafa30f5ea4f44024e7bfe4c5a767eb79a62d5344e322e9a70678fc24b0",
+      "src/morph32/evaluation.py": "05ee9669ffb636e202374843d15188e02501011dc72ed7f68d6cac85f30934d9",
+      "src/morph32/fused.py": "b50d98aab4c503db0abebf609e1e99e3a348634ea5d8ba5ea6323da4eb46a0b7",
+      "src/morph32/generation.py": "ce5f0745b70143a5d7140c5d34b51c36eab7464a20d353ff3eadc04b56d64058",
+      "src/morph32/grading.py": "784234e0abb521d1ff876e4c71748b1c97cbdb70a2051be5d152a6bbfe66b674",
+      "src/morph32/inventory.py": "08673ceccad819f1dd6c913707bb8079f4c1ee3eb128daffee84ba088b5dbda9",
+      "src/morph32/metadata.py": "1da904b6dbb5e3a406db4bc64fc41a2598db3e00bcebaf1e13b78b0d83aa626a",
+      "src/morph32/metadata_kernels.py": "581e776959ad5ca31c9b6936a122250826c3399c4d02d2d0fab59684424b0bd8",
+      "src/morph32/metadata_packet.py": "21f759e0a1cd08e5b289a23d2d87c7b899799b1ef028c5fc37aa47dc576251ea",
+      "src/morph32/metrics.py": "12f3d7dcfe31271c7be45a33ea739984e69c6b5486bba8174dfd09885046a8c7",
+      "src/morph32/mmlu.py": "e551f8e35a42270e20ff20008e3592c73e73207c8ab93fd1f4a81b089b7355fa",
+      "src/morph32/optimization.py": "96aeb9c14b4a6ccc905d3f087247fd31ed4a62bafc52ff37041c5f70d40401f1",
+      "src/morph32/packing.py": "099a7f16488b6a5d64152d25bdf1debd30cbde55bce9b771e2edd9f1ef5c61af",
+      "src/morph32/paths.py": "daebc954496d65e5c2b1cceafcb1cb12ff27817fccc683dd30be09c28d8138a3",
+      "src/morph32/prefill.py": "ff8cdedbe7600d54ddfc743bd38b2646b6e9c8a62d98e28f7a0e8c71e9d1b62f",
+      "src/morph32/profiles.py": "07eeebd75cd54cf9041e08560a35619859f450ae29290a693b01d74cd498edcb",
+      "src/morph32/research.py": "89c8ded49b5f129571daef88bb83c5cce3499735ee06684cb831d1ba88482287",
+      "src/morph32/runtime.py": "210299d47d8b3523f9030824b1bd7c44151320c075ae9102f23f0aa642634ac6",
+      "src/morph32/scalar.py": "4946711bd408d57532e2d1a0f55e57e950ab391a8e2bd4770af3fe995f929857",
+      "src/morph32/server.py": "2b427fe1552c4da8590520b99f6030212ac6a6c9597e64f88395ff7f279ae739",
+      "src/morph32/sources.py": "60cc9ea84a260e943fdc25eb755510ee4f8324a6fda282f8f4898c83fe74fa8f",
+      "src/morph32/statistics.py": "ef8bfe3ff4b11e9d6076f51a4384ddbe559f4a24bb01a841cc45edb8afb02c8b",
+      "src/morph32/tasks.py": "cec77d920524a13f535b9a3b19da57481c41fa19bfb363b86519d1a83d3cb8a5",
+      "src/morph32/workloads.py": "4821d09dd08c39730e8cf4fee06de449cc5c99afe6c776429c9688b42bda7006",
+      "src/morph32/metal/metadata_packet.metal": "4b26c7720d9d98141db57d5974c14e680a9e5189f52e6d82168f779d6258406a"
+    },
+    "git_commit": "2b20e817b0e806e0a7038d5a7da6fb7ca320be38",
+    "platform": "macOS-26.6.2-arm64-arm-64bit",
+    "packages": {
+      "mlx": "0.32.2",
+      "mlx-lm": "0.31.3",
+      "numpy": "2.5.3"
+    },
+    "device": {
+      "device_name": "Apple M5 Pro",
+      "max_recommended_working_set_size": 40200896512,
+      "memory_size": 51539607552,
+      "architecture": "applegpu_g17s",
+      "max_buffer_length": 30150672384,
+      "resource_limit": 499000
+    },
+    "power": {
+      "power": "Now drawing from 'AC Power'\n -InternalBattery-0 (id=7471203)\t100%; charged; 0:00 remaining present: true",
+      "thermal": "Note: No thermal warning level has been recorded\nNote: No performance warning level has been recorded\nNote: No CPU power status has been recorded"
+    },
+    "seed": 0,
+    "decode_variant": "original",
+    "prefill_variant": "original",
+    "decode_values": 32,
+    "fuse_gate_up": "0",
+    "metadata_variant": "packet",
+    "prefill_block_m": 128
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "status": "complete",
+  "checks": [
+    "frozen tokenizer and inference source hashes",
+    "4096 scored tokens per domain",
+    "NLL/perplexity arithmetic, float32 NLL tolerance 1e-6",
+    "10-run timing medians"
+  ],
+  "reports": {
+    "text": {
+      "sha256": "b977841e83682423661a08ba7072650b884b8906fb24c6ed79feb7827333bfd2",
+      "quality": {
+        "nll": 1.6519100833684206,
+        "perplexity": 5.216935097418753,
+        "scored_tokens": 4096,
+        "seconds": 12.487496666013612,
+        "delta_nll_nats_per_token": 0.09244101867079735,
+        "mean_kl_reference_to_candidate": 0.1836072490525279,
+        "reference_token_agreement": 0.82958984375,
+        "reference_manifest_sha256": "228f212e15be54a2d6dea6b01f0e2747b6004b6c2eb2170754179417e7c56d25"
+      },
+      "timing": {
+        "prompt_tps": {
+          "count": 10,
+          "median": 492.0873793612036,
+          "q1": 489.5975389963564,
+          "q3": 492.93926849401805,
+          "minimum": 486.11221064599954,
+          "maximum": 494.2291690641978
+        },
+        "generation_tps": {
+          "count": 10,
+          "median": 22.2586717686299,
+          "q1": 22.2328777143992,
+          "q3": 22.28630542004193,
+          "minimum": 21.63715291613747,
+          "maximum": 22.34404218857173
+        }
+      }
+    },
+    "code": {
+      "sha256": "dd7575523485b63f696d2fe67b6060d9a10606a55cdcf3b54b5a6769b92eac7c",
+      "quality": {
+        "nll": 1.1107889153063297,
+        "perplexity": 3.036753190739458,
+        "scored_tokens": 4096,
+        "seconds": 12.442055916995741,
+        "delta_nll_nats_per_token": 0.06781599763780832,
+        "mean_kl_reference_to_candidate": 0.12326634655166269,
+        "reference_token_agreement": 0.88330078125,
+        "reference_manifest_sha256": "238b21169e3f42e6eb67fdcfcac34f933bcb616e00e950c1eef30291785cd19d"
+      },
+      "timing": null
+    }
+  }
+}

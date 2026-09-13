@@ -1,0 +1,14 @@
+Downloading pyarrow (34.2MiB)
+ Downloaded pyarrow
+Installed 1 package in 5ms
+Still waiting to acquire lock on /Users/elwan.mayencou/Documents/GitHub/morph-32/models/research-Qwen3-0.6B-BF16/.cache/huggingface/.gitignore.lock (elapsed: 0.2 seconds)
+Still waiting to acquire lock on /Users/elwan.mayencou/Documents/GitHub/morph-32/models/research-Qwen3-0.6B-BF16/.cache/huggingface/.gitignore.lock (elapsed: 0.2 seconds)
+Still waiting to acquire lock on /Users/elwan.mayencou/Documents/GitHub/morph-32/models/research-Qwen3-0.6B-BF16/.cache/huggingface/.gitignore.lock (elapsed: 0.2 seconds)
+Still waiting to acquire lock on /Users/elwan.mayencou/Documents/GitHub/morph-32/models/research-Qwen3-0.6B-BF16/.cache/huggingface/.gitignore.lock (elapsed: 0.2 seconds)
+Still waiting to acquire lock on /Users/elwan.mayencou/Documents/GitHub/morph-32/models/research-Qwen3-0.6B-BF16/.cache/huggingface/.gitignore.lock (elapsed: 0.2 seconds)
+Still waiting to acquire lock on /Users/elwan.mayencou/Documents/GitHub/morph-32/models/research-Qwen3-0.6B-BF16/.cache/huggingface/.gitignore.lock (elapsed: 0.2 seconds)
+path=/Users/elwan.mayencou/Documents/GitHub/morph-32/models/research-Qwen3-0.6B-BF16
+path=/Users/elwan.mayencou/Documents/GitHub/morph-32/models/research-Qwen3-0.6B-4bit
+path=/Users/elwan.mayencou/Documents/GitHub/morph-32/data/research-20260911/mmlu-hub
+path=/Users/elwan.mayencou/Documents/GitHub/morph-32/data/research-20260911/code-hub
+INPUTS COMPLETE

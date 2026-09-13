@@ -1,0 +1,14 @@
+{
+  "utc": "2026-09-11T17:22:19.171701+00:00",
+  "authorization": "User explicitly requested stopping custom affine and replacing it with the published 3-bit MLX checkpoint.",
+  "repo": "lukaskremla/Qwen3.8-27B-3bit-MLX",
+  "revision": "b3503b31b36125107e12a2b57fbe690c37bfc053",
+  "retained_scope": "Multimodal checkpoint chosen because original native and MORPH files retain vision tensors; evaluations remain text-only.",
+  "comparison": "Practical published baseline; different tensor quantization scope, no exact equal-storage claim.",
+  "execution": "Continue only unexecuted steps; preserve all completed results and canceled partial affine evidence.",
+  "superseded_results": [
+    "affine-3bit-text.json",
+    "affine-3bit-code.json"
+  ],
+  "remaining_order": "Uncompressed metadata control and kernel tests first while published checkpoint downloads; published five-test suite follows."
+}

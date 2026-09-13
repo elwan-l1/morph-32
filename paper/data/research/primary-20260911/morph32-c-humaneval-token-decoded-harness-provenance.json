@@ -1,0 +1,43 @@
+{
+  "command": [
+    "docker",
+    "run",
+    "--rm",
+    "--network",
+    "none",
+    "--read-only",
+    "--cap-drop",
+    "ALL",
+    "--security-opt",
+    "no-new-privileges",
+    "--cpus",
+    "2",
+    "--memory",
+    "2g",
+    "--pids-limit",
+    "256",
+    "--user",
+    "65534:65534",
+    "--tmpfs",
+    "/work:rw,noexec,size=256m,mode=1777",
+    "--tmpfs",
+    "/tmp:rw,noexec,size=256m,mode=1777",
+    "-v",
+    "/Users/elwan.mayencou/Documents/GitHub/morph-32/data/research-20260911/human-eval:/harness:ro",
+    "-v",
+    "/Users/elwan.mayencou/Documents/GitHub/morph-32/paper/data/research/primary-20260911/morph32-c-humaneval-token-decoded.samples.jsonl:/input/samples.jsonl:ro",
+    "-v",
+    "/Users/elwan.mayencou/Documents/GitHub/morph-32/paper/data/research/current-20260911/harness/grade.py:/runner/grade.py:ro",
+    "sha256:e1ee7b018047ad15fccf979be1a820d446cad6d6d4bb84ef24ce670216b81583",
+    "python",
+    "/runner/grade.py"
+  ],
+  "image_id": "sha256:e1ee7b018047ad15fccf979be1a820d446cad6d6d4bb84ef24ce670216b81583",
+  "revision": "6d43fb980f9fee3c892a914eda09951f772ad10d",
+  "results_sha256": "6f7e3e86f7a889c206ea466a4f55d515f4a66f000285d6eb1425183d4993a4d2",
+  "metrics": {
+    "pass@1": 0.7012195121951219
+  },
+  "network": "none",
+  "read_only": true
+}

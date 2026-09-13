@@ -1,0 +1,42 @@
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 255B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for ghcr.io/astral-sh/uv@sha256:4f5d923c9dcea037f57bda425dd209f3ec643da2f0b74227f68d09dab0b3bb36
+#2 DONE 0.6s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [1/3] FROM ghcr.io/astral-sh/uv@sha256:4f5d923c9dcea037f57bda425dd209f3ec643da2f0b74227f68d09dab0b3bb36
+#4 resolve ghcr.io/astral-sh/uv@sha256:4f5d923c9dcea037f57bda425dd209f3ec643da2f0b74227f68d09dab0b3bb36 0.0s done
+#4 DONE 0.0s
+
+#5 [2/3] RUN uv pip install --system numpy==2.2.6 tqdm==4.67.1
+#5 0.210 Using Python 3.11.14 environment at: /usr/local
+#5 0.339 Resolved 2 packages in 126ms
+#5 0.360 Downloading numpy (13.6MiB)
+#5 0.679  Downloaded numpy
+#5 0.679 Prepared 2 packages in 339ms
+#5 0.718 Installed 2 packages in 39ms
+#5 0.718  + numpy==2.2.6
+#5 0.718  + tqdm==4.67.1
+#5 DONE 0.8s
+
+#6 [3/3] WORKDIR /work
+#6 DONE 0.0s
+
+#7 exporting to image
+#7 exporting layers
+#7 exporting layers 0.8s done
+#7 exporting manifest sha256:139b3bfde94cd8550f44ce1eaa0f24d96274c8b1ba162376a0d82c10fa237865 done
+#7 exporting config sha256:9e4202ce4bb65b6c2ec7a4d25d5814f853dbf8962fafd247d506ba772c8fd5fb done
+#7 exporting attestation manifest sha256:fb1e65b94faa4570eeae2f61aa92eb160657774317b8a5e959343f821962a46c done
+#7 exporting manifest list sha256:e1ee7b018047ad15fccf979be1a820d446cad6d6d4bb84ef24ce670216b81583 done
+#7 naming to docker.io/library/morph-humaneval:20260911 done
+#7 unpacking to docker.io/library/morph-humaneval:20260911
+#7 unpacking to docker.io/library/morph-humaneval:20260911 0.2s done
+#7 DONE 1.1s

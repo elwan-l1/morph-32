@@ -1,0 +1,25 @@
+{
+  "status": "complete",
+  "checks": [
+    "164 token histories unchanged by decoding",
+    "all exports differ by exactly one initial space",
+    "native prompt/token hashes and settings match",
+    "all generated tokens and text exactly match metadata-compressed MORPH32-3s"
+  ],
+  "accuracy_summary": {
+    "correct": 115,
+    "count": 164,
+    "accuracy": 0.7012195121951219,
+    "ci95": [
+      0.6272140413534487,
+      0.766014190000928
+    ],
+    "interval_method": "Wilson; fixed benchmark task sampling only"
+  },
+  "files": {
+    "morph32-3s-uncompressed-humaneval.json": "451f4d19273e0c24ae9fd6b5a3dbc9e974760496060a71660277330dcf8027de",
+    "morph32-3s-uncompressed-humaneval-token-decoded.json": "d015689a7d1a0717fd0d381631d3e9aedc2ffef9420a083331b03f2fb6f0cd3b",
+    "morph32-3s-uncompressed-humaneval-token-decoded-scored.json": "690e17c7df6715f21063e3b13dbfd331e48c4e0a81ef844404e45856aa72c760",
+    "morph32-3s-humaneval.json": "bf74441a98026e4b7bcfddec7a6586ee6a8c77f339b90d3877318074ff142fbe"
+  }
+}

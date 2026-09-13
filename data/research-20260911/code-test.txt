@@ -1,0 +1,2280 @@
+def get_vid_from_url(url):
+        """Extracts video ID from URL.
+        """
+        return match1(url, r'youtu\.be/([^?/]+)') or \
+          match1(url, r'youtube\.com/embed/([^/?]+)') or \
+          match1(url, r'youtube\.com/v/([^/?]+)') or \
+          match1(url, r'youtube\.com/watch/([^/?]+)') or \
+          parse_query_param(url, 'v') or \
+          parse_query_param(parse_query_param(url, 'u'), 'v')
+
+def sina_xml_to_url_list(xml_data):
+    """str->list
+    Convert XML to URL List.
+    From Biligrab.
+    """
+    rawurl = []
+    dom = parseString(xml_data)
+    for node in dom.getElementsByTagName('durl'):
+        url = node.getElementsByTagName('url')[0]
+        rawurl.append(url.childNodes[0].data)
+    return rawurl
+
+def makeMimi(upid):
+    """From http://cdn37.atwikiimg.com/sitescript/pub/dksitescript/FC2.site.js
+    Also com.hps.util.fc2.FC2EncrptUtil.makeMimiLocal
+    L110"""
+    strSeed = "gGddgPfeaf_gzyr"
+    prehash = upid + "_" + strSeed
+    return md5(prehash.encode('utf-8')).hexdigest()
+
+def fc2video_download(url, output_dir = '.', merge = True, info_only = False, **kwargs):
+    """wrapper"""
+    #'http://video.fc2.com/en/content/20151021bTVKnbEw'
+    #'http://xiaojiadianvideo.asia/content/20151021bTVKnbEw'
+    #'http://video.fc2.com/ja/content/20151021bTVKnbEw'
+    #'http://video.fc2.com/tw/content/20151021bTVKnbEw'
+    hostname = urlparse(url).hostname
+    if not ('fc2.com' in hostname or 'xiaojiadianvideo.asia' in hostname):
+        return False
+    upid = match1(url, r'.+/content/(\w+)')
+
+    fc2video_download_by_upid(upid, output_dir, merge, info_only)
+
+def dailymotion_download(url, output_dir='.', merge=True, info_only=False, **kwargs):
+    """Downloads Dailymotion videos by URL.
+    """
+
+    html = get_content(rebuilt_url(url))
+    info = json.loads(match1(html, r'qualities":({.+?}),"'))
+    title = match1(html, r'"video_title"\s*:\s*"([^"]+)"') or \
+            match1(html, r'"title"\s*:\s*"([^"]+)"')
+    title = unicodize(title)
+
+    for quality in ['1080','720','480','380','240','144','auto']:
+        try:
+            real_url = info[quality][1]["url"]
+            if real_url:
+                break
+        except KeyError:
+            pass
+
+    mime, ext, size = url_info(real_url)
+
+    print_info(site_info, title, mime, size)
+    if not info_only:
+        download_urls([real_url], title, ext, size, output_dir=output_dir, merge=merge)
+
+def dictify(r,root=True):
+    """http://stackoverflow.com/a/30923963/2946714"""
+    if root:
+        return {r.tag : dictify(r, False)}
+    d=copy(r.attrib)
+    if r.text:
+        d["_text"]=r.text
+    for x in r.findall("./*"):
+        if x.tag not in d:
+            d[x.tag]=[]
+        d[x.tag].append(dictify(x,False))
+    return d
+
+def ucas_download_single(url, output_dir = '.', merge = False, info_only = False, **kwargs):
+    '''video page'''
+    html = get_content(url)
+    # resourceID is UUID
+    resourceID = re.findall( r'resourceID":"([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})', html)[0]
+    assert resourceID != '', 'Cannot find resourceID!'
+
+    title = match1(html, r'<div class="bc-h">(.+)</div>')
+    url_lists = _ucas_get_url_lists_by_resourceID(resourceID)
+    assert url_lists, 'Cannot find any URL of such class!'
+    
+    for k, part in enumerate(url_lists):
+        part_title = title + '_' + str(k)
+        print_info(site_info, part_title, 'flv', 0)
+        if not info_only:
+            download_urls(part, part_title, 'flv', total_size=None, output_dir=output_dir, merge=merge)
+
+def ucas_download_playlist(url, output_dir = '.', merge = False, info_only = False, **kwargs):
+    '''course page'''
+    html = get_content(url)
+
+    parts = re.findall( r'(getplaytitle.do\?.+)"', html)
+    assert parts, 'No part found!'
+
+    for part_path in parts:
+        ucas_download('http://v.ucas.ac.cn/course/' + part_path, output_dir=output_dir, merge=merge, info_only=info_only)
+
+def sina_download_by_vid(vid, title=None, output_dir='.', merge=True, info_only=False):
+    """Downloads a Sina video by its unique vid.
+    http://video.sina.com.cn/
+    """
+    xml = api_req(vid)
+    urls, name, size = video_info(xml)
+    if urls is None:
+        log.wtf(name)
+    title = name
+    print_info(site_info, title, 'flv', size)
+    if not info_only:
+        download_urls(urls, title, 'flv', size, output_dir = output_dir, merge = merge)
+
+def sina_download_by_vkey(vkey, title=None, output_dir='.', merge=True, info_only=False):
+    """Downloads a Sina video by its unique vkey.
+    http://video.sina.com/
+    """
+
+    url = 'http://video.sina.com/v/flvideo/%s_0.flv' % vkey
+    type, ext, size = url_info(url)
+
+    print_info(site_info, title, 'flv', size)
+    if not info_only:
+        download_urls([url], title, 'flv', size, output_dir = output_dir, merge = merge)
+
+def sina_download(url, output_dir='.', merge=True, info_only=False, **kwargs):
+    """Downloads Sina videos by URL.
+    """
+    if 'news.sina.com.cn/zxt' in url:
+        sina_zxt(url, output_dir=output_dir, merge=merge, info_only=info_only, **kwargs)
+        return
+
+    vid = match1(url, r'vid=(\d+)')
+    if vid is None:
+        video_page = get_content(url)
+        vid = hd_vid = match1(video_page, r'hd_vid\s*:\s*\'([^\']+)\'')
+        if hd_vid == '0':
+            vids = match1(video_page, r'[^\w]vid\s*:\s*\'([^\']+)\'').split('|')
+            vid = vids[-1]
+
+    if vid is None:
+        vid = match1(video_page, r'vid:"?(\d+)"?')
+    if vid:
+        #title = match1(video_page, r'title\s*:\s*\'([^\']+)\'')
+        sina_download_by_vid(vid, output_dir=output_dir, merge=merge, info_only=info_only)
+    else:
+        vkey = match1(video_page, r'vkey\s*:\s*"([^"]+)"')
+        if vkey is None:
+            vid = match1(url, r'#(\d+)')
+            sina_download_by_vid(vid, output_dir=output_dir, merge=merge, info_only=info_only)
+            return
+        title = match1(video_page, r'title\s*:\s*"([^"]+)"')
+        sina_download_by_vkey(vkey, title=title, output_dir=output_dir, merge=merge, info_only=info_only)
+
+def yixia_download(url, output_dir = '.', merge = True, info_only = False, **kwargs):
+    """wrapper"""
+    hostname = urlparse(url).hostname
+    if 'n.miaopai.com' == hostname: 
+        smid = match1(url, r'n\.miaopai\.com/media/([^.]+)') 
+        miaopai_download_by_smid(smid, output_dir, merge, info_only)
+        return
+    elif 'miaopai.com' in hostname:  #Miaopai
+        yixia_download_by_scid = yixia_miaopai_download_by_scid
+        site_info = "Yixia Miaopai"
+
+        scid = match1(url, r'miaopai\.com/show/channel/([^.]+)\.htm') or \
+               match1(url, r'miaopai\.com/show/([^.]+)\.htm') or \
+               match1(url, r'm\.miaopai\.com/show/channel/([^.]+)\.htm') or \
+               match1(url, r'm\.miaopai\.com/show/channel/([^.]+)')
+
+    elif 'xiaokaxiu.com' in hostname:  #Xiaokaxiu
+        yixia_download_by_scid = yixia_xiaokaxiu_download_by_scid
+        site_info = "Yixia Xiaokaxiu"
+
+        if re.match(r'http://v.xiaokaxiu.com/v/.+\.html', url):  #PC
+            scid = match1(url, r'http://v.xiaokaxiu.com/v/(.+)\.html')
+        elif re.match(r'http://m.xiaokaxiu.com/m/.+\.html', url):  #Mobile
+            scid = match1(url, r'http://m.xiaokaxiu.com/m/(.+)\.html')
+
+    else:
+        pass
+
+    yixia_download_by_scid(scid, output_dir, merge, info_only)
+
+def veoh_download(url, output_dir = '.', merge = False, info_only = False, **kwargs):
+    '''Get item_id'''
+    if re.match(r'http://www.veoh.com/watch/\w+', url):
+        item_id = match1(url, r'http://www.veoh.com/watch/(\w+)')
+    elif re.match(r'http://www.veoh.com/m/watch.php\?v=\.*', url):
+        item_id = match1(url, r'http://www.veoh.com/m/watch.php\?v=(\w+)')
+    else:
+        raise NotImplementedError('Cannot find item ID')
+    veoh_download_by_id(item_id, output_dir = '.', merge = False, info_only = info_only, **kwargs)
+
+def veoh_download_by_id(item_id, output_dir = '.', merge = False, info_only = False, **kwargs):
+    """Source: Android mobile"""
+    webpage_url = 'http://www.veoh.com/m/watch.php?v={item_id}&quality=1'.format(item_id = item_id)
+
+    #grab download URL
+    a = get_content(webpage_url, decoded=True)
+    url = match1(a, r'<source src="(.*?)\"\W')
+
+    #grab title
+    title = match1(a, r'<meta property="og:title" content="([^"]*)"')
+
+    type_, ext, size = url_info(url)
+    print_info(site_info, title, type_, size)
+    if not info_only:
+        download_urls([url], title, ext, total_size=None, output_dir=output_dir, merge=merge)
+
+def download_by_id(self, vid = '', title = None, output_dir='.', merge=True, info_only=False,**kwargs):
+        """self, str->None
+        
+        Keyword arguments:
+        self: self
+        vid: The video ID for BokeCC cloud, something like
+        FE3BB999594978049C33DC5901307461
+        
+        Calls the prepare() to download the video.
+        
+        If no title is provided, this method shall try to find a proper title
+        with the information providin within the
+        returned content of the API."""
+
+        assert vid
+
+        self.prepare(vid = vid, title = title, **kwargs)
+
+        self.extract(**kwargs)
+
+        self.download(output_dir = output_dir, 
+                    merge = merge, 
+                    info_only = info_only, **kwargs)
+
+def get_vid_from_url(self, url):
+        """Extracts video ID from live.qq.com.
+        """
+        hit = re.search(r'live.qq.com/(\d+)', url)
+        if hit is not None:
+            return hit.group(1)
+        hit = re.search(r'live.qq.com/directory/match/(\d+)', url)
+        if hit is not None:
+            return self.get_room_id_from_url(hit.group(1))
+        html = get_content(url)
+        room_id = match1(html, r'room_id\":(\d+)')
+        if room_id is None:
+            log.wtf('Unknown page {}'.format(url))
+        return room_id
+
+def sprint(text, *colors):
+    """Format text with color or other effects into ANSI escaped string."""
+    return "\33[{}m{content}\33[{}m".format(";".join([str(color) for color in colors]), RESET, content=text) if IS_ANSI_TERMINAL and colors else text
+
+def print_log(text, *colors):
+    """Print a log message to standard error."""
+    sys.stderr.write(sprint("{}: {}".format(script_name, text), *colors) + "\n")
+
+def e(message, exit_code=None):
+    """Print an error log message."""
+    print_log(message, YELLOW, BOLD)
+    if exit_code is not None:
+        sys.exit(exit_code)
+
+def wtf(message, exit_code=1):
+    """What a Terrible Failure!"""
+    print_log(message, RED, BOLD)
+    if exit_code is not None:
+        sys.exit(exit_code)
+
+def detect_os():
+    """Detect operating system.
+    """
+
+    # Inspired by:
+    # https://github.com/scivision/pybashutils/blob/78b7f2b339cb03b1c37df94015098bbe462f8526/pybashutils/windows_linux_detect.py
+
+    syst = system().lower()
+    os = 'unknown'
+
+    if 'cygwin' in syst:
+        os = 'cygwin'
+    elif 'darwin' in syst:
+        os = 'mac'
+    elif 'linux' in syst:
+        os = 'linux'
+        # detect WSL https://github.com/Microsoft/BashOnWindows/issues/423
+        try:
+            with open('/proc/version', 'r') as f:
+                if 'microsoft' in f.read().lower():
+                    os = 'wsl'
+        except: pass
+    elif 'windows' in syst:
+        os = 'windows'
+    elif 'bsd' in syst:
+        os = 'bsd'
+
+    return os
+
+def miaopai_download_by_fid(fid, output_dir = '.', merge = False, info_only = False, **kwargs):
+    '''Source: Android mobile'''
+    page_url = 'http://video.weibo.com/show?fid=' + fid + '&type=mp4'
+
+    mobile_page = get_content(page_url, headers=fake_headers_mobile)
+    url = match1(mobile_page, r'<video id=.*?src=[\'"](.*?)[\'"]\W')
+    if url is None:
+        wb_mp = re.search(r'<script src=([\'"])(.+?wb_mp\.js)\1>', mobile_page).group(2)
+        return miaopai_download_by_wbmp(wb_mp, fid, output_dir=output_dir, merge=merge,
+                                        info_only=info_only, total_size=None, **kwargs)
+    title = match1(mobile_page, r'<title>((.|\n)+?)</title>')
+    if not title:
+        title = fid
+    title = title.replace('\n', '_')
+    ext, size = 'mp4', url_info(url)[2]
+    print_info(site_info, title, ext, size)
+    if not info_only:
+        download_urls([url], title, ext, total_size=None, output_dir=output_dir, merge=merge)
+
+def vimeo_download_by_channel(url, output_dir='.', merge=False, info_only=False, **kwargs):
+    """str->None"""
+    # https://vimeo.com/channels/464686
+    channel_id = match1(url, r'http://vimeo.com/channels/(\w+)')
+    vimeo_download_by_channel_id(channel_id, output_dir, merge, info_only, **kwargs)
+
+def vimeo_download_by_channel_id(channel_id, output_dir='.', merge=False, info_only=False, **kwargs):
+    """str/int->None"""
+    html = get_content('https://api.vimeo.com/channels/{channel_id}/videos?access_token={access_token}'.format(channel_id=channel_id, access_token=access_token))
+    data = loads(html)
+    id_list = []
+
+    #print(data)
+    for i in data['data']:
+        id_list.append(match1(i['uri'], r'/videos/(\w+)'))
+
+    for id in id_list:
+        try:
+            vimeo_download_by_id(id, None, output_dir, merge, info_only, **kwargs)
+        except urllib.error.URLError as e:
+            log.w('{} failed with {}'.format(id, e))
+
+def vimeo_download_by_id(id, title=None, output_dir='.', merge=True, info_only=False, **kwargs):
+    '''
+    try:
+        # normal Vimeo video
+        html = get_content('https://vimeo.com/' + id)
+        cfg_patt = r'clip_page_config\s*=\s*(\{.+?\});'
+        cfg = json.loads(match1(html, cfg_patt))
+        video_page = get_content(cfg['player']['config_url'], headers=fake_headers)
+        title = cfg['clip']['title']
+        info = loads(video_page)
+    except:
+        # embedded player - referer may be required
+        if 'referer' in kwargs:
+            fake_headers['Referer'] = kwargs['referer']
+
+        video_page = get_content('http://player.vimeo.com/video/%s' % id, headers=fake_headers)
+        title = r1(r'<title>([^<]+)</title>', video_page)
+        info = loads(match1(video_page, r'var t=(\{.+?\});'))
+
+    streams = info['request']['files']['progressive']
+    streams = sorted(streams, key=lambda i: i['height'])
+    url = streams[-1]['url']
+
+    type, ext, size = url_info(url, faker=True)
+
+    print_info(site_info, title, type, size)
+    if not info_only:
+        download_urls([url], title, ext, size, output_dir, merge=merge, faker=True)
+    '''
+    site = VimeoExtractor()
+    site.download_by_vid(id, info_only=info_only, output_dir=output_dir, merge=merge, **kwargs)
+
+def ckplayer_get_info_by_xml(ckinfo):
+    """str->dict
+    Information for CKPlayer API content."""
+    e = ET.XML(ckinfo)
+    video_dict = {'title': '',
+                  #'duration': 0,
+                  'links': [],
+                  'size': 0,
+                  'flashvars': '',}
+    dictified = dictify(e)['ckplayer']
+    if 'info' in dictified:
+        if '_text' in dictified['info'][0]['title'][0]:  #title
+            video_dict['title'] = dictified['info'][0]['title'][0]['_text'].strip()
+
+    #if dictify(e)['ckplayer']['info'][0]['title'][0]['_text'].strip():  #duration
+        #video_dict['title'] = dictify(e)['ckplayer']['info'][0]['title'][0]['_text'].strip()
+
+    if '_text' in dictified['video'][0]['size'][0]:  #size exists for 1 piece
+        video_dict['size'] = sum([int(i['size'][0]['_text']) for i in dictified['video']])
+
+    if '_text' in dictified['video'][0]['file'][0]:  #link exist
+        video_dict['links'] = [i['file'][0]['_text'].strip() for i in dictified['video']]
+
+    if '_text' in dictified['flashvars'][0]:
+        video_dict['flashvars'] = dictified['flashvars'][0]['_text'].strip()
+
+    return video_dict
+
+def get_video_url_from_video_id(video_id):
+    """Splicing URLs according to video ID to get video details"""
+    # from js
+    data = [""] * 256
+    for index, _ in enumerate(data):
+        t = index
+        for i in range(8):
+            t = -306674912 ^ unsigned_right_shitf(t, 1) if 1 & t else unsigned_right_shitf(t, 1)
+        data[index] = t
+
+    def tmp():
+        rand_num = random.random()
+        path = "/video/urls/v/1/toutiao/mp4/{video_id}?r={random_num}".format(video_id=video_id,
+                                                                              random_num=str(rand_num)[2:])
+        e = o = r = -1
+        i, a = 0, len(path)
+        while i < a:
+            e = ord(path[i])
+            i += 1
+            if e < 128:
+                r = unsigned_right_shitf(r, 8) ^ data[255 & (r ^ e)]
+            else:
+                if e < 2048:
+                    r = unsigned_right_shitf(r, 8) ^ data[255 & (r ^ (192 | e >> 6 & 31))]
+                    r = unsigned_right_shitf(r, 8) ^ data[255 & (r ^ (128 | 63 & e))]
+                else:
+                    if 55296 <= e < 57344:
+                        e = (1023 & e) + 64
+                        i += 1
+                        o = 1023 & t.url(i)
+                        r = unsigned_right_shitf(r, 8) ^ data[255 & (r ^ (240 | e >> 8 & 7))]
+                        r = unsigned_right_shitf(r, 8) ^ data[255 & (r ^ (128 | e >> 2 & 63))]
+                        r = unsigned_right_shitf(r, 8) ^ data[255 & (r ^ (128 | o >> 6 & 15 | (3 & e) << 4))]
+                        r = unsigned_right_shitf(r, 8) ^ data[255 & (r ^ (128 | 63 & o))]
+                    else:
+                        r = unsigned_right_shitf(r, 8) ^ data[255 & (r ^ (224 | e >> 12 & 15))]
+                        r = unsigned_right_shitf(r, 8) ^ data[255 & (r ^ (128 | e >> 6 & 63))]
+                        r = unsigned_right_shitf(r, 8) ^ data[255 & (r ^ (128 | 63 & e))]
+
+        return "https://ib.365yg.com{path}&s={param}".format(path=path, param=unsigned_right_shitf(r ^ -1, 0))
+
+    while 1:
+        url = tmp()
+        if url.split("=")[-1][0] != "-":  # 参数s不能为负数
+            return url
+
+def get_vid_from_url(url):
+        """Extracts video ID from URL.
+        """
+        vid = match1(url, 'https?://www.mgtv.com/(?:b|l)/\d+/(\d+).html')
+        if not vid:
+            vid = match1(url, 'https?://www.mgtv.com/hz/bdpz/\d+/(\d+).html')
+        return vid
+
+def get_mgtv_real_url(url):
+        """str->list of str
+        Give you the real URLs."""
+        content = loads(get_content(url))
+        m3u_url = content['info']
+        split = urlsplit(m3u_url)
+        
+        base_url = "{scheme}://{netloc}{path}/".format(scheme = split[0],
+                                                      netloc = split[1],
+                                                      path = dirname(split[2]))
+
+        content = get_content(content['info'])  #get the REAL M3U url, maybe to be changed later?
+        segment_list = []
+        segments_size = 0
+        for i in content.split():
+            if not i.startswith('#'):  #not the best way, better we use the m3u8 package
+                segment_list.append(base_url + i)
+            # use ext-info for fast size calculate
+            elif i.startswith('#EXT-MGTV-File-SIZE:'):
+                segments_size += int(i[i.rfind(':')+1:])
+
+        return m3u_url, segments_size, segment_list
+
+def get_head(repo_path):
+    """Get (branch, commit) from HEAD of a git repo."""
+    try:
+        ref = open(os.path.join(repo_path, '.git', 'HEAD'), 'r').read().strip()[5:].split('/')
+        branch = ref[-1]
+        commit = open(os.path.join(repo_path, '.git', *ref), 'r').read().strip()[:7]
+        return branch, commit
+    except:
+        return None
+
+def legitimize(text, os=detect_os()):
+    """Converts a string to a valid filename.
+    """
+
+    # POSIX systems
+    text = text.translate({
+        0: None,
+        ord('/'): '-',
+        ord('|'): '-',
+    })
+
+    # FIXME: do some filesystem detection
+    if os == 'windows' or os == 'cygwin' or os == 'wsl':
+        # Windows (non-POSIX namespace)
+        text = text.translate({
+            # Reserved in Windows VFAT and NTFS
+            ord(':'): '-',
+            ord('*'): '-',
+            ord('?'): '-',
+            ord('\\'): '-',
+            ord('\"'): '\'',
+            # Reserved in Windows VFAT
+            ord('+'): '-',
+            ord('<'): '-',
+            ord('>'): '-',
+            ord('['): '(',
+            ord(']'): ')',
+            ord('\t'): ' ',
+        })
+    else:
+        # *nix
+        if os == 'mac':
+            # Mac OS HFS+
+            text = text.translate({
+                ord(':'): '-',
+            })
+
+        # Remove leading .
+        if text.startswith("."):
+            text = text[1:]
+
+    text = text[:80] # Trim to 82 Unicode characters long
+    return text
+
+def get_terminal_size():
+    """Get (width, height) of the current terminal."""
+    try:
+        import fcntl, termios, struct # fcntl module only available on Unix
+        return struct.unpack('hh', fcntl.ioctl(1, termios.TIOCGWINSZ, '1234'))
+    except:
+        return (40, 80)
+
+def cbs_download(url, output_dir='.', merge=True, info_only=False, **kwargs):
+    """Downloads CBS videos by URL.
+    """
+
+    html = get_content(url)
+    pid = match1(html, r'video\.settings\.pid\s*=\s*\'([^\']+)\'')
+    title = match1(html, r'video\.settings\.title\s*=\s*\"([^\"]+)\"')
+
+    theplatform_download_by_pid(pid, title, output_dir=output_dir, merge=merge, info_only=info_only)
+
+def download(self, **kwargs):
+        """Override the original one
+        Ugly ugly dirty hack"""
+        if 'json_output' in kwargs and kwargs['json_output']:
+            json_output.output(self)
+        elif 'info_only' in kwargs and kwargs['info_only']:
+            if 'stream_id' in kwargs and kwargs['stream_id']:
+                # Display the stream
+                stream_id = kwargs['stream_id']
+                if 'index' not in kwargs:
+                    self.p(stream_id)
+                else:
+                    self.p_i(stream_id)
+            else:
+                # Display all available streams
+                if 'index' not in kwargs:
+                    self.p([])
+                else:
+                    stream_id = self.streams_sorted[0]['id'] if 'id' in self.streams_sorted[0] else self.streams_sorted[0]['itag']
+                    self.p_i(stream_id)
+
+        else:
+            if 'stream_id' in kwargs and kwargs['stream_id']:
+                # Download the stream
+                stream_id = kwargs['stream_id']
+            else:
+                # Download stream with the best quality
+                stream_id = self.streams_sorted[0]['id'] if 'id' in self.streams_sorted[0] else self.streams_sorted[0]['itag']
+
+            if 'index' not in kwargs:
+                self.p(stream_id)
+            else:
+                self.p_i(stream_id)
+
+            if stream_id in self.streams:
+                urls = self.streams[stream_id]['src']
+                ext = self.streams[stream_id]['container']
+                total_size = self.streams[stream_id]['size']
+            else:
+                urls = self.dash_streams[stream_id]['src']
+                ext = self.dash_streams[stream_id]['container']
+                total_size = self.dash_streams[stream_id]['size']
+
+            if not urls:
+                log.wtf('[Failed] Cannot extract video source.')
+            # For legacy main()
+            
+            #Here's the change!!
+            download_url_ffmpeg(urls[0], self.title, 'mp4', output_dir=kwargs['output_dir'], merge=kwargs['merge'], stream=False)
+
+            if not kwargs['caption']:
+                print('Skipping captions.')
+                return
+            for lang in self.caption_tracks:
+                filename = '%s.%s.srt' % (get_filename(self.title), lang)
+                print('Saving %s ... ' % filename, end="", flush=True)
+                srt = self.caption_tracks[lang]
+                with open(os.path.join(kwargs['output_dir'], filename),
+                          'w', encoding='utf-8') as x:
+                    x.write(srt)
+                print('Done.')
+
+def acfun_download_by_vid(vid, title, output_dir='.', merge=True, info_only=False, **kwargs):
+    """str, str, str, bool, bool ->None
+
+    Download Acfun video by vid.
+
+    Call Acfun API, decide which site to use, and pass the job to its
+    extractor.
+    """
+
+    #first call the main parasing API
+    info = json.loads(get_content('http://www.acfun.cn/video/getVideo.aspx?id=' + vid))
+
+    sourceType = info['sourceType']
+
+    #decide sourceId to know which extractor to use
+    if 'sourceId' in info: sourceId = info['sourceId']
+    # danmakuId = info['danmakuId']
+
+    #call extractor decided by sourceId
+    if sourceType == 'sina':
+        sina_download_by_vid(sourceId, title, output_dir=output_dir, merge=merge, info_only=info_only)
+    elif sourceType == 'youku':
+        youku_download_by_vid(sourceId, title=title, output_dir=output_dir, merge=merge, info_only=info_only, **kwargs)
+    elif sourceType == 'tudou':
+        tudou_download_by_iid(sourceId, title, output_dir=output_dir, merge=merge, info_only=info_only)
+    elif sourceType == 'qq':
+        qq_download_by_vid(sourceId, title, True, output_dir=output_dir, merge=merge, info_only=info_only)
+    elif sourceType == 'letv':
+        letvcloud_download_by_vu(sourceId, '2d8c027396', title, output_dir=output_dir, merge=merge, info_only=info_only)
+    elif sourceType == 'zhuzhan':
+        #As in Jul.28.2016, Acfun is using embsig to anti hotlink so we need to pass this
+#In Mar. 2017 there is a dedicated ``acfun_proxy'' in youku cloud player
+#old code removed
+        url = 'http://www.acfun.cn/v/ac' + vid
+        yk_streams = youku_acfun_proxy(info['sourceId'], info['encode'], url)
+        seq = ['mp4hd3', 'mp4hd2', 'mp4hd', 'flvhd']
+        for t in seq:
+            if yk_streams.get(t):
+                preferred = yk_streams[t]
+                break
+#total_size in the json could be incorrect(F.I. 0)
+        size = 0
+        for url in preferred[0]:
+            _, _, seg_size = url_info(url)
+            size += seg_size
+#fallback to flvhd is not quite possible
+        if re.search(r'fid=[0-9A-Z\-]*.flv', preferred[0][0]):
+            ext = 'flv'
+        else:
+            ext = 'mp4'
+        print_info(site_info, title, ext, size)
+        if not info_only:
+            download_urls(preferred[0], title, ext, size, output_dir=output_dir, merge=merge)
+    else:
+        raise NotImplementedError(sourceType)
+
+    if not info_only and not dry_run:
+        if not kwargs['caption']:
+            print('Skipping danmaku.')
+            return
+        try:
+            title = get_filename(title)
+            print('Downloading %s ...\n' % (title + '.cmt.json'))
+            cmt = get_srt_json(vid)
+            with open(os.path.join(output_dir, title + '.cmt.json'), 'w', encoding='utf-8') as x:
+                x.write(cmt)
+        except:
+            pass
+
+def main_dev(**kwargs):
+    """Main entry point.
+    you-get-dev
+    """
+
+    # Get (branch, commit) if running from a git repo.
+    head = git.get_head(kwargs['repo_path'])
+
+    # Get options and arguments.
+    try:
+        opts, args = getopt.getopt(sys.argv[1:], _short_options, _options)
+    except getopt.GetoptError as e:
+        log.wtf("""
+    [Fatal] {}.
+    Try '{} --help' for more options.""".format(e, script_name))
+
+    if not opts and not args:
+        # Display help.
+        print(_help)
+        # Enter GUI mode.
+        #from .gui import gui_main
+        #gui_main()
+    else:
+        conf = {}
+        for opt, arg in opts:
+            if opt in ('-h', '--help'):
+                # Display help.
+                print(_help)
+
+            elif opt in ('-V', '--version'):
+                # Display version.
+                log.println("you-get:", log.BOLD)
+                log.println("    version:  {}".format(__version__))
+                if head is not None:
+                    log.println("    branch:   {}\n    commit:   {}".format(*head))
+                else:
+                    log.println("    branch:   {}\n    commit:   {}".format("(stable)", "(tag v{})".format(__version__)))
+
+                log.println("    platform: {}".format(platform.platform()))
+                log.println("    python:   {}".format(sys.version.split('\n')[0]))
+
+            elif opt in ('-g', '--gui'):
+                # Run using GUI.
+                conf['gui'] = True
+
+            elif opt in ('-f', '--force'):
+                # Force download.
+                conf['force'] = True
+
+            elif opt in ('-l', '--playlist', '--playlists'):
+                # Download playlist whenever possible.
+                conf['playlist'] = True
+
+        if args:
+            if 'gui' in conf and conf['gui']:
+                # Enter GUI mode.
+                from .gui import gui_main
+                gui_main(*args, **conf)
+            else:
+                # Enter console mode.
+                from .console import console_main
+                console_main(*args, **conf)
+
+def ffmpeg_download_stream(files, title, ext, params={}, output_dir='.', stream=True):
+    """str, str->True
+    WARNING: NOT THE SAME PARMS AS OTHER FUNCTIONS!!!!!!
+    You can basicly download anything with this function
+    but better leave it alone with
+    """
+    output = title + '.' + ext
+
+    if not (output_dir == '.'):
+        output = output_dir + '/' + output
+
+    print('Downloading streaming content with FFmpeg, press q to stop recording...')
+    if stream:
+        ffmpeg_params = [FFMPEG] + ['-y', '-re', '-i']
+    else:
+        ffmpeg_params = [FFMPEG] + ['-y', '-i']
+    ffmpeg_params.append(files)  #not the same here!!!!
+
+    if FFMPEG == 'avconv':  #who cares?
+        ffmpeg_params += ['-c', 'copy', output]
+    else:
+        ffmpeg_params += ['-c', 'copy', '-bsf:a', 'aac_adtstoasc']
+
+    if params is not None:
+        if len(params) > 0:
+            for k, v in params:
+                ffmpeg_params.append(k)
+                ffmpeg_params.append(v)
+
+    ffmpeg_params.append(output)
+
+    print(' '.join(ffmpeg_params))
+
+    try:
+        a = subprocess.Popen(ffmpeg_params, stdin= subprocess.PIPE)
+        a.communicate()
+    except KeyboardInterrupt:
+        try:
+            a.stdin.write('q'.encode('utf-8'))
+        except:
+            pass
+
+    return True
+
+def match1(text, *patterns):
+    """Scans through a string for substrings matched some patterns (first-subgroups only).
+
+    Args:
+        text: A string to be scanned.
+        patterns: Arbitrary number of regex patterns.
+
+    Returns:
+        When only one pattern is given, returns a string (None if no match found).
+        When more than one pattern are given, returns a list of strings ([] if no match found).
+    """
+
+    if len(patterns) == 1:
+        pattern = patterns[0]
+        match = re.search(pattern, text)
+        if match:
+            return match.group(1)
+        else:
+            return None
+    else:
+        ret = []
+        for pattern in patterns:
+            match = re.search(pattern, text)
+            if match:
+                ret.append(match.group(1))
+        return ret
+
+def matchall(text, patterns):
+    """Scans through a string for substrings matched some patterns.
+
+    Args:
+        text: A string to be scanned.
+        patterns: a list of regex pattern.
+
+    Returns:
+        a list if matched. empty if not.
+    """
+
+    ret = []
+    for pattern in patterns:
+        match = re.findall(pattern, text)
+        ret += match
+
+    return ret
+
+def parse_query_param(url, param):
+    """Parses the query string of a URL and returns the value of a parameter.
+
+    Args:
+        url: A URL.
+        param: A string representing the name of the parameter.
+
+    Returns:
+        The value of the parameter.
+    """
+
+    try:
+        return parse.parse_qs(parse.urlparse(url).query)[param][0]
+    except:
+        return None
+
+def ungzip(data):
+    """Decompresses data for Content-Encoding: gzip.
+    """
+    from io import BytesIO
+    import gzip
+    buffer = BytesIO(data)
+    f = gzip.GzipFile(fileobj=buffer)
+    return f.read()
+
+def undeflate(data):
+    """Decompresses data for Content-Encoding: deflate.
+    (the zlib compression is used.)
+    """
+    import zlib
+    decompressobj = zlib.decompressobj(-zlib.MAX_WBITS)
+    return decompressobj.decompress(data)+decompressobj.flush()
+
+def get_content(url, headers={}, decoded=True):
+    """Gets the content of a URL via sending a HTTP GET request.
+
+    Args:
+        url: A URL.
+        headers: Request headers used by the client.
+        decoded: Whether decode the response body using UTF-8 or the charset specified in Content-Type.
+
+    Returns:
+        The content as a string.
+    """
+
+    logging.debug('get_content: %s' % url)
+
+    req = request.Request(url, headers=headers)
+    if cookies:
+        cookies.add_cookie_header(req)
+        req.headers.update(req.unredirected_hdrs)
+
+    response = urlopen_with_retry(req)
+    data = response.read()
+
+    # Handle HTTP compression for gzip and deflate (zlib)
+    content_encoding = response.getheader('Content-Encoding')
+    if content_encoding == 'gzip':
+        data = ungzip(data)
+    elif content_encoding == 'deflate':
+        data = undeflate(data)
+
+    # Decode the response body
+    if decoded:
+        charset = match1(
+            response.getheader('Content-Type', ''), r'charset=([\w-]+)'
+        )
+        if charset is not None:
+            data = data.decode(charset, 'ignore')
+        else:
+            data = data.decode('utf-8', 'ignore')
+
+    return data
+
+def post_content(url, headers={}, post_data={}, decoded=True, **kwargs):
+    """Post the content of a URL via sending a HTTP POST request.
+
+    Args:
+        url: A URL.
+        headers: Request headers used by the client.
+        decoded: Whether decode the response body using UTF-8 or the charset specified in Content-Type.
+
+    Returns:
+        The content as a string.
+    """
+    if kwargs.get('post_data_raw'):
+        logging.debug('post_content: %s\npost_data_raw: %s' % (url, kwargs['post_data_raw']))
+    else:
+        logging.debug('post_content: %s\npost_data: %s' % (url, post_data))
+
+    req = request.Request(url, headers=headers)
+    if cookies:
+        cookies.add_cookie_header(req)
+        req.headers.update(req.unredirected_hdrs)
+    if kwargs.get('post_data_raw'):
+        post_data_enc = bytes(kwargs['post_data_raw'], 'utf-8')
+    else:
+        post_data_enc = bytes(parse.urlencode(post_data), 'utf-8')
+    response = urlopen_with_retry(req, data=post_data_enc)
+    data = response.read()
+
+    # Handle HTTP compression for gzip and deflate (zlib)
+    content_encoding = response.getheader('Content-Encoding')
+    if content_encoding == 'gzip':
+        data = ungzip(data)
+    elif content_encoding == 'deflate':
+        data = undeflate(data)
+
+    # Decode the response body
+    if decoded:
+        charset = match1(
+            response.getheader('Content-Type'), r'charset=([\w-]+)'
+        )
+        if charset is not None:
+            data = data.decode(charset)
+        else:
+            data = data.decode('utf-8')
+
+    return data
+
+def parse_host(host):
+    """Parses host name and port number from a string.
+    """
+    if re.match(r'^(\d+)$', host) is not None:
+        return ("0.0.0.0", int(host))
+    if re.match(r'^(\w+)://', host) is None:
+        host = "//" + host
+    o = parse.urlparse(host)
+    hostname = o.hostname or "0.0.0.0"
+    port = o.port or 0
+    return (hostname, port)
+
+def print_more_compatible(*args, **kwargs):
+    import builtins as __builtin__
+    """Overload default print function as py (<3.3) does not support 'flush' keyword.
+    Although the function name can be same as print to get itself overloaded automatically,
+    I'd rather leave it with a different name and only overload it when importing to make less confusion.
+    """
+    # nothing happens on py3.3 and later
+    if sys.version_info[:2] >= (3, 3):
+        return __builtin__.print(*args, **kwargs)
+
+    # in lower pyver (e.g. 3.2.x), remove 'flush' keyword and flush it as requested
+    doFlush = kwargs.pop('flush', False)
+    ret = __builtin__.print(*args, **kwargs)
+    if doFlush:
+        kwargs.get('file', sys.stdout).flush()
+    return ret
+
+def showroom_get_roomid_by_room_url_key(room_url_key):
+    """str->str"""
+    fake_headers_mobile = {
+        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+        'Accept-Charset': 'UTF-8,*;q=0.5',
+        'Accept-Encoding': 'gzip,deflate,sdch',
+        'Accept-Language': 'en-US,en;q=0.8',
+        'User-Agent': 'Mozilla/5.0 (Linux; Android 4.4.2; Nexus 4 Build/KOT49H) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/34.0.1847.114 Mobile Safari/537.36'
+    }
+    webpage_url = 'https://www.showroom-live.com/' + room_url_key
+    html = get_content(webpage_url, headers = fake_headers_mobile)
+    roomid = match1(html, r'room\?room_id\=(\d+)')
+    assert roomid
+    return roomid
+
+def showroom_download_by_room_id(room_id, output_dir = '.', merge = False, info_only = False, **kwargs):
+    '''Source: Android mobile'''
+    while True:
+        timestamp = str(int(time() * 1000))
+        api_endpoint = 'https://www.showroom-live.com/api/live/streaming_url?room_id={room_id}&_={timestamp}'.format(room_id = room_id, timestamp = timestamp)
+        html = get_content(api_endpoint)
+        html = json.loads(html)
+        #{'streaming_url_list': [{'url': 'rtmp://52.197.69.198:1935/liveedge', 'id': 1, 'label': 'original spec(low latency)', 'is_default': True, 'type': 'rtmp', 'stream_name': '7656a6d5baa1d77075c971f6d8b6dc61b979fc913dc5fe7cc1318281793436ed'}, {'url': 'http://52.197.69.198:1935/liveedge/7656a6d5baa1d77075c971f6d8b6dc61b979fc913dc5fe7cc1318281793436ed/playlist.m3u8', 'is_default': True, 'id': 2, 'type': 'hls', 'label': 'original spec'}, {'url': 'rtmp://52.197.69.198:1935/liveedge', 'id': 3, 'label': 'low spec(low latency)', 'is_default': False, 'type': 'rtmp', 'stream_name': '7656a6d5baa1d77075c971f6d8b6dc61b979fc913dc5fe7cc1318281793436ed_low'}, {'url': 'http://52.197.69.198:1935/liveedge/7656a6d5baa1d77075c971f6d8b6dc61b979fc913dc5fe7cc1318281793436ed_low/playlist.m3u8', 'is_default': False, 'id': 4, 'type': 'hls', 'label': 'low spec'}]}
+        if len(html) >= 1:
+            break
+        log.w('The live show is currently offline.')
+        sleep(1)
+
+    #This is mainly for testing the M3U FFmpeg parser so I would ignore any non-m3u ones
+    stream_url = [i['url'] for i in html['streaming_url_list'] if i['is_default'] and i['type'] == 'hls'][0]
+
+    assert stream_url
+
+    #title
+    title = ''
+    profile_api = 'https://www.showroom-live.com/api/room/profile?room_id={room_id}'.format(room_id = room_id)
+    html = loads(get_content(profile_api))
+    try:
+        title = html['main_name']
+    except KeyError:
+        title = 'Showroom_{room_id}'.format(room_id = room_id)
+
+    type_, ext, size = url_info(stream_url)
+    print_info(site_info, title, type_, size)
+    if not info_only:
+        download_url_ffmpeg(url=stream_url, title=title, ext= 'mp4', output_dir=output_dir)
+
+def _wanmen_get_title_by_json_topic_part(json_content, tIndex, pIndex):
+    """JSON, int, int, int->str
+    
+    Get a proper title with courseid+topicID+partID."""
+
+    return '_'.join([json_content[0]['name'],
+                    json_content[0]['Topics'][tIndex]['name'],
+                    json_content[0]['Topics'][tIndex]['Parts'][pIndex]['name']])
+
+def wanmen_download_by_course(json_api_content, output_dir='.', merge=True, info_only=False, **kwargs):
+    """int->None
+    
+    Download a WHOLE course.
+    Reuse the API call to save time."""
+
+    for tIndex in range(len(json_api_content[0]['Topics'])):
+        for pIndex in range(len(json_api_content[0]['Topics'][tIndex]['Parts'])):
+            wanmen_download_by_course_topic_part(json_api_content,
+                                                 tIndex,
+                                                 pIndex,
+                                                 output_dir=output_dir,
+                                                 merge=merge,
+                                                 info_only=info_only,
+                                                 **kwargs)
+
+def wanmen_download_by_course_topic_part(json_api_content, tIndex, pIndex, output_dir='.', merge=True, info_only=False, **kwargs):
+    """int, int, int->None
+    
+    Download ONE PART of the course."""
+
+    html = json_api_content
+
+    title = _wanmen_get_title_by_json_topic_part(html, 
+                                                  tIndex, 
+                                                  pIndex)
+
+    bokeccID = _wanmen_get_boke_id_by_json_topic_part(html,
+                                                      tIndex, 
+                                                     pIndex)
+
+    bokecc_download_by_id(vid = bokeccID, title = title, output_dir=output_dir, merge=merge, info_only=info_only, **kwargs)
+
+def get_streams_by_id(account_number, video_id):
+        """
+        int, int->list
+        
+        Get the height of the videos.
+        
+        Since brightcove is using 3 kinds of links: rtmp, http and https,
+        we will be using the HTTPS one to make it secure.
+        
+        If somehow akamaihd.net is blocked by the Great Fucking Wall,
+        change the "startswith https" to http.
+        """
+        endpoint = 'https://edge.api.brightcove.com/playback/v1/accounts/{account_number}/videos/{video_id}'.format(account_number = account_number, video_id = video_id)
+        fake_header_id = fake_headers
+        #is this somehow related to the time? Magic....
+        fake_header_id['Accept'] ='application/json;pk=BCpkADawqM1cc6wmJQC2tvoXZt4mrB7bFfi6zGt9QnOzprPZcGLE9OMGJwspQwKfuFYuCjAAJ53JdjI8zGFx1ll4rxhYJ255AXH1BQ10rnm34weknpfG-sippyQ'
+
+        html = get_content(endpoint, headers= fake_header_id)
+        html_json = json.loads(html)
+
+        link_list = []
+
+        for i in html_json['sources']:
+            if 'src' in i:  #to avoid KeyError
+                if i['src'].startswith('https'):
+                    link_list.append((str(i['height']), i['src']))
+
+        return link_list
+
+def has_task(self, task_instance):
+        """
+        Checks if a task is either queued or running in this executor
+
+        :param task_instance: TaskInstance
+        :return: True if the task is known to this executor
+        """
+        if task_instance.key in self.queued_tasks or task_instance.key in self.running:
+            return True
+
+def get_event_buffer(self, dag_ids=None):
+        """
+        Returns and flush the event buffer. In case dag_ids is specified
+        it will only return and flush events for the given dag_ids. Otherwise
+        it returns and flushes all
+
+        :param dag_ids: to dag_ids to return events for, if None returns all
+        :return: a dict of events
+        """
+        cleared_events = dict()
+        if dag_ids is None:
+            cleared_events = self.event_buffer
+            self.event_buffer = dict()
+        else:
+            for key in list(self.event_buffer.keys()):
+                dag_id, _, _, _ = key
+                if dag_id in dag_ids:
+                    cleared_events[key] = self.event_buffer.pop(key)
+
+        return cleared_events
+
+def _get_conn_params(self):
+        """
+        one method to fetch connection params as a dict
+        used in get_uri() and get_connection()
+        """
+        conn = self.get_connection(self.snowflake_conn_id)
+        account = conn.extra_dejson.get('account', None)
+        warehouse = conn.extra_dejson.get('warehouse', None)
+        database = conn.extra_dejson.get('database', None)
+        region = conn.extra_dejson.get("region", None)
+        role = conn.extra_dejson.get('role', None)
+
+        conn_config = {
+            "user": conn.login,
+            "password": conn.password or '',
+            "schema": conn.schema or '',
+            "database": self.database or database or '',
+            "account": self.account or account or '',
+            "warehouse": self.warehouse or warehouse or '',
+            "region": self.region or region or '',
+            "role": self.role or role or '',
+        }
+
+        """
+        If private_key_file is specified in the extra json, load the contents of the file as a private
+        key and specify that in the connection configuration. The connection password then becomes the
+        passphrase for the private key. If your private key file is not encrypted (not recommended), then
+        leave the password empty.
+        """
+        private_key_file = conn.extra_dejson.get('private_key_file', None)
+        if private_key_file:
+            with open(private_key_file, "rb") as key:
+                passphrase = None
+                if conn.password:
+                    passphrase = conn.password.strip().encode()
+
+                p_key = serialization.load_pem_private_key(
+                    key.read(),
+                    password=passphrase,
+                    backend=default_backend()
+                )
+
+            pkb = p_key.private_bytes(encoding=serialization.Encoding.DER,
+                                      format=serialization.PrivateFormat.PKCS8,
+                                      encryption_algorithm=serialization.NoEncryption())
+
+            conn_config['private_key'] = pkb
+            conn_config.pop('password', None)
+
+        return conn_config
+
+def get_uri(self):
+        """
+        override DbApiHook get_uri method for get_sqlalchemy_engine()
+        """
+        conn_config = self._get_conn_params()
+        uri = 'snowflake://{user}:{password}@{account}/{database}/'
+        uri += '{schema}?warehouse={warehouse}&role={role}'
+        return uri.format(**conn_config)
+
+def get_conn(self):
+        """
+        Returns a snowflake.connection object
+        """
+        conn_config = self._get_conn_params()
+        conn = snowflake.connector.connect(**conn_config)
+        return conn
+
+def _get_aws_credentials(self):
+        """
+        returns aws_access_key_id, aws_secret_access_key
+        from extra
+
+        intended to be used by external import and export statements
+        """
+        if self.snowflake_conn_id:
+            connection_object = self.get_connection(self.snowflake_conn_id)
+            if 'aws_secret_access_key' in connection_object.extra_dejson:
+                aws_access_key_id = connection_object.extra_dejson.get(
+                    'aws_access_key_id')
+                aws_secret_access_key = connection_object.extra_dejson.get(
+                    'aws_secret_access_key')
+        return aws_access_key_id, aws_secret_access_key
+
+def _get_field(self, field_name, default=None):
+        """
+        Fetches a field from extras, and returns it. This is some Airflow
+        magic. The grpc hook type adds custom UI elements
+        to the hook page, which allow admins to specify scopes, credential pem files, etc.
+        They get formatted as shown below.
+        """
+        full_field_name = 'extra__grpc__{}'.format(field_name)
+        if full_field_name in self.extras:
+            return self.extras[full_field_name]
+        else:
+            return default
+
+def copy_expert(self, sql, filename, open=open):
+        """
+        Executes SQL using psycopg2 copy_expert method.
+        Necessary to execute COPY command without access to a superuser.
+
+        Note: if this method is called with a "COPY FROM" statement and
+        the specified input file does not exist, it creates an empty
+        file and no data is loaded, but the operation succeeds.
+        So if users want to be aware when the input file does not exist,
+        they have to check its existence by themselves.
+        """
+        if not os.path.isfile(filename):
+            with open(filename, 'w'):
+                pass
+
+        with open(filename, 'r+') as f:
+            with closing(self.get_conn()) as conn:
+                with closing(conn.cursor()) as cur:
+                    cur.copy_expert(sql, f)
+                    f.truncate(f.tell())
+                    conn.commit()
+
+def bulk_load(self, table, tmp_file):
+        """
+        Loads a tab-delimited file into a database table
+        """
+        self.copy_expert("COPY {table} FROM STDIN".format(table=table), tmp_file)
+
+def bulk_dump(self, table, tmp_file):
+        """
+        Dumps a database table into a tab-delimited file
+        """
+        self.copy_expert("COPY {table} TO STDOUT".format(table=table), tmp_file)
+
+def execute(self, context):
+        """
+        Uploads the file to Google cloud storage
+        """
+        hook = GoogleCloudStorageHook(
+            google_cloud_storage_conn_id=self.google_cloud_storage_conn_id,
+            delegate_to=self.delegate_to)
+
+        hook.upload(
+            bucket_name=self.bucket,
+            object_name=self.dst,
+            mime_type=self.mime_type,
+            filename=self.src,
+            gzip=self.gzip,
+        )
+
+def max_partition(
+        table, schema="default", field=None, filter_map=None,
+        metastore_conn_id='metastore_default'):
+    """
+    Gets the max partition for a table.
+
+    :param schema: The hive schema the table lives in
+    :type schema: str
+    :param table: The hive table you are interested in, supports the dot
+        notation as in "my_database.my_table", if a dot is found,
+        the schema param is disregarded
+    :type table: str
+    :param metastore_conn_id: The hive connection you are interested in.
+        If your default is set you don't need to use this parameter.
+    :type metastore_conn_id: str
+    :param filter_map: partition_key:partition_value map used for partition filtering,
+                       e.g. {'key1': 'value1', 'key2': 'value2'}.
+                       Only partitions matching all partition_key:partition_value
+                       pairs will be considered as candidates of max partition.
+    :type filter_map: map
+    :param field: the field to get the max value from. If there's only
+        one partition field, this will be inferred
+    :type field: str
+
+    >>> max_partition('airflow.static_babynames_partitioned')
+    '2015-01-01'
+    """
+    from airflow.hooks.hive_hooks import HiveMetastoreHook
+    if '.' in table:
+        schema, table = table.split('.')
+    hh = HiveMetastoreHook(metastore_conn_id=metastore_conn_id)
+    return hh.max_partition(
+        schema=schema, table_name=table, field=field, filter_map=filter_map)
+
+def _closest_date(target_dt, date_list, before_target=None):
+    """
+    This function finds the date in a list closest to the target date.
+    An optional parameter can be given to get the closest before or after.
+
+    :param target_dt: The target date
+    :type target_dt: datetime.date
+    :param date_list: The list of dates to search
+    :type date_list: list[datetime.date]
+    :param before_target: closest before or after the target
+    :type before_target: bool or None
+    :returns: The closest date
+    :rtype: datetime.date or None
+    """
+    fb = lambda d: target_dt - d if d <= target_dt else datetime.timedelta.max
+    fa = lambda d: d - target_dt if d >= target_dt else datetime.timedelta.max
+    fnone = lambda d: target_dt - d if d < target_dt else d - target_dt
+    if before_target is None:
+        return min(date_list, key=fnone).date()
+    if before_target:
+        return min(date_list, key=fb).date()
+    else:
+        return min(date_list, key=fa).date()
+
+def closest_ds_partition(
+        table, ds, before=True, schema="default",
+        metastore_conn_id='metastore_default'):
+    """
+    This function finds the date in a list closest to the target date.
+    An optional parameter can be given to get the closest before or after.
+
+    :param table: A hive table name
+    :type table: str
+    :param ds: A datestamp ``%Y-%m-%d`` e.g. ``yyyy-mm-dd``
+    :type ds: list[datetime.date]
+    :param before: closest before (True), after (False) or either side of ds
+    :type before: bool or None
+    :returns: The closest date
+    :rtype: str or None
+
+    >>> tbl = 'airflow.static_babynames_partitioned'
+    >>> closest_ds_partition(tbl, '2015-01-02')
+    '2015-01-01'
+    """
+    from airflow.hooks.hive_hooks import HiveMetastoreHook
+    if '.' in table:
+        schema, table = table.split('.')
+    hh = HiveMetastoreHook(metastore_conn_id=metastore_conn_id)
+    partitions = hh.get_partitions(schema=schema, table_name=table)
+    if not partitions:
+        return None
+    part_vals = [list(p.values())[0] for p in partitions]
+    if ds in part_vals:
+        return ds
+    else:
+        parts = [datetime.datetime.strptime(pv, '%Y-%m-%d')
+                 for pv in part_vals]
+        target_dt = datetime.datetime.strptime(ds, '%Y-%m-%d')
+        closest_ds = _closest_date(target_dt, parts, before_target=before)
+        return closest_ds.isoformat()
+
+def get_conn(self):
+        """
+        Returns a mysql connection object
+        """
+        conn = self.get_connection(self.mysql_conn_id)
+        conn_config = {
+            "user": conn.login,
+            "passwd": conn.password or '',
+            "host": conn.host or 'localhost',
+            "db": self.schema or conn.schema or ''
+        }
+
+        if not conn.port:
+            conn_config["port"] = 3306
+        else:
+            conn_config["port"] = int(conn.port)
+
+        if conn.extra_dejson.get('charset', False):
+            conn_config["charset"] = conn.extra_dejson["charset"]
+            if (conn_config["charset"]).lower() == 'utf8' or\
+                    (conn_config["charset"]).lower() == 'utf-8':
+                conn_config["use_unicode"] = True
+        if conn.extra_dejson.get('cursor', False):
+            if (conn.extra_dejson["cursor"]).lower() == 'sscursor':
+                conn_config["cursorclass"] = MySQLdb.cursors.SSCursor
+            elif (conn.extra_dejson["cursor"]).lower() == 'dictcursor':
+                conn_config["cursorclass"] = MySQLdb.cursors.DictCursor
+            elif (conn.extra_dejson["cursor"]).lower() == 'ssdictcursor':
+                conn_config["cursorclass"] = MySQLdb.cursors.SSDictCursor
+        local_infile = conn.extra_dejson.get('local_infile', False)
+        if conn.extra_dejson.get('ssl', False):
+            # SSL parameter for MySQL has to be a dictionary and in case
+            # of extra/dejson we can get string if extra is passed via
+            # URL parameters
+            dejson_ssl = conn.extra_dejson['ssl']
+            if isinstance(dejson_ssl, six.string_types):
+                dejson_ssl = json.loads(dejson_ssl)
+            conn_config['ssl'] = dejson_ssl
+        if conn.extra_dejson.get('unix_socket'):
+            conn_config['unix_socket'] = conn.extra_dejson['unix_socket']
+        if local_infile:
+            conn_config["local_infile"] = 1
+        conn = MySQLdb.connect(**conn_config)
+        return conn
+
+def bulk_load(self, table, tmp_file):
+        """
+        Loads a tab-delimited file into a database table
+        """
+        conn = self.get_conn()
+        cur = conn.cursor()
+        cur.execute("""
+            LOAD DATA LOCAL INFILE '{tmp_file}'
+            INTO TABLE {table}
+            """.format(tmp_file=tmp_file, table=table))
+        conn.commit()
+
+def is_bucket_updated(self, current_num_objects):
+        """
+        Checks whether new objects have been uploaded and the inactivity_period
+        has passed and updates the state of the sensor accordingly.
+
+        :param current_num_objects: number of objects in bucket during last poke.
+        :type current_num_objects: int
+        """
+
+        if current_num_objects > self.previous_num_objects:
+            # When new objects arrived, reset the inactivity_seconds
+            # previous_num_objects for the next poke.
+            self.log.info(
+                '''
+                New objects found at {} resetting last_activity_time.
+                '''.format(os.path.join(self.bucket, self.prefix)))
+            self.last_activity_time = get_time()
+            self.inactivity_seconds = 0
+            self.previous_num_objects = current_num_objects
+        elif current_num_objects < self.previous_num_objects:
+            # During the last poke interval objects were deleted.
+            if self.allow_delete:
+                self.previous_num_objects = current_num_objects
+                self.last_activity_time = get_time()
+                self.log.warning(
+                    '''
+                    Objects were deleted during the last
+                    poke interval. Updating the file counter and
+                    resetting last_activity_time.
+                    '''
+                )
+            else:
+                raise RuntimeError(
+                    '''
+                    Illegal behavior: objects were deleted in {} between pokes.
+                    '''.format(os.path.join(self.bucket, self.prefix))
+                )
+        else:
+            if self.last_activity_time:
+                self.inactivity_seconds = (
+                    get_time() - self.last_activity_time).total_seconds()
+            else:
+                # Handles the first poke where last inactivity time is None.
+                self.last_activity_time = get_time()
+                self.inactivity_seconds = 0
+
+            if self.inactivity_seconds >= self.inactivity_period:
+                if current_num_objects >= self.min_objects:
+                    self.log.info(
+                        '''
+                        SUCCESS:
+                        Sensor found {} objects at {}.
+                        Waited at least {} seconds, with no new objects dropped.
+                        '''.format(
+                            current_num_objects,
+                            os.path.join(self.bucket, self.prefix),
+                            self.inactivity_period))
+                    return True
+
+                warn_msg = \
+                    '''
+                    FAILURE:
+                    Inactivity Period passed,
+                    not enough objects found in {}
+                    '''.format(
+                        os.path.join(self.bucket, self.prefix))
+                self.log.warning(warn_msg)
+                return False
+            return False
+
+def sigquit_handler(sig, frame):
+    """Helps debug deadlocks by printing stacktraces when this gets a SIGQUIT
+    e.g. kill -s QUIT <PID> or CTRL+\
+    """
+    print("Dumping stack traces for all threads in PID {}".format(os.getpid()))
+    id_to_name = dict([(th.ident, th.name) for th in threading.enumerate()])
+    code = []
+    for thread_id, stack in sys._current_frames().items():
+        code.append("\n# Thread: {}({})"
+                    .format(id_to_name.get(thread_id, ""), thread_id))
+        for filename, line_number, name, line in traceback.extract_stack(stack):
+            code.append('File: "{}", line {}, in {}'
+                        .format(filename, line_number, name))
+            if line:
+                code.append("  {}".format(line.strip()))
+    print("\n".join(code))
+
+def trigger_dag(args):
+    """
+    Creates a dag run for the specified dag
+    :param args:
+    :return:
+    """
+    log = LoggingMixin().log
+    try:
+        message = api_client.trigger_dag(dag_id=args.dag_id,
+                                         run_id=args.run_id,
+                                         conf=args.conf,
+                                         execution_date=args.exec_date)
+    except IOError as err:
+        log.error(err)
+        raise AirflowException(err)
+    log.info(message)
+
+def delete_dag(args):
+    """
+    Deletes all DB records related to the specified dag
+    :param args:
+    :return:
+    """
+    log = LoggingMixin().log
+    if args.yes or input(
+            "This will drop all existing records related to the specified DAG. "
+            "Proceed? (y/n)").upper() == "Y":
+        try:
+            message = api_client.delete_dag(dag_id=args.dag_id)
+        except IOError as err:
+            log.error(err)
+            raise AirflowException(err)
+        log.info(message)
+    else:
+        print("Bail.")
+
+def task_failed_deps(args):
+    """
+    Returns the unmet dependencies for a task instance from the perspective of the
+    scheduler (i.e. why a task instance doesn't get scheduled and then queued by the
+    scheduler, and then run by an executor).
+    >>> airflow task_failed_deps tutorial sleep 2015-01-01
+    Task instance dependencies not met:
+    Dagrun Running: Task instance's dagrun did not exist: Unknown reason
+    Trigger Rule: Task's trigger rule 'all_success' requires all upstream tasks
+    to have succeeded, but found 1 non-success(es).
+    """
+    dag = get_dag(args)
+    task = dag.get_task(task_id=args.task_id)
+    ti = TaskInstance(task, args.execution_date)
+
+    dep_context = DepContext(deps=SCHEDULER_DEPS)
+    failed_deps = list(ti.get_failed_dep_statuses(dep_context=dep_context))
+    # TODO, Do we want to print or log this
+    if failed_deps:
+        print("Task instance dependencies not met:")
+        for dep in failed_deps:
+            print("{}: {}".format(dep.dep_name, dep.reason))
+    else:
+        print("Task instance dependencies are all met.")
+
+def task_state(args):
+    """
+    Returns the state of a TaskInstance at the command line.
+    >>> airflow task_state tutorial sleep 2015-01-01
+    success
+    """
+    dag = get_dag(args)
+    task = dag.get_task(task_id=args.task_id)
+    ti = TaskInstance(task, args.execution_date)
+    print(ti.current_state())
+
+def dag_state(args):
+    """
+    Returns the state of a DagRun at the command line.
+    >>> airflow dag_state tutorial 2015-01-01T00:00:00.000000
+    running
+    """
+    dag = get_dag(args)
+    dr = DagRun.find(dag.dag_id, execution_date=args.execution_date)
+    print(dr[0].state if len(dr) > 0 else None)
+
+def next_execution(args):
+    """
+    Returns the next execution datetime of a DAG at the command line.
+    >>> airflow next_execution tutorial
+    2018-08-31 10:38:00
+    """
+    dag = get_dag(args)
+
+    if dag.is_paused:
+        print("[INFO] Please be reminded this DAG is PAUSED now.")
+
+    if dag.latest_execution_date:
+        next_execution_dttm = dag.following_schedule(dag.latest_execution_date)
+
+        if next_execution_dttm is None:
+            print("[WARN] No following schedule can be found. " +
+                  "This DAG may have schedule interval '@once' or `None`.")
+
+        print(next_execution_dttm)
+    else:
+        print("[WARN] Only applicable when there is execution record found for the DAG.")
+        print(None)
+
+def restart_workers(gunicorn_master_proc, num_workers_expected, master_timeout):
+    """
+    Runs forever, monitoring the child processes of @gunicorn_master_proc and
+    restarting workers occasionally.
+    Each iteration of the loop traverses one edge of this state transition
+    diagram, where each state (node) represents
+    [ num_ready_workers_running / num_workers_running ]. We expect most time to
+    be spent in [n / n]. `bs` is the setting webserver.worker_refresh_batch_size.
+    The horizontal transition at ? happens after the new worker parses all the
+    dags (so it could take a while!)
+       V ────────────────────────────────────────────────────────────────────────┐
+    [n / n] ──TTIN──> [ [n, n+bs) / n + bs ]  ────?───> [n + bs / n + bs] ──TTOU─┘
+       ^                          ^───────────────┘
+       │
+       │      ┌────────────────v
+       └──────┴────── [ [0, n) / n ] <─── start
+    We change the number of workers by sending TTIN and TTOU to the gunicorn
+    master process, which increases and decreases the number of child workers
+    respectively. Gunicorn guarantees that on TTOU workers are terminated
+    gracefully and that the oldest worker is terminated.
+    """
+
+    def wait_until_true(fn, timeout=0):
+        """
+        Sleeps until fn is true
+        """
+        t = time.time()
+        while not fn():
+            if 0 < timeout <= time.time() - t:
+                raise AirflowWebServerTimeout(
+                    "No response from gunicorn master within {0} seconds"
+                    .format(timeout))
+            time.sleep(0.1)
+
+    def start_refresh(gunicorn_master_proc):
+        batch_size = conf.getint('webserver', 'worker_refresh_batch_size')
+        log.debug('%s doing a refresh of %s workers', state, batch_size)
+        sys.stdout.flush()
+        sys.stderr.flush()
+
+        excess = 0
+        for _ in range(batch_size):
+            gunicorn_master_proc.send_signal(signal.SIGTTIN)
+            excess += 1
+            wait_until_true(lambda: num_workers_expected + excess ==
+                            get_num_workers_running(gunicorn_master_proc),
+                            master_timeout)
+
+    try:
+        wait_until_true(lambda: num_workers_expected ==
+                        get_num_workers_running(gunicorn_master_proc),
+                        master_timeout)
+        while True:
+            num_workers_running = get_num_workers_running(gunicorn_master_proc)
+            num_ready_workers_running = \
+                get_num_ready_workers_running(gunicorn_master_proc)
+
+            state = '[{0} / {1}]'.format(num_ready_workers_running, num_workers_running)
+
+            # Whenever some workers are not ready, wait until all workers are ready
+            if num_ready_workers_running < num_workers_running:
+                log.debug('%s some workers are starting up, waiting...', state)
+                sys.stdout.flush()
+                time.sleep(1)
+
+            # Kill a worker gracefully by asking gunicorn to reduce number of workers
+            elif num_workers_running > num_workers_expected:
+                excess = num_workers_running - num_workers_expected
+                log.debug('%s killing %s workers', state, excess)
+
+                for _ in range(excess):
+                    gunicorn_master_proc.send_signal(signal.SIGTTOU)
+                    excess -= 1
+                    wait_until_true(lambda: num_workers_expected + excess ==
+                                    get_num_workers_running(gunicorn_master_proc),
+                                    master_timeout)
+
+            # Start a new worker by asking gunicorn to increase number of workers
+            elif num_workers_running == num_workers_expected:
+                refresh_interval = conf.getint('webserver', 'worker_refresh_interval')
+                log.debug(
+                    '%s sleeping for %ss starting doing a refresh...',
+                    state, refresh_interval
+                )
+                time.sleep(refresh_interval)
+                start_refresh(gunicorn_master_proc)
+
+            else:
+                # num_ready_workers_running == num_workers_running < num_workers_expected
+                log.error((
+                    "%s some workers seem to have died and gunicorn"
+                    "did not restart them as expected"
+                ), state)
+                time.sleep(10)
+                if len(
+                    psutil.Process(gunicorn_master_proc.pid).children()
+                ) < num_workers_expected:
+                    start_refresh(gunicorn_master_proc)
+    except (AirflowWebServerTimeout, OSError) as err:
+        log.error(err)
+        log.error("Shutting down webserver")
+        try:
+            gunicorn_master_proc.terminate()
+            gunicorn_master_proc.wait()
+        finally:
+            sys.exit(1)
+
+def get_conn(self):
+        """
+        Retrieves connection to Cloud Translate
+
+        :return: Google Cloud Translate client object.
+        :rtype: Client
+        """
+        if not self._client:
+            self._client = Client(credentials=self._get_credentials())
+        return self._client
+
+def translate(
+        self, values, target_language, format_=None, source_language=None, model=None
+    ):
+        """Translate a string or list of strings.
+
+        See https://cloud.google.com/translate/docs/translating-text
+
+        :type values: str or list
+        :param values: String or list of strings to translate.
+
+        :type target_language: str
+        :param target_language: The language to translate results into. This
+                                is required by the API and defaults to
+                                the target language of the current instance.
+
+        :type format_: str
+        :param format_: (Optional) One of ``text`` or ``html``, to specify
+                        if the input text is plain text or HTML.
+
+        :type source_language: str or None
+        :param source_language: (Optional) The language of the text to
+                                be translated.
+
+        :type model: str or None
+        :param model: (Optional) The model used to translate the text, such
+                      as ``'base'`` or ``'nmt'``.
+
+        :rtype: str or list
+        :returns: A list of dictionaries for each queried value. Each
+                  dictionary typically contains three keys (though not
+                  all will be present in all cases)
+
+                  * ``detectedSourceLanguage``: The detected language (as an
+                    ISO 639-1 language code) of the text.
+                  * ``translatedText``: The translation of the text into the
+                    target language.
+                  * ``input``: The corresponding input value.
+                  * ``model``: The model used to translate the text.
+
+                  If only a single value is passed, then only a single
+                  dictionary will be returned.
+        :raises: :class:`~exceptions.ValueError` if the number of
+                 values and translations differ.
+        """
+        client = self.get_conn()
+
+        return client.translate(
+            values=values,
+            target_language=target_language,
+            format_=format_,
+            source_language=source_language,
+            model=model,
+        )
+
+def execute(self, context):
+        """
+        Execute the bash command in a temporary directory
+        which will be cleaned afterwards
+        """
+        self.log.info('Tmp dir root location: \n %s', gettempdir())
+
+        # Prepare env for child process.
+        if self.env is None:
+            self.env = os.environ.copy()
+
+        airflow_context_vars = context_to_airflow_vars(context, in_env_var_format=True)
+        self.log.info('Exporting the following env vars:\n%s',
+                      '\n'.join(["{}={}".format(k, v)
+                                 for k, v in
+                                 airflow_context_vars.items()]))
+        self.env.update(airflow_context_vars)
+
+        self.lineage_data = self.bash_command
+
+        with TemporaryDirectory(prefix='airflowtmp') as tmp_dir:
+            with NamedTemporaryFile(dir=tmp_dir, prefix=self.task_id) as tmp_file:
+                tmp_file.write(bytes(self.bash_command, 'utf_8'))
+                tmp_file.flush()
+                script_location = os.path.abspath(tmp_file.name)
+                self.log.info('Temporary script location: %s', script_location)
+
+                def pre_exec():
+                    # Restore default signal disposition and invoke setsid
+                    for sig in ('SIGPIPE', 'SIGXFZ', 'SIGXFSZ'):
+                        if hasattr(signal, sig):
+                            signal.signal(getattr(signal, sig), signal.SIG_DFL)
+                    os.setsid()
+
+                self.log.info('Running command: %s', self.bash_command)
+                sub_process = Popen(
+                    ['bash', tmp_file.name],
+                    stdout=PIPE,
+                    stderr=STDOUT,
+                    cwd=tmp_dir,
+                    env=self.env,
+                    preexec_fn=pre_exec)
+
+                self.sub_process = sub_process
+
+                self.log.info('Output:')
+                line = ''
+                for raw_line in iter(sub_process.stdout.readline, b''):
+                    line = raw_line.decode(self.output_encoding).rstrip()
+                    self.log.info(line)
+
+                sub_process.wait()
+
+                self.log.info('Command exited with return code %s', sub_process.returncode)
+
+                if sub_process.returncode:
+                    raise AirflowException('Bash command failed')
+
+        return line
+
+def get_instance(self, instance, project_id=None):
+        """
+        Retrieves a resource containing information about a Cloud SQL instance.
+
+        :param instance: Database instance ID. This does not include the project ID.
+        :type instance: str
+        :param project_id: Project ID of the project that contains the instance. If set
+            to None or missing, the default project_id from the GCP connection is used.
+        :type project_id: str
+        :return: A Cloud SQL instance resource.
+        :rtype: dict
+        """
+        return self.get_conn().instances().get(
+            project=project_id,
+            instance=instance
+        ).execute(num_retries=self.num_retries)
+
+def create_instance(self, body, project_id=None):
+        """
+        Creates a new Cloud SQL instance.
+
+        :param body: Body required by the Cloud SQL insert API, as described in
+            https://cloud.google.com/sql/docs/mysql/admin-api/v1beta4/instances/insert#request-body.
+        :type body: dict
+        :param project_id: Project ID of the project that contains the instance. If set
+            to None or missing, the default project_id from the GCP connection is used.
+        :type project_id: str
+        :return: None
+        """
+        response = self.get_conn().instances().insert(
+            project=project_id,
+            body=body
+        ).execute(num_retries=self.num_retries)
+        operation_name = response["name"]
+        self._wait_for_operation_to_complete(project_id=project_id,
+                                             operation_name=operation_name)
+
+def patch_instance(self, body, instance, project_id=None):
+        """
+        Updates settings of a Cloud SQL instance.
+
+        Caution: This is not a partial update, so you must include values for
+        all the settings that you want to retain.
+
+        :param body: Body required by the Cloud SQL patch API, as described in
+            https://cloud.google.com/sql/docs/mysql/admin-api/v1beta4/instances/patch#request-body.
+        :type body: dict
+        :param instance: Cloud SQL instance ID. This does not include the project ID.
+        :type instance: str
+        :param project_id: Project ID of the project that contains the instance. If set
+            to None or missing, the default project_id from the GCP connection is used.
+        :type project_id: str
+        :return: None
+        """
+        response = self.get_conn().instances().patch(
+            project=project_id,
+            instance=instance,
+            body=body
+        ).execute(num_retries=self.num_retries)
+        operation_name = response["name"]
+        self._wait_for_operation_to_complete(project_id=project_id,
+                                             operation_name=operation_name)
+
+def delete_instance(self, instance, project_id=None):
+        """
+        Deletes a Cloud SQL instance.
+
+        :param project_id: Project ID of the project that contains the instance. If set
+            to None or missing, the default project_id from the GCP connection is used.
+        :type project_id: str
+        :param instance: Cloud SQL instance ID. This does not include the project ID.
+        :type instance: str
+        :return: None
+        """
+        response = self.get_conn().instances().delete(
+            project=project_id,
+            instance=instance,
+        ).execute(num_retries=self.num_retries)
+        operation_name = response["name"]
+        self._wait_for_operation_to_complete(project_id=project_id,
+                                             operation_name=operation_name)
+
+def get_database(self, instance, database, project_id=None):
+        """
+        Retrieves a database resource from a Cloud SQL instance.
+
+        :param instance: Database instance ID. This does not include the project ID.
+        :type instance: str
+        :param database: Name of the database in the instance.
+        :type database: str
+        :param project_id: Project ID of the project that contains the instance. If set
+            to None or missing, the default project_id from the GCP connection is used.
+        :type project_id: str
+        :return: A Cloud SQL database resource, as described in
+            https://cloud.google.com/sql/docs/mysql/admin-api/v1beta4/databases#resource.
+        :rtype: dict
+        """
+        return self.get_conn().databases().get(
+            project=project_id,
+            instance=instance,
+            database=database
+        ).execute(num_retries=self.num_retries)
+
+def create_database(self, instance, body, project_id=None):
+        """
+        Creates a new database inside a Cloud SQL instance.
+
+        :param instance: Database instance ID. This does not include the project ID.
+        :type instance: str
+        :param body: The request body, as described in
+            https://cloud.google.com/sql/docs/mysql/admin-api/v1beta4/databases/insert#request-body.
+        :type body: dict
+        :param project_id: Project ID of the project that contains the instance. If set
+            to None or missing, the default project_id from the GCP connection is used.
+        :type project_id: str
+        :return: None
+        """
+        response = self.get_conn().databases().insert(
+            project=project_id,
+            instance=instance,
+            body=body
+        ).execute(num_retries=self.num_retries)
+        operation_name = response["name"]
+        self._wait_for_operation_to_complete(project_id=project_id,
+                                             operation_name=operation_name)
+
+def patch_database(self, instance, database, body, project_id=None):
+        """
+        Updates a database resource inside a Cloud SQL instance.
+
+        This method supports patch semantics.
+        See https://cloud.google.com/sql/docs/mysql/admin-api/how-tos/performance#patch.
+
+        :param instance: Database instance ID. This does not include the project ID.
+        :type instance: str
+        :param database: Name of the database to be updated in the instance.
+        :type database: str
+        :param body: The request body, as described in
+            https://cloud.google.com/sql/docs/mysql/admin-api/v1beta4/databases/insert#request-body.
+        :type body: dict
+        :param project_id: Project ID of the project that contains the instance. If set
+            to None or missing, the default project_id from the GCP connection is used.
+        :type project_id: str
+        :return: None
+        """
+        response = self.get_conn().databases().patch(
+            project=project_id,
+            instance=instance,
+            database=database,
+            body=body
+        ).execute(num_retries=self.num_retries)
+        operation_name = response["name"]
+        self._wait_for_operation_to_complete(project_id=project_id,
+                                             operation_name=operation_name)
+
+def delete_database(self, instance, database, project_id=None):
+        """
+        Deletes a database from a Cloud SQL instance.
+
+        :param instance: Database instance ID. This does not include the project ID.
+        :type instance: str
+        :param database: Name of the database to be deleted in the instance.
+        :type database: str
+        :param project_id: Project ID of the project that contains the instance. If set
+            to None or missing, the default project_id from the GCP connection is used.
+        :type project_id: str
+        :return: None
+        """
+        response = self.get_conn().databases().delete(
+            project=project_id,
+            instance=instance,
+            database=database
+        ).execute(num_retries=self.num_retries)
+        operation_name = response["name"]
+        self._wait_for_operation_to_complete(project_id=project_id,
+                                             operation_name=operation_name)
+
+def export_instance(self, instance, body, project_id=None):
+        """
+        Exports data from a Cloud SQL instance to a Cloud Storage bucket as a SQL dump
+        or CSV file.
+
+        :param instance: Database instance ID of the Cloud SQL instance. This does not include the
+            project ID.
+        :type instance: str
+        :param body: The request body, as described in
+            https://cloud.google.com/sql/docs/mysql/admin-api/v1beta4/instances/export#request-body
+        :type body: dict
+        :param project_id: Project ID of the project that contains the instance. If set
+            to None or missing, the default project_id from the GCP connection is used.
+        :type project_id: str
+        :return: None
+        """
+        try:
+            response = self.get_conn().instances().export(
+                project=project_id,
+                instance=instance,
+                body=body
+            ).execute(num_retries=self.num_retries)
+            operation_name = response["name"]
+            self._wait_for_operation_to_complete(project_id=project_id,
+                                                 operation_name=operation_name)
+        except HttpError as ex:
+            raise AirflowException(
+                'Exporting instance {} failed: {}'.format(instance, ex.content)
+            )
+
+def _wait_for_operation_to_complete(self, project_id, operation_name):
+        """
+        Waits for the named operation to complete - checks status of the
+        asynchronous call.
+
+        :param project_id: Project ID of the project that contains the instance.
+        :type project_id: str
+        :param operation_name: Name of the operation.
+        :type operation_name: str
+        :return: None
+        """
+        service = self.get_conn()
+        while True:
+            operation_response = service.operations().get(
+                project=project_id,
+                operation=operation_name,
+            ).execute(num_retries=self.num_retries)
+            if operation_response.get("status") == CloudSqlOperationStatus.DONE:
+                error = operation_response.get("error")
+                if error:
+                    # Extracting the errors list as string and trimming square braces
+                    error_msg = str(error.get("errors"))[1:-1]
+                    raise AirflowException(error_msg)
+                # No meaningful info to return from the response in case of success
+                return
+            time.sleep(TIME_TO_SLEEP_IN_SECONDS)
+
+def start_proxy(self):
+        """
+        Starts Cloud SQL Proxy.
+
+        You have to remember to stop the proxy if you started it!
+        """
+        self._download_sql_proxy_if_needed()
+        if self.sql_proxy_process:
+            raise AirflowException("The sql proxy is already running: {}".format(
+                self.sql_proxy_process))
+        else:
+            command_to_run = [self.sql_proxy_path]
+            command_to_run.extend(self.command_line_parameters)
+            try:
+                self.log.info("Creating directory %s",
+                              self.cloud_sql_proxy_socket_directory)
+                os.makedirs(self.cloud_sql_proxy_socket_directory)
+            except OSError:
+                # Needed for python 2 compatibility (exists_ok missing)
+                pass
+            command_to_run.extend(self._get_credential_parameters())
+            self.log.info("Running the command: `%s`", " ".join(command_to_run))
+            self.sql_proxy_process = Popen(command_to_run,
+                                           stdin=PIPE, stdout=PIPE, stderr=PIPE)
+            self.log.info("The pid of cloud_sql_proxy: %s", self.sql_proxy_process.pid)
+            while True:
+                line = self.sql_proxy_process.stderr.readline().decode('utf-8')
+                return_code = self.sql_proxy_process.poll()
+                if line == '' and return_code is not None:
+                    self.sql_proxy_process = None
+                    raise AirflowException(
+                        "The cloud_sql_proxy finished early with return code {}!".format(
+                            return_code))
+                if line != '':
+                    self.log.info(line)
+                if "googleapi: Error" in line or "invalid instance name:" in line:
+                    self.stop_proxy()
+                    raise AirflowException(
+                        "Error when starting the cloud_sql_proxy {}!".format(
+                            line))
+                if "Ready for new connections" in line:
+                    return
+
+def stop_proxy(self):
+        """
+        Stops running proxy.
+
+        You should stop the proxy after you stop using it.
+        """
+        if not self.sql_proxy_process:
+            raise AirflowException("The sql proxy is not started yet")
+        else:
+            self.log.info("Stopping the cloud_sql_proxy pid: %s",
+                          self.sql_proxy_process.pid)
+            self.sql_proxy_process.kill()
+            self.sql_proxy_process = None
+        # Cleanup!
+        self.log.info("Removing the socket directory: %s",
+                      self.cloud_sql_proxy_socket_directory)
+        shutil.rmtree(self.cloud_sql_proxy_socket_directory, ignore_errors=True)
+        if self.sql_proxy_was_downloaded:
+            self.log.info("Removing downloaded proxy: %s", self.sql_proxy_path)
+            # Silently ignore if the file has already been removed (concurrency)
+            try:
+                os.remove(self.sql_proxy_path)
+            except OSError as e:
+                if not e.errno == errno.ENOENT:
+                    raise
+        else:
+            self.log.info("Skipped removing proxy - it was not downloaded: %s",
+                          self.sql_proxy_path)
+        if os.path.isfile(self.credentials_path):
+            self.log.info("Removing generated credentials file %s",
+                          self.credentials_path)
+            # Here file cannot be delete by concurrent task (each task has its own copy)
+            os.remove(self.credentials_path)
+
+def get_proxy_version(self):
+        """
+        Returns version of the Cloud SQL Proxy.
+        """
+        self._download_sql_proxy_if_needed()
+        command_to_run = [self.sql_proxy_path]
+        command_to_run.extend(['--version'])
+        command_to_run.extend(self._get_credential_parameters())
+        result = subprocess.check_output(command_to_run).decode('utf-8')
+        pattern = re.compile("^.*[V|v]ersion ([^;]*);.*$")
+        m = pattern.match(result)
+        if m:
+            return m.group(1)
+        else:
+            return None
+
+def create_connection(self, session=None):
+        """
+        Create connection in the Connection table, according to whether it uses
+        proxy, TCP, UNIX sockets, SSL. Connection ID will be randomly generated.
+
+        :param session: Session of the SQL Alchemy ORM (automatically generated with
+                        decorator).
+        """
+        connection = Connection(conn_id=self.db_conn_id)
+        uri = self._generate_connection_uri()
+        self.log.info("Creating connection %s", self.db_conn_id)
+        connection.parse_from_uri(uri)
+        session.add(connection)
+        session.commit()
+
+def retrieve_connection(self, session=None):
+        """
+        Retrieves the dynamically created connection from the Connection table.
+
+        :param session: Session of the SQL Alchemy ORM (automatically generated with
+                        decorator).
+        """
+        self.log.info("Retrieving connection %s", self.db_conn_id)
+        connections = session.query(Connection).filter(
+            Connection.conn_id == self.db_conn_id)
+        if connections.count():
+            return connections[0]
+        return None
+
+def delete_connection(self, session=None):
+        """
+        Delete the dynamically created connection from the Connection table.
+
+        :param session: Session of the SQL Alchemy ORM (automatically generated with
+                        decorator).
+        """
+        self.log.info("Deleting connection %s", self.db_conn_id)
+        connections = session.query(Connection).filter(
+            Connection.conn_id == self.db_conn_id)
+        if connections.count():
+            connection = connections[0]
+            session.delete(connection)
+            session.commit()
+        else:
+            self.log.info("Connection was already deleted!")
+
+def get_sqlproxy_runner(self):
+        """
+        Retrieve Cloud SQL Proxy runner. It is used to manage the proxy
+        lifecycle per task.
+
+        :return: The Cloud SQL Proxy runner.
+        :rtype: CloudSqlProxyRunner
+        """
+        if not self.use_proxy:
+            raise AirflowException("Proxy runner can only be retrieved in case of use_proxy = True")
+        return CloudSqlProxyRunner(
+            path_prefix=self.sql_proxy_unique_path,
+            instance_specification=self._get_sqlproxy_instance_specification(),
+            project_id=self.project_id,
+            sql_proxy_version=self.sql_proxy_version,
+            sql_proxy_binary_path=self.sql_proxy_binary_path
+        )
+
+def get_database_hook(self):
+        """
+        Retrieve database hook. This is the actual Postgres or MySQL database hook
+        that uses proxy or connects directly to the Google Cloud SQL database.
+        """
+        if self.database_type == 'postgres':
+            self.db_hook = PostgresHook(postgres_conn_id=self.db_conn_id,
+                                        schema=self.database)
+        else:
+            self.db_hook = MySqlHook(mysql_conn_id=self.db_conn_id,
+                                     schema=self.database)
+        return self.db_hook
+
+def cleanup_database_hook(self):
+        """
+        Clean up database hook after it was used.
+        """
+        if self.database_type == 'postgres':
+            if hasattr(self.db_hook,
+                       'conn') and self.db_hook.conn and self.db_hook.conn.notices:
+                for output in self.db_hook.conn.notices:
+                    self.log.info(output)
+
+def reserve_free_tcp_port(self):
+        """
+        Reserve free TCP port to be used by Cloud SQL Proxy
+        """
+        self.reserved_tcp_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        self.reserved_tcp_socket.bind(('127.0.0.1', 0))
+        self.sql_proxy_tcp_port = self.reserved_tcp_socket.getsockname()[1]

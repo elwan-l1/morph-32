@@ -1,0 +1,1890 @@
+{
+  "status": "running",
+  "provenance": {
+    "model": "/Users/elwan.mayencou/Documents/GitHub/morph-32/checkpoints/research/primary-20260911/affine-3bit.morph",
+    "model_sha256": {
+      "affine-3bit.morph": "1376f24ce1ecf49671e7dcc6365328eb72b690d1bcda006cf3ffac74cc8645b4"
+    },
+    "source_sha256": {
+      "src/morph32/__init__.py": "726bcfaa1c2fa5d955ff7418ef7404e7e7494664881afdc5bd72fc9d146c4017",
+      "src/morph32/__main__.py": "6d8b7d7846a845059d7a3107143f11131f63c5511d669b44085b15ec5e3d2279",
+      "src/morph32/calibration.py": "66430a5b636c4e4ec532b442b9b3c9d2ab447b4913775cd6be784def76a294d2",
+      "src/morph32/capabilities.py": "3710fd0b58a6834ed911353f4981d5481a5682bb65c704f2219ccfd322c0b532",
+      "src/morph32/cli.py": "0b823ab84a548721afcf3abb77035def06f9056fe6af01a9d16e8f54dc04a1d3",
+      "src/morph32/codec.py": "ff513d861fb74dae67d5ffb382d5e288e4760ff7c20baa012f3c9f3275f1f8db",
+      "src/morph32/conversion.py": "9df0dcafa30f5ea4f44024e7bfe4c5a767eb79a62d5344e322e9a70678fc24b0",
+      "src/morph32/evaluation.py": "05ee9669ffb636e202374843d15188e02501011dc72ed7f68d6cac85f30934d9",
+      "src/morph32/fused.py": "b50d98aab4c503db0abebf609e1e99e3a348634ea5d8ba5ea6323da4eb46a0b7",
+      "src/morph32/generation.py": "ce5f0745b70143a5d7140c5d34b51c36eab7464a20d353ff3eadc04b56d64058",
+      "src/morph32/grading.py": "784234e0abb521d1ff876e4c71748b1c97cbdb70a2051be5d152a6bbfe66b674",
+      "src/morph32/inventory.py": "08673ceccad819f1dd6c913707bb8079f4c1ee3eb128daffee84ba088b5dbda9",
+      "src/morph32/metadata.py": "1da904b6dbb5e3a406db4bc64fc41a2598db3e00bcebaf1e13b78b0d83aa626a",
+      "src/morph32/metadata_kernels.py": "581e776959ad5ca31c9b6936a122250826c3399c4d02d2d0fab59684424b0bd8",
+      "src/morph32/metadata_packet.py": "21f759e0a1cd08e5b289a23d2d87c7b899799b1ef028c5fc37aa47dc576251ea",
+      "src/morph32/metrics.py": "12f3d7dcfe31271c7be45a33ea739984e69c6b5486bba8174dfd09885046a8c7",
+      "src/morph32/mmlu.py": "e551f8e35a42270e20ff20008e3592c73e73207c8ab93fd1f4a81b089b7355fa",
+      "src/morph32/optimization.py": "96aeb9c14b4a6ccc905d3f087247fd31ed4a62bafc52ff37041c5f70d40401f1",
+      "src/morph32/packing.py": "099a7f16488b6a5d64152d25bdf1debd30cbde55bce9b771e2edd9f1ef5c61af",
+      "src/morph32/paths.py": "daebc954496d65e5c2b1cceafcb1cb12ff27817fccc683dd30be09c28d8138a3",
+      "src/morph32/prefill.py": "ff8cdedbe7600d54ddfc743bd38b2646b6e9c8a62d98e28f7a0e8c71e9d1b62f",
+      "src/morph32/profiles.py": "07eeebd75cd54cf9041e08560a35619859f450ae29290a693b01d74cd498edcb",
+      "src/morph32/research.py": "89c8ded49b5f129571daef88bb83c5cce3499735ee06684cb831d1ba88482287",
+      "src/morph32/runtime.py": "210299d47d8b3523f9030824b1bd7c44151320c075ae9102f23f0aa642634ac6",
+      "src/morph32/scalar.py": "4946711bd408d57532e2d1a0f55e57e950ab391a8e2bd4770af3fe995f929857",
+      "src/morph32/server.py": "2b427fe1552c4da8590520b99f6030212ac6a6c9597e64f88395ff7f279ae739",
+      "src/morph32/sources.py": "60cc9ea84a260e943fdc25eb755510ee4f8324a6fda282f8f4898c83fe74fa8f",
+      "src/morph32/statistics.py": "ef8bfe3ff4b11e9d6076f51a4384ddbe559f4a24bb01a841cc45edb8afb02c8b",
+      "src/morph32/tasks.py": "cec77d920524a13f535b9a3b19da57481c41fa19bfb363b86519d1a83d3cb8a5",
+      "src/morph32/workloads.py": "4821d09dd08c39730e8cf4fee06de449cc5c99afe6c776429c9688b42bda7006",
+      "src/morph32/metal/metadata_packet.metal": "4b26c7720d9d98141db57d5974c14e680a9e5189f52e6d82168f779d6258406a"
+    },
+    "git_commit": "2b20e817b0e806e0a7038d5a7da6fb7ca320be38",
+    "platform": "macOS-26.6.2-arm64-arm-64bit",
+    "packages": {
+      "mlx": "0.32.2",
+      "mlx-lm": "0.31.3",
+      "numpy": "2.5.3"
+    },
+    "device": {
+      "device_name": "Apple M5 Pro",
+      "max_recommended_working_set_size": 40200896512,
+      "memory_size": 51539607552,
+      "architecture": "applegpu_g17s",
+      "max_buffer_length": 30150672384,
+      "resource_limit": 499000
+    },
+    "power": {
+      "power": "Now drawing from 'AC Power'\n -InternalBattery-0 (id=7471203)\t100%; charged; 0:00 remaining present: true",
+      "thermal": "Note: No thermal warning level has been recorded\nNote: No performance warning level has been recorded\nNote: No CPU power status has been recorded"
+    },
+    "seed": 0,
+    "decode_variant": "original",
+    "prefill_variant": "original",
+    "decode_values": 32,
+    "fuse_gate_up": "0",
+    "metadata_variant": "packet",
+    "prefill_block_m": 128
+  },
+  "requested_count": 1140,
+  "subset_sha256": "be0834323ffc384c25337c296084090913ee23380f2406e99af83a2b03182082",
+  "records": [
+    {
+      "id": "abstract_algebra/0",
+      "category": "not aggregated",
+      "subject": "abstract_algebra",
+      "prompt_sha256": "ff9b00310e214beacf4b324da8c9e6c1de4e49cb422f1bcb1f7037b78f40a2a3",
+      "token_sha256": "b5096fc99b32750d6e8fccc024ddde2041696d7c2146ad7707b88a1de259d481",
+      "prompt_tokens": 349,
+      "answer_token_ids": [
+        357,
+        417,
+        351,
+        414
+      ],
+      "predicted": "C",
+      "expected": "B",
+      "correct": false,
+      "choice_logprobs": [
+        -6.596839904785156,
+        -0.9093399047851562,
+        -0.5343399047851562,
+        -4.909339904785156
+      ],
+      "choice_probabilities": [
+        0.0013679731637239456,
+        0.40376389026641846,
+        0.5874729752540588,
+        0.007395192980766296
+      ],
+      "seconds": 28.89324370799295,
+      "memory": {
+        "mlx_active_bytes": 13259632512,
+        "mlx_cache_bytes": 766472764,
+        "mlx_peak_bytes": 13905093260,
+        "process_peak_rss_bytes": 10395222016,
+        "process_phys_footprint_bytes": 14627384000,
+        "process_lifetime_peak_phys_footprint_bytes": 15607918064,
+        "mach_resident_bytes": 3749920768,
+        "mach_resident_peak_bytes": 10395222016
+      }
+    },
+    {
+      "id": "abstract_algebra/4",
+      "category": "not aggregated",
+      "subject": "abstract_algebra",
+      "prompt_sha256": "bc5b2c1cc8df7e323865a7492048c8ce03f3b3d96bf5558d146196186da247c3",
+      "token_sha256": "b55589b8f3b60a039e5c570e089e7e0a8acc6d9e333bb3cf25bc52b098a82f35",
+      "prompt_tokens": 391,
+      "answer_token_ids": [
+        357,
+        417,
+        351,
+        414
+      ],
+      "predicted": "A",
+      "expected": "B",
+      "correct": false,
+      "choice_logprobs": [
+        -0.8528347015380859,
+        -0.9778347015380859,
+        -2.477834701538086,
+        -2.352834701538086
+      ],
+      "choice_probabilities": [
+        0.43430325388908386,
+        0.3832712769508362,
+        0.08551938086748123,
+        0.0969061627984047
+      ],
+      "seconds": 32.518139042003895,
+      "memory": {
+        "mlx_active_bytes": 13301329792,
+        "mlx_cache_bytes": 845083868,
+        "mlx_peak_bytes": 14016327704,
+        "process_peak_rss_bytes": 10395222016,
+        "process_phys_footprint_bytes": 14747708096,
+        "process_lifetime_peak_phys_footprint_bytes": 15607918064,
+        "mach_resident_bytes": 3749380096,
+        "mach_resident_peak_bytes": 10395222016
+      }
+    },
+    {
+      "id": "abstract_algebra/5",
+      "category": "not aggregated",
+      "subject": "abstract_algebra",
+      "prompt_sha256": "6338baca9e7cd2f1a2323dded9351cf7a96271f8d82572647d118a9ae9983888",
+      "token_sha256": "14eaf265a99c7fe5518a1cceb01053ff1e89419ded913db47d55faa0c4017f11",
+      "prompt_tokens": 391,
+      "answer_token_ids": [
+        357,
+        417,
+        351,
+        414
+      ],
+      "predicted": "B",
+      "expected": "A",
+      "correct": false,
+      "choice_logprobs": [
+        -1.9527759552001953,
+        -0.5777759552001953,
+        -1.5777759552001953,
+        -2.5777759552001953
+      ],
+      "choice_probabilities": [
+        0.1439816653728485,
+        0.5694584846496582,
+        0.20949207246303558,
+        0.07706782966852188
+      ],
+      "seconds": 32.44841720799741,
+      "memory": {
+        "mlx_active_bytes": 13301329792,
+        "mlx_cache_bytes": 845083868,
+        "mlx_peak_bytes": 14016327704,
+        "process_peak_rss_bytes": 10395222016,
+        "process_phys_footprint_bytes": 14747708096,
+        "process_lifetime_peak_phys_footprint_bytes": 15607918064,
+        "mach_resident_bytes": 3749412864,
+        "mach_resident_peak_bytes": 10395222016
+      }
+    },
+    {
+      "id": "abstract_algebra/8",
+      "category": "not aggregated",
+      "subject": "abstract_algebra",
+      "prompt_sha256": "c9525b5525ecc87e943ef58948bdf947444ae951e5189bc81e0f6023f4384bf9",
+      "token_sha256": "6bbb8b98772a98c75207ee70d5e6816adb6218cba1d44a4df6336fa1ef5273ba",
+      "prompt_tokens": 345,
+      "answer_token_ids": [
+        357,
+        417,
+        351,
+        414
+      ],
+      "predicted": "B",
+      "expected": "B",
+      "correct": true,
+      "choice_logprobs": [
+        -10.256355285644531,
+        -0.00635528564453125,
+        -5.381355285644531,
+        -9.818855285644531
+      ],
+      "choice_probabilities": [
+        3.519135862006806e-05,
+        0.9953011274337769,
+        0.004609159659594297,
+        5.450546450447291e-05
+      ],
+      "seconds": 28.645570624998072,
+      "memory": {
+        "mlx_active_bytes": 13255700352,
+        "mlx_cache_bytes": 759230972,
+        "mlx_peak_bytes": 13894984300,
+        "process_peak_rss_bytes": 10395222016,
+        "process_phys_footprint_bytes": 14616881856,
+        "process_lifetime_peak_phys_footprint_bytes": 15607918064,
+        "mach_resident_bytes": 3749527552,
+        "mach_resident_peak_bytes": 10395222016
+      }
+    },
+    {
+      "id": "abstract_algebra/11",
+      "category": "not aggregated",
+      "subject": "abstract_algebra",
+      "prompt_sha256": "dfa1f47cf277486ae8aec187edd50834bc74bd27b28023f811c3fe4b5c2f7c61",
+      "token_sha256": "585741cec94a9e39894dc52294dff1b261f9781bab35d402ba75f6af52d128f0",
+      "prompt_tokens": 360,
+      "answer_token_ids": [
+        357,
+        417,
+        351,
+        414
+      ],
+      "predicted": "C",
+      "expected": "C",
+      "correct": true,
+      "choice_logprobs": [
+        -5.846736907958984,
+        -6.284236907958984,
+        -0.034236907958984375,
+        -8.034236907958984
+      ],
+      "choice_probabilities": [
+        0.0029743134509772062,
+        0.001920361421070993,
+        0.9947716593742371,
+        0.00033370876917615533
+      ],
+      "seconds": 30.07967500000086,
+      "memory": {
+        "mlx_active_bytes": 13270642560,
+        "mlx_cache_bytes": 785756908,
+        "mlx_peak_bytes": 13932520164,
+        "process_peak_rss_bytes": 10395222016,
+        "process_phys_footprint_bytes": 14658398912,
+        "process_lifetime_peak_phys_footprint_bytes": 15607918064,
+        "mach_resident_bytes": 3749625856,
+        "mach_resident_peak_bytes": 10395222016
+      }
+    },
+    {
+      "id": "abstract_algebra/18",
+      "category": "not aggregated",
+      "subject": "abstract_algebra",
+      "prompt_sha256": "e6c17e13b5a498204f72475caa12dc8ad428db7ff2969e73f4277225ae7961d5",
+      "token_sha256": "8ee5ba3ad8d3bb0fd3d4f2096a710ad94765bd89142bab659411b145e78d50fa",
+      "prompt_tokens": 351,
+      "answer_token_ids": [
+        357,
+        417,
+        351,
+        414
+      ],
+      "predicted": "D",
+      "expected": "D",
+      "correct": true,
+      "choice_logprobs": [
+        -10.549676895141602,
+        -10.674676895141602,
+        -9.112176895141602,
+        -0.11217689514160156
+      ],
+      "choice_probabilities": [
+        2.930716800619848e-05,
+        2.586348455224652e-05,
+        0.0001233878283528611,
+        0.9998214840888977
+      ],
+      "seconds": 29.57206895799027,
+      "memory": {
+        "mlx_active_bytes": 13261991808,
+        "mlx_cache_bytes": 770044508,
+        "mlx_peak_bytes": 13910499996,
+        "process_peak_rss_bytes": 10395222016,
+        "process_phys_footprint_bytes": 14634379968,
+        "process_lifetime_peak_phys_footprint_bytes": 15607918064,
+        "mach_resident_bytes": 3749691392,
+        "mach_resident_peak_bytes": 10395222016
+      }
+    },
+    {
+      "id": "abstract_algebra/19",
+      "category": "not aggregated",
+      "subject": "abstract_algebra",
+      "prompt_sha256": "6474c020ec2e3f828ceb088eb6f6e25bf6e083c131f51f819b21c5db6356135f",
+      "token_sha256": "3474799dab58660b7b2709c81e0267fdb2e85df0f131debe1ec79e8771fe95f3",
+      "prompt_tokens": 388,
+      "answer_token_ids": [
+        357,
+        417,
+        351,
+        414
+      ],
+      "predicted": "A",
+      "expected": "A",
+      "correct": true,
+      "choice_logprobs": [
+        -0.0034122467041015625,
+        -8.503412246704102,
+        -6.628412246704102,
+        -8.690912246704102
+      ],
+      "choice_probabilities": [
+        0.9983038902282715,
+        0.00020312325796112418,
+        0.0013245301088318229,
+        0.00016839512682054192
+      ],
+      "seconds": 32.691175083004055,
+      "memory": {
+        "mlx_active_bytes": 13298167680,
+        "mlx_cache_bytes": 839365804,
+        "mlx_peak_bytes": 14008315880,
+        "process_peak_rss_bytes": 10395222016,
+        "process_phys_footprint_bytes": 14738762432,
+        "process_lifetime_peak_phys_footprint_bytes": 15607918064,
+        "mach_resident_bytes": 3749806080,
+        "mach_resident_peak_bytes": 10395222016
+      }
+    },
+    {
+      "id": "abstract_algebra/24",
+      "category": "not aggregated",
+      "subject": "abstract_algebra",
+      "prompt_sha256": "95a3d53ead36100a2c1814c108a6c4900c3da2efd0cfa1a002b174449e10f195",
+      "token_sha256": "cb35a33335e71df67386820d32dac88457811749d0ba43eecdccd00917d96136",
+      "prompt_tokens": 364,
+      "answer_token_ids": [
+        357,
+        417,
+        351,
+        414
+      ],
+      "predicted": "A",
+      "expected": "B",
+      "correct": false,
+      "choice_logprobs": [
+        -0.012454986572265625,
+        -8.512454986572266,
+        -5.512454986572266,
+        -6.887454986572266
+      ],
+      "choice_probabilities": [
+        0.9947046637535095,
+        0.0002023909182753414,
+        0.004065131302922964,
+        0.0010278259869664907
+      ],
+      "seconds": 31.06352224999864,
+      "memory": {
+        "mlx_active_bytes": 13274574720,
+        "mlx_cache_bytes": 797799212,
+        "mlx_peak_bytes": 13942891268,
+        "process_peak_rss_bytes": 10395222016,
+        "process_phys_footprint_bytes": 14674488000,
+        "process_lifetime_peak_phys_footprint_bytes": 15607918064,
+        "mach_resident_bytes": 3749920768,
+        "mach_resident_peak_bytes": 10395222016
+      }
+    },
+    {
+      "id": "abstract_algebra/25",
+      "category": "not aggregated",
+      "subject": "abstract_algebra",
+      "prompt_sha256": "d4e02f317c7815077bc3ff916ddd35bcf8103d2d31edc33c31c40408cfc73971",
+      "token_sha256": "d5758acdb7dfc0c6ee897779ffe210c5abe598bce235c783ac13d388a72cbf74",
+      "prompt_tokens": 360,
+      "answer_token_ids": [
+        357,
+        417,
+        351,
+        414
+      ],
+      "predicted": "C",
+      "expected": "C",
+      "correct": true,
+      "choice_logprobs": [
+        -10.449491500854492,
+        -11.199491500854492,
+        -0.011991500854492188,
+        -12.386991500854492
+      ],
+      "choice_probabilities": [
+        2.9311013349797577e-05,
+        1.3845548892277293e-05,
+        0.9999526739120483,
+        4.222650659357896e-06
+      ],
+      "seconds": 30.54060891699919,
+      "memory": {
+        "mlx_active_bytes": 13270642560,
+        "mlx_cache_bytes": 785756908,
+        "mlx_peak_bytes": 13932520164,
+        "process_peak_rss_bytes": 10395222016,
+        "process_phys_footprint_bytes": 14658284224,
+        "process_lifetime_peak_phys_footprint_bytes": 15607918064,
+        "mach_resident_bytes": 3749937152,
+        "mach_resident_peak_bytes": 10395222016
+      }
+    },
+    {
+      "id": "abstract_algebra/37",
+      "category": "not aggregated",
+      "subject": "abstract_algebra",
+      "prompt_sha256": "e0347e187f703ef62b1fc5a2c4f3ab806e62ac2cbc9fe832f1391ee72a2c220a",
+      "token_sha256": "6ab0b67fe1a590ba56e41bbb62d75a85c792497bf9d8cc95cf94aab2913d17d8",
+      "prompt_tokens": 367,
+      "answer_token_ids": [
+        357,
+        417,
+        351,
+        414
+      ],
+      "predicted": "D",
+      "expected": "B",
+      "correct": false,
+      "choice_logprobs": [
+        -2.6316375732421875,
+        -1.5066375732421875,
+        -6.3816375732421875,
+        -0.3816375732421875
+      ],
+      "choice_probabilities": [
+        0.07357555627822876,
+        0.22662867605686188,
+        0.0017303316853940487,
+        0.6980654001235962
+      ],
+      "seconds": 31.180601333995583,
+      "memory": {
+        "mlx_active_bytes": 13277720448,
+        "mlx_cache_bytes": 803697500,
+        "mlx_peak_bytes": 13950952220,
+        "process_peak_rss_bytes": 10395222016,
+        "process_phys_footprint_bytes": 14683024064,
+        "process_lifetime_peak_phys_footprint_bytes": 15607918064,
+        "mach_resident_bytes": 3749953536,
+        "mach_resident_peak_bytes": 10395222016
+      }
+    },
+    {
+      "id": "abstract_algebra/40",
+      "category": "not aggregated",
+      "subject": "abstract_algebra",
+      "prompt_sha256": "f4214b2d78ec2148a2840818a747c97d8e0e82ad3da7e1d49a5fa251b6f3413d",
+      "token_sha256": "d6a5973d366e7b3aa01d448e41676695ea52ae841a6cbcac6de7c8003184e39d",
+      "prompt_tokens": 364,
+      "answer_token_ids": [
+        357,
+        417,
+        351,
+        414
+      ],
+      "predicted": "C",
+      "expected": "C",
+      "correct": true,
+      "choice_logprobs": [
+        -4.519489288330078,
+        -7.394489288330078,
+        -0.019489288330078125,
+        -10.144489288330078
+      ],
+      "choice_probabilities": [
+        0.010979704558849335,
+        0.0006194326560944319,
+        0.9883612990379333,
+        3.9598988223588094e-05
+      ],
+      "seconds": 34.712595833989326,
+      "memory": {
+        "mlx_active_bytes": 13274574720,
+        "mlx_cache_bytes": 797799212,
+        "mlx_peak_bytes": 13942891268,
+        "process_peak_rss_bytes": 10395222016,
+        "process_phys_footprint_bytes": 14674258624,
+        "process_lifetime_peak_phys_footprint_bytes": 15607918064,
+        "mach_resident_bytes": 1041285120,
+        "mach_resident_peak_bytes": 10395222016
+      }
+    },
+    {
+      "id": "abstract_algebra/62",
+      "category": "not aggregated",
+      "subject": "abstract_algebra",
+      "prompt_sha256": "94b2ba516a2ad1a2e61cca9fc4d189814254f9130db82ffbf1a8931377d688b5",
+      "token_sha256": "106b454e840b0c97f26108ed98b9f09abc57d13a62d9046d37bd6fcaef202512",
+      "prompt_tokens": 377,
+      "answer_token_ids": [
+        357,
+        417,
+        351,
+        414
+      ],
+      "predicted": "A",
+      "expected": "C",
+      "correct": false,
+      "choice_logprobs": [
+        -0.0067081451416015625,
+        -8.256708145141602,
+        -6.131708145141602,
+        -7.881708145141602
+      ],
+      "choice_probabilities": [
+        0.9971790313720703,
+        0.0002605215704534203,
+        0.002181320684030652,
+        0.00037905669887550175
+      ],
+      "seconds": 37.35773608300951,
+      "memory": {
+        "mlx_active_bytes": 13287157632,
+        "mlx_cache_bytes": 822080508,
+        "mlx_peak_bytes": 13981282102,
+        "process_peak_rss_bytes": 10395222016,
+        "process_phys_footprint_bytes": 14711155392,
+        "process_lifetime_peak_phys_footprint_bytes": 15607918064,
+        "mach_resident_bytes": 1041956864,
+        "mach_resident_peak_bytes": 10395222016
+      }
+    },
+    {
+      "id": "abstract_algebra/64",
+      "category": "not aggregated",
+      "subject": "abstract_algebra",
+      "prompt_sha256": "5294ea2c90fda95e6137f3cc388598b8135c0d4ba2a89d6905b407152fbfad21",
+      "token_sha256": "c5fa152014b968a294287e7cc33c4e80b2d74354a11e76e06ca516e8bb535eef",
+      "prompt_tokens": 339,
+      "answer_token_ids": [
+        357,
+        417,
+        351,
+        414
+      ],
+      "predicted": "B",
+      "expected": "B",
+      "correct": true,
+      "choice_logprobs": [
+        -1.8120918273925781,
+        -0.18709182739257812,
+        -6.749591827392578,
+        -7.562091827392578
+      ],
+      "choice_probabilities": [
+        0.1642366647720337,
+        0.8340625762939453,
+        0.0011779890628531575,
+        0.0005227294750511646
+      ],
+      "seconds": 30.487547999990056,
+      "memory": {
+        "mlx_active_bytes": 13250195328,
+        "mlx_cache_bytes": 831023516,
+        "mlx_peak_bytes": 13925608674,
+        "process_peak_rss_bytes": 10395222016,
+        "process_phys_footprint_bytes": 14682958528,
+        "process_lifetime_peak_phys_footprint_bytes": 15607918064,
+        "mach_resident_bytes": 1042300928,
+        "mach_resident_peak_bytes": 10395222016
+      }
+    },
+    {
+      "id": "abstract_algebra/70",
+      "category": "not aggregated",
+      "subject": "abstract_algebra",
+      "prompt_sha256": "c2b164c3dc14ea3632fd4972b40d1eed72518062f3d035129ab04d1c778ecec2",
+      "token_sha256": "f40e5e8a6e0be8917de7ba183d8abf02f57db48365fb49fda684b7e197703112",
+      "prompt_tokens": 356,
+      "answer_token_ids": [
+        357,
+        417,
+        351,
+        414
+      ],
+      "predicted": "C",
+      "expected": "D",
+      "correct": false,
+      "choice_logprobs": [
+        -3.9709930419921875,
+        -2.0959930419921875,
+        -0.4709930419921875,
+        -1.5959930419921875
+      ],
+      "choice_probabilities": [
+        0.01946006342768669,
+        0.12689556181430817,
+        0.6444288492202759,
+        0.2092154324054718
+      ],
+      "seconds": 31.38016924999829,
+      "memory": {
+        "mlx_active_bytes": 13266710400,
+        "mlx_cache_bytes": 778760876,
+        "mlx_peak_bytes": 13922656964,
+        "process_peak_rss_bytes": 10395222016,
+        "process_phys_footprint_bytes": 14647536320,
+        "process_lifetime_peak_phys_footprint_bytes": 15607918064,
+        "mach_resident_bytes": 1042366464,
+        "mach_resident_peak_bytes": 10395222016
+      }
+    },
+    {
+      "id": "abstract_algebra/76",
+      "category": "not aggregated",
+      "subject": "abstract_algebra",
+      "prompt_sha256": "3266513dc6597c934bfd77ca1f2909d8c7f8a354ab453f423459e019baed911b",
+      "token_sha256": "d501266bd48baa1d0fb023a56411e2dfb518cd21d110d3f3cad2bfbe88f5f116",
+      "prompt_tokens": 380,
+      "answer_token_ids": [
+        357,
+        417,
+        351,
+        414
+      ],
+      "predicted": "C",
+      "expected": "C",
+      "correct": true,
+      "choice_logprobs": [
+        -9.131145477294922,
+        -6.131145477294922,
+        -0.006145477294921875,
+        -10.131145477294922
+      ],
+      "choice_probabilities": [
+        0.00010865493095479906,
+        0.002182392403483391,
+        0.9976689219474792,
+        3.997190287918784e-05
+      ],
+      "seconds": 33.06299516699801,
+      "memory": {
+        "mlx_active_bytes": 13290303360,
+        "mlx_cache_bytes": 827126828,
+        "mlx_peak_bytes": 13988802408,
+        "process_peak_rss_bytes": 10395222016,
+        "process_phys_footprint_bytes": 14719593200,
+        "process_lifetime_peak_phys_footprint_bytes": 15607918064,
+        "mach_resident_bytes": 1042333696,
+        "mach_resident_peak_bytes": 10395222016
+      }
+    },
+    {
+      "id": "abstract_algebra/77",
+      "category": "not aggregated",
+      "subject": "abstract_algebra",
+      "prompt_sha256": "51294a2d9ba18922f973620f69dceaf67360d5c9c65ebeb778816a1dcc25bfd9",
+      "token_sha256": "fee0b9fd9d65e3626b1d8173c40a912d6d6ba3327eb62454ece196783ac540d9",
+      "prompt_tokens": 336,
+      "answer_token_ids": [
+        357,
+        417,
+        351,
+        414
+      ],
+      "predicted": "A",
+      "expected": "A",
+      "correct": true,
+      "choice_logprobs": [
+        -0.001796722412109375,
+        -7.501796722412109,
+        -10.62679672241211,
+        -10.87679672241211
+      ],
+      "choice_probabilities": [
+        0.9994039535522461,
+        0.0005527548491954803,
+        2.4286357074743137e-05,
+        1.8914230167865753e-05
+      ],
+      "seconds": 31.71912712500489,
+      "memory": {
+        "mlx_active_bytes": 13247049600,
+        "mlx_cache_bytes": 824273260,
+        "mlx_peak_bytes": 13916957874,
+        "process_peak_rss_bytes": 10395222016,
+        "process_phys_footprint_bytes": 14673685232,
+        "process_lifetime_peak_phys_footprint_bytes": 15607918064,
+        "mach_resident_bytes": 1042677760,
+        "mach_resident_peak_bytes": 10395222016
+      }
+    },
+    {
+      "id": "abstract_algebra/78",
+      "category": "not aggregated",
+      "subject": "abstract_algebra",
+      "prompt_sha256": "2c2a1d774ef72c5b696ac1d85ea88c64bb4c9efc045ebcb3f3b9a53d8807670a",
+      "token_sha256": "092210f3a61215eb8ab28a53bdb1a9ffa7e366e1b096acb7d4a105258d005463",
+      "prompt_tokens": 382,
+      "answer_token_ids": [
+        357,
+        417,
+        351,
+        414
+      ],
+      "predicted": "B",
+      "expected": "D",
+      "correct": false,
+      "choice_logprobs": [
+        -6.968135833740234,
+        -0.5931358337402344,
+        -4.843135833740234,
+        -0.8431358337402344
+      ],
+      "choice_probabilities": [
+        0.0009492143290117383,
+        0.5571749210357666,
+        0.007947673089802265,
+        0.4339282810688019
+      ],
+      "seconds": 35.25272204099747,
+      "memory": {
+        "mlx_active_bytes": 13292662656,
+        "mlx_cache_bytes": 830911564,
+        "mlx_peak_bytes": 13994356616,
+        "process_peak_rss_bytes": 10395222016,
+        "process_phys_footprint_bytes": 14725851888,
+        "process_lifetime_peak_phys_footprint_bytes": 15607918064,
+        "mach_resident_bytes": 1042743296,
+        "mach_resident_peak_bytes": 10395222016
+      }
+    },
+    {
+      "id": "abstract_algebra/82",
+      "category": "not aggregated",
+      "subject": "abstract_algebra",
+      "prompt_sha256": "30b31bdcfd09a18c616fe91e8318dd86a0d99677884b57a03930aa212524fda2",
+      "token_sha256": "3c4d6a1f19a97f8b09e5cc40457d2cecf35ebe477d62304ad3093b1ebe19b164",
+      "prompt_tokens": 368,
+      "answer_token_ids": [
+        357,
+        417,
+        351,
+        414
+      ],
+      "predicted": "A",
+      "expected": "A",
+      "correct": true,
+      "choice_logprobs": [
+        -0.0060291290283203125,
+        -11.00602912902832,
+        -9.75602912902832,
+        -12.13102912902832
+      ],
+      "choice_probabilities": [
+        0.9999196529388428,
+        1.670036363066174e-05,
+        5.828998837387189e-05,
+        5.421811692940537e-06
+      ],
+      "seconds": 32.178794457999174,
+      "memory": {
+        "mlx_active_bytes": 13278506880,
+        "mlx_cache_bytes": 804844396,
+        "mlx_peak_bytes": 13952754468,
+        "process_peak_rss_bytes": 10395222016,
+        "process_phys_footprint_bytes": 14685694704,
+        "process_lifetime_peak_phys_footprint_bytes": 15607918064,
+        "mach_resident_bytes": 1042825216,
+        "mach_resident_peak_bytes": 10395222016
+      }
+    },
+    {
+      "id": "abstract_algebra/85",
+      "category": "not aggregated",
+      "subject": "abstract_algebra",
+      "prompt_sha256": "146e8f20a08b73d238e5654c6833706dcf326f897a037a44803309fcf2e87078",
+      "token_sha256": "e993dd719b5c46f658a521d37cd1312e46e5d7abe6b023459443f6cdb36997d7",
+      "prompt_tokens": 377,
+      "answer_token_ids": [
+        357,
+        417,
+        351,
+        414
+      ],
+      "predicted": "C",
+      "expected": "C",
+      "correct": true,
+      "choice_logprobs": [
+        -5.145097732543945,
+        -4.520097732543945,
+        -0.020097732543945312,
+        -8.457597732543945
+      ],
+      "choice_probabilities": [
+        0.005845258478075266,
+        0.010920383967459202,
+        0.9830213785171509,
+        0.00021291359735187143
+      ],
+      "seconds": 33.50149708299432,
+      "memory": {
+        "mlx_active_bytes": 13287157632,
+        "mlx_cache_bytes": 822080508,
+        "mlx_peak_bytes": 13981282102,
+        "process_peak_rss_bytes": 10395222016,
+        "process_phys_footprint_bytes": 14711859952,
+        "process_lifetime_peak_phys_footprint_bytes": 15607918064,
+        "mach_resident_bytes": 1042825216,
+        "mach_resident_peak_bytes": 10395222016
+      }
+    },
+    {
+      "id": "abstract_algebra/91",
+      "category": "not aggregated",
+      "subject": "abstract_algebra",
+      "prompt_sha256": "2608937f16d35114bcdf9d5bde32b0921d12a592ee6b4414eee70bdb551195b0",
+      "token_sha256": "8c86d8b4201ecb422ea7cf752df83ccf8943f2984cfb6b0016bbc226e7e6e3b3",
+      "prompt_tokens": 348,
+      "answer_token_ids": [
+        357,
+        417,
+        351,
+        414
+      ],
+      "predicted": "B",
+      "expected": "B",
+      "correct": true,
+      "choice_logprobs": [
+        -8.947748184204102,
+        -0.010248184204101562,
+        -11.697748184204102,
+        -10.197748184204102
+      ],
+      "choice_probabilities": [
+        0.00013134576147422194,
+        0.9998226761817932,
+        8.396656085096765e-06,
+        3.763119821087457e-05
+      ],
+      "seconds": 30.773914999997942,
+      "memory": {
+        "mlx_active_bytes": 13258846080,
+        "mlx_cache_bytes": 764211756,
+        "mlx_peak_bytes": 13902439044,
+        "process_peak_rss_bytes": 10395222016,
+        "process_phys_footprint_bytes": 14625991408,
+        "process_lifetime_peak_phys_footprint_bytes": 15607918064,
+        "mach_resident_bytes": 1042726912,
+        "mach_resident_peak_bytes": 10395222016
+      }
+    },
+    {
+      "id": "anatomy/0",
+      "category": "not aggregated",
+      "subject": "anatomy",
+      "prompt_sha256": "b91759cf63d02a5541c3bd952870370ea5c19661d02a7a9a4c20907549d641e3",
+      "token_sha256": "8137c1a137fedb9f679864364f9f281424a9a504e2cfcce516e8f5b9f7294aab",
+      "prompt_tokens": 367,
+      "answer_token_ids": [
+        357,
+        417,
+        351,
+        414
+      ],
+      "predicted": "A",
+      "expected": "A",
+      "correct": true,
+      "choice_logprobs": [
+        -0.015010833740234375,
+        -7.765010833740234,
+        -7.327510833740234,
+        -5.890010833740234
+      ],
+      "choice_probabilities": [
+        0.9961085915565491,
+        0.00042906642192974687,
+        0.000664551043882966,
+        0.002797864843159914
+      ],
+      "seconds": 32.22192812499998,
+      "memory": {
+        "mlx_active_bytes": 13277720448,
+        "mlx_cache_bytes": 803697500,
+        "mlx_peak_bytes": 13950952220,
+        "process_peak_rss_bytes": 10395222016,
+        "process_phys_footprint_bytes": 14684334832,
+        "process_lifetime_peak_phys_footprint_bytes": 15607918064,
+        "mach_resident_bytes": 1042726912,
+        "mach_resident_peak_bytes": 10395222016
+      }
+    },
+    {
+      "id": "anatomy/2",
+      "category": "not aggregated",
+      "subject": "anatomy",
+      "prompt_sha256": "444452032e4c36ec8e4755f18f0c88e80dd1e15c598bcbcbbad3aae9dad7e8b1",
+      "token_sha256": "72a53bb70796385b0f972cfeed4f93146e302f0806b74df3cdc66b7af94d37a2",
+      "prompt_tokens": 327,
+      "answer_token_ids": [
+        357,
+        417,
+        351,
+        414
+      ],
+      "predicted": "A",
+      "expected": "A",
+      "correct": true,
+      "choice_logprobs": [
+        -0.0029926300048828125,
+        -9.002992630004883,
+        -7.377992630004883,
+        -9.127992630004883
+      ],
+      "choice_probabilities": [
+        0.9991416931152344,
+        0.00012330393656156957,
+        0.0006261890521273017,
+        0.00010881532944040373
+      ],
+      "seconds": 28.19537762500113,
+      "memory": {
+        "mlx_active_bytes": 13238398848,
+        "mlx_cache_bytes": 809920732,
+        "mlx_peak_bytes": 13934060594,
+        "process_peak_rss_bytes": 10395222016,
+        "process_phys_footprint_bytes": 14650551024,
+        "process_lifetime_peak_phys_footprint_bytes": 15607918064,
+        "mach_resident_bytes": 1043021824,
+        "mach_resident_peak_bytes": 10395222016
+      }
+    },
+    {
+      "id": "anatomy/11",
+      "category": "not aggregated",
+      "subject": "anatomy",
+      "prompt_sha256": "20dcf473ae8e00c0d92419aa9111fbffca7f8566f421ec858d483c9f3b9dc1ef",
+      "token_sha256": "056a984deb0920808bc4399608854caadcc7e058eb232d7eb49d145dbbfba131",
+      "prompt_tokens": 372,
+      "answer_token_ids": [
+        357,
+        417,
+        351,
+        414
+      ],
+      "predicted": "D",
+      "expected": "D",
+      "correct": true,
+      "choice_logprobs": [
+        -9.191549301147461,
+        -6.504049301147461,
+        -7.254049301147461,
+        -0.0040493011474609375
+      ],
+      "choice_probabilities": [
+        0.00010207392915617675,
+        0.0014999655541032553,
+        0.0007085338002070785,
+        0.9976894855499268
+      ],
+      "seconds": 32.372616624998045,
+      "memory": {
+        "mlx_active_bytes": 13282439040,
+        "mlx_cache_bytes": 812463020,
+        "mlx_peak_bytes": 13968453350,
+        "process_peak_rss_bytes": 10395222016,
+        "process_phys_footprint_bytes": 14697900784,
+        "process_lifetime_peak_phys_footprint_bytes": 15607918064,
+        "mach_resident_bytes": 1043152896,
+        "mach_resident_peak_bytes": 10395222016
+      }
+    },
+    {
+      "id": "anatomy/13",
+      "category": "not aggregated",
+      "subject": "anatomy",
+      "prompt_sha256": "73584e8bb8d5b7b36ff6eb7f03d75c51b546f7ef1d8a548bc4008dcadf80276d",
+      "token_sha256": "ff817adf024d90b21fe3a006958e91c3128ecb613052082d407a3722367eab73",
+      "prompt_tokens": 415,
+      "answer_token_ids": [
+        357,
+        417,
+        351,
+        414
+      ],
+      "predicted": "A",
+      "expected": "B",
+      "correct": false,
+      "choice_logprobs": [
+        -0.5079994201660156,
+        -1.0079994201660156,
+        -4.132999420166016,
+        -5.132999420166016
+      ],
+      "choice_probabilities": [
+        0.6086488366127014,
+        0.36916419863700867,
+        0.01621994562447071,
+        0.005966984201222658
+      ],
+      "seconds": 36.44597595799132,
+      "memory": {
+        "mlx_active_bytes": 13324922752,
+        "mlx_cache_bytes": 889042524,
+        "mlx_peak_bytes": 14088843682,
+        "process_peak_rss_bytes": 10395222016,
+        "process_phys_footprint_bytes": 14816242416,
+        "process_lifetime_peak_phys_footprint_bytes": 15607918064,
+        "mach_resident_bytes": 1043202048,
+        "mach_resident_peak_bytes": 10395222016
+      }
+    },
+    {
+      "id": "anatomy/15",
+      "category": "not aggregated",
+      "subject": "anatomy",
+      "prompt_sha256": "b8efc2fd92ce9052e42429a53bf562e45a095fd208e0a3043b69d48bb49b2b43",
+      "token_sha256": "597206e15b54b214c34e6e134157ad822537152061eb90cc48d568fe3448bb5d",
+      "prompt_tokens": 356,
+      "answer_token_ids": [
+        357,
+        417,
+        351,
+        414
+      ],
+      "predicted": "C",
+      "expected": "C",
+      "correct": true,
+      "choice_logprobs": [
+        -5.669454574584961,
+        -6.794454574584961,
+        -0.04445457458496094,
+        -6.419454574584961
+      ],
+      "choice_probabilities": [
+        0.003583340672776103,
+        0.0011633399408310652,
+        0.9935606718063354,
+        0.0016926497919484973
+      ],
+      "seconds": 32.81409604199871,
+      "memory": {
+        "mlx_active_bytes": 13266710400,
+        "mlx_cache_bytes": 778760876,
+        "mlx_peak_bytes": 13922656964,
+        "process_peak_rss_bytes": 10395222016,
+        "process_phys_footprint_bytes": 14647995120,
+        "process_lifetime_peak_phys_footprint_bytes": 15607918064,
+        "mach_resident_bytes": 1043202048,
+        "mach_resident_peak_bytes": 10395222016
+      }
+    },
+    {
+      "id": "anatomy/39",
+      "category": "not aggregated",
+      "subject": "anatomy",
+      "prompt_sha256": "d4898d36c274489f7c923b57b3f0e52364c3988a0694e4cc0896e4996a98a663",
+      "token_sha256": "d220684ce2270edca56cf38d59f76103613099fbdc0e645ea6a1a197b91e25d1",
+      "prompt_tokens": 342,
+      "answer_token_ids": [
+        357,
+        417,
+        351,
+        414
+      ],
+      "predicted": "C",
+      "expected": "C",
+      "correct": true,
+      "choice_logprobs": [
+        -7.487342834472656,
+        -8.049842834472656,
+        -4.299842834472656,
+        -5.174842834472656
+      ],
+      "choice_probabilities": [
+        0.027857322245836258,
+        0.01587262563407421,
+        0.6749210953712463,
+        0.28134897351264954
+      ],
+      "seconds": 32.87393270799657,
+      "memory": {
+        "mlx_active_bytes": 13253341056,
+        "mlx_cache_bytes": 753611212,
+        "mlx_peak_bytes": 13887873620,
+        "process_peak_rss_bytes": 10395222016,
+        "process_phys_footprint_bytes": 14610279152,
+        "process_lifetime_peak_phys_footprint_bytes": 15607918064,
+        "mach_resident_bytes": 1043496960,
+        "mach_resident_peak_bytes": 10395222016
+      }
+    },
+    {
+      "id": "anatomy/41",
+      "category": "not aggregated",
+      "subject": "anatomy",
+      "prompt_sha256": "ade96452caf3be33ddd86686057bd8566b176dd30ad1bcbda31cd25aa545ecc9",
+      "token_sha256": "5afdddd98a1f4575aa3a0391db1761ffc24c66fd7b4cdc8e9c6ab51ad71b8005",
+      "prompt_tokens": 349,
+      "answer_token_ids": [
+        357,
+        417,
+        351,
+        414
+      ],
+      "predicted": "C",
+      "expected": "C",
+      "correct": true,
+      "choice_logprobs": [
+        -3.9043045043945312,
+        -2.7793045043945312,
+        -0.40430450439453125,
+        -1.4043045043945312
+      ],
+      "choice_probabilities": [
+        0.020251866430044174,
+        0.06238014996051788,
+        0.6706497669219971,
+        0.24671827256679535
+      ],
+      "seconds": 31.035877625006833,
+      "memory": {
+        "mlx_active_bytes": 13259632512,
+        "mlx_cache_bytes": 766472764,
+        "mlx_peak_bytes": 13905093260,
+        "process_peak_rss_bytes": 10395222016,
+        "process_phys_footprint_bytes": 14629219056,
+        "process_lifetime_peak_phys_footprint_bytes": 15607918064,
+        "mach_resident_bytes": 1043562496,
+        "mach_resident_peak_bytes": 10395222016
+      }
+    },
+    {
+      "id": "anatomy/51",
+      "category": "not aggregated",
+      "subject": "anatomy",
+      "prompt_sha256": "d2c1e40042885a9766ef492a42f2a29abc0243a37bded67d93ecb9d7c3010007",
+      "token_sha256": "72e7f7b0c83f6e66746072aae2232c528e0a848a54e1db14b401e75103bb71b3",
+      "prompt_tokens": 337,
+      "answer_token_ids": [
+        357,
+        417,
+        351,
+        414
+      ],
+      "predicted": "D",
+      "expected": "D",
+      "correct": true,
+      "choice_logprobs": [
+        -11.697488784790039,
+        -7.134988784790039,
+        -9.822488784790039,
+        -0.009988784790039062
+      ],
+      "choice_probabilities": [
+        8.390863513341174e-06,
+        0.0008040351094678044,
+        5.471530676004477e-05,
+        0.9991329312324524
+      ],
+      "seconds": 29.643858916999307,
+      "memory": {
+        "mlx_active_bytes": 13247836032,
+        "mlx_cache_bytes": 827173244,
+        "mlx_peak_bytes": 13920038082,
+        "process_peak_rss_bytes": 10395222016,
+        "process_phys_footprint_bytes": 14678223600,
+        "process_lifetime_peak_phys_footprint_bytes": 15607918064,
+        "mach_resident_bytes": 1043660800,
+        "mach_resident_peak_bytes": 10395222016
+      }
+    },
+    {
+      "id": "anatomy/59",
+      "category": "not aggregated",
+      "subject": "anatomy",
+      "prompt_sha256": "0287feeb13ebe87c756325b296ca28a0757e52e2296f2257fad908cd62d65f7b",
+      "token_sha256": "50de6e5d2f6279675d6b4c7575e1dceb2be005415baab3427dece4731c5c48ed",
+      "prompt_tokens": 332,
+      "answer_token_ids": [
+        357,
+        417,
+        351,
+        414
+      ],
+      "predicted": "B",
+      "expected": "D",
+      "correct": false,
+      "choice_logprobs": [
+        -1.2037544250488281,
+        -1.0787544250488281,
+        -1.2037544250488281,
+        -3.078754425048828
+      ],
+      "choice_probabilities": [
+        0.3042747676372528,
+        0.34478849172592163,
+        0.3042747676372528,
+        0.04666205123066902
+      ],
+      "seconds": 29.513932375004515,
+      "memory": {
+        "mlx_active_bytes": 13243117440,
+        "mlx_cache_bytes": 819570988,
+        "mlx_peak_bytes": 13947167874,
+        "process_peak_rss_bytes": 10395222016,
+        "process_phys_footprint_bytes": 14665673456,
+        "process_lifetime_peak_phys_footprint_bytes": 15607918064,
+        "mach_resident_bytes": 1043726336,
+        "mach_resident_peak_bytes": 10395222016
+      }
+    },
+    {
+      "id": "anatomy/61",
+      "category": "not aggregated",
+      "subject": "anatomy",
+      "prompt_sha256": "3fa745867ae0b15f408971ce018e9346cc9ba245e93bed252c7d8ab5dbe81add",
+      "token_sha256": "7512dd3c9d388dcf94f4f85183457999bfb272af43e939a7428a7d1a4581bfcc",
+      "prompt_tokens": 369,
+      "answer_token_ids": [
+        357,
+        417,
+        351,
+        414
+      ],
+      "predicted": "C",
+      "expected": "C",
+      "correct": true,
+      "choice_logprobs": [
+        -8.21940803527832,
+        -12.46940803527832,
+        -0.9694080352783203,
+        -12.15690803527832
+      ],
+      "choice_probabilities": [
+        0.0007096537156030536,
+        1.012267057376448e-05,
+        0.9992664456367493,
+        1.383604649163317e-05
+      ],
+      "seconds": 31.965773292002268,
+      "memory": {
+        "mlx_active_bytes": 13279293312,
+        "mlx_cache_bytes": 807416700,
+        "mlx_peak_bytes": 13955621676,
+        "process_peak_rss_bytes": 10395222016,
+        "process_phys_footprint_bytes": 14689397488,
+        "process_lifetime_peak_phys_footprint_bytes": 15607918064,
+        "mach_resident_bytes": 1043808256,
+        "mach_resident_peak_bytes": 10395222016
+      }
+    },
+    {
+      "id": "anatomy/66",
+      "category": "not aggregated",
+      "subject": "anatomy",
+      "prompt_sha256": "0201ec07e4c2c13d54ae0af7ee70204a92f9bd0d73d03283f92ff4d239908791",
+      "token_sha256": "19eb112b704f372627ffc633c4ee7f4102f86a1c283f005d62105fdcf9b2e080",
+      "prompt_tokens": 349,
+      "answer_token_ids": [
+        357,
+        417,
+        351,
+        414
+      ],
+      "predicted": "D",
+      "expected": "D",
+      "correct": true,
+      "choice_logprobs": [
+        -9.765604019165039,
+        -9.703104019165039,
+        -8.015604019165039,
+        -0.015604019165039062
+      ],
+      "choice_probabilities": [
+        5.8268105931347236e-05,
+        6.20260980213061e-05,
+        0.00033530982909724116,
+        0.9995443224906921
+      ],
+      "seconds": 31.725562249994255,
+      "memory": {
+        "mlx_active_bytes": 13259632512,
+        "mlx_cache_bytes": 766472764,
+        "mlx_peak_bytes": 13905093260,
+        "process_peak_rss_bytes": 10395222016,
+        "process_phys_footprint_bytes": 14630415088,
+        "process_lifetime_peak_phys_footprint_bytes": 15607918064,
+        "mach_resident_bytes": 462880768,
+        "mach_resident_peak_bytes": 10395222016
+      }
+    },
+    {
+      "id": "anatomy/69",
+      "category": "not aggregated",
+      "subject": "anatomy",
+      "prompt_sha256": "0ecf98a898eea9bce2028c12c20ce9e694092a9c66dbf85c884fb78b0f878922",
+      "token_sha256": "f85207bed8facdb068658f4fb8eda8c534a32875fbe18a9469ecbc8e8af5464a",
+      "prompt_tokens": 372,
+      "answer_token_ids": [
+        357,
+        417,
+        351,
+        414
+      ],
+      "predicted": "A",
+      "expected": "B",
+      "correct": false,
+      "choice_logprobs": [
+        -0.20392799377441406,
+        -3.078927993774414,
+        -4.578927993774414,
+        -2.078927993774414
+      ],
+      "choice_probabilities": [
+        0.8180900812149048,
+        0.04615349322557449,
+        0.010298233479261398,
+        0.12545819580554962
+      ],
+      "seconds": 35.67391129099997,
+      "memory": {
+        "mlx_active_bytes": 13282439040,
+        "mlx_cache_bytes": 812463020,
+        "mlx_peak_bytes": 13968453350,
+        "process_peak_rss_bytes": 10395222016,
+        "process_phys_footprint_bytes": 14699162352,
+        "process_lifetime_peak_phys_footprint_bytes": 15607918064,
+        "mach_resident_bytes": 462979072,
+        "mach_resident_peak_bytes": 10395222016
+      }
+    },
+    {
+      "id": "anatomy/79",
+      "category": "not aggregated",
+      "subject": "anatomy",
+      "prompt_sha256": "6cb37fc07a61ced5760485f25e5fc5d28ee0540d3849265318edde49c7f36021",
+      "token_sha256": "a6a62f888e1f64a18686af73521072b4ec5d4260e43d74b0b888c590bbece214",
+      "prompt_tokens": 365,
+      "answer_token_ids": [
+        357,
+        417,
+        351,
+        414
+      ],
+      "predicted": "B",
+      "expected": "D",
+      "correct": false,
+      "choice_logprobs": [
+        -8.763067245483398,
+        -0.07556724548339844,
+        -7.200567245483398,
+        -2.9505672454833984
+      ],
+      "choice_probabilities": [
+        0.00015952609828673303,
+        0.9457252025604248,
+        0.0007610561442561448,
+        0.0533541738986969
+      ],
+      "seconds": 33.503145958005916,
+      "memory": {
+        "mlx_active_bytes": 13275361152,
+        "mlx_cache_bytes": 800092988,
+        "mlx_peak_bytes": 13945545484,
+        "process_peak_rss_bytes": 10395222016,
+        "process_phys_footprint_bytes": 14679288560,
+        "process_lifetime_peak_phys_footprint_bytes": 15607918064,
+        "mach_resident_bytes": 463355904,
+        "mach_resident_peak_bytes": 10395222016
+      }
+    },
+    {
+      "id": "anatomy/80",
+      "category": "not aggregated",
+      "subject": "anatomy",
+      "prompt_sha256": "d7675a85509826128d63ceedcd50876978390921138e55ff82f931eb303434a5",
+      "token_sha256": "cf599e870bdb10271ab28c411ba70a355e210d183dc73007aa2528b74ff2b99d",
+      "prompt_tokens": 333,
+      "answer_token_ids": [
+        357,
+        417,
+        351,
+        414
+      ],
+      "predicted": "B",
+      "expected": "B",
+      "correct": true,
+      "choice_logprobs": [
+        -10.518636703491211,
+        -0.5186367034912109,
+        -8.143636703491211,
+        -10.018636703491211
+      ],
+      "choice_probabilities": [
+        4.537232962320559e-05,
+        0.999392032623291,
+        0.00048779865028336644,
+        7.480633212253451e-05
+      ],
+      "seconds": 32.82311558299989,
+      "memory": {
+        "mlx_active_bytes": 13243903872,
+        "mlx_cache_bytes": 822356284,
+        "mlx_peak_bytes": 13950248082,
+        "process_peak_rss_bytes": 10395222016,
+        "process_phys_footprint_bytes": 14669966064,
+        "process_lifetime_peak_phys_footprint_bytes": 15607918064,
+        "mach_resident_bytes": 463716352,
+        "mach_resident_peak_bytes": 10395222016
+      }
+    },
+    {
+      "id": "anatomy/94",
+      "category": "not aggregated",
+      "subject": "anatomy",
+      "prompt_sha256": "d23e605ab4572fd30a2eb5ab94dc4769ed0eaf605a2ea08951af59f2eb8ab9fd",
+      "token_sha256": "2237af72752b5c1bc40ba39ba5b9ca30379304e4bb7e6ec3051f3537e9f6a24e",
+      "prompt_tokens": 345,
+      "answer_token_ids": [
+        357,
+        417,
+        351,
+        414
+      ],
+      "predicted": "B",
+      "expected": "A",
+      "correct": false,
+      "choice_logprobs": [
+        -1.3003063201904297,
+        -0.4253063201904297,
+        -3.1753063201904297,
+        -3.6753063201904297
+      ],
+      "choice_probabilities": [
+        0.2743299901485443,
+        0.658083438873291,
+        0.042069870978593826,
+        0.02551666647195816
+      ],
+      "seconds": 41.86333066699444,
+      "memory": {
+        "mlx_active_bytes": 13255700352,
+        "mlx_cache_bytes": 759230972,
+        "mlx_peak_bytes": 13894984300,
+        "process_peak_rss_bytes": 10395222016,
+        "process_phys_footprint_bytes": 14618553072,
+        "process_lifetime_peak_phys_footprint_bytes": 15607918064,
+        "mach_resident_bytes": 74285056,
+        "mach_resident_peak_bytes": 10395222016
+      }
+    },
+    {
+      "id": "anatomy/96",
+      "category": "not aggregated",
+      "subject": "anatomy",
+      "prompt_sha256": "2949c949c51c9d1367148684afeb862d0da888e73806915d47c5674990d486b1",
+      "token_sha256": "e84ac1fb11e925035f9ab20c1ad278c6536bb0135d43df11bfb4e9428fc3133c",
+      "prompt_tokens": 338,
+      "answer_token_ids": [
+        357,
+        417,
+        351,
+        414
+      ],
+      "predicted": "A",
+      "expected": "A",
+      "correct": true,
+      "choice_logprobs": [
+        -0.01700592041015625,
+        -9.267005920410156,
+        -6.642005920410156,
+        -6.329505920410156
+      ],
+      "choice_probabilities": [
+        0.9967740178108215,
+        9.58016244112514e-05,
+        0.0013225002912804484,
+        0.001807643100619316
+      ],
+      "seconds": 33.16384875000222,
+      "memory": {
+        "mlx_active_bytes": 13249408896,
+        "mlx_cache_bytes": 829303180,
+        "mlx_peak_bytes": 13923364050,
+        "process_peak_rss_bytes": 10395222016,
+        "process_phys_footprint_bytes": 14683286256,
+        "process_lifetime_peak_phys_footprint_bytes": 15607918064,
+        "mach_resident_bytes": 75481088,
+        "mach_resident_peak_bytes": 10395222016
+      }
+    },
+    {
+      "id": "anatomy/98",
+      "category": "not aggregated",
+      "subject": "anatomy",
+      "prompt_sha256": "94c06ba869ca308bf01fe681384c1d7f9de6a3120dfaffebf959a3de370203e4",
+      "token_sha256": "72c97cbe1e0dd802002ea52f9388efa7b9f4fd47ae8fcd99b88dceed07739430",
+      "prompt_tokens": 343,
+      "answer_token_ids": [
+        357,
+        417,
+        351,
+        414
+      ],
+      "predicted": "C",
+      "expected": "A",
+      "correct": false,
+      "choice_logprobs": [
+        -0.9162845611572266,
+        -2.9162845611572266,
+        -0.6662845611572266,
+        -3.9162845611572266
+      ],
+      "choice_probabilities": [
+        0.4049980342388153,
+        0.054810527712106705,
+        0.520027756690979,
+        0.02016366645693779
+      ],
+      "seconds": 29.58535354200285,
+      "memory": {
+        "mlx_active_bytes": 13254127488,
+        "mlx_cache_bytes": 755544540,
+        "mlx_peak_bytes": 13890331228,
+        "process_peak_rss_bytes": 10395222016,
+        "process_phys_footprint_bytes": 14614326000,
+        "process_lifetime_peak_phys_footprint_bytes": 15607918064,
+        "mach_resident_bytes": 75857920,
+        "mach_resident_peak_bytes": 10395222016
+      }
+    },
+    {
+      "id": "anatomy/101",
+      "category": "not aggregated",
+      "subject": "anatomy",
+      "prompt_sha256": "df7ec58cb0a4901c8855c5096db54ee6780bf88577b9aedf6d8633976264444e",
+      "token_sha256": "e5231379f0e0ac4de1df693a263a5b204b0c2b60acc86e8bda8eae97af5d127b",
+      "prompt_tokens": 366,
+      "answer_token_ids": [
+        357,
+        417,
+        351,
+        414
+      ],
+      "predicted": "D",
+      "expected": "D",
+      "correct": true,
+      "choice_logprobs": [
+        -8.57217788696289,
+        -6.259677886962891,
+        -7.384677886962891,
+        -0.009677886962890625
+      ],
+      "choice_probabilities": [
+        0.00019061700731981546,
+        0.0019251634366810322,
+        0.0006250091828405857,
+        0.9972591400146484
+      ],
+      "seconds": 31.34297058300581,
+      "memory": {
+        "mlx_active_bytes": 13276934016,
+        "mlx_cache_bytes": 801600332,
+        "mlx_peak_bytes": 13948412692,
+        "process_peak_rss_bytes": 10395222016,
+        "process_phys_footprint_bytes": 14682712816,
+        "process_lifetime_peak_phys_footprint_bytes": 15607918064,
+        "mach_resident_bytes": 76201984,
+        "mach_resident_peak_bytes": 10395222016
+      }
+    },
+    {
+      "id": "anatomy/118",
+      "category": "not aggregated",
+      "subject": "anatomy",
+      "prompt_sha256": "17d583ca0bc60764b489b50b2233aad138e1e5250c4c2e31a475584752771a86",
+      "token_sha256": "19e78c2b056b2dc4f8365f29973f65d96bbd72b31cad6b258b02509184657746",
+      "prompt_tokens": 355,
+      "answer_token_ids": [
+        357,
+        417,
+        351,
+        414
+      ],
+      "predicted": "B",
+      "expected": "B",
+      "correct": true,
+      "choice_logprobs": [
+        -7.085441589355469,
+        -0.02294158935546875,
+        -8.022941589355469,
+        -6.897941589355469
+      ],
+      "choice_probabilities": [
+        0.0008547318866476417,
+        0.9977795481681824,
+        0.0003347177989780903,
+        0.0010310031939297915
+      ],
+      "seconds": 31.456671125008143,
+      "memory": {
+        "mlx_active_bytes": 13265923968,
+        "mlx_cache_bytes": 777204380,
+        "mlx_peak_bytes": 13920510652,
+        "process_peak_rss_bytes": 10395222016,
+        "process_phys_footprint_bytes": 14647372528,
+        "process_lifetime_peak_phys_footprint_bytes": 15607918064,
+        "mach_resident_bytes": 76447744,
+        "mach_resident_peak_bytes": 10395222016
+      }
+    },
+    {
+      "id": "anatomy/120",
+      "category": "not aggregated",
+      "subject": "anatomy",
+      "prompt_sha256": "9fa7f67e17f620fff29da7899d324e25bbcf80fa3f77559228ad19077d301276",
+      "token_sha256": "e434756aa0cf3736f508192f9737849d2786a0c387d06f13c0304fdb5c4992eb",
+      "prompt_tokens": 323,
+      "answer_token_ids": [
+        357,
+        417,
+        351,
+        414
+      ],
+      "predicted": "C",
+      "expected": "C",
+      "correct": true,
+      "choice_logprobs": [
+        -10.806388854980469,
+        -11.368888854980469,
+        -0.05638885498046875,
+        -8.868888854980469
+      ],
+      "choice_probabilities": [
+        2.1441503122332506e-05,
+        1.2216994036862161e-05,
+        0.9998175501823425,
+        0.00014883351104799658
+      ],
+      "seconds": 30.333524791989475,
+      "memory": {
+        "mlx_active_bytes": 13234466688,
+        "mlx_cache_bytes": 801581212,
+        "mlx_peak_bytes": 13922952178,
+        "process_peak_rss_bytes": 10395222016,
+        "process_phys_footprint_bytes": 14640458480,
+        "process_lifetime_peak_phys_footprint_bytes": 15607918064,
+        "mach_resident_bytes": 76939264,
+        "mach_resident_peak_bytes": 10395222016
+      }
+    },
+    {
+      "id": "astronomy/2",
+      "category": "not aggregated",
+      "subject": "astronomy",
+      "prompt_sha256": "089676eb480c8fbe79819b2a9263c9b9d0ac4b80c893c4e1479fb1be8d836b4c",
+      "token_sha256": "d207afd19f489f130f4c5feecc6f674ce7cadf2e95b78fcda80608c74af4fc0f",
+      "prompt_tokens": 591,
+      "answer_token_ids": [
+        357,
+        417,
+        351,
+        414
+      ],
+      "predicted": "C",
+      "expected": "C",
+      "correct": true,
+      "choice_logprobs": [
+        -13.543350219726562,
+        -10.293350219726562,
+        -7.6683502197265625,
+        -8.168350219726562
+      ],
+      "choice_probabilities": [
+        0.001670133089646697,
+        0.04307329282164574,
+        0.5946083664894104,
+        0.3606482148170471
+      ],
+      "seconds": 52.49184245901415,
+      "memory": {
+        "mlx_active_bytes": 13514698624,
+        "mlx_cache_bytes": 1118046556,
+        "mlx_peak_bytes": 14468016666,
+        "process_peak_rss_bytes": 10395222016,
+        "process_phys_footprint_bytes": 15237114608,
+        "process_lifetime_peak_phys_footprint_bytes": 15607918064,
+        "mach_resident_bytes": 76824576,
+        "mach_resident_peak_bytes": 10395222016
+      }
+    },
+    {
+      "id": "astronomy/22",
+      "category": "not aggregated",
+      "subject": "astronomy",
+      "prompt_sha256": "26a0dfe2585bd4e7583845618efdf16bc6003af10b732efdc39cc85d004daea2",
+      "token_sha256": "554c430882eef6aa07d81e3c657b30c5c5a5eb1d8e31bc67647e9037d013a6f1",
+      "prompt_tokens": 620,
+      "answer_token_ids": [
+        357,
+        417,
+        351,
+        414
+      ],
+      "predicted": "D",
+      "expected": "D",
+      "correct": true,
+      "choice_logprobs": [
+        -11.823579788208008,
+        -12.073579788208008,
+        -12.823579788208008,
+        -0.011079788208007812
+      ],
+      "choice_probabilities": [
+        7.41121448299964e-06,
+        5.771866653958568e-06,
+        2.726435923250392e-06,
+        0.9999841451644897
+      ],
+      "seconds": 61.479429583007004,
+      "memory": {
+        "mlx_active_bytes": 13543026560,
+        "mlx_cache_bytes": 1138412332,
+        "mlx_peak_bytes": 14485302018,
+        "process_peak_rss_bytes": 10395222016,
+        "process_phys_footprint_bytes": 15285545712,
+        "process_lifetime_peak_phys_footprint_bytes": 15607918064,
+        "mach_resident_bytes": 69206016,
+        "mach_resident_peak_bytes": 10395222016
+      }
+    },
+    {
+      "id": "astronomy/26",
+      "category": "not aggregated",
+      "subject": "astronomy",
+      "prompt_sha256": "8a9bcc2105acf75c1fdbe7c61c74978ea97077ffffddd707160134c26f18f1de",
+      "token_sha256": "eabad42f207d941e32f706bb6a60d49d193228701ea5e41b1adaf26dfac1d2ad",
+      "prompt_tokens": 592,
+      "answer_token_ids": [
+        357,
+        417,
+        351,
+        414
+      ],
+      "predicted": "C",
+      "expected": "C",
+      "correct": true,
+      "choice_logprobs": [
+        -9.068111419677734,
+        -8.568111419677734,
+        -0.13061141967773438,
+        -9.443111419677734
+      ],
+      "choice_probabilities": [
+        0.0001313115208176896,
+        0.00021649613336194307,
+        0.9995619654655457,
+        9.024898463394493e-05
+      ],
+      "seconds": 58.81658354199317,
+      "memory": {
+        "mlx_active_bytes": 13515485056,
+        "mlx_cache_bytes": 1122437484,
+        "mlx_peak_bytes": 14469786146,
+        "process_peak_rss_bytes": 10395222016,
+        "process_phys_footprint_bytes": 15241833200,
+        "process_lifetime_peak_phys_footprint_bytes": 15607918064,
+        "mach_resident_bytes": 72941568,
+        "mach_resident_peak_bytes": 10395222016
+      }
+    },
+    {
+      "id": "astronomy/27",
+      "category": "not aggregated",
+      "subject": "astronomy",
+      "prompt_sha256": "02453c754d774e4366fef71e7ae47b57488994ef4556aa5019a0cff0b9c6745d",
+      "token_sha256": "a0bde7acdadcadaff6fa2e0579588150d9796edff33b838c864589552e065e72",
+      "prompt_tokens": 580,
+      "answer_token_ids": [
+        357,
+        417,
+        351,
+        414
+      ],
+      "predicted": "D",
+      "expected": "D",
+      "correct": true,
+      "choice_logprobs": [
+        -13.33201789855957,
+        -14.05076789855957,
+        -14.01951789855957,
+        -13.01951789855957
+      ],
+      "choice_probabilities": [
+        0.2978822886943817,
+        0.1451762467622757,
+        0.1497846245765686,
+        0.4071568250656128
+      ],
+      "seconds": 55.05387116699421,
+      "memory": {
+        "mlx_active_bytes": 13503688576,
+        "mlx_cache_bytes": 1102071980,
+        "mlx_peak_bytes": 14440917442,
+        "process_peak_rss_bytes": 10395222016,
+        "process_phys_footprint_bytes": 15210277616,
+        "process_lifetime_peak_phys_footprint_bytes": 15607918064,
+        "mach_resident_bytes": 73924608,
+        "mach_resident_peak_bytes": 10395222016
+      }
+    },
+    {
+      "id": "astronomy/33",
+      "category": "not aggregated",
+      "subject": "astronomy",
+      "prompt_sha256": "eeb2bf0917e08fa277c970f938d204aa44d9f4279227f6ebe1ba30fe8656b586",
+      "token_sha256": "d4fc1128c2951823178edc5af693292cf7ef0832d5a8f4057c95307ed7638bdb",
+      "prompt_tokens": 588,
+      "answer_token_ids": [
+        357,
+        417,
+        351,
+        414
+      ],
+      "predicted": "D",
+      "expected": "D",
+      "correct": true,
+      "choice_logprobs": [
+        -4.859596252441406,
+        -2.1095962524414062,
+        -9.734596252441406,
+        -1.4845962524414062
+      ],
+      "choice_probabilities": [
+        0.021798579022288322,
+        0.3409871757030487,
+        0.0001664342125877738,
+        0.6370478868484497
+      ],
+      "seconds": 58.371268542003236,
+      "memory": {
+        "mlx_active_bytes": 13511552896,
+        "mlx_cache_bytes": 1112623404,
+        "mlx_peak_bytes": 14460365314,
+        "process_peak_rss_bytes": 10395222016,
+        "process_phys_footprint_bytes": 15228136176,
+        "process_lifetime_peak_phys_footprint_bytes": 15607918064,
+        "mach_resident_bytes": 74088448,
+        "mach_resident_peak_bytes": 10395222016
+      }
+    }
+  ],
+  "load_seconds": 13.098680416995194,
+  "device": {
+    "device_name": "Apple M5 Pro",
+    "max_recommended_working_set_size": 40200896512,
+    "memory_size": 51539607552,
+    "architecture": "applegpu_g17s",
+    "max_buffer_length": 30150672384,
+    "resource_limit": 499000
+  },
+  "resident_parameter_bytes": 12721667358,
+  "parameters": {
+    "fewshot": 5,
+    "batch_size": 1,
+    "chat_template": false,
+    "thinking": false,
+    "sampling": null
+  },
+  "benchmark_seconds": 1573.6477884170017
+}

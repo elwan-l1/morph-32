@@ -1,0 +1,21 @@
+{
+  "status": "complete",
+  "architecture_config_differences": [
+    "quantization_config",
+    "quantization"
+  ],
+  "identical_tokenizer_files": {
+    "tokenizer.json": "06b9509352d2af50381ab2247e083b80d32d5c0aba91c272ca9ff729b6a0e523",
+    "tokenizer_config.json": "792fa3f0cb88b111e54ef3134c873531008c4df471d108da17903426e308aa7b",
+    "chat_template.jinja": "c3cf9e34abf4f9e36c2d72165aa9c132d3e2a725b6c2586aaa3a8af9d7a81041"
+  },
+  "revision": "b3503b31b36125107e12a2b57fbe690c37bfc053",
+  "vision_scope": "Both checkpoint families retain vision tensors; only text capabilities benchmarked.",
+  "weight_integrity": "hf cache verify exited 0; all 15 pinned repository files verified",
+  "integrity_log": "published-3bit-integrity.log",
+  "extra_files": {
+    "count": 33,
+    "scope": "Only local Hugging Face download-cache metadata"
+  },
+  "checkpoint_weight_bytes": 12692872225
+}

@@ -1,0 +1,867 @@
+[
+  {
+    "id": "CP01",
+    "section": "Working rules",
+    "requirement": "Add results only when raw measurements are saved under `paper/data/`.",
+    "status": "complete",
+    "card": "paper/data/research/current-20260911/checkpoints/CP01.md",
+    "evidence": [
+      "../protocol.json",
+      "../../primary-20260911/commands.json",
+      "../../smaller-20260911/commands.json",
+      "../../../artifact-verification.json",
+      "../../../final-summary.json",
+      "../../../../main.typ",
+      "../../../../../README.md"
+    ],
+    "note": "Raw measurements and execution logs are archived; both final manifests are complete (41 primary steps, 9 smaller steps).",
+    "verification_note": "Final publication audit, 2026-09-11. Existing measurements only."
+  },
+  {
+    "id": "CP02",
+    "section": "Working rules",
+    "requirement": "Use identical prompts, tokenization, scoring, and hardware settings for compared formats.",
+    "status": "complete",
+    "card": "paper/data/research/current-20260911/checkpoints/CP02.md",
+    "evidence": [
+      "../protocol.json",
+      "../../primary-20260911/commands.json",
+      "../../smaller-20260911/commands.json",
+      "../../../artifact-verification.json",
+      "../../../final-summary.json",
+      "../../../../main.typ",
+      "../../../../../README.md"
+    ],
+    "note": "Saved-record checks match corpus, tokenizer, task/prompt hashes, package/device settings and generation budgets. Timing sessions were sequential, so cross-session drift remains a limitation.",
+    "verification_note": "Final publication audit, 2026-09-11. Existing measurements only."
+  },
+  {
+    "id": "CP03",
+    "section": "Working rules",
+    "requirement": "Keep calibration and evaluation data separate.",
+    "status": "complete",
+    "card": "paper/data/research/current-20260911/checkpoints/CP03.md",
+    "evidence": [
+      "../protocol.json",
+      "../../primary-20260911/commands.json",
+      "../../smaller-20260911/commands.json",
+      "../input-audit.json",
+      "../../../artifact-verification.json",
+      "../../../final-summary.json",
+      "../../../../main.typ",
+      "../../../../../README.md"
+    ],
+    "note": "Frozen validation calibration and separate held-out test inputs are recorded with hashes and offsets.",
+    "verification_note": "Final publication audit, 2026-09-11. Existing measurements only."
+  },
+  {
+    "id": "CP04",
+    "section": "Working rules",
+    "requirement": "Always report memory, quality, and speed together.",
+    "status": "complete",
+    "card": "paper/data/research/current-20260911/checkpoints/CP04.md",
+    "evidence": [
+      "../protocol.json",
+      "../../primary-20260911/commands.json",
+      "../../smaller-20260911/commands.json",
+      "../../../artifact-verification.json",
+      "../../../final-summary.json",
+      "../../../../main.typ",
+      "../../../../../README.md"
+    ],
+    "note": "The README and paper jointly show file size, loaded arrays, quality and timing; peak allocator memory is distinguished in the paper.",
+    "verification_note": "Final publication audit, 2026-09-11. Existing measurements only."
+  },
+  {
+    "id": "CP05",
+    "section": "1. Add one introductory technology diagram",
+    "requirement": "Use different colors for stored A/B/C/scale and reconstructed upper C bits in the compact inset.",
+    "status": "complete",
+    "card": "paper/data/research/current-20260911/checkpoints/CP05.md",
+    "evidence": [
+      "../protocol.json",
+      "../../primary-20260911/commands.json",
+      "../../smaller-20260911/commands.json",
+      "../../../../figures/morph32-c.svg",
+      "../../../../main.typ",
+      "../../../artifact-verification.json",
+      "../../../final-summary.json",
+      "../../../../../README.md"
+    ],
+    "note": "The published compact diagram distinguishes stored planes, reconstructed bits and Metal execution.",
+    "original_requirement": "Use different colors for stored state (`A`, `B`, `C`, scale) and generated state (`D`, `E`).",
+    "verification_note": "Final publication audit, 2026-09-11. Existing measurements only."
+  },
+  {
+    "id": "CP06",
+    "section": "1. Add one introductory technology diagram",
+    "requirement": "Show how three sign bits at one position produce one reconstructed weight.",
+    "status": "complete",
+    "card": "paper/data/research/current-20260911/checkpoints/CP06.md",
+    "evidence": [
+      "../protocol.json",
+      "../../primary-20260911/commands.json",
+      "../../smaller-20260911/commands.json",
+      "../../../../figures/morph32-c.svg",
+      "../../../../main.typ",
+      "../../../artifact-verification.json",
+      "../../../final-summary.json",
+      "../../../../../README.md"
+    ],
+    "note": "The published diagrams show the sign bits and scale used to reconstruct a weight.",
+    "original_requirement": "Show how the five bits at one position produce one reconstructed weight.",
+    "verification_note": "Final publication audit, 2026-09-11. Existing measurements only."
+  },
+  {
+    "id": "CP07",
+    "section": "1. Add one introductory technology diagram",
+    "requirement": "Label morph32-3s as 112 bits per tile and 3.5 bpw; add a small morph32-c inset.",
+    "status": "complete",
+    "card": "paper/data/research/current-20260911/checkpoints/CP07.md",
+    "evidence": [
+      "../protocol.json",
+      "../../primary-20260911/commands.json",
+      "../../smaller-20260911/commands.json",
+      "../../../../figures/morph32-c.svg",
+      "../../../../figures/morph32-3s.svg",
+      "../../../../main.typ",
+      "../../../artifact-verification.json",
+      "../../../final-summary.json",
+      "../../../../../README.md"
+    ],
+    "note": "The separate compact and full diagrams show 96 and 112 bits per 32-weight tile, respectively.",
+    "verification_note": "Final publication audit, 2026-09-11. Existing measurements only."
+  },
+  {
+    "id": "CP08",
+    "section": "1. Add one introductory technology diagram",
+    "requirement": "Show that inference does not create a complete dense MLP copy.",
+    "status": "complete",
+    "card": "paper/data/research/current-20260911/checkpoints/CP08.md",
+    "evidence": [
+      "../protocol.json",
+      "../../primary-20260911/commands.json",
+      "../../smaller-20260911/commands.json",
+      "../../../../figures/morph32-c.svg",
+      "../../../../main.typ",
+      "../../../artifact-verification.json",
+      "../../../final-summary.json",
+      "../../../../../README.md"
+    ],
+    "note": "The diagram and kernel description distinguish temporary tile reconstruction from a full dense MLP allocation.",
+    "verification_note": "Final publication audit, 2026-09-11. Existing measurements only."
+  },
+  {
+    "id": "CP09",
+    "section": "1. Add one introductory technology diagram",
+    "requirement": "State the tradeoff in the caption: lower weight storage, additional decoding work.",
+    "status": "complete",
+    "card": "paper/data/research/current-20260911/checkpoints/CP09.md",
+    "evidence": [
+      "../protocol.json",
+      "../../primary-20260911/commands.json",
+      "../../smaller-20260911/commands.json",
+      "../../../../figures/morph32-c.svg",
+      "../../../../main.typ",
+      "../../../artifact-verification.json",
+      "../../../final-summary.json",
+      "../../../../../README.md"
+    ],
+    "note": "The caption states lower storage and additional decoding work.",
+    "verification_note": "Final publication audit, 2026-09-11. Existing measurements only."
+  },
+  {
+    "id": "CP10",
+    "section": "2. Add only two fair baselines",
+    "requirement": "A published MLX 3-bit checkpoint of the same base model; report actual storage and tensor quantization scope.",
+    "status": "complete",
+    "card": "paper/data/research/current-20260911/checkpoints/CP10.md",
+    "evidence": [
+      "../protocol.json",
+      "../../primary-20260911/commands.json",
+      "../../smaller-20260911/commands.json",
+      "../../primary-20260911/conversion-audit.json",
+      "../../primary-20260911/interim-audit-1001.json",
+      "../../primary-20260911/quality-audit.json",
+      "../published-3bit-replacement.json",
+      "../../../artifact-verification.json",
+      "../../../final-summary.json",
+      "../../../../main.typ",
+      "../../../../../README.md",
+      "../published-3bit-input-audit.json"
+    ],
+    "note": "The pinned published MLX 3-bit checkpoint completed the common quality, timing and capability protocol. The custom affine suite is withdrawn, not counted as complete.",
+    "verification_note": "Final publication audit, 2026-09-11. Existing measurements only."
+  },
+  {
+    "id": "CP11",
+    "section": "2. Add only two fair baselines",
+    "requirement": "Use an equal-storage three-plane control with base fitting to isolate the stronger seed search.",
+    "status": "complete",
+    "card": "paper/data/research/current-20260911/checkpoints/CP11.md",
+    "evidence": [
+      "../protocol.json",
+      "../../primary-20260911/commands.json",
+      "../../smaller-20260911/commands.json",
+      "../../primary-20260911/conversion-audit.json",
+      "../../primary-20260911/interim-audit-1001.json",
+      "../../primary-20260911/quality-audit.json",
+      "../../../artifact-verification.json",
+      "../../../final-summary.json",
+      "../../../../main.typ",
+      "../../../../../README.md"
+    ],
+    "note": "Base-fit 3s has the same representation size and retained tensor policy as strong-fit 3s. It is not an additional product profile.",
+    "original_requirement": "An independent-sign-plane representation matched to morph32-3s storage.",
+    "verification_note": "Final publication audit, 2026-09-11. Existing measurements only."
+  },
+  {
+    "id": "CP12",
+    "section": "2. Add only two fair baselines",
+    "requirement": "Give every format the same retained tensors and metadata treatment, or clearly separate representation-only and complete-checkpoint results.",
+    "status": "complete",
+    "card": "paper/data/research/current-20260911/checkpoints/CP12.md",
+    "evidence": [
+      "../protocol.json",
+      "../../primary-20260911/commands.json",
+      "../../smaller-20260911/commands.json",
+      "../../primary-20260911/conversion-audit.json",
+      "../../primary-20260911/interim-audit-1001.json",
+      "../../primary-20260911/quality-audit.json",
+      "../published-3bit-replacement.json",
+      "../../../artifact-verification.json",
+      "../../../final-summary.json",
+      "../../../../main.typ",
+      "../../../../../README.md",
+      "../published-3bit-input-audit.json"
+    ],
+    "note": "Whole-checkpoint and MLP representation rates are distinguished. Published 3-bit has broader language quantization and a different vision policy; this is not an equal-storage comparison.",
+    "verification_note": "Final publication audit, 2026-09-11. Existing measurements only."
+  },
+  {
+    "id": "CP13",
+    "section": "3. Run a small, decisive ablation",
+    "requirement": "Audit the archived recurrence-off comparison; keep it separate from current three-plane experiments.",
+    "status": "complete",
+    "card": "paper/data/research/current-20260911/checkpoints/CP13.md",
+    "evidence": [
+      "../protocol.json",
+      "../../primary-20260911/commands.json",
+      "../../smaller-20260911/commands.json",
+      "../historical-recurrence-audit.json",
+      "../../../artifact-verification.json",
+      "../../../final-summary.json",
+      "../../../../main.typ",
+      "../../../../../README.md"
+    ],
+    "note": "The current paper describes only the current format and completed comparisons, as requested on September 12. The historical recurrence audit remains available in this evidence index, outside the publication narrative.",
+    "original_requirement": "Compare three stored planes without generated planes against the full recurrence.",
+    "verification_note": "Final publication audit, 2026-09-11. Existing measurements only."
+  },
+  {
+    "id": "CP14",
+    "section": "3. Run a small, decisive ablation",
+    "requirement": "Compare current morph32-3s with the same three-plane layout using base fitting only.",
+    "status": "complete",
+    "card": "paper/data/research/current-20260911/checkpoints/CP14.md",
+    "evidence": [
+      "../protocol.json",
+      "../../primary-20260911/commands.json",
+      "../../smaller-20260911/commands.json",
+      "../../primary-20260911/quality-audit.json",
+      "../../primary-20260911/conversion-audit.json",
+      "../../primary-20260911/interim-audit-1001.json",
+      "../../../artifact-verification.json",
+      "../../../final-summary.json",
+      "../../../../main.typ",
+      "../../../../../README.md"
+    ],
+    "note": "Strong/base fitting results are mixed: equal MMLU counts, three additional strong-fit HumanEval passes, tiny mixed-direction PPL differences; smaller-model strong fitting is worse.",
+    "original_requirement": "Compare morph32-3s against the equal-storage independent-plane baseline.",
+    "verification_note": "Final publication audit, 2026-09-11. Existing measurements only."
+  },
+  {
+    "id": "CP15",
+    "section": "3. Run a small, decisive ablation",
+    "requirement": "Separate memory savings from procedural weights and lossless metadata compression.",
+    "status": "complete",
+    "card": "paper/data/research/current-20260911/checkpoints/CP15.md",
+    "evidence": [
+      "../protocol.json",
+      "../../primary-20260911/commands.json",
+      "../../smaller-20260911/commands.json",
+      "../../primary-20260911/conversion-audit.json",
+      "../../primary-20260911/interim-audit-1001.json",
+      "../../primary-20260911/quality-audit.json",
+      "../../../artifact-verification.json",
+      "../../../final-summary.json",
+      "../../../../main.typ",
+      "../../../../../README.md",
+      "../../primary-20260911/metadata-header-equivalence.json",
+      "../../primary-20260911/metadata-mmlu-equivalence.json"
+    ],
+    "note": "Metadata-off versus standard 3s separates payload saving from MLP representation saving and verifies matching outputs.",
+    "verification_note": "Final publication audit, 2026-09-11. Existing measurements only."
+  },
+  {
+    "id": "CP16",
+    "section": "4. Adopt a compact version of Unsloth-style testing",
+    "requirement": "Keep held-out perplexity and report the NLL change in nats/token.",
+    "status": "complete",
+    "card": "paper/data/research/current-20260911/checkpoints/CP16.md",
+    "evidence": [
+      "../protocol.json",
+      "../../primary-20260911/commands.json",
+      "../../smaller-20260911/commands.json",
+      "../../primary-20260911/conversion-audit.json",
+      "../../primary-20260911/interim-audit-1001.json",
+      "../../primary-20260911/quality-audit.json",
+      "../../../artifact-verification.json",
+      "../../../final-summary.json",
+      "../../../../main.typ",
+      "../../../../../README.md"
+    ],
+    "note": "PPL and NLL changes are rebuilt from archived per-token losses.",
+    "verification_note": "Final publication audit, 2026-09-11. Existing measurements only."
+  },
+  {
+    "id": "CP17",
+    "section": "4. Adopt a compact version of Unsloth-style testing",
+    "requirement": "Add mean KL divergence from the chosen reference on the same held-out window.",
+    "status": "complete",
+    "card": "paper/data/research/current-20260911/checkpoints/CP17.md",
+    "evidence": [
+      "../protocol.json",
+      "../../primary-20260911/commands.json",
+      "../../smaller-20260911/commands.json",
+      "../../primary-20260911/conversion-audit.json",
+      "../../primary-20260911/interim-audit-1001.json",
+      "../../primary-20260911/quality-audit.json",
+      "../../../artifact-verification.json",
+      "../../../final-summary.json",
+      "../../../../main.typ",
+      "../../../../../README.md"
+    ],
+    "note": "Full-vocabulary mean KL uses native int4 as reference, not BF16; saved per-token KL is checked.",
+    "verification_note": "Final publication audit, 2026-09-11. Existing measurements only."
+  },
+  {
+    "id": "CP18",
+    "section": "4. Adopt a compact version of Unsloth-style testing",
+    "requirement": "Add top-1 **reference-token agreement**; do not call it task accuracy.",
+    "status": "complete",
+    "card": "paper/data/research/current-20260911/checkpoints/CP18.md",
+    "evidence": [
+      "../protocol.json",
+      "../../primary-20260911/commands.json",
+      "../../smaller-20260911/commands.json",
+      "../../primary-20260911/conversion-audit.json",
+      "../../primary-20260911/interim-audit-1001.json",
+      "../../primary-20260911/quality-audit.json",
+      "../../../artifact-verification.json",
+      "../../../final-summary.json",
+      "../../../../main.typ",
+      "../../../../../README.md"
+    ],
+    "note": "Top-1 reference-token agreement is reported separately from task accuracy.",
+    "verification_note": "Final publication audit, 2026-09-11. Existing measurements only."
+  },
+  {
+    "id": "CP19",
+    "section": "4. Adopt a compact version of Unsloth-style testing",
+    "requirement": "Repeat these measurements on one code dataset so conclusions are not WikiText-only.",
+    "status": "complete",
+    "card": "paper/data/research/current-20260911/checkpoints/CP19.md",
+    "evidence": [
+      "../protocol.json",
+      "../../primary-20260911/commands.json",
+      "../../smaller-20260911/commands.json",
+      "../../primary-20260911/quality-audit.json",
+      "../../primary-20260911/conversion-audit.json",
+      "../../primary-20260911/interim-audit-1001.json",
+      "../input-audit.json",
+      "../../../artifact-verification.json",
+      "../../../final-summary.json",
+      "../../../../main.typ",
+      "../../../../../README.md"
+    ],
+    "note": "Text and Python-code results share the same protocol within each domain.",
+    "verification_note": "Final publication audit, 2026-09-11. Existing measurements only."
+  },
+  {
+    "id": "CP20",
+    "section": "4. Adopt a compact version of Unsloth-style testing",
+    "requirement": "Replace the 50-question MMLU result with full MMLU/MMLU-Pro or a substantially larger fixed subset.",
+    "status": "complete",
+    "card": "paper/data/research/current-20260911/checkpoints/CP20.md",
+    "evidence": [
+      "../protocol.json",
+      "../../primary-20260911/commands.json",
+      "../../smaller-20260911/commands.json",
+      "../input-audit.json",
+      "../../../artifact-verification.json",
+      "../../../final-summary.json",
+      "../../../../main.typ",
+      "../../../../../README.md",
+      "../../primary-20260911/native-mmlu.json",
+      "../../primary-20260911/published-3bit-mmlu.json"
+    ],
+    "note": "All six configurations completed the same 1,140-question, 57-subject five-shot MMLU subset.",
+    "verification_note": "Final publication audit, 2026-09-11. Existing measurements only."
+  },
+  {
+    "id": "CP21",
+    "section": "4. Adopt a compact version of Unsloth-style testing",
+    "requirement": "Add one standard coding benchmark such as HumanEval or MBPP.",
+    "status": "complete",
+    "card": "paper/data/research/current-20260911/checkpoints/CP21.md",
+    "evidence": [
+      "../protocol.json",
+      "../../primary-20260911/commands.json",
+      "../../smaller-20260911/commands.json",
+      "../input-audit.json",
+      "../../../artifact-verification.json",
+      "../../../final-summary.json",
+      "../../../../main.typ",
+      "../../../../../README.md",
+      "../../primary-20260911/native-humaneval-decoding-audit.json",
+      "../../primary-20260911/native-humaneval-token-decoded-scored.json"
+    ],
+    "note": "All six completed 164 HumanEval tasks. Final scores use uniformly corrected initial-space decoding of saved tokens and official isolated harness results; original exports remain archived.",
+    "verification_note": "Final publication audit, 2026-09-11. Existing measurements only."
+  },
+  {
+    "id": "CP22",
+    "section": "4. Adopt a compact version of Unsloth-style testing",
+    "requirement": "Repeat long-context retrieval across several insertion positions instead of one prompt.",
+    "status": "complete",
+    "card": "paper/data/research/current-20260911/checkpoints/CP22.md",
+    "evidence": [
+      "../protocol.json",
+      "../../primary-20260911/commands.json",
+      "../../smaller-20260911/commands.json",
+      "../input-audit.json",
+      "../../../artifact-verification.json",
+      "../../../final-summary.json",
+      "../../../../main.typ",
+      "../../../../../README.md",
+      "../../primary-20260911/native-retrieval.json"
+    ],
+    "note": "All six completed ten retrieval trials across five positions (50 prompts). Every trial passed; the confidence unit is a trial.",
+    "verification_note": "Final publication audit, 2026-09-11. Existing measurements only."
+  },
+  {
+    "id": "CP23",
+    "section": "5. Improve confidence without excessive statistics",
+    "requirement": "Increase throughput measurement from three to ten runs.",
+    "status": "complete",
+    "card": "paper/data/research/current-20260911/checkpoints/CP23.md",
+    "evidence": [
+      "../protocol.json",
+      "../../primary-20260911/commands.json",
+      "../../smaller-20260911/commands.json",
+      "../../primary-20260911/conversion-audit.json",
+      "../../primary-20260911/interim-audit-1001.json",
+      "../../primary-20260911/quality-audit.json",
+      "../../../artifact-verification.json",
+      "../../../final-summary.json",
+      "../../../../main.typ",
+      "../../../../../README.md"
+    ],
+    "note": "Each published timing estimate uses ten archived runs.",
+    "verification_note": "Final publication audit, 2026-09-11. Existing measurements only."
+  },
+  {
+    "id": "CP24",
+    "section": "5. Improve confidence without excessive statistics",
+    "requirement": "Report the median and interquartile range or full range.",
+    "status": "complete",
+    "card": "paper/data/research/current-20260911/checkpoints/CP24.md",
+    "evidence": [
+      "../protocol.json",
+      "../../primary-20260911/commands.json",
+      "../../smaller-20260911/commands.json",
+      "../../primary-20260911/conversion-audit.json",
+      "../../primary-20260911/interim-audit-1001.json",
+      "../../primary-20260911/quality-audit.json",
+      "../../../artifact-verification.json",
+      "../../../final-summary.json",
+      "../../../../main.typ",
+      "../../../../../README.md"
+    ],
+    "note": "Timing figures show medians and IQR; sequential-session confounding is explicitly stated.",
+    "verification_note": "Final publication audit, 2026-09-11. Existing measurements only."
+  },
+  {
+    "id": "CP25",
+    "section": "5. Improve confidence without excessive statistics",
+    "requirement": "Report sample counts and simple 95% confidence intervals for benchmark accuracy.",
+    "status": "complete",
+    "card": "paper/data/research/current-20260911/checkpoints/CP25.md",
+    "evidence": [
+      "../protocol.json",
+      "../../primary-20260911/commands.json",
+      "../../smaller-20260911/commands.json",
+      "../../../artifact-verification.json",
+      "../../../final-summary.json",
+      "../../../../main.typ",
+      "../../../../../README.md",
+      "../../primary-20260911/native-mmlu.json",
+      "../../primary-20260911/published-3bit-mmlu.json"
+    ],
+    "note": "MMLU and HumanEval include counts and descriptive Wilson 95% intervals; retrieval is 10/10 trials with 72.25\u2013100% interval.",
+    "verification_note": "Final publication audit, 2026-09-11. Existing measurements only."
+  },
+  {
+    "id": "CP26",
+    "section": "6. Use three main result graphics",
+    "requirement": "**Quality versus size:** complete checkpoint GB on X, mean KLD on Y; include native int4, MORPH profiles, and the two fair baselines.",
+    "status": "complete",
+    "card": "paper/data/research/current-20260911/checkpoints/CP26.md",
+    "evidence": [
+      "../protocol.json",
+      "../../primary-20260911/commands.json",
+      "../../smaller-20260911/commands.json",
+      "../../../artifact-verification.json",
+      "../../../final-summary.json",
+      "../../../../main.typ",
+      "../../../../../README.md"
+    ],
+    "note": "Quality versus size is reported as complete checkpoint size and text/code fidelity in the shared four-model table and detailed paper tables. The former plot was removed from the publication.",
+    "verification_note": "Final publication audit, 2026-09-11. Existing measurements only."
+  },
+  {
+    "id": "CP27",
+    "section": "6. Use three main result graphics",
+    "requirement": "**Memory versus speed:** resident weight memory on X, generation tokens/s on Y, with timing variation.",
+    "status": "complete",
+    "card": "paper/data/research/current-20260911/checkpoints/CP27.md",
+    "evidence": [
+      "../protocol.json",
+      "../../primary-20260911/commands.json",
+      "../../smaller-20260911/commands.json",
+      "../../../artifact-verification.json",
+      "../../../final-summary.json",
+      "../../../../main.typ",
+      "../../../../../README.md"
+    ],
+    "note": "Resident size and generation throughput appear in the shared four-model table; prefill and timing variation remain in the detailed paper tables and audited records. The former plots were removed.",
+    "verification_note": "Final publication audit, 2026-09-11. Existing measurements only."
+  },
+  {
+    "id": "CP28",
+    "section": "6. Use three main result graphics",
+    "requirement": "**Capability comparison:** grouped bars for the larger knowledge test, coding benchmark, and repeated retrieval test.",
+    "status": "complete",
+    "card": "paper/data/research/current-20260911/checkpoints/CP28.md",
+    "evidence": [
+      "../protocol.json",
+      "../../primary-20260911/commands.json",
+      "../../smaller-20260911/commands.json",
+      "../../../artifact-verification.json",
+      "../../../final-summary.json",
+      "../../../../main.typ",
+      "../../../../../README.md"
+    ],
+    "note": "MMLU and HumanEval appear in the shared four-model table, with counts and intervals in the paper. Retrieval and answer changes remain in the detailed results. The former plots were removed.",
+    "verification_note": "Final publication audit, 2026-09-11. Existing measurements only."
+  },
+  {
+    "id": "CP29",
+    "section": "7. Tighten the paper narrative",
+    "requirement": "Introduction: add the diagram, research question, and three contributions; mention the speed cost immediately.",
+    "status": "complete",
+    "card": "paper/data/research/current-20260911/checkpoints/CP29.md",
+    "evidence": [
+      "../protocol.json",
+      "../../primary-20260911/commands.json",
+      "../../smaller-20260911/commands.json",
+      "../../../../figures/morph32-c.svg",
+      "../../../../main.typ",
+      "../../../artifact-verification.json",
+      "../../../final-summary.json",
+      "../../../../../README.md"
+    ],
+    "note": "The introduction defines the research question, representation, fitting and runtime contributions; the opening abstract states the measured tradeoff.",
+    "verification_note": "Final publication audit, 2026-09-11. Existing measurements only."
+  },
+  {
+    "id": "CP30",
+    "section": "7. Tighten the paper narrative",
+    "requirement": "Related work: explain the difference from scalar quantization, GPTQ/AWQ-style fitting, binary bases, and additive codebooks.",
+    "status": "complete",
+    "card": "paper/data/research/current-20260911/checkpoints/CP30.md",
+    "evidence": [
+      "../protocol.json",
+      "../../primary-20260911/commands.json",
+      "../../smaller-20260911/commands.json",
+      "../../../../figures/morph32-c.svg",
+      "../../../../main.typ",
+      "../../../artifact-verification.json",
+      "../../../final-summary.json",
+      "../../../../../README.md"
+    ],
+    "note": "Related work separates scalar grids, binary bases, GPTQ/AWQ fitting and additive codebooks; external work is not presented as measured competition.",
+    "verification_note": "Final publication audit, 2026-09-11. Existing measurements only."
+  },
+  {
+    "id": "CP31",
+    "section": "7. Tighten the paper narrative",
+    "requirement": "Results: organize around \u201cDoes it save memory?\u201d, \u201cWhat quality is lost?\u201d, and \u201cWhy is it slower?\u201d.",
+    "status": "complete",
+    "card": "paper/data/research/current-20260911/checkpoints/CP31.md",
+    "evidence": [
+      "../protocol.json",
+      "../../primary-20260911/commands.json",
+      "../../smaller-20260911/commands.json",
+      "../../../../figures/morph32-c.svg",
+      "../../../../main.typ",
+      "../../../artifact-verification.json",
+      "../../../final-summary.json",
+      "../../../../../README.md"
+    ],
+    "note": "Results answer storage/memory, quality and runtime questions and include controls and negative evidence.",
+    "verification_note": "Final publication audit, 2026-09-11. Existing measurements only."
+  },
+  {
+    "id": "CP32",
+    "section": "7. Tighten the paper narrative",
+    "requirement": "State the measured current-method tradeoffs and the historical recurrence outcome; avoid quality-equivalence or speed-superiority claims.",
+    "status": "complete",
+    "card": "paper/data/research/current-20260911/checkpoints/CP32.md",
+    "evidence": [
+      "../protocol.json",
+      "../../primary-20260911/commands.json",
+      "../../smaller-20260911/commands.json",
+      "../../../../figures/morph32-c.svg",
+      "../../../../main.typ",
+      "../../../artifact-verification.json",
+      "../../../final-summary.json",
+      "../../../../../README.md"
+    ],
+    "note": "The paper leads with current compression and task results, while reporting speed costs, tensor-scope differences, negative generalization and inconclusive optimization. Removed methods are omitted from the narrative.",
+    "original_requirement": "Conclusion: state whether the recurrence beat the equal-storage control and avoid quality-equivalence or speed-superiority claims. Current conclusion explicitly states the equal-storage result is unmeasured; final result-dependent conclusion needs to run.",
+    "verification_note": "Final publication audit, 2026-09-11. Existing measurements only."
+  },
+  {
+    "id": "CP33",
+    "section": "8. Four high-value stretch items for a 9/10 target",
+    "requirement": "**Second-model validation:** run morph32-3s, native int4, and the independent-plane control on one smaller model from the same or a related family. Only repeat the central size, KLD/perplexity, and generation-speed measurements. This tests whether the result is not unique to one 27B checkpoint.",
+    "status": "complete",
+    "card": "paper/data/research/current-20260911/checkpoints/CP33.md",
+    "evidence": [
+      "../protocol.json",
+      "../../primary-20260911/commands.json",
+      "../../smaller-20260911/commands.json",
+      "../../smaller-20260911/summary.json",
+      "../../smaller-20260911/artifact.log",
+      "../../../artifact-verification.json",
+      "../../../final-summary.json",
+      "../../../../main.typ",
+      "../../../../../README.md"
+    ],
+    "note": "The smaller Qwen3-0.6B suite is complete. Storage improves while perplexity deteriorates substantially; this negative result is in the paper.",
+    "verification_note": "Final publication audit, 2026-09-11. Existing measurements only."
+  },
+  {
+    "id": "CP34",
+    "section": "8. Four high-value stretch items for a 9/10 target",
+    "requirement": "**One recognized external reference:** include the nearest-size GPTQ, AWQ, AQLM, or GGUF result only if it can be reproduced fairly. Clearly label runtime or format differences instead of forcing an artificial direct comparison.",
+    "status": "complete",
+    "card": "paper/data/research/current-20260911/checkpoints/CP34.md",
+    "evidence": [
+      "../protocol.json",
+      "../../primary-20260911/commands.json",
+      "../../smaller-20260911/commands.json",
+      "../published-3bit-replacement.json",
+      "../../../artifact-verification.json",
+      "../../../final-summary.json",
+      "../../../../main.typ",
+      "../../../../../README.md",
+      "../published-3bit-input-audit.json"
+    ],
+    "note": "Scope amendment: the published MLX 3-bit checkpoint supplies the external comparison requested by the user. The separately planned GGUF runtime benchmark was not run; no GGUF result is claimed.",
+    "verification_note": "Final publication audit, 2026-09-11. Existing measurements only."
+  },
+  {
+    "id": "CP35",
+    "section": "8. Four high-value stretch items for a 9/10 target",
+    "requirement": "**One targeted speed improvement:** profile the generation kernel, identify the largest measured bottleneck, implement one focused optimization, and report before/after speed and quality. Reaching close to native int4 speed would materially raise the runtime score; profiling alone will not.",
+    "status": "inconclusive",
+    "card": "paper/data/research/current-20260911/checkpoints/CP35.md",
+    "evidence": [
+      "../protocol.json",
+      "../../primary-20260911/commands.json",
+      "../../smaller-20260911/commands.json",
+      "../../../artifact-verification.json",
+      "../../../final-summary.json",
+      "../../../../main.typ",
+      "../../../../../README.md",
+      "../../primary-20260911/profile-original.json",
+      "../../primary-20260911/profile-split.json",
+      "../../primary-20260911/morph32-3s-split-text.json"
+    ],
+    "note": "Experiment complete, causal improvement not established. The split accumulator reports higher later end-to-end throughput, but unchanged prefill also accelerates and synchronized projection times do not improve. A largest instruction bottleneck was not isolated; optimization remains opt-in. No further benchmarks authorized.",
+    "verification_note": "Final publication audit, 2026-09-11. Existing measurements only."
+  },
+  {
+    "id": "CP36",
+    "section": "8. Four high-value stretch items for a 9/10 target",
+    "requirement": "**One-command artifact check:** provide a command that regenerates the summary, figures, and paper from archived measurements, then verify all reported numbers automatically.",
+    "status": "complete",
+    "card": "paper/data/research/current-20260911/checkpoints/CP36.md",
+    "evidence": [
+      "../protocol.json",
+      "../../primary-20260911/commands.json",
+      "../../smaller-20260911/commands.json",
+      "../../../artifact-verification.json",
+      "../../../final-summary.json",
+      "../../../../main.typ",
+      "../../../../../README.md"
+    ],
+    "note": "The offline artifact command validates saved arithmetic/protocol/hash chains and rebuilds tables, JSON and four SVG/PNG figures. Typst reads that JSON; the source was compiled to SVG/PNG for layout verification, without PDF output.",
+    "verification_note": "Final publication audit, 2026-09-11. Existing measurements only."
+  },
+  {
+    "id": "CP37",
+    "section": "Definition of done",
+    "requirement": "The technology is understandable from the introductory diagram.",
+    "status": "complete",
+    "card": "paper/data/research/current-20260911/checkpoints/CP37.md",
+    "evidence": [
+      "../protocol.json",
+      "../../primary-20260911/commands.json",
+      "../../smaller-20260911/commands.json",
+      "../../../artifact-verification.json",
+      "../../../final-summary.json",
+      "../../../../main.typ",
+      "../../../../../README.md",
+      "../../../../figures/morph32-c.svg"
+    ],
+    "note": "The current three-plane and compact method is illustrated with bit counts, one weight example and direct execution.",
+    "verification_note": "Final publication audit, 2026-09-11. Existing measurements only."
+  },
+  {
+    "id": "CP38",
+    "section": "Definition of done",
+    "requirement": "The historical recurrence comparison is audited and clearly separated from the current method.",
+    "status": "complete",
+    "card": "paper/data/research/current-20260911/checkpoints/CP38.md",
+    "evidence": [
+      "../protocol.json",
+      "../../primary-20260911/commands.json",
+      "../../smaller-20260911/commands.json",
+      "../historical-recurrence-audit.json",
+      "../../../artifact-verification.json",
+      "../../../final-summary.json",
+      "../../../../main.typ",
+      "../../../../../README.md"
+    ],
+    "note": "The current paper describes only the current format and completed comparisons, as requested on September 12. The historical recurrence audit remains available in this evidence index, outside the publication narrative.",
+    "original_requirement": "The recurrence is compared with a simpler equal-storage representation.",
+    "verification_note": "Final publication audit, 2026-09-11. Existing measurements only."
+  },
+  {
+    "id": "CP39",
+    "section": "Definition of done",
+    "requirement": "Metadata savings are separated from procedural-weight savings.",
+    "status": "complete",
+    "card": "paper/data/research/current-20260911/checkpoints/CP39.md",
+    "evidence": [
+      "../protocol.json",
+      "../../primary-20260911/commands.json",
+      "../../smaller-20260911/commands.json",
+      "../../primary-20260911/conversion-audit.json",
+      "../../primary-20260911/interim-audit-1001.json",
+      "../../primary-20260911/quality-audit.json",
+      "../../../artifact-verification.json",
+      "../../../final-summary.json",
+      "../../../../main.typ",
+      "../../../../../README.md",
+      "../../primary-20260911/metadata-header-equivalence.json",
+      "../../primary-20260911/metadata-mmlu-equivalence.json"
+    ],
+    "note": "Metadata and MLP savings are separate; identical words/scales/descriptors and measured outputs support losslessness.",
+    "verification_note": "Final publication audit, 2026-09-11. Existing measurements only."
+  },
+  {
+    "id": "CP40",
+    "section": "Definition of done",
+    "requirement": "Quality evidence goes beyond two WikiText windows and 50 MMLU questions.",
+    "status": "complete",
+    "card": "paper/data/research/current-20260911/checkpoints/CP40.md",
+    "evidence": [
+      "../protocol.json",
+      "../../primary-20260911/commands.json",
+      "../../smaller-20260911/commands.json",
+      "../../../artifact-verification.json",
+      "../../../final-summary.json",
+      "../../../../main.typ",
+      "../../../../../README.md",
+      "../../primary-20260911/native-mmlu.json",
+      "../../primary-20260911/published-3bit-mmlu.json"
+    ],
+    "note": "Evidence includes held-out Python code, 1,140 MMLU questions, 164 HumanEval tasks and repeated retrieval.",
+    "verification_note": "Final publication audit, 2026-09-11. Existing measurements only."
+  },
+  {
+    "id": "CP41",
+    "section": "Definition of done",
+    "requirement": "All central claims jointly report memory, quality, and speed.",
+    "status": "complete",
+    "card": "paper/data/research/current-20260911/checkpoints/CP41.md",
+    "evidence": [
+      "../protocol.json",
+      "../../primary-20260911/commands.json",
+      "../../smaller-20260911/commands.json",
+      "../../../artifact-verification.json",
+      "../../../final-summary.json",
+      "../../../../main.typ",
+      "../../../../../README.md"
+    ],
+    "note": "Central comparisons jointly report memory, fidelity, capability and speed; quantization-scope and hardware limits are explicit.",
+    "verification_note": "Final publication audit, 2026-09-11. Existing measurements only."
+  },
+  {
+    "id": "CP42",
+    "section": "Definition of done",
+    "requirement": "The current three-plane method and base-fitting control are evaluated on a second, smaller model; report whether the observed tradeoff generalizes.",
+    "status": "complete",
+    "card": "paper/data/research/current-20260911/checkpoints/CP42.md",
+    "evidence": [
+      "../protocol.json",
+      "../../primary-20260911/commands.json",
+      "../../smaller-20260911/commands.json",
+      "../../smaller-20260911/summary.json",
+      "../../smaller-20260911/artifact.log",
+      "../../../artifact-verification.json",
+      "../../../final-summary.json",
+      "../../../../main.typ",
+      "../../../../../README.md"
+    ],
+    "note": "The second-model result is reported as a negative quality-generalization result.",
+    "original_requirement": "The main recurrence result reproduces on a second, smaller model.",
+    "verification_note": "Final publication audit, 2026-09-11. Existing measurements only."
+  },
+  {
+    "id": "CP43",
+    "section": "Definition of done",
+    "requirement": "At least one measured generation bottleneck has been investigated and optimized.",
+    "status": "inconclusive",
+    "card": "paper/data/research/current-20260911/checkpoints/CP43.md",
+    "evidence": [
+      "../protocol.json",
+      "../../primary-20260911/commands.json",
+      "../../smaller-20260911/commands.json",
+      "../../../artifact-verification.json",
+      "../../../final-summary.json",
+      "../../../../main.typ",
+      "../../../../../README.md",
+      "../../primary-20260911/profile-original.json",
+      "../../primary-20260911/profile-split.json",
+      "../../primary-20260911/morph32-3s-split-text.json"
+    ],
+    "note": "The generation experiment was implemented and tested, but saved data do not demonstrate a causal optimization or identify the largest instruction bottleneck. This success criterion remains unmet; no more benchmarks are authorized.",
+    "verification_note": "Final publication audit, 2026-09-11. Existing measurements only."
+  }
+]

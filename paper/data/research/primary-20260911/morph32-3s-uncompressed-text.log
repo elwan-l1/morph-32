@@ -1,0 +1,11 @@
+[transformers] Token indices sequence length is longer than the specified maximum sequence length for this model (308707 > 262144). Running this sequence through the model will result in indexing errors
+{
+  "nll": 1.5933605898171663,
+  "perplexity": 4.920256138486851,
+  "scored_tokens": 4096,
+  "seconds": 11.798347791991546,
+  "delta_nll_nats_per_token": 0.033891525119543076,
+  "mean_kl_reference_to_candidate": 0.07874798211732831,
+  "reference_token_agreement": 0.898193359375,
+  "reference_manifest_sha256": "228f212e15be54a2d6dea6b01f0e2747b6004b6c2eb2170754179417e7c56d25"
+}

@@ -1,0 +1,91 @@
+{
+  "status": "complete",
+  "scope": "Arithmetic audit of archived 4096-token quality and 80 interleaved generation runs. No old code or deleted checkpoint was rerun.",
+  "rows": [
+    {
+      "profile": "morph32-3s",
+      "variant": "baseline",
+      "text_perplexity": 4.871218234822427,
+      "code_perplexity": 1.7383959130454725,
+      "generation_tps_gain": 0.0,
+      "prompt_tps_gain": 0.0
+    },
+    {
+      "profile": "morph32-3s",
+      "variant": "seed",
+      "text_perplexity": 4.878615738685807,
+      "code_perplexity": 1.7337534191255681,
+      "generation_tps_gain": -0.003911927670181337,
+      "prompt_tps_gain": 0.019493865739991012
+    },
+    {
+      "profile": "morph32-3s",
+      "variant": "independent",
+      "text_perplexity": 4.920171377657315,
+      "code_perplexity": 1.7250071314916604,
+      "generation_tps_gain": 0.35893633309660533,
+      "prompt_tps_gain": 0.0964910618987882
+    },
+    {
+      "profile": "morph32-3s",
+      "variant": "both",
+      "text_perplexity": 4.920256112750942,
+      "code_perplexity": 1.7255642871422017,
+      "generation_tps_gain": 0.3281288386940713,
+      "prompt_tps_gain": 0.07447412645913376
+    },
+    {
+      "profile": "morph32-c",
+      "variant": "baseline",
+      "text_perplexity": 5.009511235754494,
+      "code_perplexity": 1.843649159719821,
+      "generation_tps_gain": 0.0,
+      "prompt_tps_gain": 0.0
+    },
+    {
+      "profile": "morph32-c",
+      "variant": "seed",
+      "text_perplexity": 4.971012893752983,
+      "code_perplexity": 1.8351469680593206,
+      "generation_tps_gain": -0.014313792261896219,
+      "prompt_tps_gain": 0.001690119462282258
+    },
+    {
+      "profile": "morph32-c",
+      "variant": "independent",
+      "text_perplexity": 4.973022875634687,
+      "code_perplexity": 1.8271380187986894,
+      "generation_tps_gain": 0.38088911543003245,
+      "prompt_tps_gain": 0.07456906767220906
+    },
+    {
+      "profile": "morph32-c",
+      "variant": "both",
+      "text_perplexity": 4.990083613316071,
+      "code_perplexity": 1.8321939669289513,
+      "generation_tps_gain": 0.38382723905795846,
+      "prompt_tps_gain": 0.07896157466107123
+    }
+  ],
+  "source_sha256": {
+    "summary.json": "e1bea48622c84fe8f104fd79384809cdc1e602117dd799345f9b525967ac6069",
+    "morph32-3s-interleaved.json": "33ecf9dc4815569d82315333d4ca5b80a1cb0a9a836d384996b35c81ab3b2070",
+    "morph32-3s-baseline-text.json": "44922e19218fc290fe1ef8540926150f4b9bbc916695d456840d3dece2d53de8",
+    "morph32-3s-baseline-code.json": "b88c38bdbabd10bb226847bf5d42722fb927856e1cfb50cb334b383824c846d9",
+    "morph32-3s-seed-text.json": "76f1335b93bb99c55146130c51f3d92f537c95c1d0c89c0e660faa2a5ab41725",
+    "morph32-3s-seed-code.json": "e4edf754b2e7c8b50ba9283c6249f53e05a8c233ce613e45b472005a4791bf0f",
+    "morph32-3s-independent-text.json": "921e318d85483a6f2b16936551d1f0bef5d70dd25b40cfe4584dd40b58f30403",
+    "morph32-3s-independent-code.json": "57bfe57793abda94ab0d15b645497f2cd4707938bf9ea60cc0f553b651ade9dc",
+    "morph32-3s-both-text.json": "935dba9e04be54611e7f392043c6b8e3cec0a5ad4fed95d14fc7c893719cd8e7",
+    "morph32-3s-both-code.json": "63a66fd44b516ff3e9361fe58e73aab42603ec6775657c46f219af2db70ea421",
+    "morph32-c-interleaved.json": "c984a868591cb85fbd7975182f7bdae549901a7e72851cc488fa83b4ce47eb3d",
+    "morph32-c-baseline-text.json": "50c9ce54854bfaf1d6f355716fa8df4a01b257d8a3f6012cfbb8a79cfe5bb334",
+    "morph32-c-baseline-code.json": "bd027386c30f5d32b000763a1588dffb9c05584bdba4175a0e56994edf7a6f85",
+    "morph32-c-seed-text.json": "1c4856993b9b00165f9f0f66ae34290eaa3e9da73ac01d2391dc6c019dff8e1a",
+    "morph32-c-seed-code.json": "e3bd91580ae75aa8cc663b769924b1037d86afb5202547da8bf631b5571c1c63",
+    "morph32-c-independent-text.json": "febbc891bc69f36855cff3643530cb95879f36520c43ef6a8fefcb26d633d890",
+    "morph32-c-independent-code.json": "f93328ed583ee1d63ae1d42cd3cd4b03f743d3ff7018e1d62df6be7feaa569f1",
+    "morph32-c-both-text.json": "8f4a8ec101e4f04876bdac3d6bf5d6e6ed0763f0d3f3a26ce65d249108f0ec30",
+    "morph32-c-both-code.json": "957e5b917cfc949b0788434c91589a990611fe15fb92b88078b3f613bdcd5e80"
+  }
+}

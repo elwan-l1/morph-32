@@ -1,0 +1,262 @@
+{
+  "status": "complete",
+  "scope": "Six-format quality and timing cohort only; downstream capability results are separate and may still be running.",
+  "profiles": {
+    "native": {
+      "text": {
+        "nll": 1.5594690646976233,
+        "perplexity": 4.756295289559941,
+        "scored_tokens": 4096,
+        "seconds": 12.88849174999632,
+        "delta_nll_nats_per_token": 0.0,
+        "mean_kl_reference_to_candidate": 0.0,
+        "reference_token_agreement": 1.0,
+        "reference_manifest_sha256": "228f212e15be54a2d6dea6b01f0e2747b6004b6c2eb2170754179417e7c56d25"
+      },
+      "file_bytes": 16081490933,
+      "resident_parameter_bytes": 15132802048,
+      "generation": {
+        "count": 10,
+        "median": 15.922604420011357,
+        "q1": 15.896173937631936,
+        "q3": 16.277093051038314,
+        "minimum": 14.853089310872019,
+        "maximum": 16.981427823689096
+      },
+      "prefill": {
+        "count": 10,
+        "median": 417.712121920863,
+        "q1": 402.6908926775756,
+        "q3": 421.91883438736835,
+        "minimum": 384.54082061357786,
+        "maximum": 446.3095641707648
+      },
+      "code": {
+        "nll": 1.0429729176685214,
+        "perplexity": 2.8376405586493365,
+        "scored_tokens": 4096,
+        "seconds": 12.1341574590042,
+        "delta_nll_nats_per_token": 0.0,
+        "mean_kl_reference_to_candidate": 0.0,
+        "reference_token_agreement": 1.0,
+        "reference_manifest_sha256": "238b21169e3f42e6eb67fdcfcac34f933bcb616e00e950c1eef30291785cd19d"
+      }
+    },
+    "morph32-3s": {
+      "text": {
+        "nll": 1.5933605898171663,
+        "perplexity": 4.920256138486851,
+        "scored_tokens": 4096,
+        "seconds": 12.752183582997532,
+        "delta_nll_nats_per_token": 0.033891525119543076,
+        "mean_kl_reference_to_candidate": 0.07874798211732831,
+        "reference_token_agreement": 0.898193359375,
+        "reference_manifest_sha256": "228f212e15be54a2d6dea6b01f0e2747b6004b6c2eb2170754179417e7c56d25"
+      },
+      "file_bytes": 13671088797,
+      "resident_parameter_bytes": 12721667358,
+      "generation": {
+        "count": 10,
+        "median": 14.63943588009139,
+        "q1": 14.001474668145024,
+        "q3": 14.677475654999364,
+        "minimum": 13.571487972879657,
+        "maximum": 14.751469716039297
+      },
+      "prefill": {
+        "count": 10,
+        "median": 366.15890978505627,
+        "q1": 360.2583556706991,
+        "q3": 379.52517357389604,
+        "minimum": 346.94793759676,
+        "maximum": 398.04448178361923
+      },
+      "code": {
+        "nll": 1.0698300106450915,
+        "perplexity": 2.9148839586160538,
+        "scored_tokens": 4096,
+        "seconds": 11.834108958995785,
+        "delta_nll_nats_per_token": 0.02685709297657013,
+        "mean_kl_reference_to_candidate": 0.055582310421502246,
+        "reference_token_agreement": 0.930419921875,
+        "reference_manifest_sha256": "238b21169e3f42e6eb67fdcfcac34f933bcb616e00e950c1eef30291785cd19d"
+      }
+    },
+    "morph32-c": {
+      "text": {
+        "nll": 1.6074526645243168,
+        "perplexity": 4.990083606957244,
+        "scored_tokens": 4096,
+        "seconds": 12.842525874992134,
+        "delta_nll_nats_per_token": 0.047983599826693535,
+        "mean_kl_reference_to_candidate": 0.1037082095296036,
+        "reference_token_agreement": 0.880615234375,
+        "reference_manifest_sha256": "228f212e15be54a2d6dea6b01f0e2747b6004b6c2eb2170754179417e7c56d25"
+      },
+      "file_bytes": 13136316418,
+      "resident_parameter_bytes": 12186893598,
+      "generation": {
+        "count": 10,
+        "median": 13.351132651410369,
+        "q1": 12.250622777278643,
+        "q3": 14.166721519451848,
+        "minimum": 11.50988103054424,
+        "maximum": 14.53306620640491
+      },
+      "prefill": {
+        "count": 10,
+        "median": 348.88485227503185,
+        "q1": 328.9324300884864,
+        "q3": 370.58614984364726,
+        "minimum": 314.13221976907096,
+        "maximum": 382.75123969230276
+      },
+      "code": {
+        "nll": 1.0887554865330458,
+        "perplexity": 2.9705748507684686,
+        "scored_tokens": 4096,
+        "seconds": 11.993674625002313,
+        "delta_nll_nats_per_token": 0.045782568864524364,
+        "mean_kl_reference_to_candidate": 0.07321608134413993,
+        "reference_token_agreement": 0.921630859375,
+        "reference_manifest_sha256": "238b21169e3f42e6eb67fdcfcac34f933bcb616e00e950c1eef30291785cd19d"
+      }
+    },
+    "independent-3s": {
+      "text": {
+        "nll": 1.5933433752506971,
+        "perplexity": 4.920171439139543,
+        "scored_tokens": 4096,
+        "seconds": 14.112761791999219,
+        "delta_nll_nats_per_token": 0.03387431055307388,
+        "mean_kl_reference_to_candidate": 0.07908241865669328,
+        "reference_token_agreement": 0.897216796875,
+        "reference_manifest_sha256": "228f212e15be54a2d6dea6b01f0e2747b6004b6c2eb2170754179417e7c56d25"
+      },
+      "file_bytes": 13671088762,
+      "resident_parameter_bytes": 12721667358,
+      "generation": {
+        "count": 10,
+        "median": 15.238652867261877,
+        "q1": 15.02520805988435,
+        "q3": 15.47146526235566,
+        "minimum": 14.615162226047119,
+        "maximum": 15.600542109186277
+      },
+      "prefill": {
+        "count": 10,
+        "median": 413.29250719747614,
+        "q1": 404.123859353955,
+        "q3": 420.91610029608586,
+        "minimum": 386.12531060907486,
+        "maximum": 426.3918345211985
+      },
+      "code": {
+        "nll": 1.0706401960924268,
+        "perplexity": 2.9172465121039908,
+        "scored_tokens": 4096,
+        "seconds": 11.840039124988834,
+        "delta_nll_nats_per_token": 0.027667278423905373,
+        "mean_kl_reference_to_candidate": 0.05556026579478868,
+        "reference_token_agreement": 0.92919921875,
+        "reference_manifest_sha256": "238b21169e3f42e6eb67fdcfcac34f933bcb616e00e950c1eef30291785cd19d"
+      }
+    },
+    "affine-3bit": {
+      "text": {
+        "nll": 1.5729078017175198,
+        "perplexity": 4.8206453142114745,
+        "scored_tokens": 4096,
+        "seconds": 348.9679344169999,
+        "delta_nll_nats_per_token": 0.013438737019896507,
+        "mean_kl_reference_to_candidate": 0.06582733164545967,
+        "reference_token_agreement": 0.891845703125,
+        "reference_manifest_sha256": "228f212e15be54a2d6dea6b01f0e2747b6004b6c2eb2170754179417e7c56d25"
+      },
+      "file_bytes": 13671135011,
+      "resident_parameter_bytes": 12721667358,
+      "generation": {
+        "count": 10,
+        "median": 9.654123653188748,
+        "q1": 9.580680216866229,
+        "q3": 9.665221832673783,
+        "minimum": 9.435425479725383,
+        "maximum": 9.6836886778893
+      },
+      "prefill": {
+        "count": 10,
+        "median": 12.153658018930779,
+        "q1": 12.0909154895697,
+        "q3": 12.168204197561469,
+        "minimum": 12.02181245313049,
+        "maximum": 12.194335206093733
+      },
+      "code": {
+        "nll": 1.0663612764328718,
+        "perplexity": 2.9047905167581516,
+        "scored_tokens": 4096,
+        "seconds": 343.53881725000974,
+        "delta_nll_nats_per_token": 0.023388358764350414,
+        "mean_kl_reference_to_candidate": 0.04595299224643873,
+        "reference_token_agreement": 0.929931640625,
+        "reference_manifest_sha256": "238b21169e3f42e6eb67fdcfcac34f933bcb616e00e950c1eef30291785cd19d"
+      }
+    },
+    "morph32-3s-uncompressed": {
+      "text": {
+        "nll": 1.5933605898171663,
+        "perplexity": 4.920256138486851,
+        "scored_tokens": 4096,
+        "seconds": 11.798347791991546,
+        "delta_nll_nats_per_token": 0.033891525119543076,
+        "mean_kl_reference_to_candidate": 0.07874798211732831,
+        "reference_token_agreement": 0.898193359375,
+        "reference_manifest_sha256": "228f212e15be54a2d6dea6b01f0e2747b6004b6c2eb2170754179417e7c56d25"
+      },
+      "file_bytes": 13942931757,
+      "resident_parameter_bytes": 12993707008,
+      "generation": {
+        "count": 10,
+        "median": 16.580749216212674,
+        "q1": 16.573312059647506,
+        "q3": 16.584669328567433,
+        "minimum": 16.461679107999892,
+        "maximum": 16.59171463707653
+      },
+      "prefill": {
+        "count": 10,
+        "median": 451.8610065697061,
+        "q1": 449.91995061232444,
+        "q3": 452.94962982429286,
+        "minimum": 439.68220846875494,
+        "maximum": 455.7809529816446
+      },
+      "code": {
+        "nll": 1.0698300106450915,
+        "perplexity": 2.9148839586160538,
+        "scored_tokens": 4096,
+        "seconds": 11.782507834010175,
+        "delta_nll_nats_per_token": 0.02685709297657013,
+        "mean_kl_reference_to_candidate": 0.055582310421502246,
+        "reference_token_agreement": 0.930419921875,
+        "reference_manifest_sha256": "238b21169e3f42e6eb67fdcfcac34f933bcb616e00e950c1eef30291785cd19d"
+      }
+    }
+  },
+  "source_sha256": {
+    "native-text.json": "af128175203bc7e5aeb9b29db12d31c40aa330852d0ffca58408fe92b0c00fdd",
+    "native-code.json": "a2dd9b146fce31baa52d1419994b4a9ac47100cdcebaca226fbaa3a425f2e047",
+    "morph32-3s-text.json": "88358866f78bf31719e9e7d976d679594de1b3b770c46441c249c250f4e02c74",
+    "morph32-3s-code.json": "7d3a104515d304ad465361a1987f0dc2217524406114d0c4193fd616e169fc17",
+    "morph32-c-text.json": "3af1cbd5e0299905c34ff8acff7ad9504522351868df8b62819d7df31d9ba0cc",
+    "morph32-c-code.json": "036ec2566bf2231f59a57d6d8721abd9c7f405022d3966335641c4990ca26efa",
+    "independent-3s-text.json": "bdb84f6cf53486bac26b3e5f5e58d77b0ecfa5d2ae5c1d55a81183b3600fbfd0",
+    "independent-3s-code.json": "a0449ddf873df00dfecf591e73d739d74f4a334691fa0763201a2b742b16f5c6",
+    "affine-3bit-text.json": "f0acb0c28ef9d1e0e6ab37fd0b0e0ed203dfb54cb54056c31c8478e79dac1a22",
+    "affine-3bit-code.json": "b78e897a6245690455c3fc9e2d029227bb53e796f8817ba8574903ab31cab327",
+    "morph32-3s-uncompressed-text.json": "60f67eba26b5ba04e6f0d2a4c6b76a149a02a22059283968676c45bd737b7512",
+    "morph32-3s-uncompressed-code.json": "462fcd05eb60cf5d03c6627dd4799c3d113b4bcd3ed68e5c16e1c37c774f508c"
+  },
+  "auditor_sha256": "04b90a72a4343ed2afcc6b826c29375d3d10a6a08d6bae2c0375114786bc6fbe",
+  "timing_limitation": "Sequential fresh-process measurements. Small differences can reflect machine drift; ten repetitions and IQR do not remove between-session confounding. Affine control uses an intentionally simple prefill kernel."
+}

@@ -1,0 +1,16 @@
+{
+  "status": "complete",
+  "source_file_hashes_verified": 129,
+  "mmlu_questions": 1140,
+  "mmlu_subjects": 57,
+  "mmlu_questions_per_subject": 20,
+  "mmlu_fewshot": 5,
+  "humaneval_unique_tasks": 164,
+  "retrieval_distinct_codes": 10,
+  "retrieval_positions": 5,
+  "code_dataset": "code-search-net/code_search_net:python",
+  "code_split": "test:first100",
+  "code_revision": "bd0cf261e357a3eb5c8fba490d23ec1a1cd59555",
+  "calibration_and_code_corpus_hashes_differ": true,
+  "scope": "Input integrity and protocol checks only. This is not downstream model accuracy; pretraining contamination is not established."
+}

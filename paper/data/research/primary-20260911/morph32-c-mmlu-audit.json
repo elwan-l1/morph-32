@@ -1,0 +1,19 @@
+{
+  "status": "complete",
+  "audited_utc": "2026-09-11T14:51:26.572566+00:00",
+  "report": "morph32-c-mmlu.json",
+  "report_sha256": "8d5a09c30c0a64262d96c596f0f9fdf651787d57f6639860649eac2eeb8e57a8",
+  "subset_sha256": "be0834323ffc384c25337c296084090913ee23380f2406e99af83a2b03182082",
+  "subjects": 57,
+  "accuracy_summary": {
+    "correct": 940,
+    "count": 1140,
+    "accuracy": 0.8245614035087719,
+    "ci95": [
+      0.8014030628853057,
+      0.8455397405019254
+    ],
+    "interval_method": "Wilson; fixed benchmark task sampling only"
+  },
+  "checks": "coverage, prompt hashes, expected answers, predictions, probabilities, counts, Wilson interval"
+}

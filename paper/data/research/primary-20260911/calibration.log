@@ -1,0 +1,15 @@
+[transformers] Token indices sequence length is longer than the specified maximum sequence length for this model (270510 > 262144). Running this sequence through the model will result in indexing errors
+{
+  "format": "morph32_channel_importance",
+  "source_revision": "3e6447f082e89cc7f0bc6e5441afd38dfce760ff",
+  "source_config_sha256": "14b65a0ee06517060a6bbd979bb1a8ff54e7b304b1a1f01d54344b88b8285e85",
+  "corpus_sha256": "f0737ed31fc1329026e95cb8b98e19c2a182c39c240ab909dc31abf2f8af58e8",
+  "token_sha256": "2039b00664d79d04b4219f2144b3e37032cfdb836e72139d0aa74e9251b5c29c",
+  "offset": 32768,
+  "tokens": 128,
+  "chunk_tokens": 128,
+  "chunks": 1,
+  "normalized": true,
+  "context": "fresh cache at selected offset",
+  "captured_arrays": 128
+}

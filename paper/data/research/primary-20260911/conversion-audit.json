@@ -1,0 +1,43 @@
+{
+  "status": "complete",
+  "scope": "All five converted 27B variants: common retained source tensors, calibration and BF16 hashes; 192 projections each; matched 3.5-bpw payloads; zero metadata compression in the metadata ablation.",
+  "rows": {
+    "morph32-3s": {
+      "file_bytes": 13671088797,
+      "representation_bytes": 7486832640,
+      "metadata_saved_bytes": 272039650,
+      "seconds": 164.19159549998585
+    },
+    "morph32-c": {
+      "file_bytes": 13136316418,
+      "representation_bytes": 6952058880,
+      "metadata_saved_bytes": 272039650,
+      "seconds": 159.99368395798956
+    },
+    "independent-3s": {
+      "file_bytes": 13671088762,
+      "representation_bytes": 7486832640,
+      "metadata_saved_bytes": 272039650,
+      "seconds": 89.05083962499339
+    },
+    "affine-3bit": {
+      "file_bytes": 13671135011,
+      "representation_bytes": 7486832640,
+      "metadata_saved_bytes": 272039650,
+      "seconds": 123.16548812499968
+    },
+    "morph32-3s-uncompressed": {
+      "file_bytes": 13942931757,
+      "representation_bytes": 7486832640,
+      "metadata_saved_bytes": 0,
+      "seconds": 162.24072225000418
+    }
+  },
+  "source_sha256": {
+    "morph32-3s-conversion.json": "8d2b71302d861437ce5439ef4a973ca373d74a3c3fe0723eb24e1627fea20e6f",
+    "morph32-c-conversion.json": "571a750d7aba1abe1a5cc09441626599ea4a9eddeb5118f9f1beecc2ced1a036",
+    "independent-3s-conversion.json": "d1e03bd95b13319127d8c42f78dd638ef5085765f9a9abec10b008693dc92e32",
+    "affine-3bit-conversion.json": "8bec21164abe90e4b4e7a395d82ae9e86059df7e2b46be699f8d5bdb224cde07",
+    "morph32-3s-uncompressed-conversion.json": "6fcb147badc95e8135afedc1729d40cfeb1923a7fed3f0a9fc47a9ef32108e9d"
+  }
+}

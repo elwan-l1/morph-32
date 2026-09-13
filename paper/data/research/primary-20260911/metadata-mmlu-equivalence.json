@@ -1,0 +1,19 @@
+{
+  "status": "complete",
+  "count": 1140,
+  "exact_match_fields": [
+    "id",
+    "prompt_sha256",
+    "token_sha256",
+    "answer_token_ids",
+    "expected",
+    "predicted",
+    "correct",
+    "choice_logprobs",
+    "choice_probabilities"
+  ],
+  "files": {
+    "morph32-3s-mmlu.json": "6513da236c76438b93f17db3f44a2fc09b08f5b536d41697ec614cd208b634fe",
+    "morph32-3s-uncompressed-mmlu.json": "6d97fb1e461862011becfa72ce9c144b4586769b17fb84647ade0ff895cff0df"
+  }
+}

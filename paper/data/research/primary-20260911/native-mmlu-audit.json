@@ -1,0 +1,19 @@
+{
+  "status": "complete",
+  "audited_utc": "2026-09-11T11:57:32.993150+00:00",
+  "report": "native-mmlu.json",
+  "report_sha256": "0f6e10bec96685b6dc9fd30c14128343a7592e6607c65cfcf7295b94c05b0070",
+  "subset_sha256": "be0834323ffc384c25337c296084090913ee23380f2406e99af83a2b03182082",
+  "subjects": 57,
+  "accuracy_summary": {
+    "correct": 958,
+    "count": 1140,
+    "accuracy": 0.8403508771929824,
+    "ci95": [
+      0.8179505763598521,
+      0.8604651201651362
+    ],
+    "interval_method": "Wilson; fixed benchmark task sampling only"
+  },
+  "checks": "coverage, prompt hashes, expected answers, predictions, probabilities, counts, Wilson interval"
+}

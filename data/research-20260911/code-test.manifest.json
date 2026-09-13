@@ -1,0 +1,9 @@
+{
+  "dataset": "code-search-net/code_search_net:python",
+  "split": "test:first100",
+  "revision": "bd0cf261e357a3eb5c8fba490d23ec1a1cd59555",
+  "license": "See archived dataset README and upstream per-repository licenses",
+  "sha256": "377942ec488719a227c4210fcd8d455df1c425d8eebf6f4b09c39b739229bc2c",
+  "calibration_sha256": "f0737ed31fc1329026e95cb8b98e19c2a182c39c240ab909dc31abf2f8af58e8",
+  "caveat": "Distinct corpus files; pretraining contamination is not established"
+}

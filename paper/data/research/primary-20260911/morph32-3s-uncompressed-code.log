@@ -1,0 +1,10 @@
+{
+  "nll": 1.0698300106450915,
+  "perplexity": 2.9148839586160538,
+  "scored_tokens": 4096,
+  "seconds": 11.782507834010175,
+  "delta_nll_nats_per_token": 0.02685709297657013,
+  "mean_kl_reference_to_candidate": 0.055582310421502246,
+  "reference_token_agreement": 0.930419921875,
+  "reference_manifest_sha256": "238b21169e3f42e6eb67fdcfcac34f933bcb616e00e950c1eef30291785cd19d"
+}

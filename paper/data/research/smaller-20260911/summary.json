@@ -1,0 +1,149 @@
+{
+  "optimization": null,
+  "status": "complete",
+  "model": "smaller-20260911",
+  "smaller_model": true,
+  "profiles": {
+    "native": {
+      "text": {
+        "nll": 2.675503697246313,
+        "perplexity": 14.51966151152257,
+        "scored_tokens": 4096,
+        "seconds": 2.0450012920045992,
+        "delta_nll_nats_per_token": 0.0,
+        "mean_kl_reference_to_candidate": 0.0,
+        "reference_token_agreement": 1.0,
+        "reference_manifest_sha256": "128c1553acde07ad57556e4d4da49cfcb539d733da2147603cfceab88d55da28"
+      },
+      "file_bytes": 351386061,
+      "peak_mlx_bytes": 1707245712,
+      "resident_parameter_bytes": 335372288,
+      "generation": {
+        "count": 10,
+        "median": 219.64979028060205,
+        "q1": 217.88268793248824,
+        "q3": 220.58811448333714,
+        "minimum": 211.75440986445835,
+        "maximum": 221.46107818022782
+      },
+      "prompt": {
+        "count": 10,
+        "median": 15163.684289539742,
+        "q1": 15134.25810774158,
+        "q3": 15232.313516062715,
+        "minimum": 15028.775206533215,
+        "maximum": 15300.378707811173
+      },
+      "code": {
+        "nll": 1.7584428153932095,
+        "perplexity": 5.803393399776207,
+        "scored_tokens": 4096,
+        "seconds": 2.0681930419959826,
+        "delta_nll_nats_per_token": 0.0,
+        "mean_kl_reference_to_candidate": 0.0,
+        "reference_token_agreement": 1.0,
+        "reference_manifest_sha256": "b1a10bf92ca9f6a9f542f7c2b47ba6491f402bd70ae138dd8240313e5b1c889e"
+      }
+    },
+    "morph32-3s": {
+      "text": {
+        "nll": 3.0567144379019737,
+        "perplexity": 21.257599137221817,
+        "scored_tokens": 4096,
+        "seconds": 2.1185994170082267,
+        "delta_nll_nats_per_token": 0.38121074065566063,
+        "mean_kl_reference_to_candidate": 0.41293430387056085,
+        "reference_token_agreement": 0.704345703125,
+        "reference_manifest_sha256": "128c1553acde07ad57556e4d4da49cfcb539d733da2147603cfceab88d55da28"
+      },
+      "file_bytes": 312929769,
+      "peak_mlx_bytes": 1672978431,
+      "resident_parameter_bytes": 296702255,
+      "generation": {
+        "count": 10,
+        "median": 204.91986529814744,
+        "q1": 202.62373801807968,
+        "q3": 206.21179464428536,
+        "minimum": 200.8008767278266,
+        "maximum": 207.44954559124338
+      },
+      "prompt": {
+        "count": 10,
+        "median": 14490.121893255367,
+        "q1": 14432.463557045352,
+        "q3": 14549.889850828287,
+        "minimum": 14082.794004288124,
+        "maximum": 14648.222280054637
+      },
+      "code": {
+        "nll": 1.9340827763080597,
+        "perplexity": 6.9176960698330605,
+        "scored_tokens": 4096,
+        "seconds": 2.1224196669936646,
+        "delta_nll_nats_per_token": 0.17563996091485023,
+        "mean_kl_reference_to_candidate": 0.3107261378126409,
+        "reference_token_agreement": 0.802978515625,
+        "reference_manifest_sha256": "b1a10bf92ca9f6a9f542f7c2b47ba6491f402bd70ae138dd8240313e5b1c889e"
+      },
+      "representation_bytes": 115605504,
+      "native_representation_bytes": 148635648,
+      "metadata_saved_bytes": 5639889
+    },
+    "independent-3s": {
+      "text": {
+        "nll": 3.048243723809719,
+        "perplexity": 21.078292592029474,
+        "scored_tokens": 4096,
+        "seconds": 2.105193249997683,
+        "delta_nll_nats_per_token": 0.372740026563406,
+        "mean_kl_reference_to_candidate": 0.4071461753241179,
+        "reference_token_agreement": 0.706787109375,
+        "reference_manifest_sha256": "128c1553acde07ad57556e4d4da49cfcb539d733da2147603cfceab88d55da28"
+      },
+      "file_bytes": 312929734,
+      "peak_mlx_bytes": 1672978431,
+      "resident_parameter_bytes": 296702255,
+      "generation": {
+        "count": 10,
+        "median": 204.44532297324878,
+        "q1": 203.47121286612705,
+        "q3": 205.61892126624724,
+        "minimum": 200.8268940692622,
+        "maximum": 206.454027083932
+      },
+      "prompt": {
+        "count": 10,
+        "median": 14467.033343733867,
+        "q1": 14272.580014470377,
+        "q3": 14547.07165928211,
+        "minimum": 14116.033380350962,
+        "maximum": 14649.796210367575
+      },
+      "code": {
+        "nll": 1.9342943616211414,
+        "perplexity": 6.9191599075796235,
+        "scored_tokens": 4096,
+        "seconds": 2.119558666003286,
+        "delta_nll_nats_per_token": 0.17585154622793198,
+        "mean_kl_reference_to_candidate": 0.3102433733683081,
+        "reference_token_agreement": 0.796875,
+        "reference_manifest_sha256": "b1a10bf92ca9f6a9f542f7c2b47ba6491f402bd70ae138dd8240313e5b1c889e"
+      },
+      "representation_bytes": 115605504,
+      "native_representation_bytes": 148635648,
+      "metadata_saved_bytes": 5639889
+    }
+  },
+  "source_directory": "research/smaller-20260911",
+  "source_sha256": {
+    "native-text.json": "cc1fba99d31a6c4df8068b934d7c6ef13d5edeb78f4f6d999db71245d874c034",
+    "native-code.json": "da16ccda371bff6e453191110426ee3e8a6411bf88bbbdab1eeb9a81a4ff8171",
+    "morph32-3s-text.json": "4433ec392da6b3d5f393f03a37ba85ea113ea34fa6b38b6d652d700122f4e2e6",
+    "morph32-3s-code.json": "c62cea851db44f0a63f817eca7d344fab1e78805ee73ea71bb84fe645b8e53c5",
+    "morph32-3s-conversion.json": "449eede9fede4b2dfd4ab64abe13df15b5bc3356e803b742049ded61e5635fca",
+    "independent-3s-text.json": "041cb1ca03cc0ccb91ff5333889aeaeecbc1b93bacaa59c219a9aec42b0fd5a5",
+    "independent-3s-code.json": "f387711dd5a4b7e11441bfbe1f622613bb8834136f7baea2290a6da5ef0888b6",
+    "independent-3s-conversion.json": "7877a2aac37cbef8da043e99425f6c4f4c0fa8eb1cec95b64a7a725ad0457d07"
+  },
+  "interpretation": "Current MORPH uses three planes. independent-3s is a base-fitting ablation; no recurrence is present. Historical recurrence results are separate. No superiority is assumed."
+}

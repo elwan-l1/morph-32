@@ -8,10 +8,11 @@ import statistics
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+EVIDENCE = ROOT / "evidence"
 
 
 def read(name):
-    return json.loads((ROOT / "evidence" / name).read_text())
+    return json.loads((EVIDENCE / name).read_text())
 
 
 def memory_peak(report, field):
@@ -24,7 +25,7 @@ def audit():
     provenance = read("provenance.json")
     for name, item in provenance["files"].items():
         assert (
-            hashlib.sha256((ROOT / "evidence" / name).read_bytes()).hexdigest()
+            hashlib.sha256((EVIDENCE / name).read_bytes()).hexdigest()
             == item["curated_report_sha256"]
         ), name
     baseline_ppl = read("native-quality-heldout.json")["quality"]["perplexity"]

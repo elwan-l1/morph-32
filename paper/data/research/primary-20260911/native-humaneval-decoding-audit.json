@@ -1,0 +1,18 @@
+{
+  "status": "complete",
+  "checks": [
+    "all 164 token arrays and inference fields unchanged",
+    "every decoded completion adds exactly one initial space",
+    "model provenance and generation parameters unchanged"
+  ],
+  "files": {
+    "native-humaneval.json": "b07327bc5a5d1579f49cb1ba9c516182c9c4262ecd586643108d9e5fdbc20d64",
+    "native-humaneval-scored.json": "990eead5d46a95af1b88284b0781a271197ccc270f9764637141733b6b117a88",
+    "native-humaneval-token-decoded.json": "017e437e720630c3da509af5fe60090193b673edcbca2901df35714f4498c7f2",
+    "native-humaneval-token-decoded-scored.json": "5241a0ea68c8056e899b0d6be4010a52745513b9ddf41685beab3082889fe3ca"
+  },
+  "invalid_streaming_export_score": 0.036585365853658534,
+  "exact_token_export_score": 0.7682926829268293,
+  "use_for_report": "native-humaneval-token-decoded-scored.json",
+  "policy": "Apply identical token decoding and official grading to all six formats."
+}
