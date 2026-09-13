@@ -1,5 +1,7 @@
 """Exact metadata reconstruction for retained native four-bit projections."""
 
+import os
+
 import mlx.nn as nn
 
 from .metadata_kernels import correlated_native_matmul, metadata_matmul, metadata_native_matmul
@@ -38,8 +40,11 @@ class CorrelatedLinear(nn.Module):
             self.bias = bias
 
     def __call__(self, x):
+        decode = os.environ.get("MORPH32_METADATA_VARIANT", self._decode)
+        if decode not in ("packet", "native"):
+            raise ValueError("Unknown MORPH32_METADATA_VARIANT")
         if (
-            self._decode == "packet"
+            decode == "packet"
             and x.size == x.shape[-1]
             and x.shape[-1] % 512 == 0
             and self.weight.shape[0] % 8 == 0

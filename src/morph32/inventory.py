@@ -24,17 +24,21 @@ def inventory(path):
             continue
         prefix, suffix = name.rsplit(".", 1)
         d = manifest["descriptors"].get(prefix)
-        if d and d["kind"] == "morph32":
+        if d and d["kind"] in ("morph32", "affine3"):
             if suffix == "words":
                 n, k = d["shape"]
-                seeds = 5 if d["spec"].get("partial", False) else d["spec"]["seeds"]
+                seeds = (
+                    3
+                    if d["kind"] == "affine3"
+                    else (5 if d["spec"].get("partial", False) else d["spec"]["seeds"])
+                )
                 if item["shape"] != [n, k // 32, seeds] or header[prefix + ".scales"]["shape"] != [
                     n,
-                    k // 32,
+                    k // (64 if d["kind"] == "affine3" else 32),
                 ]:
                     raise ValueError("MORPH physical/logical shape mismatch")
                 logical += n * k
-            elif suffix != "scales":
+            elif suffix not in ("scales", "biases"):
                 logical += math.prod(item["shape"])
             continue
         if (

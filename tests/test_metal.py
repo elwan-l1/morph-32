@@ -17,7 +17,7 @@ from morph32.profiles import recipe
 
 
 @pytest.mark.parametrize("profile", ["morph32-3s", "morph32-c"])
-def test_direct_orbit_kernels(profile):
+def test_direct_bitplane_kernels(profile):
     mx.random.seed(42)
     weight = mx.random.normal((64, 1024)) * 0.04
     spec = recipe(profile, 16, "up_proj")

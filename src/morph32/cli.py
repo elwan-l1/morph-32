@@ -16,11 +16,14 @@ def main():
     )
     inspect.add_argument("checkpoint", type=Path)
     calibrate = commands.add_parser(
-        "calibrate", help="Capture the measured 128-token channel importance"
+        "calibrate", help="Capture channel importance and optional tile second moments"
     )
     calibrate.add_argument("--source", type=Path, required=True)
     calibrate.add_argument("--text", type=Path, default=Path("data/wikitext2-valid.txt"))
     calibrate.add_argument("--offset", type=int, default=32768)
+    calibrate.add_argument("--tokens", type=int, default=128)
+    calibrate.add_argument("--chunks", type=int, default=1)
+    calibrate.add_argument("--covariance", action="store_true")
     calibrate.add_argument("--output", type=Path, required=True)
     convert = commands.add_parser(
         "convert", help="Fit a standalone checkpoint directly from Qwen weights"
@@ -31,6 +34,20 @@ def main():
     convert.add_argument("--profile", type=normalize_profile, choices=PROFILES, required=True)
     convert.add_argument("--output", type=Path, required=True)
     convert.add_argument("--report", type=Path, required=True)
+    convert.add_argument(
+        "--optimization",
+        type=Path,
+        help="Override profile seed search with JSON: sweeps, restarts, seed, covariance",
+    )
+    convert.add_argument(
+        "--recipe-map", type=Path, help="JSON mapping every projection name to its MORPH spec"
+    )
+    convert.add_argument("--no-metadata-compression", action="store_true")
+    convert.add_argument(
+        "--allow-other-model",
+        action="store_true",
+        help="Experimental compatible gate/up/down architecture; validates tensor shapes",
+    )
     serve = commands.add_parser("serve", help="Serve a standalone checkpoint on a local chat API")
     serve.add_argument("--checkpoint", type=Path, required=True)
     serve.add_argument("--port", type=int, default=8081)
@@ -46,6 +63,7 @@ def main():
         ("evaluate", "Measure NLL, memory, and generation"),
         ("mmlu", "Score a frozen multiple-choice subset"),
         ("workloads", "Run reasoning, coding, and long-context smoke tests"),
+        ("capabilities", "Generate HumanEval samples or repeated retrieval trials"),
     ]:
         task = commands.add_parser(name, help=help_text)
         model = task.add_mutually_exclusive_group(required=True)
@@ -57,10 +75,26 @@ def main():
             task.add_argument("--tokens", type=int, default=4096)
             task.add_argument("--offset", type=int, default=0)
             task.add_argument("--generation", type=int, default=64)
-            task.add_argument("--runs", type=int, default=3)
+            task.add_argument(
+                "--timing-tokens",
+                type=int,
+                help="Timing prompt length; quality still uses --tokens",
+            )
+            task.add_argument("--runs", type=int, default=10)
             task.add_argument("--quality-only", action="store_true")
+            task.add_argument("--domain", choices=("text", "code"), default="text")
+            reference = task.add_mutually_exclusive_group()
+            reference.add_argument("--export-reference", type=Path)
+            reference.add_argument("--reference", type=Path)
         elif name == "mmlu":
             task.add_argument("--subset", type=Path, default=Path("data/mmlu-50.json"))
+        elif name == "capabilities":
+            task.add_argument("--kind", choices=("humaneval", "retrieval"), required=True)
+            task.add_argument("--problems", type=Path)
+            task.add_argument("--max-tokens", type=int, default=512)
+            task.add_argument("--positions", type=float, nargs="+", default=[0, 0.25, 0.5, 0.75, 1])
+            task.add_argument("--trials", type=int, default=10)
+            task.add_argument("--filler-records", type=int, default=1100)
         else:
             task.add_argument("--max-tokens", type=int, default=1024)
     args = parser.parse_args()
@@ -81,7 +115,15 @@ def main():
         if args.command == "calibrate":
             from .calibration import capture
 
-            result = capture(args.source, args.text, args.output, offset=args.offset)
+            result = capture(
+                args.source,
+                args.text,
+                args.output,
+                offset=args.offset,
+                tokens=args.tokens,
+                chunks=args.chunks,
+                covariance=args.covariance,
+            )
         elif args.command == "convert":
             from .conversion import convert
 
@@ -92,6 +134,12 @@ def main():
                 args.output,
                 args.report,
                 profile=args.profile,
+                compress_metadata=not args.no_metadata_compression,
+                allow_other_model=args.allow_other_model,
+                optimization=json.loads(args.optimization.read_text())
+                if args.optimization
+                else "profile",
+                recipe_map=json.loads(args.recipe_map.read_text()) if args.recipe_map else None,
             )
         elif args.command == "serve":
             from .server import serve
@@ -113,6 +161,10 @@ def main():
             result = evaluate(args)
         elif args.command == "mmlu":
             from .mmlu import evaluate
+
+            result = evaluate(args)
+        elif args.command == "capabilities":
+            from .capabilities import evaluate
 
             result = evaluate(args)
         else:

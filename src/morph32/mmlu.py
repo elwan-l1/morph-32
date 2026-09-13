@@ -7,10 +7,13 @@ import time
 
 import mlx.core as mx
 from mlx.utils import tree_flatten
+from mlx_lm.models.cache import make_prompt_cache
 
 from .generation import load_selected
 from .metrics import memory
 from .paths import write_json
+from .research import provenance
+from .statistics import accuracy_interval
 
 
 def evaluate(args):
@@ -25,6 +28,8 @@ def evaluate(args):
     model, tokenizer = load_selected(args.checkpoint, args.baseline)
     report = dict(
         status="running",
+        provenance=provenance(args.checkpoint, args.baseline),
+        requested_count=len(subset["records"]),
         subset_sha256=hashlib.sha256(raw).hexdigest(),
         records=[],
         load_seconds=time.monotonic() - start,
@@ -46,7 +51,7 @@ def evaluate(args):
                 raise ValueError("Choices must each be one token with an unchanged prompt prefix")
             choices.append(together[-1])
         encoded.append((row, ids, choices))
-    warm = model(mx.array(encoded[0][1][:64])[None], cache=model.make_cache())
+    warm = model(mx.array(encoded[0][1][:64])[None], cache=make_prompt_cache(model))
     mx.eval(warm)
     mx.synchronize()
     del warm
@@ -59,7 +64,7 @@ def evaluate(args):
         mx.reset_peak_memory()
         mx.synchronize()
         question_start = time.monotonic()
-        cache = model.make_cache()
+        cache = make_prompt_cache(model)
         logits = model(mx.array(ids)[None], cache=cache)[0, -1].astype(mx.float32)
         scores = mx.take(logits, mx.array(choices))
         logprobs, probabilities = scores - mx.logsumexp(logits), mx.softmax(scores)
@@ -98,5 +103,7 @@ def evaluate(args):
         accuracy=correct / len(report["records"]) if report["records"] else None,
         process_seconds=time.monotonic() - start,
     )
+    if report["count"]:
+        report["accuracy_summary"] = accuracy_interval(correct, report["count"])
     write_json(args.output, report)
     return {k: report[k] for k in ("status", "correct", "count", "accuracy", "process_seconds")}

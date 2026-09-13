@@ -14,12 +14,10 @@ def test_profile_partition():
     for profile, partial_count in [
         ("morph32-3s", 0),
         ("morph32-c", 96),
-        ("three-seed", 0),
-        ("compact", 96),
     ]:
         specs = [recipe(profile, layer, p) for layer in range(64) for p in projections]
         assert sum(s.get("partial", False) for s in specs) == partial_count
-        assert all(s["tail"] == 0.5 and s["planes"] == 5 and s["seeds"] == 3 for s in specs)
+        assert all(s["planes"] == 3 and s["seeds"] == 3 for s in specs)
     with pytest.raises(ValueError):
         recipe("morph32-c", 64, "up_proj")
 

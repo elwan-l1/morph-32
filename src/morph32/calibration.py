@@ -1,4 +1,4 @@
-"""Capture channel importance from 128 real native-model activations."""
+"""Capture channel energy and optional tile moments from native-model activations."""
 
 import hashlib
 import json
@@ -7,8 +7,9 @@ from pathlib import Path
 import mlx.core as mx
 import mlx.nn as nn
 from mlx_lm import load
+from mlx_lm.models.cache import make_prompt_cache
 
-from .sources import MODEL_REVISION
+from .sources import LOGICAL_PARAMETERS, MODEL_REVISION, native_inventory
 
 
 class Capture(nn.Module):
@@ -23,17 +24,17 @@ class Capture(nn.Module):
         return self.inner(x)
 
 
-def capture(source, text, output, *, offset=32768, tokens=128):
+def capture(source, text, output, *, offset=32768, tokens=128, chunks=1, covariance=False):
     source, text, output = Path(source), Path(text), Path(output)
     if output.exists():
         raise FileExistsError(output)
-    if tokens != 128 or offset < 0 or output.suffix != ".safetensors":
-        raise ValueError("Use 128 calibration tokens, nonnegative offset, and .safetensors output")
+    if tokens < 1 or chunks < 1 or offset < 0 or output.suffix != ".safetensors":
+        raise ValueError(
+            "Use positive calibration tokens/chunks, nonnegative offset, and .safetensors output"
+        )
     model, tokenizer = load(str(source))
-    if len(model.layers) != 64:
-        raise ValueError("Expected the 64-layer Qwen3.8-27B model")
     pending = {}
-    for layer in range(64):
+    for layer in range(len(model.layers)):
         for projection in ("up_proj", "down_proj"):
             inner = getattr(model.layers[layer].mlp, projection)
             setattr(
@@ -42,24 +43,38 @@ def capture(source, text, output, *, offset=32768, tokens=128):
                 Capture(inner, f"layer{layer}.{projection}", pending),
             )
     corpus = text.read_text()
-    ids = tokenizer.encode(corpus, add_special_tokens=False)[offset : offset + tokens]
-    if len(ids) != tokens:
+    all_ids = tokenizer.encode(corpus, add_special_tokens=False)[offset : offset + tokens * chunks]
+    if len(all_ids) != tokens * chunks:
         raise ValueError("Calibration corpus is too short")
-    y = model(mx.array(ids)[None], cache=model.make_cache())
-    mx.eval(y, pending)
-    importance = {}
-    for key, x in pending.items():
-        value = mx.mean(x.astype(mx.float32) ** 2, axis=0)
-        value /= mx.mean(value)
-        importance[key] = value
+    sums, moments = {}, {}
+    from .optimization import second_moments
+
+    for chunk in range(chunks):
+        ids = all_ids[chunk * tokens : (chunk + 1) * tokens]
+        y = model(mx.array(ids)[None], cache=make_prompt_cache(model))
+        mx.eval(y, pending)
+        for key, x in pending.items():
+            value = mx.mean(x.astype(mx.float32) ** 2, axis=0)
+            sums[key] = sums.get(key, 0) + value
+            if covariance:
+                moments[key] = moments.get(key, 0) + second_moments(x)
+        mx.eval(sums, moments)
+        pending.clear()
+    importance = {key: value / mx.maximum(mx.mean(value), 1e-20) for key, value in sums.items()}
+    importance.update({key + ".moments": value / chunks for key, value in moments.items()})
     mx.eval(importance)
     manifest = dict(
-        format="morph32_channel_importance",
-        source_revision=MODEL_REVISION,
+        format="morph32_tile_moments" if covariance else "morph32_channel_importance",
+        source_revision=MODEL_REVISION
+        if native_inventory(source)["logical_parameters"] == LOGICAL_PARAMETERS
+        else None,
+        source_config_sha256=hashlib.sha256((source / "config.json").read_bytes()).hexdigest(),
         corpus_sha256=hashlib.sha256(corpus.encode()).hexdigest(),
-        token_sha256=hashlib.sha256(json.dumps(ids).encode()).hexdigest(),
+        token_sha256=hashlib.sha256(json.dumps(all_ids).encode()).hexdigest(),
         offset=offset,
-        tokens=tokens,
+        tokens=tokens * chunks,
+        chunk_tokens=tokens,
+        chunks=chunks,
         normalized=True,
         context="fresh cache at selected offset",
         captured_arrays=len(importance),

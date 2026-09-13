@@ -2,6 +2,7 @@
 
 import hashlib
 import json
+import os
 import tempfile
 from pathlib import Path
 
@@ -42,7 +43,17 @@ class MorphLinear(nn.Module):
 
     def __call__(self, x):
         if x.size == x.shape[-1]:
-            y = matvec_fast(x, self.words, self.scales, **self._spec, values=32)
+            variant = os.environ.get("MORPH32_DECODE_VARIANT", "original")
+            if variant not in ("original", "split"):
+                raise ValueError("Unknown MORPH32_DECODE_VARIANT")
+            y = matvec_fast(
+                x,
+                self.words,
+                self.scales,
+                **self._spec,
+                values=int(os.environ.get("MORPH32_DECODE_VALUES", "32")),
+                optimized=variant == "split",
+            )
         else:
             y = matmul(x, self.words, self.scales, **self._spec)
         return y + self.bias if "bias" in self else y
@@ -95,6 +106,20 @@ def load(path, verify=True):
                 module = MorphLinear(
                     weights[name + ".words"], weights[name + ".scales"], d["spec"], bias
                 )
+            elif d["kind"] == "affine3":
+                from .scalar import Affine3Linear
+
+                if not isinstance(module, nn.QuantizedLinear) or list(d["shape"]) != [
+                    module.weight.shape[0],
+                    module.weight.shape[1] * 8,
+                ]:
+                    raise ValueError("Affine3 architecture shape mismatch")
+                module = Affine3Linear(
+                    weights[name + ".words"],
+                    weights[name + ".scales"],
+                    weights[name + ".biases"],
+                    bias,
+                )
             elif d["kind"] == "correlated_bf16_metadata":
                 module = CorrelatedLinear(
                     *[
@@ -121,6 +146,17 @@ def load(path, verify=True):
             raise ValueError("Unloaded checkpoint descriptors")
         model.update_modules(tree_unflatten(replacements))
         model.load_weights(list(weights.items()), strict=True)
+        fusion = os.environ.get("MORPH32_FUSE_GATE_UP", "0")
+        if fusion not in ("0", "1"):
+            raise ValueError("MORPH32_FUSE_GATE_UP must be 0 or 1")
+        if fusion == "1":
+            from .fused import FusedMorphMLP
+
+            for layer in model.layers:
+                if isinstance(layer.mlp.gate_proj, MorphLinear) and isinstance(
+                    layer.mlp.up_proj, MorphLinear
+                ):
+                    layer.mlp = FusedMorphMLP(layer.mlp)
         model.eval()
         mx.eval(model.parameters())
         tokenizer = load_tokenizer(folder, eos_token_ids=config.get("eos_token_id"))

@@ -1,4 +1,4 @@
-"""MORPH-32: orbit-recurrent quantization for MLX on Apple M5."""
+"""MORPH-32: packed bitplane quantization for MLX on Apple M5."""
 
 __version__ = "0.1.0"
 

@@ -17,7 +17,7 @@ def tensor_rows(folder, key, rows=None):
     import numpy as np
 
     folder = Path(folder)
-    index = json.loads((folder / "model.safetensors.index.json").read_text())["weight_map"]
+    index = tensor_index(folder)
     path = folder / index[key]
     with path.open("rb") as stream:
         size = struct.unpack("<Q", stream.read(8))[0]
@@ -66,3 +66,22 @@ def native_inventory(folder):
         ),
         embedded_asset_bytes=assets,
     )
+
+
+def tensor_index(folder):
+    """Support sharded and single-file BF16 snapshots without loading weights."""
+    folder = Path(folder)
+    path = folder / "model.safetensors.index.json"
+    if path.exists():
+        return json.loads(path.read_text())["weight_map"]
+    result = {}
+    for shard in sorted(folder.glob("model*.safetensors")):
+        with shard.open("rb") as stream:
+            size = struct.unpack("<Q", stream.read(8))[0]
+            names = json.loads(stream.read(size))
+        for key in names:
+            if key != "__metadata__":
+                if key in result:
+                    raise ValueError("Duplicate BF16 tensor")
+                result[key] = shard.name
+    return result
