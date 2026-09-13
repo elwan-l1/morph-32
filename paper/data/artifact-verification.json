@@ -62,7 +62,7 @@
   },
   "artifact_sha256": {
     "README.md": "9c0516d1606420b772059ffaef7057a95c05a4d404c892877909405bc09c2917",
-    "paper/main.typ": "a447b7450d072e7cbbe861ee74ac4d86e784e1f89e97a2355adfba071edd8381",
+    "paper/main.typ": "ac31eced7b835a7a5b4f523299a3808c62ef923cd4c20d40a441433cf940010e",
     "paper/data/final-summary.json": "defcd5f2ef5ccc78efc7c28630617fd03577861dc45a9af4203adf7c6e5cdc9e",
     "paper/research_artifact.py": "990bda192db02d42590bded0696102513530104a40d1806063c5dfe655edfdd4",
     "paper/publication.py": "5c1be0e3bbc8e5a2446f29a9442bee1a58eaf66fdc1f5536cad01138ccc9dc6f",

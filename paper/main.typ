@@ -211,13 +211,14 @@ The controls use the same current 3s layout, calibration and retained tensor pol
 ]
 ]
 
+#block(breakable: false)[
 == Runtime optimization: what remains to improve
 
 The direct decoder performs bit extraction, reconstruction and scaling in addition to moving weights. A focused experiment split its serial accumulation into two chains. The later run reaches #num(opt.candidate_generation.median) tokens/s, compared with #num(opt.original_generation.median), while text perplexity, stored bytes and loaded arrays are unchanged. However, prefill also accelerates despite an unchanged prefill kernel, and synchronized projection-family timings do not improve. This does not isolate a causal speedup.
 
 The experiment identifies an implementation avenue worth studying, but the split kernel remains opt-in. Profiling attributes similar aggregate time to gate, up and down projections and does not resolve instruction stalls. Better kernel scheduling and controlled, interleaved timing are concrete next steps; the present report uses only the completed measurements.
+]
 
-#pagebreak()
 = Discussion and conclusion
 
 The main result is a working 27B-model deployment from a new packed representation. MORPH32-c removes #gb(native.file_bytes - compact.file_bytes) GB, or #pct(1 - compact.file_bytes/native.file_bytes)%, from the complete MLX 4-bit checkpoint while scoring #pct(compact.mmlu.accuracy)% versus #pct(native.mmlu.accuracy)% on the fixed MMLU subset. MORPH32-3s offers a simpler quality–size point: #gb(native.file_bytes - three.file_bytes) GB less storage and #pct(three.mmlu.accuracy)% MMLU. Both savings remain present in loaded model arrays. Achieving those results required fitting a constrained code across all 192 language MLP projections, packaging a standalone checkpoint and executing it directly in Metal without a complete dense MLP copy. The measured result is an end-to-end compression system, rather than a nominal tile bit rate alone.
