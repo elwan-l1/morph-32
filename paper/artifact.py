@@ -85,6 +85,7 @@ def main():
         *sorted((current / "checkpoints").glob("CP*.md")),
         PAPER / "figures/morph32-c.svg",
         PAPER / "figures/morph32-3s.svg",
+        PAPER / "figures/quality-size-paper.svg",
     ]
     sources = {
         str((primary_dir / name).relative_to(ROOT)): digest
@@ -98,7 +99,7 @@ def main():
     )
     result = dict(
         status="complete",
-        scope="Current primary and smaller saved-record arithmetic, matched inputs, exact token-decoding chain, execution output/log hashes, shared diagrams and regenerated comparison table. No inference or PDF output.",
+        scope="Current primary and smaller saved-record arithmetic, matched inputs, exact token-decoding chain, execution output/log hashes, shared SVG figures and regenerated comparison table. No inference or PDF output.",
         source_sha256=sources,
         artifact_sha256={
             str(p.relative_to(ROOT)): hashlib.sha256(p.read_bytes()).hexdigest() for p in files

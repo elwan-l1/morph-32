@@ -37,6 +37,12 @@ Qwen3.8-27B on Apple M5 Pro. The four rows use the same evaluation inputs; MLX 3
 
 GB is decimal. MMLU is a fixed 1,140-question subset; HumanEval has 164 tasks. Generation is the median of ten 4,096-prompt/64-output-token runs. See the [paper](paper/morph32.pdf) for the method, additional metrics, and limitations.
 
+### Model size versus prediction divergence
+
+![Complete model file size versus text and Python KL divergence for four measured models](paper/figures/quality-size-paper.svg)
+
+Each point is one measured model. Lower KL means its predictions are closer to MLX 4-bit on the same text or Python inputs; the horizontal axis is the complete model file size. These four points do not imply a continuous tradeoff curve.
+
 ## Rebuild the evidence without inference
 
 ```bash
@@ -44,7 +50,7 @@ uv sync --locked --dev
 uv run python paper/artifact.py
 ```
 
-This command audits saved records, rebuilds the numerical summaries, and refreshes the README results table. The two diagrams are versioned SVG files. The Typst paper reads the audited JSON directly. It does not load models, run benchmarks, execute generated code, or create a PDF. [The artifact verification record](paper/data/artifact-verification.json) lists the source hashes and scope of the checks.
+This command audits saved records, rebuilds the numerical summaries, and refreshes the README results table. The two diagrams and size versus KL figure are versioned SVG files. The Typst paper reads the audited JSON directly. It does not load models, run benchmarks, execute generated code, or create a PDF. [The artifact verification record](paper/data/artifact-verification.json) lists the source hashes and scope of the checks.
 
 The [frozen protocol and amendments](paper/data/research/current-20260911/protocol.json) record model revisions, dataset inputs and the HumanEval export correction. MLX's streaming decoder dropped an initial space; exact decoding of the saved tokens restored Python indentation uniformly for every configuration. Original exports, corrected exports and official harness results are all preserved. No inference was repeated for that correction.
 

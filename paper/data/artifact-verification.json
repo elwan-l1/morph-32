@@ -1,6 +1,6 @@
 {
   "status": "complete",
-  "scope": "Current primary and smaller saved-record arithmetic, matched inputs, exact token-decoding chain, execution output/log hashes, shared diagrams and regenerated comparison table. No inference or PDF output.",
+  "scope": "Current primary and smaller saved-record arithmetic, matched inputs, exact token-decoding chain, execution output/log hashes, shared SVG figures and regenerated comparison table. No inference or PDF output.",
   "source_sha256": {
     "paper/data/research/primary-20260911/native-text.json": "af128175203bc7e5aeb9b29db12d31c40aa330852d0ffca58408fe92b0c00fdd",
     "paper/data/research/primary-20260911/native-code.json": "a2dd9b146fce31baa52d1419994b4a9ac47100cdcebaca226fbaa3a425f2e047",
@@ -61,13 +61,13 @@
     "paper/data/research/smaller-20260911/independent-3s-conversion.json": "7877a2aac37cbef8da043e99425f6c4f4c0fa8eb1cec95b64a7a725ad0457d07"
   },
   "artifact_sha256": {
-    "README.md": "e166f52675e80f7bc37e8cbeea9bf6fda6a320f932f6635ab5ee40c1cb3fe132",
-    "paper/main.typ": "179c5ae1955a5aa0a0815c605c0d769257aa3cec43ac619c83d1e11e2fa0949a",
+    "README.md": "9c0516d1606420b772059ffaef7057a95c05a4d404c892877909405bc09c2917",
+    "paper/main.typ": "a447b7450d072e7cbbe861ee74ac4d86e784e1f89e97a2355adfba071edd8381",
     "paper/data/final-summary.json": "defcd5f2ef5ccc78efc7c28630617fd03577861dc45a9af4203adf7c6e5cdc9e",
     "paper/research_artifact.py": "990bda192db02d42590bded0696102513530104a40d1806063c5dfe655edfdd4",
     "paper/publication.py": "5c1be0e3bbc8e5a2446f29a9442bee1a58eaf66fdc1f5536cad01138ccc9dc6f",
-    "paper/artifact.py": "455381a79478a7532eb4d60266e32b688f6f42d727e10fa0a575a8ef22c8b6cc",
-    "paper/data/research/current-20260911/checkpoint-index.json": "3f3c9f547465724cbc08455e0662974523ce450a8a15a412aecb55af3c55e4e7",
+    "paper/artifact.py": "5a189b1b903c0acf071801ff5618af6a597e198eccf518e5eb426c1662c617c7",
+    "paper/data/research/current-20260911/checkpoint-index.json": "67c805fc9fd2d4ae6f7b545f531b5574d7473cc192afe93926b59579d438258d",
     "paper/data/research/primary-20260911/metadata-header-equivalence.json": "3cc51ef3282a53610a20b491c2f1f123c7a9397a0749db44e0bcee3b3b1c5a53",
     "paper/data/research/current-20260911/checkpoints/CP01.md": "88245114159afada3017b12ca2c87544060cdfd06678697ec2713a504032bf8c",
     "paper/data/research/current-20260911/checkpoints/CP02.md": "be9cc4ec5d3b12fc9c3c0997025fcfe610a95d4802011dbf5870075fb4b024a9",
@@ -94,7 +94,7 @@
     "paper/data/research/current-20260911/checkpoints/CP23.md": "72f1f933b8d5869a22721eaa0ceac710ca74d8067fc8b234d3d0f7a84054b62d",
     "paper/data/research/current-20260911/checkpoints/CP24.md": "4e9b7c4c255dda8e1ab48c10baee555ae0370f1ed5ff8c477c99b48a72478dcb",
     "paper/data/research/current-20260911/checkpoints/CP25.md": "d655d34a56ddddab2d9b887ff93dc76f222c03bc1fceb0891cd8d6a9f6f79746",
-    "paper/data/research/current-20260911/checkpoints/CP26.md": "c15a1128c9470b5d68b4fdb4a8df2f6614a79f0cbddd3b90acad1f7ffb98214f",
+    "paper/data/research/current-20260911/checkpoints/CP26.md": "fbbf7fd048ee16329763c685552e24aba527f197e9e0e1487bc87aebc982e85b",
     "paper/data/research/current-20260911/checkpoints/CP27.md": "d272028d2106c7c4bf7da88d8e925d7bebc4f5db8bfed86e1dd11571f565d40c",
     "paper/data/research/current-20260911/checkpoints/CP28.md": "87f8e679cd8f51b427be7c7c070d1b843d9d979db247af9f4688b49af1df6f46",
     "paper/data/research/current-20260911/checkpoints/CP29.md": "9cc01c56d7fd4d3aa4bcd5e39f12f210f1be842425795083cfbf86e2ebdb9dd6",
@@ -113,6 +113,7 @@
     "paper/data/research/current-20260911/checkpoints/CP42.md": "3534c9967b3db7e672487265c18709a3687ab129e67a2c1a5a1bc7327eb02184",
     "paper/data/research/current-20260911/checkpoints/CP43.md": "7fd75701e71b1e384d4eae6d866daef8bffd7a46db6ae32db49a18495b689cc6",
     "paper/figures/morph32-c.svg": "27dd86e1899bb443d9a8d762bbec2bdd6b00bbecb5a34f216f414f7f308ffa3a",
-    "paper/figures/morph32-3s.svg": "27ac7f81b558ac49032abb485e6e2ddf95076ca444b58639bc21d53b713fb3e6"
+    "paper/figures/morph32-3s.svg": "27ac7f81b558ac49032abb485e6e2ddf95076ca444b58639bc21d53b713fb3e6",
+    "paper/figures/quality-size-paper.svg": "dbd38a0276e79451f052b53243dd9c1b456b35c85c0115a44bdfc0e65410b0ae"
   }
 }

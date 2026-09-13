@@ -525,9 +525,10 @@
       "../../../artifact-verification.json",
       "../../../final-summary.json",
       "../../../../main.typ",
-      "../../../../../README.md"
+      "../../../../../README.md",
+      "../../../../figures/quality-size-paper.svg"
     ],
-    "note": "Quality versus size is reported as complete checkpoint size and text/code fidelity in the shared four-model table and detailed paper tables. The former plot was removed from the publication.",
+    "note": "The shared size-versus-KL scatter shows four deployment models in two prediction domains. The base-fitting and metadata controls remain in the detailed table; no continuous frontier is inferred.",
     "verification_note": "Final publication audit, 2026-09-11. Existing measurements only."
   },
   {

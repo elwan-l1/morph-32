@@ -176,6 +176,8 @@ Both prediction domains show the same quality ordering: MLX 4-bit, MORPH32-3s, M
 
 #figure(tbl(([Configuration], [Text PPL ↓], [Code PPL ↓], [Text KL ↓], [Code KL ↓]), cells((r => num(r.text.perplexity,digits:3), r => num(r.code.perplexity,digits:3), r => num(r.text.mean_kl_reference_to_candidate,digits:4), r => num(r.code.mean_kl_reference_to_candidate,digits:4)), ns: ("native", "morph32-c", "morph32-3s", "published-3bit", "independent-3s", "morph32-3s-uncompressed"))), kind: table, caption: [*Prediction and distribution fidelity, including both 3s controls.* PPL is perplexity; KL is mean divergence in nats/token from MLX 4-bit. Each domain contains 4,096 scored tokens. MLX 4-bit KL is zero by definition. NLL changes and token agreement appear in Appendix B.]) <fidelity>
 
+#figure(image("figures/quality-size-paper.svg", width: 100%), caption: [*Model size versus prediction divergence.* Four measured models are shown in both text and Python domains. Each point uses complete model file size and mean KL divergence from MLX 4-bit on the same 4,096-token input. Lower KL means closer predictions; the points do not define a continuous frontier.]) <quality-size>
+
 
 == Capability retention on knowledge and code
 

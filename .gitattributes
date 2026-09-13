@@ -1,3 +1,4 @@
 data/research-20260911/** linguist-generated
 paper/data/research/** linguist-generated
 *.pdf binary
+paper/figures/quality-size-paper.svg -whitespace linguist-generated
