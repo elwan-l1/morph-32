@@ -1,0 +1,721 @@
+{
+  "primary": {
+    "optimization": {
+      "original_generation": {
+        "count": 10,
+        "median": 14.63943588009139,
+        "q1": 14.001474668145024,
+        "q3": 14.677475654999364,
+        "minimum": 13.571487972879657,
+        "maximum": 14.751469716039297
+      },
+      "candidate_generation": {
+        "count": 10,
+        "median": 15.993331472564321,
+        "q1": 15.981397635181818,
+        "q3": 16.00637213576969,
+        "minimum": 15.729854658177063,
+        "maximum": 16.020935020371248
+      },
+      "original_quality": {
+        "nll": 1.5933605898171663,
+        "perplexity": 4.920256138486851,
+        "scored_tokens": 4096,
+        "seconds": 12.752183582997532,
+        "delta_nll_nats_per_token": 0.033891525119543076,
+        "mean_kl_reference_to_candidate": 0.07874798211732831,
+        "reference_token_agreement": 0.898193359375,
+        "reference_manifest_sha256": "228f212e15be54a2d6dea6b01f0e2747b6004b6c2eb2170754179417e7c56d25"
+      },
+      "candidate_quality": {
+        "nll": 1.5933605898171663,
+        "perplexity": 4.920256138486851,
+        "scored_tokens": 4096,
+        "seconds": 12.035088125005132,
+        "delta_nll_nats_per_token": 0.033891525119543076,
+        "mean_kl_reference_to_candidate": 0.07874798211732831,
+        "reference_token_agreement": 0.898193359375,
+        "reference_manifest_sha256": "228f212e15be54a2d6dea6b01f0e2747b6004b6c2eb2170754179417e7c56d25"
+      },
+      "candidate_file_bytes": 13671088797,
+      "candidate_resident_parameter_bytes": 12721667358,
+      "largest_instrumented_projection": "language_model.model.layers.61.mlp.down_proj",
+      "caveat": "Instrumented projection ranking is not instruction-level bottleneck evidence; candidate remains opt-in"
+    },
+    "status": "complete",
+    "model": "primary-20260911",
+    "smaller_model": false,
+    "profiles": {
+      "native": {
+        "text": {
+          "nll": 1.5594690646976233,
+          "perplexity": 4.756295289559941,
+          "scored_tokens": 4096,
+          "seconds": 12.88849174999632,
+          "delta_nll_nats_per_token": 0.0,
+          "mean_kl_reference_to_candidate": 0.0,
+          "reference_token_agreement": 1.0,
+          "reference_manifest_sha256": "228f212e15be54a2d6dea6b01f0e2747b6004b6c2eb2170754179417e7c56d25"
+        },
+        "file_bytes": 16081490933,
+        "peak_mlx_bytes": 18262539308,
+        "resident_parameter_bytes": 15132802048,
+        "generation": {
+          "count": 10,
+          "median": 15.922604420011357,
+          "q1": 15.896173937631936,
+          "q3": 16.277093051038314,
+          "minimum": 14.853089310872019,
+          "maximum": 16.981427823689096
+        },
+        "prompt": {
+          "count": 10,
+          "median": 417.712121920863,
+          "q1": 402.6908926775756,
+          "q3": 421.91883438736835,
+          "minimum": 384.54082061357786,
+          "maximum": 446.3095641707648
+        },
+        "code": {
+          "nll": 1.0429729176685214,
+          "perplexity": 2.8376405586493365,
+          "scored_tokens": 4096,
+          "seconds": 12.1341574590042,
+          "delta_nll_nats_per_token": 0.0,
+          "mean_kl_reference_to_candidate": 0.0,
+          "reference_token_agreement": 1.0,
+          "reference_manifest_sha256": "238b21169e3f42e6eb67fdcfcac34f933bcb616e00e950c1eef30291785cd19d"
+        },
+        "mmlu_flips": {
+          "lost": 0,
+          "gained": 0,
+          "changed_answers": 0
+        },
+        "mmlu": {
+          "correct": 958,
+          "count": 1140,
+          "accuracy": 0.8403508771929824,
+          "ci95": [
+            0.8179505763598521,
+            0.8604651201651362
+          ],
+          "interval_method": "Wilson; fixed benchmark task sampling only"
+        },
+        "humaneval": {
+          "correct": 126,
+          "count": 164,
+          "accuracy": 0.7682926829268293,
+          "ci95": [
+            0.6980264694019171,
+            0.8262778390705852
+          ],
+          "interval_method": "Wilson; fixed benchmark task sampling only"
+        },
+        "retrieval": {
+          "correct": 10,
+          "count": 10,
+          "accuracy": 1.0,
+          "ci95": [
+            0.7224672001371107,
+            0.9999999999999999
+          ],
+          "interval_method": "Wilson; fixed benchmark task sampling only"
+        }
+      },
+      "morph32-3s": {
+        "text": {
+          "nll": 1.5933605898171663,
+          "perplexity": 4.920256138486851,
+          "scored_tokens": 4096,
+          "seconds": 12.752183582997532,
+          "delta_nll_nats_per_token": 0.033891525119543076,
+          "mean_kl_reference_to_candidate": 0.07874798211732831,
+          "reference_token_agreement": 0.898193359375,
+          "reference_manifest_sha256": "228f212e15be54a2d6dea6b01f0e2747b6004b6c2eb2170754179417e7c56d25"
+        },
+        "file_bytes": 13671088797,
+        "peak_mlx_bytes": 15868618606,
+        "resident_parameter_bytes": 12721667358,
+        "generation": {
+          "count": 10,
+          "median": 14.63943588009139,
+          "q1": 14.001474668145024,
+          "q3": 14.677475654999364,
+          "minimum": 13.571487972879657,
+          "maximum": 14.751469716039297
+        },
+        "prompt": {
+          "count": 10,
+          "median": 366.15890978505627,
+          "q1": 360.2583556706991,
+          "q3": 379.52517357389604,
+          "minimum": 346.94793759676,
+          "maximum": 398.04448178361923
+        },
+        "code": {
+          "nll": 1.0698300106450915,
+          "perplexity": 2.9148839586160538,
+          "scored_tokens": 4096,
+          "seconds": 11.834108958995785,
+          "delta_nll_nats_per_token": 0.02685709297657013,
+          "mean_kl_reference_to_candidate": 0.055582310421502246,
+          "reference_token_agreement": 0.930419921875,
+          "reference_manifest_sha256": "238b21169e3f42e6eb67fdcfcac34f933bcb616e00e950c1eef30291785cd19d"
+        },
+        "representation_bytes": 7486832640,
+        "native_representation_bytes": 9625927680,
+        "metadata_saved_bytes": 272039650,
+        "mmlu_flips": {
+          "lost": 39,
+          "gained": 34,
+          "changed_answers": 92
+        },
+        "mmlu": {
+          "correct": 953,
+          "count": 1140,
+          "accuracy": 0.8359649122807018,
+          "ci95": [
+            0.8133470780229882,
+            0.8563261481859566
+          ],
+          "interval_method": "Wilson; fixed benchmark task sampling only"
+        },
+        "humaneval": {
+          "correct": 115,
+          "count": 164,
+          "accuracy": 0.7012195121951219,
+          "ci95": [
+            0.6272140413534487,
+            0.766014190000928
+          ],
+          "interval_method": "Wilson; fixed benchmark task sampling only"
+        },
+        "retrieval": {
+          "correct": 10,
+          "count": 10,
+          "accuracy": 1.0,
+          "ci95": [
+            0.7224672001371107,
+            0.9999999999999999
+          ],
+          "interval_method": "Wilson; fixed benchmark task sampling only"
+        }
+      },
+      "morph32-c": {
+        "text": {
+          "nll": 1.6074526645243168,
+          "perplexity": 4.990083606957244,
+          "scored_tokens": 4096,
+          "seconds": 12.842525874992134,
+          "delta_nll_nats_per_token": 0.047983599826693535,
+          "mean_kl_reference_to_candidate": 0.1037082095296036,
+          "reference_token_agreement": 0.880615234375,
+          "reference_manifest_sha256": "228f212e15be54a2d6dea6b01f0e2747b6004b6c2eb2170754179417e7c56d25"
+        },
+        "file_bytes": 13136316418,
+        "peak_mlx_bytes": 15333566318,
+        "resident_parameter_bytes": 12186893598,
+        "generation": {
+          "count": 10,
+          "median": 13.351132651410369,
+          "q1": 12.250622777278643,
+          "q3": 14.166721519451848,
+          "minimum": 11.50988103054424,
+          "maximum": 14.53306620640491
+        },
+        "prompt": {
+          "count": 10,
+          "median": 348.88485227503185,
+          "q1": 328.9324300884864,
+          "q3": 370.58614984364726,
+          "minimum": 314.13221976907096,
+          "maximum": 382.75123969230276
+        },
+        "code": {
+          "nll": 1.0887554865330458,
+          "perplexity": 2.9705748507684686,
+          "scored_tokens": 4096,
+          "seconds": 11.993674625002313,
+          "delta_nll_nats_per_token": 0.045782568864524364,
+          "mean_kl_reference_to_candidate": 0.07321608134413993,
+          "reference_token_agreement": 0.921630859375,
+          "reference_manifest_sha256": "238b21169e3f42e6eb67fdcfcac34f933bcb616e00e950c1eef30291785cd19d"
+        },
+        "representation_bytes": 6952058880,
+        "native_representation_bytes": 9625927680,
+        "metadata_saved_bytes": 272039650,
+        "mmlu_flips": {
+          "lost": 59,
+          "gained": 41,
+          "changed_answers": 123
+        },
+        "mmlu": {
+          "correct": 940,
+          "count": 1140,
+          "accuracy": 0.8245614035087719,
+          "ci95": [
+            0.8014030628853057,
+            0.8455397405019254
+          ],
+          "interval_method": "Wilson; fixed benchmark task sampling only"
+        },
+        "humaneval": {
+          "correct": 115,
+          "count": 164,
+          "accuracy": 0.7012195121951219,
+          "ci95": [
+            0.6272140413534487,
+            0.766014190000928
+          ],
+          "interval_method": "Wilson; fixed benchmark task sampling only"
+        },
+        "retrieval": {
+          "correct": 10,
+          "count": 10,
+          "accuracy": 1.0,
+          "ci95": [
+            0.7224672001371107,
+            0.9999999999999999
+          ],
+          "interval_method": "Wilson; fixed benchmark task sampling only"
+        }
+      },
+      "independent-3s": {
+        "text": {
+          "nll": 1.5933433752506971,
+          "perplexity": 4.920171439139543,
+          "scored_tokens": 4096,
+          "seconds": 14.112761791999219,
+          "delta_nll_nats_per_token": 0.03387431055307388,
+          "mean_kl_reference_to_candidate": 0.07908241865669328,
+          "reference_token_agreement": 0.897216796875,
+          "reference_manifest_sha256": "228f212e15be54a2d6dea6b01f0e2747b6004b6c2eb2170754179417e7c56d25"
+        },
+        "file_bytes": 13671088762,
+        "peak_mlx_bytes": 15868487534,
+        "resident_parameter_bytes": 12721667358,
+        "generation": {
+          "count": 10,
+          "median": 15.238652867261877,
+          "q1": 15.02520805988435,
+          "q3": 15.47146526235566,
+          "minimum": 14.615162226047119,
+          "maximum": 15.600542109186277
+        },
+        "prompt": {
+          "count": 10,
+          "median": 413.29250719747614,
+          "q1": 404.123859353955,
+          "q3": 420.91610029608586,
+          "minimum": 386.12531060907486,
+          "maximum": 426.3918345211985
+        },
+        "code": {
+          "nll": 1.0706401960924268,
+          "perplexity": 2.9172465121039908,
+          "scored_tokens": 4096,
+          "seconds": 11.840039124988834,
+          "delta_nll_nats_per_token": 0.027667278423905373,
+          "mean_kl_reference_to_candidate": 0.05556026579478868,
+          "reference_token_agreement": 0.92919921875,
+          "reference_manifest_sha256": "238b21169e3f42e6eb67fdcfcac34f933bcb616e00e950c1eef30291785cd19d"
+        },
+        "representation_bytes": 7486832640,
+        "native_representation_bytes": 9625927680,
+        "metadata_saved_bytes": 272039650,
+        "mmlu_flips": {
+          "lost": 41,
+          "gained": 36,
+          "changed_answers": 97
+        },
+        "mmlu": {
+          "correct": 953,
+          "count": 1140,
+          "accuracy": 0.8359649122807018,
+          "ci95": [
+            0.8133470780229882,
+            0.8563261481859566
+          ],
+          "interval_method": "Wilson; fixed benchmark task sampling only"
+        },
+        "humaneval": {
+          "correct": 112,
+          "count": 164,
+          "accuracy": 0.6829268292682927,
+          "ci95": [
+            0.6082169120069604,
+            0.7492632983152004
+          ],
+          "interval_method": "Wilson; fixed benchmark task sampling only"
+        },
+        "retrieval": {
+          "correct": 10,
+          "count": 10,
+          "accuracy": 1.0,
+          "ci95": [
+            0.7224672001371107,
+            0.9999999999999999
+          ],
+          "interval_method": "Wilson; fixed benchmark task sampling only"
+        }
+      },
+      "published-3bit": {
+        "text": {
+          "nll": 1.6519100833684206,
+          "perplexity": 5.216935097418753,
+          "scored_tokens": 4096,
+          "seconds": 12.487496666013612,
+          "delta_nll_nats_per_token": 0.09244101867079735,
+          "mean_kl_reference_to_candidate": 0.1836072490525279,
+          "reference_token_agreement": 0.82958984375,
+          "reference_manifest_sha256": "228f212e15be54a2d6dea6b01f0e2747b6004b6c2eb2170754179417e7c56d25"
+        },
+        "file_bytes": 12719813675,
+        "peak_mlx_bytes": 14900755500,
+        "resident_parameter_bytes": 11771132928,
+        "generation": {
+          "count": 10,
+          "median": 22.2586717686299,
+          "q1": 22.2328777143992,
+          "q3": 22.28630542004193,
+          "minimum": 21.63715291613747,
+          "maximum": 22.34404218857173
+        },
+        "prompt": {
+          "count": 10,
+          "median": 492.0873793612036,
+          "q1": 489.5975389963564,
+          "q3": 492.93926849401805,
+          "minimum": 486.11221064599954,
+          "maximum": 494.2291690641978
+        },
+        "code": {
+          "nll": 1.1107889153063297,
+          "perplexity": 3.036753190739458,
+          "scored_tokens": 4096,
+          "seconds": 12.442055916995741,
+          "delta_nll_nats_per_token": 0.06781599763780832,
+          "mean_kl_reference_to_candidate": 0.12326634655166269,
+          "reference_token_agreement": 0.88330078125,
+          "reference_manifest_sha256": "238b21169e3f42e6eb67fdcfcac34f933bcb616e00e950c1eef30291785cd19d"
+        },
+        "mmlu_flips": {
+          "lost": 108,
+          "gained": 46,
+          "changed_answers": 180
+        },
+        "mmlu": {
+          "correct": 896,
+          "count": 1140,
+          "accuracy": 0.7859649122807018,
+          "ci95": [
+            0.7612162295812198,
+            0.8087928350248271
+          ],
+          "interval_method": "Wilson; fixed benchmark task sampling only"
+        },
+        "humaneval": {
+          "correct": 105,
+          "count": 164,
+          "accuracy": 0.6402439024390244,
+          "ci95": [
+            0.5643567024484356,
+            0.7097114587985541
+          ],
+          "interval_method": "Wilson; fixed benchmark task sampling only"
+        },
+        "retrieval": {
+          "correct": 10,
+          "count": 10,
+          "accuracy": 1.0,
+          "ci95": [
+            0.7224672001371107,
+            0.9999999999999999
+          ],
+          "interval_method": "Wilson; fixed benchmark task sampling only"
+        }
+      },
+      "morph32-3s-uncompressed": {
+        "text": {
+          "nll": 1.5933605898171663,
+          "perplexity": 4.920256138486851,
+          "scored_tokens": 4096,
+          "seconds": 11.798347791991546,
+          "delta_nll_nats_per_token": 0.033891525119543076,
+          "mean_kl_reference_to_candidate": 0.07874798211732831,
+          "reference_token_agreement": 0.898193359375,
+          "reference_manifest_sha256": "228f212e15be54a2d6dea6b01f0e2747b6004b6c2eb2170754179417e7c56d25"
+        },
+        "file_bytes": 13942931757,
+        "peak_mlx_bytes": 16123542572,
+        "resident_parameter_bytes": 12993707008,
+        "generation": {
+          "count": 10,
+          "median": 16.580749216212674,
+          "q1": 16.573312059647506,
+          "q3": 16.584669328567433,
+          "minimum": 16.461679107999892,
+          "maximum": 16.59171463707653
+        },
+        "prompt": {
+          "count": 10,
+          "median": 451.8610065697061,
+          "q1": 449.91995061232444,
+          "q3": 452.94962982429286,
+          "minimum": 439.68220846875494,
+          "maximum": 455.7809529816446
+        },
+        "code": {
+          "nll": 1.0698300106450915,
+          "perplexity": 2.9148839586160538,
+          "scored_tokens": 4096,
+          "seconds": 11.782507834010175,
+          "delta_nll_nats_per_token": 0.02685709297657013,
+          "mean_kl_reference_to_candidate": 0.055582310421502246,
+          "reference_token_agreement": 0.930419921875,
+          "reference_manifest_sha256": "238b21169e3f42e6eb67fdcfcac34f933bcb616e00e950c1eef30291785cd19d"
+        },
+        "representation_bytes": 7486832640,
+        "native_representation_bytes": 9625927680,
+        "metadata_saved_bytes": 0,
+        "mmlu_flips": {
+          "lost": 39,
+          "gained": 34,
+          "changed_answers": 92
+        },
+        "mmlu": {
+          "correct": 953,
+          "count": 1140,
+          "accuracy": 0.8359649122807018,
+          "ci95": [
+            0.8133470780229882,
+            0.8563261481859566
+          ],
+          "interval_method": "Wilson; fixed benchmark task sampling only"
+        },
+        "humaneval": {
+          "correct": 115,
+          "count": 164,
+          "accuracy": 0.7012195121951219,
+          "ci95": [
+            0.6272140413534487,
+            0.766014190000928
+          ],
+          "interval_method": "Wilson; fixed benchmark task sampling only"
+        },
+        "retrieval": {
+          "correct": 10,
+          "count": 10,
+          "accuracy": 1.0,
+          "ci95": [
+            0.7224672001371107,
+            0.9999999999999999
+          ],
+          "interval_method": "Wilson; fixed benchmark task sampling only"
+        }
+      }
+    },
+    "source_directory": "research/primary-20260911",
+    "source_sha256": {
+      "native-text.json": "af128175203bc7e5aeb9b29db12d31c40aa330852d0ffca58408fe92b0c00fdd",
+      "native-code.json": "a2dd9b146fce31baa52d1419994b4a9ac47100cdcebaca226fbaa3a425f2e047",
+      "native-mmlu.json": "0f6e10bec96685b6dc9fd30c14128343a7592e6607c65cfcf7295b94c05b0070",
+      "native-humaneval.json": "b07327bc5a5d1579f49cb1ba9c516182c9c4262ecd586643108d9e5fdbc20d64",
+      "native-humaneval-token-decoded.json": "017e437e720630c3da509af5fe60090193b673edcbca2901df35714f4498c7f2",
+      "native-humaneval-token-decoded-scored.json": "5241a0ea68c8056e899b0d6be4010a52745513b9ddf41685beab3082889fe3ca",
+      "native-retrieval.json": "5e2ba4af4da6041acba68d52a808736d123cf1a2c06a9deee2efc59c44d31e36",
+      "morph32-3s-text.json": "88358866f78bf31719e9e7d976d679594de1b3b770c46441c249c250f4e02c74",
+      "morph32-3s-code.json": "7d3a104515d304ad465361a1987f0dc2217524406114d0c4193fd616e169fc17",
+      "morph32-3s-conversion.json": "8d2b71302d861437ce5439ef4a973ca373d74a3c3fe0723eb24e1627fea20e6f",
+      "morph32-3s-mmlu.json": "6513da236c76438b93f17db3f44a2fc09b08f5b536d41697ec614cd208b634fe",
+      "morph32-3s-humaneval.json": "bf74441a98026e4b7bcfddec7a6586ee6a8c77f339b90d3877318074ff142fbe",
+      "morph32-3s-humaneval-token-decoded.json": "c7c58e112bca72fdec88a9c109991fa67ed9be85e550c80035460e25e4efcac7",
+      "morph32-3s-humaneval-token-decoded-scored.json": "5bf2ca69b890a6a07ca3f639e3b26152635440de86ef1ce30064040be7685227",
+      "morph32-3s-retrieval.json": "48a391af0bc7e867635be39ff1000b46b869e54ee84bbae6dc131339bad67bfb",
+      "morph32-c-text.json": "3af1cbd5e0299905c34ff8acff7ad9504522351868df8b62819d7df31d9ba0cc",
+      "morph32-c-code.json": "036ec2566bf2231f59a57d6d8721abd9c7f405022d3966335641c4990ca26efa",
+      "morph32-c-conversion.json": "571a750d7aba1abe1a5cc09441626599ea4a9eddeb5118f9f1beecc2ced1a036",
+      "morph32-c-mmlu.json": "8d5a09c30c0a64262d96c596f0f9fdf651787d57f6639860649eac2eeb8e57a8",
+      "morph32-c-humaneval.json": "bfdd457607b4e2dbb13a97151553db292f585d257d1c6173f99c69ddeba3539f",
+      "morph32-c-humaneval-token-decoded.json": "7c4434da0485831a3516a46677f08655fa09349f73049bf6485b780a9801ff5f",
+      "morph32-c-humaneval-token-decoded-scored.json": "d88128adb326f9aea3a68580bfe4a9af599e9c061da47dae4cb7b57b84a9f425",
+      "morph32-c-retrieval.json": "6e0756604d3725c3ba41c7c7fc0c0892c1a155244acd94e7f1adccbd0c8ff9ea",
+      "independent-3s-text.json": "bdb84f6cf53486bac26b3e5f5e58d77b0ecfa5d2ae5c1d55a81183b3600fbfd0",
+      "independent-3s-code.json": "a0449ddf873df00dfecf591e73d739d74f4a334691fa0763201a2b742b16f5c6",
+      "independent-3s-conversion.json": "d1e03bd95b13319127d8c42f78dd638ef5085765f9a9abec10b008693dc92e32",
+      "independent-3s-mmlu.json": "a98c59a0703d41e6fd1725c6983c294cce1a3df7200ebde04528ba2088b9b151",
+      "independent-3s-humaneval.json": "f194c4c9fcaeee4ee3a6f368eb2742ebe7511dfab8cec3c6cbcb2ca37fcdecd5",
+      "independent-3s-humaneval-token-decoded.json": "35d205454ab7b22150040cfcd82fccc5f86999939075531b800fc29393438187",
+      "independent-3s-humaneval-token-decoded-scored.json": "2eac01ae57821629d503fe9b45b628fb59e96e76403f4c5bffb0b79485870d2e",
+      "independent-3s-retrieval.json": "7fac5738fbb29362bbdc07cc26430f91ae9d598675635da8d3b9aee1564462fa",
+      "published-3bit-text.json": "b977841e83682423661a08ba7072650b884b8906fb24c6ed79feb7827333bfd2",
+      "published-3bit-code.json": "dd7575523485b63f696d2fe67b6060d9a10606a55cdcf3b54b5a6769b92eac7c",
+      "published-3bit-mmlu.json": "dc89db7c0c89299db970324367d4c62f73379d079ecf6b7618abac755eec5e33",
+      "published-3bit-humaneval.json": "865da338b18464305a3ce79e59ebd6e1d5733971ca6350ad7b64b8995631bca0",
+      "published-3bit-humaneval-token-decoded.json": "08cadd8c582a4394f4c3d8e00d4223031a3e644ee56c406870506d07bffa5bc9",
+      "published-3bit-humaneval-token-decoded-scored.json": "eb20dbef91e396e78c064db4112d0928b838afe7f7f0e69502291425dcc82f1d",
+      "published-3bit-retrieval.json": "80ef748e52d1025addc9bb567ee6579c21be1ebc683076d94bd0f08ebc8f7f6b",
+      "morph32-3s-uncompressed-text.json": "60f67eba26b5ba04e6f0d2a4c6b76a149a02a22059283968676c45bd737b7512",
+      "morph32-3s-uncompressed-code.json": "462fcd05eb60cf5d03c6627dd4799c3d113b4bcd3ed68e5c16e1c37c774f508c",
+      "morph32-3s-uncompressed-conversion.json": "6fcb147badc95e8135afedc1729d40cfeb1923a7fed3f0a9fc47a9ef32108e9d",
+      "morph32-3s-uncompressed-mmlu.json": "6d97fb1e461862011becfa72ce9c144b4586769b17fb84647ade0ff895cff0df",
+      "morph32-3s-uncompressed-humaneval.json": "451f4d19273e0c24ae9fd6b5a3dbc9e974760496060a71660277330dcf8027de",
+      "morph32-3s-uncompressed-humaneval-token-decoded.json": "d015689a7d1a0717fd0d381631d3e9aedc2ffef9420a083331b03f2fb6f0cd3b",
+      "morph32-3s-uncompressed-humaneval-token-decoded-scored.json": "690e17c7df6715f21063e3b13dbfd331e48c4e0a81ef844404e45856aa72c760",
+      "morph32-3s-uncompressed-retrieval.json": "2a5e078ad119ff1df8557dc79487d5e16db391b266dcafe3a58e0085e8c050e4",
+      "morph32-3s-split-text.json": "5d966c4ed3f91c8c4a545d2e9338310e5e5e136851d025c7b6a58dcde920fbe4",
+      "profile-original.json": "d97459ab9e87cedd66e48087e0628b9c679b145950f05e89c12e17f0e9f731aa",
+      "profile-split.json": "ce1727f11428918044212e9028d91f9f30346841ff18c1861bab172a48740b61"
+    },
+    "interpretation": "Current MORPH uses three planes. independent-3s is a base-fitting ablation; no recurrence is present. Historical recurrence results are separate. No superiority is assumed."
+  },
+  "smaller": {
+    "optimization": null,
+    "status": "complete",
+    "model": "smaller-20260911",
+    "smaller_model": true,
+    "profiles": {
+      "native": {
+        "text": {
+          "nll": 2.675503697246313,
+          "perplexity": 14.51966151152257,
+          "scored_tokens": 4096,
+          "seconds": 2.0450012920045992,
+          "delta_nll_nats_per_token": 0.0,
+          "mean_kl_reference_to_candidate": 0.0,
+          "reference_token_agreement": 1.0,
+          "reference_manifest_sha256": "128c1553acde07ad57556e4d4da49cfcb539d733da2147603cfceab88d55da28"
+        },
+        "file_bytes": 351386061,
+        "peak_mlx_bytes": 1707245712,
+        "resident_parameter_bytes": 335372288,
+        "generation": {
+          "count": 10,
+          "median": 219.64979028060205,
+          "q1": 217.88268793248824,
+          "q3": 220.58811448333714,
+          "minimum": 211.75440986445835,
+          "maximum": 221.46107818022782
+        },
+        "prompt": {
+          "count": 10,
+          "median": 15163.684289539742,
+          "q1": 15134.25810774158,
+          "q3": 15232.313516062715,
+          "minimum": 15028.775206533215,
+          "maximum": 15300.378707811173
+        },
+        "code": {
+          "nll": 1.7584428153932095,
+          "perplexity": 5.803393399776207,
+          "scored_tokens": 4096,
+          "seconds": 2.0681930419959826,
+          "delta_nll_nats_per_token": 0.0,
+          "mean_kl_reference_to_candidate": 0.0,
+          "reference_token_agreement": 1.0,
+          "reference_manifest_sha256": "b1a10bf92ca9f6a9f542f7c2b47ba6491f402bd70ae138dd8240313e5b1c889e"
+        }
+      },
+      "morph32-3s": {
+        "text": {
+          "nll": 3.0567144379019737,
+          "perplexity": 21.257599137221817,
+          "scored_tokens": 4096,
+          "seconds": 2.1185994170082267,
+          "delta_nll_nats_per_token": 0.38121074065566063,
+          "mean_kl_reference_to_candidate": 0.41293430387056085,
+          "reference_token_agreement": 0.704345703125,
+          "reference_manifest_sha256": "128c1553acde07ad57556e4d4da49cfcb539d733da2147603cfceab88d55da28"
+        },
+        "file_bytes": 312929769,
+        "peak_mlx_bytes": 1672978431,
+        "resident_parameter_bytes": 296702255,
+        "generation": {
+          "count": 10,
+          "median": 204.91986529814744,
+          "q1": 202.62373801807968,
+          "q3": 206.21179464428536,
+          "minimum": 200.8008767278266,
+          "maximum": 207.44954559124338
+        },
+        "prompt": {
+          "count": 10,
+          "median": 14490.121893255367,
+          "q1": 14432.463557045352,
+          "q3": 14549.889850828287,
+          "minimum": 14082.794004288124,
+          "maximum": 14648.222280054637
+        },
+        "code": {
+          "nll": 1.9340827763080597,
+          "perplexity": 6.9176960698330605,
+          "scored_tokens": 4096,
+          "seconds": 2.1224196669936646,
+          "delta_nll_nats_per_token": 0.17563996091485023,
+          "mean_kl_reference_to_candidate": 0.3107261378126409,
+          "reference_token_agreement": 0.802978515625,
+          "reference_manifest_sha256": "b1a10bf92ca9f6a9f542f7c2b47ba6491f402bd70ae138dd8240313e5b1c889e"
+        },
+        "representation_bytes": 115605504,
+        "native_representation_bytes": 148635648,
+        "metadata_saved_bytes": 5639889
+      },
+      "independent-3s": {
+        "text": {
+          "nll": 3.048243723809719,
+          "perplexity": 21.078292592029474,
+          "scored_tokens": 4096,
+          "seconds": 2.105193249997683,
+          "delta_nll_nats_per_token": 0.372740026563406,
+          "mean_kl_reference_to_candidate": 0.4071461753241179,
+          "reference_token_agreement": 0.706787109375,
+          "reference_manifest_sha256": "128c1553acde07ad57556e4d4da49cfcb539d733da2147603cfceab88d55da28"
+        },
+        "file_bytes": 312929734,
+        "peak_mlx_bytes": 1672978431,
+        "resident_parameter_bytes": 296702255,
+        "generation": {
+          "count": 10,
+          "median": 204.44532297324878,
+          "q1": 203.47121286612705,
+          "q3": 205.61892126624724,
+          "minimum": 200.8268940692622,
+          "maximum": 206.454027083932
+        },
+        "prompt": {
+          "count": 10,
+          "median": 14467.033343733867,
+          "q1": 14272.580014470377,
+          "q3": 14547.07165928211,
+          "minimum": 14116.033380350962,
+          "maximum": 14649.796210367575
+        },
+        "code": {
+          "nll": 1.9342943616211414,
+          "perplexity": 6.9191599075796235,
+          "scored_tokens": 4096,
+          "seconds": 2.119558666003286,
+          "delta_nll_nats_per_token": 0.17585154622793198,
+          "mean_kl_reference_to_candidate": 0.3102433733683081,
+          "reference_token_agreement": 0.796875,
+          "reference_manifest_sha256": "b1a10bf92ca9f6a9f542f7c2b47ba6491f402bd70ae138dd8240313e5b1c889e"
+        },
+        "representation_bytes": 115605504,
+        "native_representation_bytes": 148635648,
+        "metadata_saved_bytes": 5639889
+      }
+    },
+    "source_directory": "research/smaller-20260911",
+    "source_sha256": {
+      "native-text.json": "cc1fba99d31a6c4df8068b934d7c6ef13d5edeb78f4f6d999db71245d874c034",
+      "native-code.json": "da16ccda371bff6e453191110426ee3e8a6411bf88bbbdab1eeb9a81a4ff8171",
+      "morph32-3s-text.json": "4433ec392da6b3d5f393f03a37ba85ea113ea34fa6b38b6d652d700122f4e2e6",
+      "morph32-3s-code.json": "c62cea851db44f0a63f817eca7d344fab1e78805ee73ea71bb84fe645b8e53c5",
+      "morph32-3s-conversion.json": "449eede9fede4b2dfd4ab64abe13df15b5bc3356e803b742049ded61e5635fca",
+      "independent-3s-text.json": "041cb1ca03cc0ccb91ff5333889aeaeecbc1b93bacaa59c219a9aec42b0fd5a5",
+      "independent-3s-code.json": "f387711dd5a4b7e11441bfbe1f622613bb8834136f7baea2290a6da5ef0888b6",
+      "independent-3s-conversion.json": "7877a2aac37cbef8da043e99425f6c4f4c0fa8eb1cec95b64a7a725ad0457d07"
+    },
+    "interpretation": "Current MORPH uses three planes. independent-3s is a base-fitting ablation; no recurrence is present. Historical recurrence results are separate. No superiority is assumed."
+  }
+}

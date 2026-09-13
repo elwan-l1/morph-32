@@ -7,4 +7,4 @@
 
 `mmlu-50.json` preserves complete five-shot prompts, gold labels, IDs, the selection seed and prompt hashes. Machine-specific source paths and selection bookkeeping are omitted. The whole-file subset hashes in archived measurement reports refer to the original JSON serialization, not this curated file. Use IDs and prompt hashes to verify evaluation identity.
 
-See [reproduction](../docs/reproduce.md) for the scoring procedure and [attribution](../NOTICE.md) for original dataset terms.
+The evaluation method is described in [the paper](../paper/morph32.pdf). Upstream datasets retain their original terms.

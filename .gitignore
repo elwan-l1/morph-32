@@ -11,6 +11,8 @@ build/
 dist/
 models/
 checkpoints/
+!paper/data/research/current-20260911/checkpoints/
+!paper/data/research/current-20260911/checkpoints/*.md
 results/
 *.morph
 *.safetensors
